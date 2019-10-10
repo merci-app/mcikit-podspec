@@ -1,0 +1,11 @@
+framework module MCIFoundation {
+  umbrella header "MCIFoundation.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIFoundation.Swift {
+    header "MCIFoundation-Swift.h"
+    requires objc
+}

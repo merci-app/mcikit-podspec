@@ -9,8 +9,8 @@
 Pod::Spec.new do |spec|
 
   spec.name            = "MCIKit"
-  spec.version         = "0.1.0"
-  spec.summary         = "MCIKit é framework destinado a Merci e seus parceiros."
+  spec.version         = "1.2.2"
+  spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
   spec.swift_versions  = ['5.0']
 
   spec.description  = <<-DESC
@@ -20,10 +20,10 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/merci-app/mcikit-podspec'
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors      = { 'Denis Oliveira' => 'denis @ merci dot app', 'Thales Frigo' => 'thales @ merci dot app' }
-  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '0.1.0' }
+  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '1.2.2' }
  
   spec.ios.deployment_target = '9.0'
-  spec.vendored_frameworks = 'MCIKit.framework'
+  spec.vendored_frameworks = ['MCIFoundation.framework', 'MCIMarketPayCore.framework', 'MCISupportCore.framework', 'MCIAuth.framework', 'MCIIssuerViewerCore.framework', 'MCIMarketpay.framework', 'MCIWallet.framework', 'MCIAuthCore.framework', 'MCIKit.framework', 'MCIProfile.framework', 'MerciKit.framework', 'MCICheckout.framework', 'MCIProfileCore.framework', 'MCICheckoutCore.framework', 'MCILogger.framework', 'MCIQuizCore.framework']
 
   spec.frameworks   = 'UIKit', 'MapKit'
   spec.dependency 'Alamofire', '~> 4.8.2'

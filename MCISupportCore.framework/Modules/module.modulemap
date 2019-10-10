@@ -1,0 +1,11 @@
+framework module MCISupportCore {
+  umbrella header "MCISupportCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCISupportCore.Swift {
+    header "MCISupportCore-Swift.h"
+    requires objc
+}

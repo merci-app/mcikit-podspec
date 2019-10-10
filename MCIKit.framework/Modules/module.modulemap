@@ -1,5 +1,5 @@
 framework module MCIKit {
-  umbrella header "MCIKit-umbrella.h"
+  umbrella header "MCIKit.h"
 
   export *
   module * { export * }

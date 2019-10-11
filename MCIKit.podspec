@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name            = "MCIKit"
-  spec.version         = "1.1.0"
+  spec.version         = "1.1.1"
   spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
   spec.swift_versions  = ['5.0']
 

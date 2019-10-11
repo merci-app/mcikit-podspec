@@ -1,0 +1,65 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.0.270.13 clang-1100.0.33.7)
+// swift-module-flags: -target i386-apple-ios9.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MerciKit
+import Alamofire
+import Foundation
+import MCIAuthCore
+import MCICheckout
+import MCICheckoutCore
+import MCIFoundation
+import MCIKit
+import MCILogger
+import MCIMarketPayCore
+import MCIMarketpay
+import MCISupportCore
+import Swift
+import UIKit
+public enum MerciModule {
+  case marketpay
+  case merchant(Swift.String)
+}
+public enum MerciEnvironment {
+  case production
+  case sandbox
+  public static func == (a: MerciKit.MerciEnvironment, b: MerciKit.MerciEnvironment) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+final public class Merci {
+  public static let shared: MerciKit.Merci
+  final public class func instantiate(clientId: Swift.String, clientSecret: Swift.String, environment: MerciKit.MerciEnvironment, primaryColor: UIKit.UIColor? = nil, secondaryColor: UIKit.UIColor? = nil, homeImage: UIKit.UIImage? = nil, merciBrandImage: UIKit.UIImage? = nil, delegate: MerciKit.MerciDelegate = BaseDelegate())
+  final public class func authenticate(cpf: Swift.String, completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
+  final public class func revokeAuthentication(then completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
+  final public class func isAuthenticated() -> Swift.Bool
+  final public class func launch(viewController: UIKit.UIViewController, module: MerciKit.MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
+  @objc deinit
+}
+extension Merci {
+  public static let merchantOpenedNotification: Foundation.Notification.Name
+  public static let merchantClosedNotification: Foundation.Notification.Name
+  public static let checkoutStartedNotification: Foundation.Notification.Name
+  public static let checkoutCompletedNotification: Foundation.Notification.Name
+}
+extension MCIFoundation {
+  final public func revokeCustomerAuthentication(completion: @escaping ((Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void))
+}
+@objc final public class MCINotificationCenter : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol MerciDelegate {
+  func supportFlow(reason: Swift.String?) -> UIKit.UIViewController?
+  func authenticationFlow() -> UIKit.UIViewController
+}
+extension MerciDelegate {
+  public func supportFlow(reason: Swift.String?) -> UIKit.UIViewController?
+}
+public class BaseDelegate : MerciKit.MerciDelegate {
+  public init()
+  public func authenticationFlow() -> UIKit.UIViewController
+  @objc deinit
+}
+extension MerciKit.MerciEnvironment : Swift.Equatable {}
+extension MerciKit.MerciEnvironment : Swift.Hashable {}

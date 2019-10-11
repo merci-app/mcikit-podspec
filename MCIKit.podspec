@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/merci-app/mcikit-podspec'
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors      = { 'Denis Oliveira' => 'denis @ merci dot app', 'Thales Frigo' => 'thales @ merci dot app' }
-  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '1.1.0' }
+  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '1.1.1' }
  
   spec.ios.deployment_target = '9.0'
   spec.vendored_frameworks = 'MerciKit.framework'

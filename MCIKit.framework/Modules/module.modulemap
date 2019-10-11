@@ -1,0 +1,11 @@
+framework module MCIKit {
+  umbrella header "MCIKit.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIKit.Swift {
+    header "MCIKit-Swift.h"
+    requires objc
+}

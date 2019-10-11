@@ -1,0 +1,11 @@
+framework module MCILogger {
+  umbrella header "MCILogger.h"
+
+  export *
+  module * { export * }
+}
+
+module MCILogger.Swift {
+    header "MCILogger-Swift.h"
+    requires objc
+}

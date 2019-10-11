@@ -1,0 +1,11 @@
+framework module MCIWallet {
+  umbrella header "MCIWallet.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIWallet.Swift {
+    header "MCIWallet-Swift.h"
+    requires objc
+}

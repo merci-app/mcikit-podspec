@@ -1,0 +1,11 @@
+framework module MCIMarketpay {
+  umbrella header "MCIMarketpay.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIMarketpay.Swift {
+    header "MCIMarketpay-Swift.h"
+    requires objc
+}

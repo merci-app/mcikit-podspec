@@ -1,0 +1,11 @@
+framework module MCIProfileCore {
+  umbrella header "MCIProfileCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIProfileCore.Swift {
+    header "MCIProfileCore-Swift.h"
+    requires objc
+}

@@ -1,0 +1,11 @@
+framework module MCIAuthCore {
+  umbrella header "MCIAuthCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIAuthCore.Swift {
+    header "MCIAuthCore-Swift.h"
+    requires objc
+}

@@ -398,6 +398,14 @@ SWIFT_CLASS("_TtC6MCIKit15MCIInputValueVC")
 
 
 
+SWIFT_CLASS("_TtC6MCIKit12MCIL10nLabel")
+@interface MCIL10nLabel : UILabel
+- (void)didMoveToWindow;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit19MCILoadingTableCell")
 @interface MCILoadingTableCell : UITableViewCell
 - (void)awakeFromNib;
@@ -657,9 +665,9 @@ SWIFT_CLASS("_TtC6MCIKit10MCIWebView")
 
 
 @interface UIView (SWIFT_EXTENSION(MCIKit))
-@property (nonatomic) CGFloat cornerRadius;
-@property (nonatomic, strong) UIColor * _Nonnull borderColor;
-@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) CGFloat mciCornerRadius;
+@property (nonatomic, strong) UIColor * _Nonnull mciBorderColor;
+@property (nonatomic) CGFloat mciBorderWidth;
 @end
 
 
@@ -1075,6 +1083,14 @@ SWIFT_CLASS("_TtC6MCIKit15MCIInputValueVC")
 
 
 
+SWIFT_CLASS("_TtC6MCIKit12MCIL10nLabel")
+@interface MCIL10nLabel : UILabel
+- (void)didMoveToWindow;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit19MCILoadingTableCell")
 @interface MCILoadingTableCell : UITableViewCell
 - (void)awakeFromNib;
@@ -1334,9 +1350,9 @@ SWIFT_CLASS("_TtC6MCIKit10MCIWebView")
 
 
 @interface UIView (SWIFT_EXTENSION(MCIKit))
-@property (nonatomic) CGFloat cornerRadius;
-@property (nonatomic, strong) UIColor * _Nonnull borderColor;
-@property (nonatomic) CGFloat borderWidth;
+@property (nonatomic) CGFloat mciCornerRadius;
+@property (nonatomic, strong) UIColor * _Nonnull mciBorderColor;
+@property (nonatomic) CGFloat mciBorderWidth;
 @end
 
 

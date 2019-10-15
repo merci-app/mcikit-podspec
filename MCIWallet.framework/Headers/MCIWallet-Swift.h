@@ -186,7 +186,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import MCIKit;
-@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -205,13 +204,52 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class UIStoryboardSegue;
+@class NSBundle;
+@class NSCoder;
 
-SWIFT_CLASS("_TtC9MCIWallet18MCIInitAccountFlow")
-@interface MCIInitAccountFlow : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS("_TtC9MCIWallet14WalletIssuerVC")
+@interface WalletIssuerVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
+
+
+@class UICollectionView;
+@class UICollectionViewCell;
+@class UICollectionReusableView;
+
+@interface WalletIssuerVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDataSource>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionReusableView * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView viewForSupplementaryElementOfKind:(NSString * _Nonnull)kind atIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+@class UICollectionViewLayout;
+
+@interface WalletIssuerVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDelegateFlowLayout>
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC9MCIWallet19WalletOnboardQuizVC")
+@interface WalletOnboardQuizVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 
 SWIFT_CLASS("_TtC9MCIWallet23WalletSectionHeaderView")
 @interface WalletSectionHeaderView : UITableViewHeaderFooterView
@@ -221,8 +259,6 @@ SWIFT_CLASS("_TtC9MCIWallet23WalletSectionHeaderView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIStoryboardSegue;
-@class NSBundle;
 
 SWIFT_CLASS("_TtC9MCIWallet8WalletVC")
 @interface WalletVC : MCIViewController
@@ -235,8 +271,6 @@ SWIFT_CLASS("_TtC9MCIWallet8WalletVC")
 
 
 
-@class UICollectionView;
-@class UICollectionViewCell;
 
 @interface WalletVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -458,7 +492,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreGraphics;
 @import Foundation;
 @import MCIKit;
-@import ObjectiveC;
 @import UIKit;
 #endif
 
@@ -477,13 +510,52 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 # pragma pop_macro("any")
 #endif
 
+@class UIStoryboardSegue;
+@class NSBundle;
+@class NSCoder;
 
-SWIFT_CLASS("_TtC9MCIWallet18MCIInitAccountFlow")
-@interface MCIInitAccountFlow : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+SWIFT_CLASS("_TtC9MCIWallet14WalletIssuerVC")
+@interface WalletIssuerVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSCoder;
+
+
+@class UICollectionView;
+@class UICollectionViewCell;
+@class UICollectionReusableView;
+
+@interface WalletIssuerVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDataSource>
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionReusableView * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView viewForSupplementaryElementOfKind:(NSString * _Nonnull)kind atIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+@class UICollectionViewLayout;
+
+@interface WalletIssuerVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDelegateFlowLayout>
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UIEdgeInsets)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout insetForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (CGSize)collectionView:(UICollectionView * _Nonnull)collectionView layout:(UICollectionViewLayout * _Nonnull)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC9MCIWallet19WalletOnboardQuizVC")
+@interface WalletOnboardQuizVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 
 SWIFT_CLASS("_TtC9MCIWallet23WalletSectionHeaderView")
 @interface WalletSectionHeaderView : UITableViewHeaderFooterView
@@ -493,8 +565,6 @@ SWIFT_CLASS("_TtC9MCIWallet23WalletSectionHeaderView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIStoryboardSegue;
-@class NSBundle;
 
 SWIFT_CLASS("_TtC9MCIWallet8WalletVC")
 @interface WalletVC : MCIViewController
@@ -507,8 +577,6 @@ SWIFT_CLASS("_TtC9MCIWallet8WalletVC")
 
 
 
-@class UICollectionView;
-@class UICollectionViewCell;
 
 @interface WalletVC (SWIFT_EXTENSION(MCIWallet)) <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;

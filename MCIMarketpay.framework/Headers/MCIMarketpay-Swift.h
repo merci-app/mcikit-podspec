@@ -236,6 +236,24 @@ SWIFT_CLASS("_TtC12MCIMarketpay14Api99ServiceVC")
 
 
 
+SWIFT_CLASS("_TtC12MCIMarketpay25Api99TransactionHistoryVC")
+@interface Api99TransactionHistoryVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class UITableViewCell;
+
+@interface Api99TransactionHistoryVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
 
 
 SWIFT_CLASS("_TtC12MCIMarketpay15CategoryEmptyVC")
@@ -253,8 +271,6 @@ SWIFT_CLASS("_TtC12MCIMarketpay15CategoryGroupVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
-@class UITableViewCell;
 
 @interface CategoryGroupVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -278,6 +294,18 @@ SWIFT_CLASS("_TtC12MCIMarketpay14CategoryListVC")
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
+
+SWIFT_CLASS("_TtC12MCIMarketpay25CellphoneRechargeTicketVC")
+@interface CellphoneRechargeTicketVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 @class UIViewController;
 
 SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
@@ -293,6 +321,10 @@ SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
 
 
 
+
+
+
+
 @class UIScrollView;
 
 @interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
@@ -300,21 +332,17 @@ SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
 @end
 
 
-
-
+@interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDelegate>
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didEndDisplayingCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
 
 
 @interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDelegate>
-- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)tableView:(UITableView * _Nonnull)tableView didEndDisplayingCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
@@ -433,6 +461,18 @@ SWIFT_CLASS("_TtC12MCIMarketpay11MarketpayVC")
 
 
 
+SWIFT_CLASS("_TtC12MCIMarketpay18TVRechargeTicketVC")
+@interface TVRechargeTicketVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC12MCIMarketpay12TVRechargeVC")
 @interface TVRechargeVC : MCIViewController
 - (void)viewDidLoad;
@@ -443,13 +483,13 @@ SWIFT_CLASS("_TtC12MCIMarketpay12TVRechargeVC")
 @end
 
 
-
-
-
-
 @interface TVRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
+
+
+
+
 
 
 
@@ -494,14 +534,21 @@ SWIFT_CLASS("_TtC12MCIMarketpay9VoucherVC")
 @end
 
 
-
-
-
-
-
-
 @interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+@end
+
+
+
+
+
+
+
+
+@interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -512,13 +559,15 @@ SWIFT_CLASS("_TtC12MCIMarketpay9VoucherVC")
 @end
 
 
-@interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+
+
+SWIFT_CLASS("_TtC12MCIMarketpay23WalletSectionHeaderView")
+@interface WalletSectionHeaderView : UITableViewHeaderFooterView
+- (void)awakeFromNib;
+- (void)prepareForReuse;
+- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
-
-
 
 
 SWIFT_CLASS("_TtC12MCIMarketpay19WebPaymentReceiptVC")
@@ -770,6 +819,24 @@ SWIFT_CLASS("_TtC12MCIMarketpay14Api99ServiceVC")
 
 
 
+SWIFT_CLASS("_TtC12MCIMarketpay25Api99TransactionHistoryVC")
+@interface Api99TransactionHistoryVC : MCIViewController
+- (void)viewDidLoad;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UITableView;
+@class UITableViewCell;
+
+@interface Api99TransactionHistoryVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource, UITableViewDelegate>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
+
+
 
 
 SWIFT_CLASS("_TtC12MCIMarketpay15CategoryEmptyVC")
@@ -787,8 +854,6 @@ SWIFT_CLASS("_TtC12MCIMarketpay15CategoryGroupVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITableView;
-@class UITableViewCell;
 
 @interface CategoryGroupVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource, UITableViewDelegate>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -812,6 +877,18 @@ SWIFT_CLASS("_TtC12MCIMarketpay14CategoryListVC")
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
+
+SWIFT_CLASS("_TtC12MCIMarketpay25CellphoneRechargeTicketVC")
+@interface CellphoneRechargeTicketVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
 @class UIViewController;
 
 SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
@@ -827,6 +904,10 @@ SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
 
 
 
+
+
+
+
 @class UIScrollView;
 
 @interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
@@ -834,21 +915,17 @@ SWIFT_CLASS("_TtC12MCIMarketpay19CellphoneRechargeVC")
 @end
 
 
-
-
+@interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDelegate>
+- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didEndDisplayingCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+@end
 
 
 @interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface CellphoneRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDelegate>
-- (void)tableView:(UITableView * _Nonnull)tableView willDisplayCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)tableView:(UITableView * _Nonnull)tableView didEndDisplayingCell:(UITableViewCell * _Nonnull)cell forRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 @end
 
 
@@ -967,6 +1044,18 @@ SWIFT_CLASS("_TtC12MCIMarketpay11MarketpayVC")
 
 
 
+SWIFT_CLASS("_TtC12MCIMarketpay18TVRechargeTicketVC")
+@interface TVRechargeTicketVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewDidLayoutSubviews;
+- (void)prepareForSegue:(UIStoryboardSegue * _Nonnull)segue sender:(id _Nullable)sender;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC12MCIMarketpay12TVRechargeVC")
 @interface TVRechargeVC : MCIViewController
 - (void)viewDidLoad;
@@ -977,13 +1066,13 @@ SWIFT_CLASS("_TtC12MCIMarketpay12TVRechargeVC")
 @end
 
 
-
-
-
-
 @interface TVRechargeVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
 @end
+
+
+
+
 
 
 
@@ -1028,14 +1117,21 @@ SWIFT_CLASS("_TtC12MCIMarketpay9VoucherVC")
 @end
 
 
-
-
-
-
-
-
 @interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UIScrollViewDelegate>
 - (void)scrollViewDidScroll:(UIScrollView * _Nonnull)scrollView;
+@end
+
+
+
+
+
+
+
+
+@interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
+- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1046,13 +1142,15 @@ SWIFT_CLASS("_TtC12MCIMarketpay9VoucherVC")
 @end
 
 
-@interface VoucherVC (SWIFT_EXTENSION(MCIMarketpay)) <UITableViewDataSource>
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+
+
+SWIFT_CLASS("_TtC12MCIMarketpay23WalletSectionHeaderView")
+@interface WalletSectionHeaderView : UITableViewHeaderFooterView
+- (void)awakeFromNib;
+- (void)prepareForReuse;
+- (nonnull instancetype)initWithReuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
-
-
 
 
 SWIFT_CLASS("_TtC12MCIMarketpay19WebPaymentReceiptVC")

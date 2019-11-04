@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MCIQuizCore-Swift.h</key>
 		<data>
-		H63ZNe0rKtk2FNcEDkoeF1H0hSQ=
+		nA79nE6qk4rYqsyQFfd0UJp5CIU=
 		</data>
 		<key>Headers/MCIQuizCore.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u3kDOLkOUxz8nDZRIwJoorYGUPs=
+		4yR9AEAjFhPk7KnMObSvYIlylVM=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm.swiftdoc</key>
 		<data>
-		NoiCwcyIxBPCCYJGCPew0r7xjYk=
+		ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm.swiftmodule</key>
 		<data>
-		NS64BiEgHCN9UFlHBtLiUeYKWAg=
+		WqJ7Xii26qSRAxOtPWDLSky6MWM=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		/0HdUIrgHKHRVurkRJiYq0pGthE=
+		pMw8bwQ86SJPBhDd+8qUY7Et7XE=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		kDiiDakdJJIWgG/bhEN3wFz4A7o=
+		AUuutdxJtEzRHDTcjEaEWCT8Wmw=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		/0HdUIrgHKHRVurkRJiYq0pGthE=
+		pMw8bwQ86SJPBhDd+8qUY7Et7XE=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		kDiiDakdJJIWgG/bhEN3wFz4A7o=
+		AUuutdxJtEzRHDTcjEaEWCT8Wmw=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		NoiCwcyIxBPCCYJGCPew0r7xjYk=
+		ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		NS64BiEgHCN9UFlHBtLiUeYKWAg=
+		WqJ7Xii26qSRAxOtPWDLSky6MWM=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		NoiCwcyIxBPCCYJGCPew0r7xjYk=
+		ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 		</data>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		NS64BiEgHCN9UFlHBtLiUeYKWAg=
+		WqJ7Xii26qSRAxOtPWDLSky6MWM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,11 +67,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H63ZNe0rKtk2FNcEDkoeF1H0hSQ=
+			nA79nE6qk4rYqsyQFfd0UJp5CIU=
 			</data>
 			<key>hash2</key>
 			<data>
-			hpvMD72OlsmGcATIybCED37+TnzYpVcHLvQehkptMVk=
+			wbiSgxEBk3XjAdtAB6f6gMVNnY0uKrQw1umho0/VGI0=
 			</data>
 		</dict>
 		<key>Headers/MCIQuizCore.h</key>
@@ -89,110 +89,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NoiCwcyIxBPCCYJGCPew0r7xjYk=
+			ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wwy2VAFmdf9+xxxS/x+EEJjw2Pb6Vu1XNPhf2oDrtM0=
+			ik6CkYXjDF0JSvU1D1d6lR2BiQPnhMBHMfgJUhJ2U8k=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NS64BiEgHCN9UFlHBtLiUeYKWAg=
+			WqJ7Xii26qSRAxOtPWDLSky6MWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			z/gJ+lyXI1acChL1IdZtvXz+7YF+vqNUGfXy0bYYLDU=
+			rDCcmahHX6ZpbIfHvM+Won3loMSYnZSkAF5KUQTDnHM=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/0HdUIrgHKHRVurkRJiYq0pGthE=
+			pMw8bwQ86SJPBhDd+8qUY7Et7XE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yjky/cMRSEzX+mtHWgZ8pEvFzTTERvkZgKjncrIeGpg=
+			dJyXmEgIxxWcYwzSs9wM7WzabTKMPR1XmB8DlG3nf0s=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kDiiDakdJJIWgG/bhEN3wFz4A7o=
+			AUuutdxJtEzRHDTcjEaEWCT8Wmw=
 			</data>
 			<key>hash2</key>
 			<data>
-			SVk+tOPNrkYxdPb4duWtRk6o0/SUMLk5iUeIo6tZBmM=
+			1Il2gn81LtODIWTowLk7Kx5KzMTE9xOhBURCMm2EZ1M=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/0HdUIrgHKHRVurkRJiYq0pGthE=
+			pMw8bwQ86SJPBhDd+8qUY7Et7XE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yjky/cMRSEzX+mtHWgZ8pEvFzTTERvkZgKjncrIeGpg=
+			dJyXmEgIxxWcYwzSs9wM7WzabTKMPR1XmB8DlG3nf0s=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kDiiDakdJJIWgG/bhEN3wFz4A7o=
+			AUuutdxJtEzRHDTcjEaEWCT8Wmw=
 			</data>
 			<key>hash2</key>
 			<data>
-			SVk+tOPNrkYxdPb4duWtRk6o0/SUMLk5iUeIo6tZBmM=
+			1Il2gn81LtODIWTowLk7Kx5KzMTE9xOhBURCMm2EZ1M=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NoiCwcyIxBPCCYJGCPew0r7xjYk=
+			ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wwy2VAFmdf9+xxxS/x+EEJjw2Pb6Vu1XNPhf2oDrtM0=
+			ik6CkYXjDF0JSvU1D1d6lR2BiQPnhMBHMfgJUhJ2U8k=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NS64BiEgHCN9UFlHBtLiUeYKWAg=
+			WqJ7Xii26qSRAxOtPWDLSky6MWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			z/gJ+lyXI1acChL1IdZtvXz+7YF+vqNUGfXy0bYYLDU=
+			rDCcmahHX6ZpbIfHvM+Won3loMSYnZSkAF5KUQTDnHM=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NoiCwcyIxBPCCYJGCPew0r7xjYk=
+			ya+OqwlaLkZciGPmv3SQ0xi2o3Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wwy2VAFmdf9+xxxS/x+EEJjw2Pb6Vu1XNPhf2oDrtM0=
+			ik6CkYXjDF0JSvU1D1d6lR2BiQPnhMBHMfgJUhJ2U8k=
 			</data>
 		</dict>
 		<key>Modules/MCIQuizCore.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NS64BiEgHCN9UFlHBtLiUeYKWAg=
+			WqJ7Xii26qSRAxOtPWDLSky6MWM=
 			</data>
 			<key>hash2</key>
 			<data>
-			z/gJ+lyXI1acChL1IdZtvXz+7YF+vqNUGfXy0bYYLDU=
+			rDCcmahHX6ZpbIfHvM+Won3loMSYnZSkAF5KUQTDnHM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

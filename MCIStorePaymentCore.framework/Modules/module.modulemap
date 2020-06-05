@@ -1,0 +1,11 @@
+framework module MCIStorePaymentCore {
+  umbrella header "MCIStorePaymentCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIStorePaymentCore.Swift {
+    header "MCIStorePaymentCore-Swift.h"
+    requires objc
+}

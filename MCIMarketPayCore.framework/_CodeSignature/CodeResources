@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MCIMarketPayCore-Swift.h</key>
 		<data>
-		TcgqMVsG+sMzhJ/qxadfNjVAIq4=
+		WofMiMHdyVXn77axImeU4udEDVY=
 		</data>
 		<key>Headers/MCIMarketPayCore.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		m7DasWJPD8tdLgj/xarZbEL8Z5M=
+		TP2MyMm/Kl+auWLQ/o8EBVXfGXk=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm.swiftdoc</key>
 		<data>
-		YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+		b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm.swiftmodule</key>
 		<data>
-		d40p25vNT3R1vfsijZqbWSRHFwY=
+		Efqle/DgB1tqDMV9rls6oRhrzN8=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		K7UO2TMLwguP03FozNEJY1YroUY=
+		BYqlIb+MTPF29VVRPWeiDLTPL+M=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		usj8Ekpny3kg42YxWlG2UlLFr/4=
+		VOklyNbT3SKINzaeMi8nSIoX8Ng=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		K7UO2TMLwguP03FozNEJY1YroUY=
+		BYqlIb+MTPF29VVRPWeiDLTPL+M=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		usj8Ekpny3kg42YxWlG2UlLFr/4=
+		VOklyNbT3SKINzaeMi8nSIoX8Ng=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+		b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		d40p25vNT3R1vfsijZqbWSRHFwY=
+		Efqle/DgB1tqDMV9rls6oRhrzN8=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+		b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 		</data>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		d40p25vNT3R1vfsijZqbWSRHFwY=
+		Efqle/DgB1tqDMV9rls6oRhrzN8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,11 +67,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TcgqMVsG+sMzhJ/qxadfNjVAIq4=
+			WofMiMHdyVXn77axImeU4udEDVY=
 			</data>
 			<key>hash2</key>
 			<data>
-			GHp4CaK77zUtYX+eLX1qGW4e+RDA41sOshicPpMWd9c=
+			5VsjLWM6tZnMLGnLK2zHrScn1rnt37MGE5JIXITQBQ8=
 			</data>
 		</dict>
 		<key>Headers/MCIMarketPayCore.h</key>
@@ -89,110 +89,110 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+			b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			IEZD4Rg96wB6YtTD9pSVNW11woLpszCXTvn6UuFopZE=
+			uScsBKGHujnqK1tNSfbMeyhMY6NGAoxX9LV4+iz6Ufw=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d40p25vNT3R1vfsijZqbWSRHFwY=
+			Efqle/DgB1tqDMV9rls6oRhrzN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			sY1B3uWS5jA8kBqBnYtcIK4WLgkJq9zjxK0WyuVXBkE=
+			NorAsUzzUKp1KL9z5JNDk/Xq600eUmj4Sb1uLYMsrxE=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K7UO2TMLwguP03FozNEJY1YroUY=
+			BYqlIb+MTPF29VVRPWeiDLTPL+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			JjNlETaM0RYe+PnMgmWv8ITh7xAs4dtniqcYNe41h2Q=
+			12MeFr9aP3pKXT2/UT8S+QmJlaACg3l6jy58fbbwdGY=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			usj8Ekpny3kg42YxWlG2UlLFr/4=
+			VOklyNbT3SKINzaeMi8nSIoX8Ng=
 			</data>
 			<key>hash2</key>
 			<data>
-			XKZPENmtr2S3PEryM/naTrtHBnwZtfltDpCc5eQtP8k=
+			5EqLBge5bl3dvDFv/l04lW4U3PTr8lxmMLVInKIH0rg=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K7UO2TMLwguP03FozNEJY1YroUY=
+			BYqlIb+MTPF29VVRPWeiDLTPL+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			JjNlETaM0RYe+PnMgmWv8ITh7xAs4dtniqcYNe41h2Q=
+			12MeFr9aP3pKXT2/UT8S+QmJlaACg3l6jy58fbbwdGY=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			usj8Ekpny3kg42YxWlG2UlLFr/4=
+			VOklyNbT3SKINzaeMi8nSIoX8Ng=
 			</data>
 			<key>hash2</key>
 			<data>
-			XKZPENmtr2S3PEryM/naTrtHBnwZtfltDpCc5eQtP8k=
+			5EqLBge5bl3dvDFv/l04lW4U3PTr8lxmMLVInKIH0rg=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+			b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			IEZD4Rg96wB6YtTD9pSVNW11woLpszCXTvn6UuFopZE=
+			uScsBKGHujnqK1tNSfbMeyhMY6NGAoxX9LV4+iz6Ufw=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d40p25vNT3R1vfsijZqbWSRHFwY=
+			Efqle/DgB1tqDMV9rls6oRhrzN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			sY1B3uWS5jA8kBqBnYtcIK4WLgkJq9zjxK0WyuVXBkE=
+			NorAsUzzUKp1KL9z5JNDk/Xq600eUmj4Sb1uLYMsrxE=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YF/2E7FilWAcnzxZ7BBjLBIfM8Y=
+			b2HWVQ5Iw3yHIV3huOgCSsFQfbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			IEZD4Rg96wB6YtTD9pSVNW11woLpszCXTvn6UuFopZE=
+			uScsBKGHujnqK1tNSfbMeyhMY6NGAoxX9LV4+iz6Ufw=
 			</data>
 		</dict>
 		<key>Modules/MCIMarketPayCore.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			d40p25vNT3R1vfsijZqbWSRHFwY=
+			Efqle/DgB1tqDMV9rls6oRhrzN8=
 			</data>
 			<key>hash2</key>
 			<data>
-			sY1B3uWS5jA8kBqBnYtcIK4WLgkJq9zjxK0WyuVXBkE=
+			NorAsUzzUKp1KL9z5JNDk/Xq600eUmj4Sb1uLYMsrxE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

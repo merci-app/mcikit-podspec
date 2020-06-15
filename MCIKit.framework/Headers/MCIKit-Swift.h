@@ -764,6 +764,14 @@ SWIFT_CLASS("_TtC6MCIKit10MCIWebView")
 
 
 
+SWIFT_CLASS("_TtC6MCIKit14OfflineErrorVC")
+@interface OfflineErrorVC : MCIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 
 
@@ -1578,6 +1586,14 @@ SWIFT_CLASS("_TtC6MCIKit10MCIWebView")
 @end
 
 
+
+
+SWIFT_CLASS("_TtC6MCIKit14OfflineErrorVC")
+@interface OfflineErrorVC : MCIViewController
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 

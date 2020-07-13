@@ -356,6 +356,24 @@ SWIFT_CLASS("_TtC6MCIKit18MCIBannerTableCell")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit17MCICardNumberView")
+@interface MCICardNumberView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (BOOL)becomeFirstResponder;
+@end
+
+
+
+@class UITextField;
+
+@interface MCICardNumberView (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit11MCICardView")
 @interface MCICardView : UIView
 - (void)layoutSubviews;
@@ -513,6 +531,15 @@ SWIFT_CLASS("_TtC6MCIKit12MCILoadingVC")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit14MCILoadingView")
+@interface MCILoadingView : UIImageView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit21MCINavBarTransitionVC")
 @interface MCINavBarTransitionVC : MCIFlowViewController
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
@@ -590,7 +617,6 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
 - (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
@@ -1180,6 +1206,24 @@ SWIFT_CLASS("_TtC6MCIKit18MCIBannerTableCell")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit17MCICardNumberView")
+@interface MCICardNumberView : UIView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (BOOL)becomeFirstResponder;
+@end
+
+
+
+@class UITextField;
+
+@interface MCICardNumberView (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (void)textFieldDidEndEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit11MCICardView")
 @interface MCICardView : UIView
 - (void)layoutSubviews;
@@ -1337,6 +1381,15 @@ SWIFT_CLASS("_TtC6MCIKit12MCILoadingVC")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit14MCILoadingView")
+@interface MCILoadingView : UIImageView
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithImage:(UIImage * _Nullable)image highlightedImage:(UIImage * _Nullable)highlightedImage SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC6MCIKit21MCINavBarTransitionVC")
 @interface MCINavBarTransitionVC : MCIFlowViewController
 @property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
@@ -1414,7 +1467,6 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UITextField;
 
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
 - (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;

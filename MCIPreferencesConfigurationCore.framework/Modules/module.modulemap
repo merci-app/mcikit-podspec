@@ -1,0 +1,11 @@
+framework module MCIPreferencesConfigurationCore {
+  umbrella header "MCIPreferencesConfigurationCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIPreferencesConfigurationCore.Swift {
+    header "MCIPreferencesConfigurationCore-Swift.h"
+    requires objc
+}

@@ -618,15 +618,15 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 @end
 
 
-@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -727,6 +727,21 @@ SWIFT_CLASS("_TtC6MCIKit18MCISimpleTextField")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit13MCIStackField")
+@interface MCIStackField : UIStackView
+@property (nonatomic, copy) IBInspectable NSString * _Nullable title;
+@property (nonatomic, copy) IBInspectable NSString * _Nullable placeholder;
+@property (nonatomic, copy) IBInspectable NSString * _Nullable text;
+@property (nonatomic) IBInspectable CGFloat separatorHeight;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)awakeFromNib;
+- (BOOL)becomeFirstResponder;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC6MCIKit22MCITableViewController")
 @interface MCITableViewController : UITableViewController
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -767,6 +782,22 @@ SWIFT_CLASS("_TtC6MCIKit12MCITextField")
 
 
 
+
+
+SWIFT_CLASS("_TtC6MCIKit9MCIWaitVC")
+@interface MCIWaitVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface MCIWaitVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 SWIFT_CLASS("_TtC6MCIKit10MCIWebView")
@@ -1468,15 +1499,15 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 @end
 
 
-@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1577,6 +1608,21 @@ SWIFT_CLASS("_TtC6MCIKit18MCISimpleTextField")
 @end
 
 
+SWIFT_CLASS("_TtC6MCIKit13MCIStackField")
+@interface MCIStackField : UIStackView
+@property (nonatomic, copy) IBInspectable NSString * _Nullable title;
+@property (nonatomic, copy) IBInspectable NSString * _Nullable placeholder;
+@property (nonatomic, copy) IBInspectable NSString * _Nullable text;
+@property (nonatomic) IBInspectable CGFloat separatorHeight;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
+- (void)awakeFromNib;
+- (BOOL)becomeFirstResponder;
+@end
+
+
+
+
 SWIFT_CLASS("_TtC6MCIKit22MCITableViewController")
 @interface MCITableViewController : UITableViewController
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
@@ -1617,6 +1663,22 @@ SWIFT_CLASS("_TtC6MCIKit12MCITextField")
 
 
 
+
+
+SWIFT_CLASS("_TtC6MCIKit9MCIWaitVC")
+@interface MCIWaitVC : MCIViewController
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@interface MCIWaitVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
+- (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
 
 
 SWIFT_CLASS("_TtC6MCIKit10MCIWebView")

@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name            = "MCIKit"
-  spec.version         = "1.4.3"
+  spec.version         = "1.5.0"
   spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
   spec.swift_versions  = ['5.2']
 
@@ -35,6 +35,7 @@ Pod::Spec.new do |spec|
     'MCIProfile.framework',
     'MCIProfileCore.framework',
     'MCIStorePaymentCore.framework',
+    'MCIPreferencesConfigurationCore.framework',
     'MCISupportCore.framework',
     'MCIWithdrawalCore.framework',
     'MCIIssuerViewerCore.framework',
@@ -42,9 +43,10 @@ Pod::Spec.new do |spec|
   ]
 
   spec.frameworks  = 'UIKit', 'MapKit'
-  spec.dependency 'Alamofire', '~> 4.8.2'
+  spec.dependency 'Alamofire', '~> 4.9.1'
   spec.dependency 'Kingfisher'
+  spec.dependency 'SwiftyRSA'
   spec.dependency 'AlamofireNetworkActivityIndicator', '~> 2.4.0'
-  spec.dependency 'KeychainAccess', '~> 3.2.0'
+  spec.dependency 'KeychainAccess', '~> 4.2.0'
   spec.dependency 'TPKeyboardAvoiding', '~> 1.3'
 end

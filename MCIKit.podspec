@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name            = "MCIKit"
-  spec.version         = "1.5.1"
+  spec.version         = "1.5.2"
   spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
   spec.swift_versions  = ['5.2']
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/merci-app/mcikit-podspec'
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors      = { 'Denis Oliveira' => 'denis @ merci dot app', 'Thales Frigo' => 'thales @ merci dot app' }
-  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '1.5.1' }
+  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '1.5.2' }
  
   spec.ios.deployment_target = '9.0'
   spec.vendored_frameworks   = [
@@ -47,6 +47,6 @@ Pod::Spec.new do |spec|
   spec.dependency 'Kingfisher'
   spec.dependency 'SwiftyRSA'
   spec.dependency 'AlamofireNetworkActivityIndicator', '~> 2.4.0'
-  spec.dependency 'KeychainAccess', '~> 4.2.0'
+  spec.dependency 'KeychainAccess', '<= 4.2.0'
   spec.dependency 'TPKeyboardAvoiding', '~> 1.3'
 end

@@ -1,0 +1,38 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIAuth
+import Alamofire
+@_exported import MCIAuth
+import MCIFoundation
+import MCIKit
+import MCILogger
+import Swift
+import UIKit
+extension MCIFoundation {
+  final public func requestCustomerAuthenticationCode(phoneNumber: Swift.String, cpf: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
+  final public func requestCustomerAuthenticationCodeValidation(authId: Swift.String, sms: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
+  final public func requestCustomerAuthenticationCodeResend(authId: Swift.String, completion: @escaping MCIResult<Swift.Void>)
+  final public func requestCustomerAuthenticationProfile(authId: Swift.String, cpf: Swift.String, name: Swift.String? = nil, email: Swift.String? = nil, password: Swift.String, completion: @escaping MCIResult<Swift.Void>)
+  final public func revokeCustomerAuthentication(completion: @escaping ((Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void))
+}
+public protocol PasswordFlowDelegate : AnyObject {
+  func passwordFlowDidAuthenticate(_ passwordFlowVC: PasswordFlowVC)
+  func dismissView(_ passwordFlowVC: PasswordFlowVC)
+}
+extension PasswordFlowDelegate {
+  public func dismissView(_ passwordFlowVC: PasswordFlowVC)
+}
+extension PasswordFlowDelegate where Self : UIKit.UIViewController, Self : MCINavigationStylable, Self : MCIViewControllerProtocol {
+  public func performUnwindToSplashVC()
+}
+@objc @_inheritsConvenienceInitializers final public class PasswordFlowVC : MCIFlowViewController, Identifiable {
+  weak final public var delegate: PasswordFlowDelegate?
+  final public var dismissToWallet: Swift.Bool?
+  final public class func allocate() -> PasswordFlowVC
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @objc override final public func viewDidLayoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}

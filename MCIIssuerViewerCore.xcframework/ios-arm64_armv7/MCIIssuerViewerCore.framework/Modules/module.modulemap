@@ -1,0 +1,11 @@
+framework module MCIIssuerViewerCore {
+  umbrella header "MCIIssuerViewerCore.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIIssuerViewerCore.Swift {
+    header "MCIIssuerViewerCore-Swift.h"
+    requires objc
+}

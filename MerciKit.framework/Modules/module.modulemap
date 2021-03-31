@@ -1,4 +1,0 @@
-framework module MerciKit {
-  header "MerciKit-Swift.h"
-  requires objc
-}

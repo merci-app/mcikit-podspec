@@ -1,0 +1,1564 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIKit
+import AVFoundation
+import CoreGraphics
+import CoreImage
+import CoreLocation
+import Foundation
+import Kingfisher
+import MCIFoundation
+@_exported import MCIKit
+import MCILogger
+import StoreKit
+import Swift
+import UIKit
+import WebKit
+public typealias ValueChanged<T> = (T) -> Swift.Void
+public protocol MCITextFieldDelegate : UIKit.UITextFieldDelegate {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MCITextField : UIKit.UIView, Identifiable {
+  @objc @IBInspectable public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var titleColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var underlineColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  public var textField: UIKit.UITextField {
+    get
+  }
+  public var isErrored: Swift.Bool {
+    get
+    set
+  }
+  public var isValid: Swift.Bool
+  weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+    get
+    set
+  }
+  public var onChanged: ValueChanged<MCITextField>?
+  public var onEditingComplete: ValueChanged<MCITextField>?
+  @objc override dynamic public func awakeFromNib()
+  @discardableResult
+  @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  public func setNormalState()
+  public func setTypingState()
+  public func setErrorState()
+  public func setErrorMessage(_ errorMessage: Swift.String?)
+  public func resetState()
+  public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
+  @objc deinit
+}
+public protocol MCICardNumberViewDelegate : AnyObject {
+  func cardNumberView(_ cardNumberView: MCICardNumberView, textDidChange text: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCICardNumberView : UIKit.UIView, Identifiable {
+  final public var text: Swift.String {
+    get
+  }
+  weak final public var delegate: MCICardNumberViewDelegate?
+  @discardableResult
+  @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension MCICardNumberView : UIKit.UITextFieldDelegate {
+  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+}
+public protocol MCIStyle : AnyObject {
+  var base: MCIBaseTheme { get }
+  var wallet: MCIWalletTheme { get }
+  var marketPlace: MCIMarketPlaceTheme { get }
+  var checkout: MCICheckoutTheme { get }
+}
+public protocol MCIBaseTheme : AnyObject {
+  var primaryColor: UIKit.UIColor { get }
+  var secondaryColor: UIKit.UIColor { get }
+  var loadingTintColor: UIKit.UIColor { get }
+  var tabBarBackgroundColor: UIKit.UIColor? { get }
+  var tabBarTintColor: UIKit.UIColor { get }
+  var tabBarUnselectedColor: UIKit.UIColor { get }
+  var inputTextColor: UIKit.UIColor { get }
+  var caretTextColor: UIKit.UIColor { get }
+  var titleTextColor: UIKit.UIColor { get }
+  var bodyTextTextColor: UIKit.UIColor { get }
+  var actionTintColor: UIKit.UIColor { get }
+  var actionTextColor: UIKit.UIColor { get }
+  var actionOutlineTintColor: UIKit.UIColor { get }
+  var actionOutlineTextColor: UIKit.UIColor { get }
+  var actionDisabledTintColor: UIKit.UIColor { get }
+  var actionDisabledTextColor: UIKit.UIColor { get }
+  var actionFlatTextColor: UIKit.UIColor { get }
+}
+public protocol MCIWalletTheme : AnyObject {
+  var walletNavBarTintColor: UIKit.UIColor { get }
+  var walletNavBarActionColor: UIKit.UIColor { get }
+  var walletStatusBarStyle: UIKit.UIStatusBarStyle { get }
+  var accountsBackgroundColor: UIKit.UIColor { get }
+  var accountsActiveIndicatorColor: UIKit.UIColor? { get }
+  var accountsRefreshControlColor: UIKit.UIColor? { get }
+  var accountsIndicatorColor: UIKit.UIColor? { get }
+  var aliasBankTextColor: UIKit.UIColor? { get }
+}
+public protocol MCIMarketPlaceTheme : AnyObject {
+  var marketNavBarTintColor: UIKit.UIColor { get }
+  var marketNavBarTextColor: UIKit.UIColor { get }
+  var marketNavBarActionColor: UIKit.UIColor { get }
+  var marketStatusBarStyle: UIKit.UIStatusBarStyle { get }
+  var categoriesBackgroundColor: UIKit.UIColor { get }
+  var categoriesRefreshControlColor: UIKit.UIColor? { get }
+  var categoriesTintColor: UIKit.UIColor { get }
+  var categoriesTextColor: UIKit.UIColor { get }
+  var merchantsBackgroundColor: UIKit.UIColor { get }
+  var merchantsActionTintColor: UIKit.UIColor { get }
+  var merchantsTextColor: UIKit.UIColor { get }
+  var servicesActionTintColor: UIKit.UIColor { get }
+  var servicesActionTextColor: UIKit.UIColor { get }
+  var servicesActionAltTintColor: UIKit.UIColor { get }
+}
+public protocol MCICheckoutTheme : AnyObject {
+  var payTintColor: UIKit.UIColor { get }
+}
+extension UIWindow {
+  public func replaceRootViewControllerWith(_ replacementController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIPassVC : MCIViewController, MCIChildViewController, Identifiable, Dismissable {
+  final public class func allocate() -> MCIPassVC
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  final public func configure(authentication: ((MCIPassVC) -> Swift.Void)?, forgot: ((MCIPassVC) -> Swift.Void)?, lockedPassword: ((MCIPassVC) -> Swift.Void)?, dismiss: ((MCIPassVC) -> Swift.Void)? = nil)
+  @objc override final public func dismissAnimatedWithNotification()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIPassVC : UIKit.UITextFieldDelegate {
+  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+}
+extension MCIPassVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@objc @_inheritsConvenienceInitializers final public class BadTimestampVC : MCIViewController, Identifiable {
+  final public class func allocate() -> BadTimestampVC
+  @objc override final public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension FloatingPoint {
+  public var degreesToRadians: Self {
+    get
+  }
+  public var radiansToDegrees: Self {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers final public class OfflineErrorVC : MCIViewController, Identifiable {
+  final public class func allocate() -> OfflineErrorVC
+  @objc override final public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UIImage {
+  public func resized(scale: CoreGraphics.CGFloat, compressionQuality: CoreGraphics.CGFloat, size: CoreGraphics.CGSize) -> UIKit.UIImage?
+  public func cropped(rect: CoreGraphics.CGRect, scale: CoreGraphics.CGFloat) -> UIKit.UIImage?
+  public func jpegImage(maxSize: Swift.Int = 2000000, minSize: Swift.Int = 1000000, times: Swift.Int = 5) -> Foundation.Data?
+}
+public typealias MCIActionHandler = ((MCIActionVC) -> Swift.Void)
+public enum MCIActionComponent {
+  case cancel(MCIActionHandler?)
+  case first(image: UIKit.UIImage?, text: Swift.String?, description: Swift.String?, completion: MCIActionHandler?)
+  case second(image: UIKit.UIImage?, text: Swift.String?, description: Swift.String?, completion: MCIActionHandler?)
+  case third(image: UIKit.UIImage?, text: Swift.String?, description: Swift.String?, completion: MCIActionHandler?)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIActionVC : MCIViewController, Identifiable, Dismissable {
+  final public class func allocate() -> MCIActionVC
+  @objc override final public func viewDidLoad()
+  final public func configure(with components: [MCIActionComponent])
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIActionVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+public protocol MCISupportable : AnyObject {
+  func support(reason: Swift.String?) -> UIKit.UIViewController?
+}
+public protocol MCISupportableFlow : AnyObject {
+  func performSupportFlow(reason: Swift.String?)
+}
+@_hasMissingDesignatedInitializers public class MCIEmptySupport : MCISupportable {
+  public func support(reason: Swift.String?) -> UIKit.UIViewController?
+  @objc deinit
+}
+extension CAShapeLayer {
+  public static func circleShape(radius: CoreGraphics.CGFloat = 100, lineWidth: CoreGraphics.CGFloat = 20, strokeColor: UIKit.UIColor, fillColor: UIKit.UIColor) -> QuartzCore.CAShapeLayer
+}
+public protocol MCINavigationStylable : AnyObject {
+  var requireStyle: MCINavigationStyle { get }
+}
+@objc @_inheritsConvenienceInitializers open class MCINavigationController : UIKit.UINavigationController, MCIChildViewController, Identifiable {
+  public var statusBarStyle: UIKit.UIStatusBarStyle {
+    get
+    set
+  }
+  @objc override dynamic open func viewDidLoad()
+  @objc override dynamic open func setViewControllers(_ viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  @objc override dynamic open func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @objc override dynamic open func popViewController(animated: Swift.Bool) -> UIKit.UIViewController?
+  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  public func makeClearAppearance()
+  public func makeSolidAppearance()
+  public func makeDarkAppearance()
+  public func makeCustomAppearance(style: MCINavigationStyle)
+  public func apply(_ data: MCINavigationStyleData)
+  @objc deinit
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+}
+extension MCINavigationController : UIKit.UIGestureRecognizerDelegate {
+  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
+extension MCINavigationController {
+  public class func encapsulate(_ viewController: UIKit.UIViewController) -> MCINavigationController
+  public class func push(_ viewController: UIKit.UIViewController) -> MCINavigationController
+}
+@objc @_inheritsConvenienceInitializers final public class MCIActionView : UIKit.UIView, Identifiable {
+  final public var color: UIKit.UIColor? {
+    get
+    set
+  }
+  @objc override final public func layoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension Data {
+  public init?(hexStringEncoded string: Swift.String)
+}
+extension NSNotification.Name {
+  public struct System {
+    public static let ImageCacheReloaded: Foundation.Notification.Name
+    public static let AccountCreated: Foundation.Notification.Name
+    public static let AccountRefresh: Foundation.Notification.Name
+    public static let BadTimestamp: Foundation.Notification.Name
+    public static let ApplicationStarted: Foundation.Notification.Name
+    public static let DeviceJailbroken: Foundation.Notification.Name
+    public static let OfflineError: Foundation.Notification.Name
+    public static let ForegroundUpdate: Foundation.Notification.Name
+    public static let InternetChanged: Foundation.Notification.Name
+    public static let NoCustomerAccount: Foundation.Notification.Name
+  }
+  public struct SSL {
+    public static let InvalidCertificate: Foundation.Notification.Name
+  }
+  public struct Session {
+    public static let Unauthorized: Foundation.Notification.Name
+    public static let Invalidated: Foundation.Notification.Name
+  }
+  public struct Customer {
+    public static let Authenticated: Foundation.Notification.Name
+    public static let Unauthenticated: Foundation.Notification.Name
+    public struct Home {
+      public static let Refreshed: Foundation.Notification.Name
+    }
+    public struct Profile {
+      public static let Updated: Foundation.Notification.Name
+    }
+    public struct Wallet {
+      public static let Refreshed: Foundation.Notification.Name
+    }
+    public struct Support {
+      public static let TalkToUs: Foundation.Notification.Name
+    }
+  }
+  public struct CustomerAccount {
+    public static let Created: Foundation.Notification.Name
+    public static let Activated: Foundation.Notification.Name
+    public static let Deactivated: Foundation.Notification.Name
+  }
+  public struct Merchant {
+    public static let Registered: Foundation.Notification.Name
+    public static let Authenticated: Foundation.Notification.Name
+    public static let Unauthenticated: Foundation.Notification.Name
+  }
+  public struct Transaction {
+    public static let Created: Foundation.Notification.Name
+    public static let Denied: Foundation.Notification.Name
+  }
+  public struct Authentication {
+    public static let SMS: Foundation.Notification.Name
+  }
+  public struct Api99Service {
+    public static let Category: Foundation.Notification.Name
+  }
+  public struct Api99Reference {
+    public static let Origin: Foundation.Notification.Name
+    public static let Destination: Foundation.Notification.Name
+  }
+  public struct Api99AddressDrag {
+    public static let Origin: Foundation.Notification.Name
+  }
+  public struct Api99AddressSelection {
+    public static let Origin: Foundation.Notification.Name
+    public static let Destination: Foundation.Notification.Name
+    public static let LastAddresses: Foundation.Notification.Name
+    public static let UserAddresses: Foundation.Notification.Name
+    public static let EditUserAddress: Foundation.Notification.Name
+    public static let SearchAddress: Foundation.Notification.Name
+  }
+  public struct Api99Ride {
+    public static let Cancelation: Foundation.Notification.Name
+    public static let Status: Foundation.Notification.Name
+    public static let Data: Foundation.Notification.Name
+  }
+  public struct Marketpay {
+    public struct Category {
+      public static let ShowMore: Foundation.Notification.Name
+    }
+    public struct Selected {
+      public static let Category: Foundation.Notification.Name
+      public static let Merchant: Foundation.Notification.Name
+      public static let SubCategory: Foundation.Notification.Name
+    }
+  }
+  public struct Wallet {
+    public struct Action {
+      public static let Added: Foundation.Notification.Name
+      public static let Block: Foundation.Notification.Name
+      public static let Unblock: Foundation.Notification.Name
+      public static let More: Foundation.Notification.Name
+      public static let New: Foundation.Notification.Name
+      public static let Retry: Foundation.Notification.Name
+      public static let KnowMore: Foundation.Notification.Name
+      public static let Refreshed: Foundation.Notification.Name
+      public static let ToggleBalanceVisibility: Foundation.Notification.Name
+    }
+  }
+  public struct Voucher {
+    public static let Created: Foundation.Notification.Name
+  }
+  public struct Checkout {
+    public struct Account {
+      public static let Selected: Foundation.Notification.Name
+    }
+  }
+  public struct UI {
+    public struct MCI {
+      public static let Expand: Foundation.Notification.Name
+      public static let InputValue: Foundation.Notification.Name
+      public static let Retry: Foundation.Notification.Name
+    }
+  }
+  public struct ViewController {
+    public static let Dismissed: Foundation.Notification.Name
+    public static let Pop: Foundation.Notification.Name
+  }
+  public struct Signup {
+    public static let Completed: Foundation.Notification.Name
+  }
+}
+@objc @_inheritsConvenienceInitializers final public class MCIPrimaryView : UIKit.UIView, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIPrimaryLabel : UIKit.UILabel, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCISecondaryLabel : UIKit.UILabel, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIAppNameLabel : UIKit.UILabel, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIRefreshControl : UIKit.UIRefreshControl, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCISimpleTextField : UIKit.UITextField, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol MCIToogleButton : AnyObject {
+  var activeColor: UIKit.UIColor { get set }
+  var inactiveColor: UIKit.UIColor { get set }
+  func enable(_ animated: Swift.Bool)
+  func disable(_ animated: Swift.Bool)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIRaisedButton : UIKit.UIButton, MCIToogleButton, Identifiable {
+  final public var activeColor: UIKit.UIColor
+  final public var inactiveColor: UIKit.UIColor
+  @objc override final public func awakeFromNib()
+  final public func enable(_ animated: Swift.Bool)
+  final public func disable(_ animated: Swift.Bool)
+  final public func setState(enabled: Swift.Bool, animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIFlatButton : UIKit.UIButton, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIOutlineButton : UIKit.UIButton, MCIToogleButton, Identifiable {
+  final public var activeColor: UIKit.UIColor
+  final public var inactiveColor: UIKit.UIColor
+  @objc override final public func awakeFromNib()
+  final public func enable(_ animated: Swift.Bool)
+  final public func disable(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIImageTintedView : UIKit.UIImageView, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIL10nLabel : UIKit.UILabel, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIErrorTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UICollectionView {
+  public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Reusable
+  public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Nibable, T : Reusable
+  public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell, T : Reusable
+  public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Reusable
+  public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Nibable, T : Reusable
+  public func dequeueReusableSupplementaryView<T>(ofKind elementKind: Swift.String, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionReusableView, T : Reusable
+}
+@objc @_inheritsConvenienceInitializers public class MCILoadingVC : MCIViewController {
+  public class func allocate() -> MCILoadingVC
+  @objc override dynamic public func viewDidLoad()
+  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_hasMissingDesignatedInitializers final public class MCILoadingView : UIKit.UIImageView, Identifiable {
+  final public func animateStart()
+  final public func animateStop()
+  @objc deinit
+  @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+}
+@objc @_inheritsConvenienceInitializers final public class MCILoadingTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+  @objc override final public func awakeFromNib()
+  final public func animateStart()
+  final public func animateStop()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class BlockedApplicationVC : MCIViewController, Identifiable {
+  final public class func allocate() -> BlockedApplicationVC
+  @objc override final public func viewDidLoad()
+  @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCISectionTitleTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+  @objc override final public func awakeFromNib()
+  final public func configure(with label: Swift.String?)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UIButton {
+  public func setBackgroundColor(_ color: UIKit.UIColor, for state: UIKit.UIControl.State)
+}
+@objc @_inheritsConvenienceInitializers final public class MCISafariActivity : UIKit.UIActivity, Identifiable {
+  @objc override final public var activityType: UIKit.UIActivity.ActivityType? {
+    @objc get
+  }
+  @objc override final public var activityTitle: Swift.String? {
+    @objc get
+  }
+  @objc override final public var activityImage: UIKit.UIImage? {
+    @objc get
+  }
+  @objc override final public func canPerform(withActivityItems activityItems: [Any]) -> Swift.Bool
+  @objc override final public func prepare(withActivityItems activityItems: [Any])
+  @objc override final public func perform()
+  @objc deinit
+  @objc override dynamic public init()
+}
+public typealias MCIHandler = ((MCIAlertVC) -> Swift.Void)
+public enum MCIAlertAction {
+  case cancel(MCIHandler?)
+  case first(text: Swift.String, MCIHandler?)
+  case second(text: Swift.String, MCIHandler?)
+}
+public enum MCIAlertComponent {
+  case title(text: Swift.String)
+  case description(text: Swift.String)
+}
+public enum UnrecoveryError : Swift.Int {
+  case unauthorized
+  case unavailableForLegalReasons
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers final public class MCIAlertVC : MCIViewController, Identifiable, Dismissable, MCIChildViewController {
+  final public var dismissHandler: MCIHandler?
+  final public var alertTransition: MCIAlertTransition {
+    get
+    set
+  }
+  final public class func allocate() -> MCIAlertVC
+  final public class func alert(title: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
+  final public class func error(_ error: Foundation.NSError, dismissable: Swift.Bool = true, talkToMerci: MCIHandler? = nil, handler: MCIHandler?) -> MCIAlertVC
+  @objc override final public func viewDidLoad()
+  @objc override final public func dismissAnimatedWithNotification()
+  final public func configure(with components: [MCIAlertComponent], actions: [MCIAlertAction], dismissable: Swift.Bool = true)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIAlertVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+extension CIImage {
+  public var transparent: CoreImage.CIImage? {
+    get
+  }
+  public var inverted: CoreImage.CIImage? {
+    get
+  }
+  public var blackTransparent: CoreImage.CIImage? {
+    get
+  }
+  public func tint(using color: UIKit.UIColor) -> CoreImage.CIImage?
+  public func combined(with image: CoreImage.CIImage) -> CoreImage.CIImage?
+}
+@_hasMissingDesignatedInitializers final public class MCIKitConfig {
+  public static let shared: MCIKitConfig
+  final public var imageEmpty: UIKit.UIImage?
+  final public var imageWaitSuccess: UIKit.UIImage?
+  @objc deinit
+}
+extension URL {
+  public static func maps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func googleMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func waze(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func uber(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+}
+public protocol Notifiable : AnyObject {
+  func registerNotifications()
+  func unregisterNotifications()
+}
+extension Notifiable where Self : ObjectiveC.NSObject {
+  public typealias RegisterType = (Any, ObjectiveC.Selector, Foundation.NSNotification.Name?, Any?)
+  public typealias UnregisterType = (Any, Foundation.NSNotification.Name?, Any?)
+  public func register(_ observers: [Self.RegisterType], in notificationCenter: Foundation.NotificationCenter = .default)
+  public func unregister(_ observers: [Self.UnregisterType], in notificationCenter: Foundation.NotificationCenter = .default)
+}
+extension Bundle {
+  public static var mciAppName: Swift.String?
+  public func image(named: Swift.String) -> UIKit.UIImage?
+  public func dataAsset(named: Swift.String) -> UIKit.NSDataAsset?
+  public var appName: Swift.String {
+    get
+  }
+  public var shortVersion: Swift.String {
+    get
+  }
+  public func loadJSONArray<T>(named: Swift.String) -> T where T : Swift.Decodable, T : Swift.Encodable
+}
+extension NSDataAsset {
+  public func loadJSONArray<T>() -> T where T : Swift.Decodable, T : Swift.Encodable
+}
+public protocol MCIChildViewController : AnyObject {
+}
+extension MCIChildViewController where Self : UIKit.UIViewController {
+  public func attach(to controller: UIKit.UIViewController, content view: UIKit.UIView?, hideController: Swift.Bool = true, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+  public func detach(content view: UIKit.UIView?, hideController: Swift.Bool = true, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+}
+public protocol AuthController : AnyObject {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCISegmentedControl : UIKit.UIControl, Identifiable {
+  final public var titles: [Swift.String] {
+    get
+    set
+  }
+  final public var selectedSegmentIndex: Swift.Int {
+    get
+    set
+  }
+  final public func perfomSegmentSelection(_ index: Swift.Int)
+  @objc deinit
+}
+public protocol Nibable : AnyObject {
+  static var nib: UIKit.UINib { get }
+}
+extension Nibable {
+  public static var nib: UIKit.UINib {
+    get
+  }
+}
+public typealias NibReusable = Nibable & Reusable
+extension Nibable {
+  public static func loadFromNib() -> Self
+}
+@objc @_inheritsConvenienceInitializers final public class MCIReceiptView : UIKit.UIView, Identifiable {
+  @objc override final public func layoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum MCIWaitState {
+  case loading(title: Swift.String = "Aguarde", body: Swift.String = "Estamos verificando seu pedido")
+  case success(title: Swift.String = "Sucesso", body: Swift.String = "Seu pedido foi concluído")
+}
+@objc @_inheritsConvenienceInitializers final public class MCIWaitVC : MCIViewController, MCIChildViewController, Identifiable {
+  final public class func allocate() -> MCIWaitVC
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  final public func updateState(_ state: MCIWaitState)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIWaitVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@objc @_inheritsConvenienceInitializers final public class MCIWebView : MCIViewController, Identifiable {
+  final public var url: Swift.String? {
+    get
+  }
+  final public var hideCloseButton: Swift.Bool {
+    get
+  }
+  final public class func allocate(title: Swift.String?, url: Swift.String?, hideCloseButton: Swift.Bool = false) -> MCIWebView
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIWebView : WebKit.WKNavigationDelegate {
+  @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIAlertTransition : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+  public enum AlertTransition {
+    case present
+    case dismiss
+    public static func == (a: MCIAlertTransition.AlertTransition, b: MCIAlertTransition.AlertTransition) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum ShadowMode : CoreGraphics.CGFloat {
+    case off
+    case on
+    public typealias RawValue = CoreGraphics.CGFloat
+    public init?(rawValue: CoreGraphics.CGFloat)
+    public var rawValue: CoreGraphics.CGFloat {
+      get
+    }
+  }
+  final public var transitionMode: MCIAlertTransition.AlertTransition
+  final public var shadowMode: MCIAlertTransition.ShadowMode
+  @objc final public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @objc final public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers final public class MCINonDismissableView : UIKit.UIView, Identifiable {
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCINonDismissableView : UIKit.UIGestureRecognizerDelegate {
+  @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+}
+public protocol MCITextBoxDelegate : AnyObject {
+  func textBox(_ textBox: MCITextBox, textDidChange text: Swift.String)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCITextBox : UIKit.UIView, Identifiable {
+  final public var text: Swift.String? {
+    get
+    set
+  }
+  @objc @IBInspectable final public var fields: Swift.Int {
+    @objc get
+    @objc set
+  }
+  final public var keyboardType: UIKit.UIKeyboardType {
+    get
+    set
+  }
+  weak final public var delegate: MCITextBoxDelegate?
+  @discardableResult
+  @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @objc deinit
+}
+extension MCITextBox : UIKit.UITextFieldDelegate {
+  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers final public class MCIExpandedTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+  @objc override final public func awakeFromNib()
+  @objc override final public func prepareForReuse()
+  final public func configure(with description: Swift.String?, isMore: Swift.Bool)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIEmptyVC : MCIViewController, Identifiable {
+  final public class func allocate() -> MCIEmptyVC
+  @objc override final public func viewDidLoad()
+  final public func configure(title: Swift.String?, subtitle: Swift.String?, message: Swift.String?, verticalConstant: CoreGraphics.CGFloat = -24)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public enum CategoryViewType : Swift.String {
+  case empty
+  case group
+  case list
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public typealias MCIViewController = UIKit.UIViewController & MCINavigationStylable & MCIViewControllerProtocol
+public protocol MCIViewControllerProtocol : AnyObject {
+}
+extension MCIViewControllerProtocol where Self : UIKit.UIViewController {
+  public var mciNavigationController: MCINavigationController? {
+    get
+  }
+  public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    get
+  }
+  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    get
+  }
+  public var requireStyle: MCINavigationStyle {
+    get
+  }
+  public func presentSupportVC(reason: Swift.String?)
+  public func pushSupportVC(reason: Swift.String?, navigation: UIKit.UINavigationController)
+  public func presentForgotPasswordVC()
+}
+extension UIBezierPath {
+  public static func circlePath(with radius: CoreGraphics.CGFloat = 100) -> UIKit.UIBezierPath
+}
+extension UIView {
+  @objc @IBInspectable dynamic public var mciCornerRadius: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var mciBorderColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable dynamic public var mciBorderWidth: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  public func addShadow()
+  public func addShadowWith(opacity: Swift.Float)
+  public func snapshot() -> UIKit.UIImage
+  public func shake(_ completion: (() -> Swift.Void)?)
+  public func convertProprotionsFrom(zeplinScreenWidth: CoreGraphics.CGFloat, viewSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func activateFinishEditing()
+  public func roundCorners(_ corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+  public func isVisibleInWindow() -> Swift.Bool
+}
+extension CGRect {
+  public func center() -> CoreGraphics.CGPoint
+}
+extension UIApplication {
+  public class func isBranchAvailable() -> Swift.Bool
+  public func topViewController() -> UIKit.UIViewController?
+  public func clearLaunchScreenCache() throws
+}
+public protocol MCIAccountable : AnyObject {
+  func accountCreation()
+}
+public protocol MCIAccountableFlow : AnyObject {
+  func performAccountCreationFlow()
+}
+@_hasMissingDesignatedInitializers public class MCIEmptyAccountable : MCIAccountable {
+  public func accountCreation()
+  @objc deinit
+}
+public protocol Identifiable : AnyObject {
+  var identifier: Swift.String { get }
+}
+extension Identifiable {
+  public var identifier: Swift.String {
+    get
+  }
+}
+public typealias MCIFlowViewController = UIKit.UIViewController & MCIFlowViewControllerProtocol & MCINavigationStylable & MCIViewControllerProtocol
+public protocol MCIFlowViewControllerProtocol : AnyObject {
+}
+extension MCIFlowViewControllerProtocol where Self : UIKit.UIViewController {
+  public func viewLayoutSubviews()
+}
+@objc @_inheritsConvenienceInitializers final public class MCIInputOtherValueTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+  @objc override final public func awakeFromNib()
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers public class MCIDrawView : UIKit.UIView {
+  @objc @IBInspectable public var drawColor: UIKit.UIColor
+  @objc @IBInspectable public var lineWidth: CoreGraphics.CGFloat
+  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  public func clear()
+  public func hasDraw() -> Swift.Bool
+  public func renderToImage() -> UIKit.UIImage?
+  public func renderFitToImage() -> UIKit.UIImage?
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UITableView {
+  public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Reusable
+  public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Nibable, T : Reusable
+  public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell, T : Reusable
+  public func cellForRow<T>(at indexPath: Foundation.IndexPath) -> T? where T : UIKit.UITableViewCell, T : Reusable
+  public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Reusable
+  public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Nibable, T : Reusable
+  public func dequeueReusableHeaderFooterView<T>() -> T where T : UIKit.UITableViewHeaderFooterView, T : Reusable
+  public func insertBackgroundView(withColor color: UIKit.UIColor)
+}
+extension UIColor {
+  public static var style: MCIStyle
+  @nonobjc public class var mciCoral0: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDarkBlue: UIKit.UIColor {
+    get
+  }
+}
+extension UIColor {
+  @nonobjc public class var mciYellow: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciOrangeYellow: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDarkIndigo: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciLight: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDarkGrey: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDark: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciSuccess: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciError: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciEnabledOnLight: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDisabledOnDark: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciCoral4: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciCoral3: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciCoral1: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciCoral2: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciLightGrey: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciLightGrey40: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciPurplishGrey: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciShadowImage: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciTabBarShadowImage: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var dashedBorder: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciAccountDisable: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciChartGreenAshura: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciChartGrey: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciChartCoral: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciGreyLight: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciGreen: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciActionDisabled: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _Danger: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _100Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _200Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _300Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _400Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _600Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _900Gray: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var _Green: UIKit.UIColor {
+    get
+  }
+  @nonobjc public class var mciDisabledGray: UIKit.UIColor {
+    get
+  }
+}
+extension UIColor {
+  public func image(with width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat) -> UIKit.UIImage
+}
+@_hasMissingDesignatedInitializers final public class MerciStyle : MCIStyle, Identifiable {
+  final public var base: MCIBaseTheme {
+    get
+  }
+  final public var wallet: MCIWalletTheme {
+    get
+  }
+  final public var marketPlace: MCIMarketPlaceTheme {
+    get
+  }
+  final public var checkout: MCICheckoutTheme {
+    get
+  }
+  @objc deinit
+}
+extension MerciStyle : MCIBaseTheme {
+  final public var primaryColor: UIKit.UIColor {
+    get
+  }
+  final public var secondaryColor: UIKit.UIColor {
+    get
+  }
+  final public var loadingTintColor: UIKit.UIColor {
+    get
+  }
+  final public var tabBarBackgroundColor: UIKit.UIColor? {
+    get
+  }
+  final public var tabBarTintColor: UIKit.UIColor {
+    get
+  }
+  final public var tabBarUnselectedColor: UIKit.UIColor {
+    get
+  }
+  final public var inputTextColor: UIKit.UIColor {
+    get
+  }
+  final public var caretTextColor: UIKit.UIColor {
+    get
+  }
+  final public var titleTextColor: UIKit.UIColor {
+    get
+  }
+  final public var bodyTextTextColor: UIKit.UIColor {
+    get
+  }
+  final public var actionTintColor: UIKit.UIColor {
+    get
+  }
+  final public var actionTextColor: UIKit.UIColor {
+    get
+  }
+  final public var actionOutlineTintColor: UIKit.UIColor {
+    get
+  }
+  final public var actionOutlineTextColor: UIKit.UIColor {
+    get
+  }
+  final public var actionDisabledTintColor: UIKit.UIColor {
+    get
+  }
+  final public var actionDisabledTextColor: UIKit.UIColor {
+    get
+  }
+  final public var actionFlatTextColor: UIKit.UIColor {
+    get
+  }
+}
+extension MerciStyle : MCIWalletTheme {
+  final public var walletNavBarTintColor: UIKit.UIColor {
+    get
+  }
+  final public var walletNavBarActionColor: UIKit.UIColor {
+    get
+  }
+  final public var walletStatusBarStyle: UIKit.UIStatusBarStyle {
+    get
+  }
+  final public var accountsBackgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var accountsRefreshControlColor: UIKit.UIColor? {
+    get
+  }
+  final public var accountsActiveIndicatorColor: UIKit.UIColor? {
+    get
+  }
+  final public var accountsIndicatorColor: UIKit.UIColor? {
+    get
+  }
+  final public var aliasBankTextColor: UIKit.UIColor? {
+    get
+  }
+}
+extension MerciStyle : MCIMarketPlaceTheme {
+  final public var marketNavBarTintColor: UIKit.UIColor {
+    get
+  }
+  final public var marketNavBarTextColor: UIKit.UIColor {
+    get
+  }
+  final public var marketStatusBarStyle: UIKit.UIStatusBarStyle {
+    get
+  }
+  final public var marketNavBarActionColor: UIKit.UIColor {
+    get
+  }
+  final public var categoriesBackgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var categoriesRefreshControlColor: UIKit.UIColor? {
+    get
+  }
+  final public var categoriesTintColor: UIKit.UIColor {
+    get
+  }
+  final public var categoriesTextColor: UIKit.UIColor {
+    get
+  }
+  final public var merchantsBackgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var merchantsActionTintColor: UIKit.UIColor {
+    get
+  }
+  final public var merchantsTextColor: UIKit.UIColor {
+    get
+  }
+  final public var servicesActionTintColor: UIKit.UIColor {
+    get
+  }
+  final public var servicesActionTextColor: UIKit.UIColor {
+    get
+  }
+  final public var servicesActionAltTintColor: UIKit.UIColor {
+    get
+  }
+}
+extension MerciStyle : MCICheckoutTheme {
+  final public var payTintColor: UIKit.UIColor {
+    get
+  }
+}
+extension UIAlertController {
+  convenience public init(title: Swift.String, message: Swift.String)
+  convenience public init(title: Swift.String, message: Swift.String, completion: @escaping () -> Swift.Void = {})
+  convenience public init(error: Foundation.NSError)
+  convenience public init(error: Foundation.NSError, completion: @escaping () -> Swift.Void = {})
+}
+extension String {
+  public func nsRange(of string: Swift.String) -> Foundation.NSRange?
+}
+@objc @_inheritsConvenienceInitializers final public class MCIPlaceTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+  @objc override final public func awakeFromNib()
+  @objc override final public func prepareForReuse()
+  final public func configure(with merchantName: Swift.String?, address: Swift.String?, distance: Swift.String?)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIPlaceTableCell {
+  final public func configure(with placedMerchant: MCIPlacedMerchant?)
+}
+@objc @_inheritsConvenienceInitializers final public class MCICopyButton : UIKit.UIButton, Identifiable {
+  @objc override final public func didMoveToWindow()
+  final public func performCopy(_ onCompletion: @escaping () -> Swift.Void = {})
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension NSAttributedString {
+  convenience public init?(html: Swift.String?)
+}
+public protocol MCIImagePreviewDelegate : AnyObject {
+  func imagePreviewDidChange(_ viewController: MCIImagePreviewVC)
+  func imagePreviewDidRemove(_ viewController: MCIImagePreviewVC)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIImagePreviewVC : MCIViewController, Identifiable {
+  final public var imageView: UIKit.UIImageView {
+    get
+    set
+  }
+  weak final public var delegate: MCIImagePreviewDelegate?
+  final public class func allocate(with image: UIKit.UIImage?) -> MCIImagePreviewVC
+  @objc override final public func viewDidLoad()
+  @objc override final public var previewActionItems: [UIKit.UIPreviewActionItem] {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol Dismissable : AnyObject {
+}
+extension Dismissable where Self : UIKit.UIViewController {
+  public func registerDismiss(withNonDismissView rootView: (UIKit.UIView & UIKit.UIGestureRecognizerDelegate)?)
+  public func unregisterDismiss()
+}
+@objc @_inheritsConvenienceInitializers final public class LocationDriverManager : ObjectiveC.NSObject {
+  final public var lastLocation: CoreLocation.CLLocation? {
+    get
+  }
+  final public func startReceivingLocationChanges()
+  final public func stopReceivingLocationChanges()
+  final public func location() -> CoreLocation.CLLocation?
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension LocationDriverManager : CoreLocation.CLLocationManagerDelegate {
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didUpdateLocations locations: [CoreLocation.CLLocation])
+  @objc final public func locationManager(_ manager: CoreLocation.CLLocationManager, didFailWithError error: Swift.Error)
+}
+public typealias MCINavigationStyleData = (viewBackgroundColor: UIKit.UIColor, navBarBackgroundColor: UIKit.UIColor, navBarColor: UIKit.UIColor, navBarTintColor: UIKit.UIColor, navBarTranslucent: Swift.Bool, navBarOpaque: Swift.Bool, navBarTitleColor: UIKit.UIColor, navShadowImage: UIKit.UIImage?, navBackgroundImage: UIKit.UIImage?, statusBarStyle: UIKit.UIStatusBarStyle)
+public enum MCINavigationStyle : Swift.CaseIterable {
+  case light
+  case dark
+  case clear
+  case wallet
+  case marketPlace
+  public var data: MCINavigationStyleData? {
+    get
+  }
+  public static func == (a: MCINavigationStyle, b: MCINavigationStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [MCINavigationStyle]
+  public static var allCases: [MCINavigationStyle] {
+    get
+  }
+}
+public typealias MCITableViewController = UIKit.UITableViewController & MCITableViewControllerProtocol
+public protocol MCITableViewControllerProtocol : AnyObject {
+}
+extension MCITableViewControllerProtocol where Self : UIKit.UITableViewController {
+  public var priorContentSize: CoreGraphics.CGSize {
+    get
+  }
+  public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    get
+  }
+  public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    get
+  }
+  public func presentSupportVC(reason: Swift.String?)
+  public func pushSupportVC(reason: Swift.String?, navigation: UIKit.UINavigationController)
+}
+public struct MCITicketShareController {
+  public init(merchantName: Swift.String?, amount: Swift.Double?, pin: Swift.String?, url: Foundation.URL?)
+  public func present(in viewController: UIKit.UIViewController)
+}
+extension UserDefaults {
+  public func set(splashCacheCleared: Swift.Bool)
+  public func splashCacheCleared() -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers final public class MCIBannerTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+  final public func configure(with image: UIKit.UIImage?)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension UIScrollView {
+  public func screenshot() -> UIKit.UIImage?
+}
+extension UIBarButtonItem {
+  public class func close(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
+  public class func back(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
+}
+@objc @_inheritsConvenienceInitializers final public class MCICardView : UIKit.UIView, Identifiable {
+  final public var color: UIKit.UIColor {
+    get
+    set
+  }
+  @objc override final public func layoutSubviews()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIPageControl : UIKit.UIPageControl, Identifiable {
+  @objc override final public func didMoveToWindow()
+  @objc deinit
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol MCIAuthenticable : AnyObject {
+  func authentication()
+}
+public protocol MCIAuthenticableFlow : AnyObject {
+  func performAuthenticationFlow()
+}
+@_hasMissingDesignatedInitializers public class MCIEmptyAuthentication : MCIAuthenticable {
+  public func authentication()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers final public class MCIInputValueVC : MCIViewController, Identifiable, Dismissable {
+  final public class func allocate() -> MCIInputValueVC
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  final public func configure(with merchantName: Swift.String?, min: Swift.Double?, max: Swift.Double?, then handler: ((MCIInputValueVC, Swift.String) -> Swift.Void)?)
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCIInputValueVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@objc @_inheritsConvenienceInitializers final public class FadeInPushSegue : UIKit.UIStoryboardSegue {
+  @objc override final public func perform()
+  @objc deinit
+  @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+}
+@objc @_inheritsConvenienceInitializers final public class FadeOutPopSegue : UIKit.UIStoryboardSegue {
+  @objc override final public func perform()
+  @objc deinit
+  @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+}
+public protocol MCIStackFieldDelegate : UIKit.UITextFieldDelegate {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MCIStackField : UIKit.UIStackView, Identifiable {
+  @objc @IBInspectable public var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable public var separatorHeight: CoreGraphics.CGFloat
+  public var textField: UIKit.UITextField {
+    get
+  }
+  public var isErrored: Swift.Bool {
+    get
+    set
+  }
+  public var isValid: Swift.Bool
+  weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+    get
+    set
+  }
+  public var onChanged: ValueChanged<MCIStackField>?
+  public var onEditingComplete: ValueChanged<MCIStackField>?
+  @objc override dynamic public func awakeFromNib()
+  @discardableResult
+  @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  public func setNormalState()
+  public func setTypingState()
+  public func setErrorState()
+  public func setHintMessage(_ errorMessage: Swift.String?)
+  public func resetState()
+  public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
+  @objc deinit
+}
+extension UIViewController {
+  public func headerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
+  public func headerView(text: Swift.String?) -> UIKit.UIView?
+  public func footerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
+  public func footerView(text: Swift.String?) -> UIKit.UIView?
+  public func addChildViewController(_ child: UIKit.UIViewController)
+  public func addChild(_ child: UIKit.UIViewController, with frame: CoreGraphics.CGRect)
+  public func removeChildFromParent()
+  public func canPerformSegue(withIdentifier id: Swift.String) -> Swift.Bool
+}
+extension UIViewController {
+  @objc dynamic public func dismissAnimatedWithNotification()
+  @objc dynamic public func popWithNotification()
+  public func presentError(_ error: Foundation.NSError, dismissable: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+}
+@objc @_inheritsConvenienceInitializers final public class MCIAlertNC : UIKit.UINavigationController, Identifiable {
+  @objc override final public func viewDidLoad()
+  @objc deinit
+  @available(iOS 5.0, *)
+  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+}
+extension MCIAlertNC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+extension CGSize {
+  public func bestFit(into: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+extension UIView {
+  @discardableResult
+  public func topAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func bottomAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func leadingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func trailingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func heightAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func heightAnchor(equalTo height: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func widthAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func widthAnchor(equalTo width: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func centerXAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func centerYAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
+  @discardableResult
+  public func anchors(equalTo superview: UIKit.UIView, constant: CoreGraphics.CGFloat = 0) -> Self
+}
+public protocol Reusable : AnyObject {
+  static var reuseIdentifier: Swift.String { get }
+}
+extension Reusable {
+  public static var reuseIdentifier: Swift.String {
+    get
+  }
+}
+public protocol MCICoverImageDelegate : AnyObject {
+  func coverImageDidTapOnHistory()
+  func coverImageDidTapOnParticipantingStores()
+}
+extension MCICoverImageDelegate {
+  public func coverImageDidTapOnParticipantingStores()
+}
+@objc @_inheritsConvenienceInitializers final public class MCICoverImageTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+  weak final public var delegate: MCICoverImageDelegate?
+  @objc override final public func awakeFromNib()
+  @objc override final public func prepareForReuse()
+  final public func configure(with displayName: Swift.String?, bannerURL: Swift.String?, iconURL: Swift.String?, serviceColor: UIKit.UIColor = .white, stores: Swift.Bool? = nil)
+  @objc deinit
+  @available(iOS 3.0, *)
+  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCICoverImageTableCell {
+  final public func configure(with merchant: MCIMerchant?)
+  final public func configure(with category: MCICategory?)
+}
+@objc @_hasMissingDesignatedInitializers final public class MCINavBarTransitionVC : MCIFlowViewController, Identifiable {
+  @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  public init(destination: UIKit.UIViewController)
+  @objc override final public func viewDidLoad()
+  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @objc override final public func viewDidLayoutSubviews()
+  @objc override final public func canPerformUnwindSegueAction(_ action: ObjectiveC.Selector, from fromViewController: UIKit.UIViewController, withSender sender: Any) -> Swift.Bool
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+}
+extension UIStoryboard {
+  public class var home: UIKit.UIStoryboard {
+    get
+  }
+  public class var main: UIKit.UIStoryboard {
+    get
+  }
+  public class var mciKit: UIKit.UIStoryboard {
+    get
+  }
+  public class var wallet: UIKit.UIStoryboard {
+    get
+  }
+  public class var voucher: UIKit.UIStoryboard {
+    get
+  }
+  public class var api99Service: UIKit.UIStoryboard {
+    get
+  }
+  public class var cellphoneRecharge: UIKit.UIStoryboard {
+    get
+  }
+  public class var tvRecharge: UIKit.UIStoryboard {
+    get
+  }
+  public func instantiate<T>(_: T.Type) -> T where T : UIKit.UIViewController
+  public func instantiate<T>(_: T.Type, identifier: Swift.String) -> T where T : UIKit.UINavigationController
+}
+extension String {
+  public enum BarcodeTypes : Swift.String {
+    case aztec
+    case code128
+    case pdf417
+    case qr
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public func barcode(format: Swift.String.BarcodeTypes, size: CoreGraphics.CGSize, color: UIKit.UIColor = .black, image: UIKit.UIImage? = nil) -> UIKit.UIImage?
+  public var trimmed: Swift.String {
+    get
+  }
+  public var trimmedPreservingSpaceBetween: Swift.String {
+    get
+  }
+  public func padding(leftTo paddedLength: Swift.Int, withPad pad: Swift.String, startingAt padStart: Swift.Int = 0) -> Swift.String
+  public func addingPercentEncodingForURL() -> Swift.String?
+}
+extension UnrecoveryError : Swift.Equatable {}
+extension UnrecoveryError : Swift.Hashable {}
+extension UnrecoveryError : Swift.RawRepresentable {}
+extension MCIAlertTransition.AlertTransition : Swift.Equatable {}
+extension MCIAlertTransition.AlertTransition : Swift.Hashable {}
+extension MCIAlertTransition.ShadowMode : Swift.Equatable {}
+extension MCIAlertTransition.ShadowMode : Swift.Hashable {}
+extension MCIAlertTransition.ShadowMode : Swift.RawRepresentable {}
+extension CategoryViewType : Swift.Equatable {}
+extension CategoryViewType : Swift.Hashable {}
+extension CategoryViewType : Swift.RawRepresentable {}
+extension MCINavigationStyle : Swift.Equatable {}
+extension MCINavigationStyle : Swift.Hashable {}
+extension Swift.String.BarcodeTypes : Swift.Equatable {}
+extension Swift.String.BarcodeTypes : Swift.Hashable {}
+extension Swift.String.BarcodeTypes : Swift.RawRepresentable {}

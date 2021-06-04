@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIKit
 import AVFoundation
 import CoreGraphics
@@ -62,6 +62,9 @@ public protocol MCITextFieldDelegate : UIKit.UITextFieldDelegate {
   public func setTypingState()
   public func setErrorState()
   public func setErrorMessage(_ errorMessage: Swift.String?)
+  public func setErrorMessageWithTitle(_ errorMessage: Swift.String, title: Swift.String)
+  public func setSubtleMessage(_ message: Swift.String?)
+  public func setTitle(_ title: Swift.String)
   public func resetState()
   public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
   @objc deinit
@@ -607,6 +610,7 @@ extension CIImage {
   public static let shared: MCIKitConfig
   final public var imageEmpty: UIKit.UIImage?
   final public var imageWaitSuccess: UIKit.UIImage?
+  final public var imageTermsError: UIKit.UIImage?
   @objc deinit
 }
 extension URL {
@@ -624,6 +628,9 @@ extension Notifiable where Self : ObjectiveC.NSObject {
   public typealias UnregisterType = (Any, Foundation.NSNotification.Name?, Any?)
   public func register(_ observers: [Self.RegisterType], in notificationCenter: Foundation.NotificationCenter = .default)
   public func unregister(_ observers: [Self.UnregisterType], in notificationCenter: Foundation.NotificationCenter = .default)
+}
+extension UIDevice {
+  public static let modelName: Swift.String
 }
 extension Bundle {
   public static var mciAppName: Swift.String?
@@ -712,6 +719,7 @@ extension MCIWaitVC : UIKit.UIViewControllerTransitioningDelegate {
 }
 extension MCIWebView : WebKit.WKNavigationDelegate {
   @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
   @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
   @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
 }
@@ -1229,6 +1237,17 @@ public protocol MCIImagePreviewDelegate : AnyObject {
   @objc deinit
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers final public class MCITermsErrorVC : MCIViewController, Identifiable {
+  final public class func allocate(title: Swift.String?) -> MCITermsErrorVC
+  @objc override final public func viewDidLoad()
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+extension MCITermsErrorVC : UIKit.UIViewControllerTransitioningDelegate {
+  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
 public protocol Dismissable : AnyObject {
 }

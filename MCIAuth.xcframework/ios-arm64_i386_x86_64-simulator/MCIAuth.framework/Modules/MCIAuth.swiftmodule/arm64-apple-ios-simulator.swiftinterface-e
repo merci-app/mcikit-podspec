@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIAuth
 import Alamofire
 @_exported import MCIAuth
@@ -9,7 +9,7 @@ import MCILogger
 import Swift
 import UIKit
 extension MCIFoundation {
-  final public func requestCustomerAuthenticationCode(phoneNumber: Swift.String, cpf: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
+  final public func requestCustomerAuthenticationCode(phoneNumber: Swift.String, vatNumber: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
   final public func requestCustomerAuthenticationCodeValidation(authId: Swift.String, sms: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
   final public func requestCustomerAuthenticationCodeResend(authId: Swift.String, completion: @escaping MCIResult<Swift.Void>)
   final public func requestCustomerAuthenticationProfile(authId: Swift.String, cpf: Swift.String, name: Swift.String? = nil, email: Swift.String? = nil, password: Swift.String, completion: @escaping MCIResult<Swift.Void>)

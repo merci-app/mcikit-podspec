@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIFoundation
 import AVFoundation
 import AdSupport
@@ -92,6 +92,7 @@ extension NSError {
   public class func error(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String, userInfo: [Swift.AnyHashable : Any]?) -> Foundation.NSError
   public class func genericError() -> Foundation.NSError
   public class func unexpectedResponseError() -> Foundation.NSError
+  public class func outdatedAppCode() -> Swift.Int
 }
 public enum ModuleCheckout {
   case pay
@@ -100,17 +101,17 @@ public enum ModuleCheckout {
   case wallet
   case general
   public static func == (a: ModuleCheckout, b: ModuleCheckout) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum MCIFoundationSource : Swift.String {
   case unknown
   case customer
   case merchant
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -212,10 +213,10 @@ public enum ObfuscateVat {
   case borders
   case nothing
   public static func == (a: ObfuscateVat, b: ObfuscateVat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @_hasMissingDesignatedInitializers final public class MCIFormatter {
   final public class func obfuscate(email: Swift.String?) -> Swift.String
@@ -250,8 +251,8 @@ public enum ObfuscateVat {
 public enum MCIFaqGroupStatus : Swift.String, Swift.Codable {
   case unknown
   case active
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -280,8 +281,8 @@ extension Array where Element : MCIFaqGroup {
 @_hasMissingDesignatedInitializers final public class MCIPhoneValidationCustomer : Swift.Codable {
   final public var emailVerified: Swift.Bool
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public typealias AnalyticsEvent = (view: Swift.String?, category: Swift.String?, action: Swift.String?, label: Swift.String?)
 public protocol AnalyticsInjectable {
@@ -328,8 +329,8 @@ final public class MCICashInAliasBank : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCICellphoneRechargeTransaction : Swift.Codable {
   final public var id: Swift.String? {
@@ -380,8 +381,8 @@ public enum MCIFoundationEnvironment {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MapAddressComponents : Swift.Codable {
   final public var streetName: Swift.String? {
@@ -409,8 +410,8 @@ public enum MCIFoundationEnvironment {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension MapReverseGeocode {
   convenience public init(placemark: CoreLocation.CLPlacemark)
@@ -491,6 +492,20 @@ final public class MCIVoucherTransaction : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
 }
+@_hasMissingDesignatedInitializers final public class MCIPhoneNumberUpdate : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var status: Swift.String? {
+    get
+  }
+  final public var expirationTime: Swift.Int? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
 public enum MCIAccountWalletActionService : Swift.String, Swift.Codable {
   case bankSlip
   case ted
@@ -498,8 +513,8 @@ public enum MCIAccountWalletActionService : Swift.String, Swift.Codable {
   case pl
   case invoiceReceipt
   case smsPackage
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -520,8 +535,8 @@ public enum MCIAccountWalletActionType : Swift.String, Swift.Codable {
   case plVirtualCard
   case pix
   public static let supported: [MCIAccountWalletActionType]
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -560,8 +575,8 @@ final public class MCIAccountWalletAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Api99Vehicle : Swift.Codable {
   final public var model: Swift.String? {
@@ -571,8 +586,8 @@ final public class MCIAccountWalletAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Api99Data : Swift.Codable {
   final public var id: Swift.String? {
@@ -612,8 +627,8 @@ final public class MCIAccountWalletAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum Api99DataStatus : Swift.String {
   case finding
@@ -624,8 +639,8 @@ public enum Api99DataStatus : Swift.String {
   case arrived
   case inProgress
   case finished
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -643,8 +658,8 @@ public enum Api99DataCategory : Swift.String {
   public var type: Api99CategoryType {
     get
   }
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -686,11 +701,14 @@ extension MCICacheController {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension MCIMerchantAccount : Swift.Equatable {
   public static func == (lhs: MCIMerchantAccount, rhs: MCIMerchantAccount) -> Swift.Bool
+}
+public protocol StatementInjectable {
+  func present(_ controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
 }
 final public class MCIPayAccountLimit : Swift.Codable {
   final public var showBoxDetail: Swift.Bool? {
@@ -702,19 +720,19 @@ final public class MCIPayAccountLimit : Swift.Codable {
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case showBoxDetail
     case availableLimit
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
     public var rawValue: Swift.String {
       get
     }
     public var stringValue: Swift.String {
       get
     }
-    public init?(stringValue: Swift.String)
-    public var intValue: Swift.Int? {
-      get
-    }
-    public init?(intValue: Swift.Int)
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -752,31 +770,34 @@ final public class MCIWalletLimits : Swift.Codable {
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case showBoxDetail
     case availableLimit
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
     public var rawValue: Swift.String {
       get
     }
     public var stringValue: Swift.String {
       get
     }
-    public init?(stringValue: Swift.String)
-    public var intValue: Swift.Int? {
-      get
-    }
-    public init?(intValue: Swift.Int)
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
+}
+public protocol CashInInjectable {
+  func present(_ controller: UIKit.UIViewController, account: MCIAccount, action: MCIAccountWalletAction, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
 }
 @_hasMissingDesignatedInitializers final public class Api99Ride : Swift.Codable {
   final public var rideId: Swift.String? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantMcc : Swift.Codable {
   final public var id: Swift.UInt {
@@ -786,17 +807,23 @@ final public class MCIWalletLimits : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension MCIMerchantMcc : Swift.Equatable {
   public static func == (lhs: MCIMerchantMcc, rhs: MCIMerchantMcc) -> Swift.Bool
 }
+public protocol PhysicalCardInjectable {
+  func present(controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+}
+public protocol CashOutInjectable {
+  func present(_ controller: UIKit.UIViewController, account: MCIAccount, action: MCIAccountWalletAction, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+}
 public enum MCIFaqQuestionStatus : Swift.String, Swift.Codable {
   case unknown
   case active
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -858,19 +885,19 @@ final public class MCIExternalAccountLimit : Swift.Codable {
     case availableInstallmentLimit
     case withdrawLimit
     case availableWithdrawLimit
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
     public var rawValue: Swift.String {
       get
     }
     public var stringValue: Swift.String {
       get
     }
-    public init?(stringValue: Swift.String)
-    public var intValue: Swift.Int? {
-      get
-    }
-    public init?(intValue: Swift.Int)
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -889,8 +916,8 @@ public enum MCICustomerAuthenticationType : Swift.String {
   case accountCreated
   case authenticated
   case reviewed
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -912,18 +939,18 @@ final public class MCICustomerAuthentication : Swift.Codable {
   }
   public init()
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MobileServiceController : Alamofire.SessionManager {
   public static let shared: MobileServiceController
   final public func serviceUrl(_ url: Swift.String) -> Swift.String
-  final public func defaultHeader() -> Alamofire.HTTPHeaders?
-  final public func get(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: Alamofire.HTTPHeaders?, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
-  final public func post(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: Alamofire.HTTPHeaders?, ignoreUnauthorizedSession: Swift.Bool = false, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
-  final public func put(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: Alamofire.HTTPHeaders?, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
-  final public func delete(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: Alamofire.HTTPHeaders?, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
-  final public func patch(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: Alamofire.HTTPHeaders?, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func defaultHeader() -> (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> ()
+  final public func get(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func post(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), ignoreUnauthorizedSession: Swift.Bool = false, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func put(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func delete(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func patch(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
   override public init(configuration: Foundation.URLSessionConfiguration = super, delegate: Alamofire.SessionDelegate = super, serverTrustPolicyManager: Alamofire.ServerTrustPolicyManager? = super)
   override public init?(session: Foundation.URLSession, delegate: Alamofire.SessionDelegate, serverTrustPolicyManager: Alamofire.ServerTrustPolicyManager? = super)
   @objc deinit
@@ -958,8 +985,8 @@ public enum SwiftGCMError : Swift.Error {
   }
   final public class func session(_ customer: MCICustomer?) -> MCISession?
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol MarketplaceInjectable {
   func present(_ controller: UIKit.UIViewController, with: UIKit.UIImage?, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
@@ -975,8 +1002,8 @@ public enum MCIAccountType : Swift.String {
   case privateLabel
   case benefits
   case unknow
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -993,8 +1020,8 @@ public enum MCICustomerAccountStatus : Swift.String, Swift.Codable {
   case canceled
   case blocked
   case unknown
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1195,6 +1222,15 @@ final public class Api99TransactionLocation : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
 }
+final public class MCIAlertUI {
+  final public var title: Swift.String?
+  final public var message: Swift.String?
+  final public var dismissTitle: Swift.String?
+  final public var actionUrl: Foundation.URL?
+  final public var showSupport: Swift.Bool?
+  public init(title: Swift.String?, message: Swift.String?, dismissTitle: Swift.String?, actionUrl: Foundation.URL?, showSupport: Swift.Bool?)
+  @objc deinit
+}
 extension CLLocationCoordinate2D : Swift.Equatable {
   public static func == (lhs: CoreLocation.CLLocationCoordinate2D, rhs: CoreLocation.CLLocationCoordinate2D) -> Swift.Bool
 }
@@ -1327,8 +1363,8 @@ final public class MCIPayerModel : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum MCIIssuerProductType : Swift.String, Swift.Codable {
   case unknown
@@ -1336,8 +1372,8 @@ public enum MCIIssuerProductType : Swift.String, Swift.Codable {
   case debit
   case prepaid
   case benefits
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1347,8 +1383,8 @@ public enum MCIIssuerProductStatus : Swift.String, Swift.Codable {
   case quiz
   case onboarding
   case onboardingV2
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1357,8 +1393,8 @@ public enum MCIDocumentType : Swift.String, Swift.Codable {
   case rg
   case cnh
   case rne
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1383,8 +1419,8 @@ public enum MCIDocumentType : Swift.String, Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIIssuerProduct : Swift.Codable {
   final public var id: Swift.String? {
@@ -1431,8 +1467,8 @@ final public class MCIEmailUpdateModel : Swift.Codable {
   }
   final public func retriveExpirationDate()
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIEmailValidateModel : Swift.Codable {
   final public var id: Swift.String {
@@ -1442,8 +1478,8 @@ final public class MCIEmailValidateModel : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCICustomerAccountQuizSuccess : Swift.Codable {
   final public var successTitle: Swift.String? {
@@ -1459,14 +1495,14 @@ final public class MCIEmailValidateModel : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum Api99AddressType : Swift.String {
   case company
   case home
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1490,8 +1526,8 @@ extension Api99AddressType : Swift.Codable, Swift.CustomStringConvertible {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension Api99UserAddress {
   convenience public init(address: Api99Address, type: Api99AddressType)
@@ -1538,8 +1574,8 @@ extension Api99Address {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCICustomerAccountQuizQuestion : Swift.Codable {
   final public var id: Swift.String? {
@@ -1552,8 +1588,8 @@ extension Api99Address {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCICustomerAccountSelectedAnswer : Swift.Codable {
   final public var questionId: Swift.String? {
@@ -1564,14 +1600,18 @@ final public class MCICustomerAccountSelectedAnswer : Swift.Codable {
   }
   public init(questionId: Swift.String, answer: Swift.String)
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol PixInjectable {
   static func allocate() -> PixInjectable
   func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func present(controller: UIKit.UIViewController, account: MCIAccount, completion: (() -> Swift.Void)?)
   func push(navigation: UIKit.UINavigationController)
   func configure(account: MCIAccount, qrCode: Swift.String, completionHandler: @escaping (Swift.Result<Swift.Bool, Foundation.NSError>) -> Swift.Void)
+}
+extension PixInjectable {
+  public func present(controller: UIKit.UIViewController, account: MCIAccount, completion: (() -> Swift.Void)?)
 }
 public protocol PixCashOutInjectable {
   static func allocate() -> PixCashOutInjectable
@@ -1605,8 +1645,8 @@ public enum MCIPLInvoiceReceiptEmailStatus : Swift.String, Swift.Codable {
   case enabled
   case disabled
   case pending
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1614,8 +1654,8 @@ public enum MCIPLInvoiceReceiptEmailStatus : Swift.String, Swift.Codable {
 public enum MCIPLServiceInvoiceReceiptOption : Swift.String, Swift.Codable {
   case email
   case sms
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1670,8 +1710,8 @@ public enum BillPaymentType : Swift.String, Swift.Codable {
   case invalid
   case dealership
   case bankslip
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1695,8 +1735,8 @@ public enum BillPaymentType : Swift.String, Swift.Codable {
   final public func description() -> Swift.String
   final public func formattedAmount() -> Swift.String
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISubCategory : Swift.Codable {
   final public var id: Swift.String {
@@ -1710,8 +1750,8 @@ public enum BillPaymentType : Swift.String, Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public protocol MenuInjectable : AnyObject {
   static func allocate() -> MenuInjectable
@@ -1736,8 +1776,8 @@ public protocol StorePaymentInjectable {
 public enum MCICategoryType : Swift.String {
   case voucher
   case cellphoneRecharge
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1788,8 +1828,8 @@ final public class MCIVoucherAmount : Swift.Codable {
   }
   public init(amount: Swift.String, title: Swift.String?)
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIVoucherAmountsRange : Swift.Codable {
   final public var minRange: Swift.String {
@@ -1805,11 +1845,14 @@ final public class MCIVoucherAmountsRange : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIVoucher : Swift.Codable {
   final public var transactionId: Swift.String? {
+    get
+  }
+  final public var buttonStyle: Swift.String? {
     get
   }
   final public var amounts: [MCIVoucherAmount]? {
@@ -1819,8 +1862,8 @@ final public class MCIVoucherAmountsRange : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantLocation : Swift.Codable {
   final public var latitude: Swift.Double? {
@@ -1833,16 +1876,16 @@ final public class MCIVoucherAmountsRange : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantAddress : Swift.Codable {
   final public var short: Swift.String? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class Api99Position : Swift.Codable {
   final public var latitude: Swift.Double? {
@@ -1863,8 +1906,8 @@ final public class Api99Position : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Api99Driver : Swift.Codable {
   final public var driverID: Swift.Int? {
@@ -1889,8 +1932,8 @@ final public class Api99Position : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Api99Running : Swift.Codable {
   final public var rideId: Swift.String? {
@@ -1912,8 +1955,8 @@ final public class Api99Position : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class Api99RideStatus : Swift.Codable {
   final public var employeeId: Swift.Int? {
@@ -1957,8 +2000,8 @@ public enum Api99Status : Swift.String {
   case canceledByDriver
   case canceledByPassenger
   case rideEnded
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -1977,6 +2020,8 @@ extension MCIFoundation {
 @_hasMissingDesignatedInitializers final public class MCISecurityController {
   public static let shared: MCISecurityController
   final public func compare(password: Swift.String?) -> (equal: Swift.Bool, locked: Swift.Bool)
+  final public func encrypt(_ plainText: Swift.String) -> Swift.String
+  final public func decrypt(hexValue: Swift.String?) -> Swift.String
   @objc deinit
 }
 extension MCISecurityController {
@@ -1993,10 +2038,10 @@ extension MCISecurityController {
     case eyesClosed
     case mouthNotDetected
     public static func == (a: MCISecurityController.SelfieValidation, b: MCISecurityController.SelfieValidation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   final public func validate(selfie: UIKit.UIImage?) throws
   final public func validate(editingEmail: Swift.String?) -> Swift.Bool
@@ -2077,8 +2122,8 @@ final public class MCIAccountUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIPlacedMerchant : Swift.Codable {
   final public var id: Swift.String? {
@@ -2097,8 +2142,8 @@ final public class MCIAccountUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIBank : Swift.Codable {
   final public var id: Swift.Int? {
@@ -2117,8 +2162,8 @@ final public class MCIAccountUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Api99Budget : Swift.Codable {
   final public var transactionId: Swift.String? {
@@ -2128,8 +2173,8 @@ final public class MCIAccountUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MapDirections : Swift.Codable {
   final public var origin: MapPlace? {
@@ -2142,8 +2187,8 @@ final public class MCIAccountUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIAccountLimits : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
@@ -2176,8 +2221,8 @@ final public class MCIIssuerUI : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIIssuer : Swift.Codable {
   final public var id: Swift.String? {
@@ -2260,19 +2305,19 @@ final public class MCIMarketplaceAccountLimit : Swift.Codable {
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case showBoxDetail
     case availableLimit
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
     public var rawValue: Swift.String {
       get
     }
     public var stringValue: Swift.String {
       get
     }
-    public init?(stringValue: Swift.String)
-    public var intValue: Swift.Int? {
-      get
-    }
-    public init?(intValue: Swift.Int)
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2291,6 +2336,9 @@ extension UserDefaults {
   public func set(pushTokenRegistered: Swift.Bool)
   public func pushTokenRegistered() -> Swift.Bool
 }
+public protocol PaymentSlipInjectable {
+  func present(controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+}
 final public class MCIWithdrawAccountLimit : Swift.Codable {
   final public var showBoxDetail: Swift.Bool? {
     get
@@ -2301,19 +2349,19 @@ final public class MCIWithdrawAccountLimit : Swift.Codable {
   public enum CodingKeys : Swift.String, Swift.CodingKey {
     case showBoxDetail
     case availableLimit
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
     public var rawValue: Swift.String {
       get
     }
     public var stringValue: Swift.String {
       get
     }
-    public init?(stringValue: Swift.String)
-    public var intValue: Swift.Int? {
-      get
-    }
-    public init?(intValue: Swift.Int)
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
@@ -2333,8 +2381,8 @@ final public class MCIWithdrawAccountLimit : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCIHomeSettings : Swift.Codable {
   final public var categories: Swift.Int {
@@ -2367,8 +2415,8 @@ final public class MCIHomeSettings : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCICashInSettings : Swift.Codable {
   final public var bankSlipMinValue: Swift.Double {
@@ -2516,16 +2564,16 @@ final public class MCIPixHomeUISettings : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIAvailabilityPaymentSettings : Swift.Codable {
   final public var qrcode: MCIAvailabilityQRCodeSettings? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeSettings : Swift.Codable {
   final public var reading: MCIAvailabilityQRCodeReadingSettings? {
@@ -2535,24 +2583,24 @@ final public class MCIPixHomeUISettings : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeReadingSettings : Swift.Codable {
   final public var enabled: Swift.Bool? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeWritingSettings : Swift.Codable {
   final public var enabled: Swift.Bool? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIAvailabilityHomeTab : Swift.Codable {
   final public var marketplace: Swift.Bool? {
@@ -2568,16 +2616,16 @@ final public class MCIPixHomeUISettings : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMessageError : Swift.Codable {
   final public var defaultError: MCIDefaultError? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIDefaultError : Swift.Codable {
   final public var title: Swift.String? {
@@ -2587,8 +2635,8 @@ final public class MCIPixHomeUISettings : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum MCICardIssuanceStatus : Swift.String, Swift.Codable {
   case unknown
@@ -2596,8 +2644,8 @@ public enum MCICardIssuanceStatus : Swift.String, Swift.Codable {
   case paid
   case complete
   case expired
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2644,8 +2692,8 @@ public enum MCICardIssuanceDeliveryMode : Swift.String, Swift.Codable {
   case unknown
   case delivery
   case pickupOnIssuer
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2715,9 +2763,22 @@ public enum MCIMerchantActionType : Swift.String {
   case app
   case www
   case dynamicURL
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCIMerchantMCCType : Swift.Int {
+  case recharge
+  case food
+  case health
+  case softwareStore
+  case transport
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -2735,8 +2796,8 @@ public enum MCIMerchantServiceType : Swift.String {
   case online
   case webview
   public static let supported: [MCIMerchantServiceType]
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2771,16 +2832,16 @@ final public class MCIMerchantSimpleAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantCallToAction : Swift.Codable {
   final public var buttons: [MCIMerchantAction]? {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantUrls : Swift.Codable {
   final public var icon: Swift.String? {
@@ -2799,8 +2860,8 @@ final public class MCIMerchantSimpleAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchantDeprecated : Swift.Codable {
   final public var urlLogo: Swift.String? {
@@ -2816,8 +2877,8 @@ final public class MCIMerchantSimpleAction : Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCIMerchant {
   final public var id: Swift.String? {
@@ -2850,6 +2911,9 @@ final public class MCIMerchantSimpleAction : Swift.Codable {
   final public var participatingStores: Swift.Bool {
     get
   }
+  final public var mcc: MCIMerchantMCCType {
+    get
+  }
   @objc deinit
 }
 extension MCIMerchant : Swift.Codable {
@@ -2871,8 +2935,8 @@ final public class MCIAuthenticationState : Swift.Codable {
   }
   public init()
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension TimeZone {
   public static let zero: Foundation.TimeZone?
@@ -2895,7 +2959,7 @@ extension DateFormatter {
   public static let shortDayMonthYear: Foundation.DateFormatter
   public static let longDayMonthYear: Foundation.DateFormatter
   public static let brazilianDate: Foundation.DateFormatter
-  public static let pixDate: Foundation.DateFormatter
+  public static let brazilianUTCDate: Foundation.DateFormatter
   public static let shortBrazilianDate: Foundation.DateFormatter
   public static let shortExpiration: Foundation.DateFormatter
   public static let longExpiration: Foundation.DateFormatter
@@ -2910,7 +2974,8 @@ extension DateFormatter {
   public static let year: Foundation.DateFormatter
 }
 public protocol MCIAdditionalHeaderDelegate {
-  func headers() -> [Swift.String : Swift.String]?
+  func headers(_ completion: @escaping ([Swift.String : Swift.String]?) -> ())
+  func retryHeaders(_ status: Swift.String, completion: @escaping ([Swift.String : Swift.String]?) -> ())
 }
 extension UIDevice {
   public class func deviceIdentifier() -> Swift.String
@@ -2934,8 +2999,8 @@ extension UIDevice {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension MapPlace {
   convenience public init(_ geocode: MapReverseGeocode)
@@ -2958,8 +3023,8 @@ extension MapPlace {
   }
   final public func updateZipCode(_ zipCode: Swift.String?)
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCITvRechargeTransaction : Swift.Codable {
   final public var id: Swift.String? {
@@ -2989,8 +3054,8 @@ final public class MCITvRechargeTransaction : Swift.Codable {
 }
 public enum MCICashInType : Swift.String {
   case cashIn
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -2999,8 +3064,8 @@ extension MCICashInType : Swift.Codable {
 }
 public enum MCICashInMethod : Swift.String {
   case bankSlip
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3013,8 +3078,8 @@ public enum MCICashInStatus : Swift.String {
   case pending
   case expired
   case failed
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3087,10 +3152,11 @@ extension MCICustomerAccountToken : Swift.Equatable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 extension Data {
+  public init?(hexStringEncoded string: Swift.String)
   public var decrypt: Foundation.Data {
     get
   }
@@ -3106,6 +3172,7 @@ public protocol AuthInjectable {
 @_hasMissingDesignatedInitializers final public class AuthConfig {
   public static let shared: AuthConfig
   final public var imageRegisterSuccess: UIKit.UIImage?
+  final public var isSDK: Swift.Bool
   @objc deinit
 }
 public enum Api99CategoryType : Swift.String {
@@ -3113,8 +3180,8 @@ public enum Api99CategoryType : Swift.String {
   case turboTaxi
   case top99
   case pop99
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3150,10 +3217,10 @@ public enum MCISupportOptionType {
   case whatsapp
   case callcenter
   public static func == (a: MCISupportOptionType, b: MCISupportOptionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol MCISupportOption {
   var available: Swift.Bool { get }
@@ -3177,8 +3244,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISupportContactByEmail : MCISupportOption, Swift.Codable {
   final public var available: Swift.Bool {
@@ -3197,8 +3264,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISupportContactByPhone : MCISupportOption, Swift.Codable {
   final public var available: Swift.Bool {
@@ -3214,8 +3281,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISupportContactByCallcenter : MCISupportOption, Swift.Codable {
   final public var available: Swift.Bool {
@@ -3231,8 +3298,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISupportContactByWhatsapp : MCISupportOption, Swift.Codable {
   final public var available: Swift.Bool {
@@ -3248,8 +3315,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class MCISupportPhoneNumber : Swift.Codable {
   final public var title: Swift.String? {
@@ -3259,8 +3326,8 @@ public protocol MCISupportOption {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum MCIPixKeyType : Swift.String, Swift.Codable {
   case phoneNumber
@@ -3268,8 +3335,8 @@ public enum MCIPixKeyType : Swift.String, Swift.Codable {
   case email
   case evp
   case unknown
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3282,8 +3349,8 @@ public enum MCIPixKeyType : Swift.String, Swift.Codable {
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum MCICustomerTransactionStatus : Swift.String {
   case pending
@@ -3292,8 +3359,8 @@ public enum MCICustomerTransactionStatus : Swift.String {
   case canceled
   case expired
   case none
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3310,8 +3377,8 @@ public enum MCICustomerTransactionType : Swift.String {
   case installment
   case adjustment
   case none
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3332,8 +3399,8 @@ extension MCICustomerTransactionType : Swift.Codable, Swift.CustomStringConverti
     get
   }
   @objc deinit
-  public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 final public class MCICustomerTransaction : Swift.Codable {
   final public var id: Swift.String? {
@@ -3380,8 +3447,8 @@ extension MCICustomerTransaction : Swift.Equatable {
 public enum MCIBalanceStatus : Swift.String, Swift.Codable {
   case online
   case offline
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -3407,6 +3474,7 @@ public protocol QuizInjectable : AnyObject {
 }
 public protocol VirtualCardInjectable {
   func present(_ controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+  func presentDigital(_ controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
 }
 final public class MCICustomer : Swift.Codable {
   final public var id: Swift.String? {
@@ -3520,6 +3588,9 @@ extension MCICardIssuanceDeliveryMode : Swift.RawRepresentable {}
 extension MCIMerchantActionType : Swift.Equatable {}
 extension MCIMerchantActionType : Swift.Hashable {}
 extension MCIMerchantActionType : Swift.RawRepresentable {}
+extension MCIMerchantMCCType : Swift.Equatable {}
+extension MCIMerchantMCCType : Swift.Hashable {}
+extension MCIMerchantMCCType : Swift.RawRepresentable {}
 extension MCIMerchantServiceType : Swift.Equatable {}
 extension MCIMerchantServiceType : Swift.Hashable {}
 extension MCIMerchantServiceType : Swift.RawRepresentable {}

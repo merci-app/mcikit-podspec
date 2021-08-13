@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIKit
 import AVFoundation
 import CoreGraphics
@@ -268,9 +268,6 @@ extension MCINavigationController {
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension Data {
-  public init?(hexStringEncoded string: Swift.String)
-}
 extension NSNotification.Name {
   public struct System {
     public static let ImageCacheReloaded: Foundation.Notification.Name
@@ -527,6 +524,11 @@ extension UICollectionView {
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
+public class MCITimer {
+  public init(tickInterval: Swift.Int = 1, repeats: Swift.Bool = true, timerDuration: Swift.Int = 0, _ tickBlock: @escaping (Swift.Int) -> ())
+  public func stopTimer()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers final public class MCISectionTitleTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
   @objc override final public func awakeFromNib()
   final public func configure(with label: Swift.String?)
@@ -567,8 +569,8 @@ public enum MCIAlertComponent {
 public enum UnrecoveryError : Swift.Int {
   case unauthorized
   case unavailableForLegalReasons
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
@@ -728,16 +730,16 @@ extension MCIWebView : WebKit.WKNavigationDelegate {
     case present
     case dismiss
     public static func == (a: MCIAlertTransition.AlertTransition, b: MCIAlertTransition.AlertTransition) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
     public var hashValue: Swift.Int {
       get
     }
-    public func hash(into hasher: inout Swift.Hasher)
   }
   public enum ShadowMode : CoreGraphics.CGFloat {
     case off
     case on
-    public typealias RawValue = CoreGraphics.CGFloat
     public init?(rawValue: CoreGraphics.CGFloat)
+    public typealias RawValue = CoreGraphics.CGFloat
     public var rawValue: CoreGraphics.CGFloat {
       get
     }
@@ -804,8 +806,8 @@ public enum CategoryViewType : Swift.String {
   case empty
   case group
   case list
-  public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
@@ -848,7 +850,7 @@ extension UIView {
   }
   public func addShadow()
   public func addShadowWith(opacity: Swift.Float)
-  public func snapshot() -> UIKit.UIImage
+  public func snapshot() -> UIKit.UIImage?
   public func shake(_ completion: (() -> Swift.Void)?)
   public func convertProprotionsFrom(zeplinScreenWidth: CoreGraphics.CGFloat, viewSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
   public func activateFinishEditing()
@@ -906,9 +908,9 @@ extension MCIFlowViewControllerProtocol where Self : UIKit.UIViewController {
   public func hasDraw() -> Swift.Bool
   public func renderToImage() -> UIKit.UIImage?
   public func renderFitToImage() -> UIKit.UIImage?
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension UITableView {
   public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Reusable
@@ -1212,9 +1214,9 @@ extension MCIPlaceTableCell {
 @objc @_inheritsConvenienceInitializers final public class MCICopyButton : UIKit.UIButton, Identifiable {
   @objc override final public func didMoveToWindow()
   final public func performCopy(_ onCompletion: @escaping () -> Swift.Void = {})
-  @objc deinit
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
 }
 extension NSAttributedString {
   convenience public init?(html: Swift.String?)
@@ -1280,12 +1282,12 @@ public enum MCINavigationStyle : Swift.CaseIterable {
     get
   }
   public static func == (a: MCINavigationStyle, b: MCINavigationStyle) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
   public func hash(into hasher: inout Swift.Hasher)
   public typealias AllCases = [MCINavigationStyle]
   public static var allCases: [MCINavigationStyle] {
+    get
+  }
+  public var hashValue: Swift.Int {
     get
   }
 }
@@ -1369,13 +1371,13 @@ extension MCIInputValueVC : UIKit.UIViewControllerTransitioningDelegate {
 }
 @objc @_inheritsConvenienceInitializers final public class FadeInPushSegue : UIKit.UIStoryboardSegue {
   @objc override final public func perform()
-  @objc deinit
   @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers final public class FadeOutPopSegue : UIKit.UIStoryboardSegue {
   @objc override final public func perform()
-  @objc deinit
   @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+  @objc deinit
 }
 public protocol MCIStackFieldDelegate : UIKit.UITextFieldDelegate {
 }
@@ -1549,8 +1551,8 @@ extension String {
     case code128
     case pdf417
     case qr
-    public typealias RawValue = Swift.String
     public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
     }

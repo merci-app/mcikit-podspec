@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
 // swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MerciKit
 import Alamofire
 import Foundation
@@ -14,7 +14,8 @@ import UIKit
 public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   public var delegate: MerciClientSecurityDelegate?
   public init(delegate: MerciClientSecurityDelegate? = nil)
-  public func headers() -> [Swift.String : Swift.String]?
+  public func headers(_ completion: @escaping ([Swift.String : Swift.String]?) -> ())
+  public func retryHeaders(_ status: Swift.String, completion: @escaping ([Swift.String : Swift.String]?) -> ())
   @objc deinit
 }
 @_hasMissingDesignatedInitializers final public class Merci {
@@ -222,7 +223,8 @@ public class BaseDelegate : MerciDelegate {
   @objc deinit
 }
 public protocol MerciClientSecurityDelegate {
-  func externalToken() -> Swift.String
+  func externalToken(completion: @escaping (Swift.Result<Swift.String, Swift.Error>) -> Swift.Void)
+  func retryToken(status: Swift.String, completion: @escaping (Swift.Result<Swift.String, Swift.Error>) -> Swift.Void)
 }
 public struct MCICustomerAccountInfo {
   public var externalAccountId: Swift.String
@@ -232,6 +234,12 @@ public struct MCICustomerAccountInfo {
 }
 public enum MerciWalletModule {
   case virtualCard(Swift.String)
+  case pix(Swift.String)
+  case cashIn(Swift.String)
+  case cashOut(Swift.String)
+  case statement(Swift.String)
+  case physicalCard(Swift.String)
+  case paymentSlip(Swift.String)
 }
 public enum MerciModule {
   case marketpay
@@ -244,10 +252,10 @@ public enum MerciEnvironment {
   case production
   case sandbox
   public static func == (a: MerciEnvironment, b: MerciEnvironment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 extension MerciEnvironment : Swift.Equatable {}
 extension MerciEnvironment : Swift.Hashable {}

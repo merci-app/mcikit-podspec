@@ -524,10 +524,12 @@ extension UICollectionView {
   @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-public class MCITimer {
+@objc public class MCITimer : ObjectiveC.NSObject, Identifiable {
   public init(tickInterval: Swift.Int = 1, repeats: Swift.Bool = true, timerDuration: Swift.Int = 0, _ tickBlock: @escaping (Swift.Int) -> ())
+  public func startTimer(tickInterval: Swift.Int = 1, repeats: Swift.Bool = true, timerDuration: Swift.Int = 0, _ tickBlock: @escaping (Swift.Int) -> ())
   public func stopTimer()
   @objc deinit
+  @objc override dynamic public init()
 }
 @objc @_inheritsConvenienceInitializers final public class MCISectionTitleTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
   @objc override final public func awakeFromNib()

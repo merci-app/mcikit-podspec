@@ -37,6 +37,30 @@ extension Merci {
   public static let merchantPresentationNotification: Foundation.Notification.Name
   public static let transactionNotification: Foundation.Notification.Name
 }
+public enum MCILogTag : Swift.String, Swift.Codable {
+  case INSTANTIATE
+  case APP_AUTHENTICATION
+  case ISSUER_AUTHENTICATION
+  case REVOKE_AUTHENTICATION
+  case LAUNCH
+  case DATA_LOAD
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCILogResult : Swift.String, Swift.Codable {
+  case BEGIN
+  case SUCCESS
+  case FATAL_ERROR
+  case NON_FATAL_ERROR
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 extension MCIFoundation {
   final public func revokeCustomerAuthentication(completion: @escaping ((Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerIssuerImport(completion: @escaping ((Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void))
@@ -257,5 +281,11 @@ public enum MerciEnvironment {
     get
   }
 }
+extension MCILogTag : Swift.Equatable {}
+extension MCILogTag : Swift.Hashable {}
+extension MCILogTag : Swift.RawRepresentable {}
+extension MCILogResult : Swift.Equatable {}
+extension MCILogResult : Swift.Hashable {}
+extension MCILogResult : Swift.RawRepresentable {}
 extension MerciEnvironment : Swift.Equatable {}
 extension MerciEnvironment : Swift.Hashable {}

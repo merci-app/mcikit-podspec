@@ -593,15 +593,15 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 @end
 
 
-@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -758,6 +758,13 @@ SWIFT_CLASS("_TtC6MCIKit12MCITextField")
 - (BOOL)becomeFirstResponder;
 @end
 
+
+
+SWIFT_CLASS("_TtC6MCIKit8MCITimer")
+@interface MCITimer : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC6MCIKit9MCIWaitVC")
@@ -1437,15 +1444,15 @@ SWIFT_CLASS("_TtC6MCIKit9MCIPassVC")
 @end
 
 
-@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
-- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
-- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
 @interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UIViewControllerTransitioningDelegate>
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForPresentedController:(UIViewController * _Nonnull)presented presentingController:(UIViewController * _Nonnull)presenting sourceController:(UIViewController * _Nonnull)source SWIFT_WARN_UNUSED_RESULT;
 - (id <UIViewControllerAnimatedTransitioning> _Nullable)animationControllerForDismissedController:(UIViewController * _Nonnull)dismissed SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+@interface MCIPassVC (SWIFT_EXTENSION(MCIKit)) <UITextFieldDelegate>
+- (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
+- (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -1602,6 +1609,13 @@ SWIFT_CLASS("_TtC6MCIKit12MCITextField")
 - (BOOL)becomeFirstResponder;
 @end
 
+
+
+SWIFT_CLASS("_TtC6MCIKit8MCITimer")
+@interface MCITimer : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 SWIFT_CLASS("_TtC6MCIKit9MCIWaitVC")

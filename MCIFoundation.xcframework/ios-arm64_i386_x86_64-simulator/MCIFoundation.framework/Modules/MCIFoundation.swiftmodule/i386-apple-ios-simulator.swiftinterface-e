@@ -1160,6 +1160,7 @@ final public class MCIAccount : Swift.Codable {
   final public func formattedTotalWithdrawLimit() -> Swift.String
   final public func formattedUsedWithdrawLimit() -> Swift.String
   final public func formattedCheckoutPayLimit() -> Swift.String
+  final public func formattedCheckoutPayFormattedLimit() -> Swift.String
   final public func formattedCheckoutMarketplaceLimit() -> Swift.String
   final public func formattedCheckoutWithdrawLimit() -> Swift.String
   final public func formattedCheckoutWalletLimit() -> Swift.String
@@ -3447,6 +3448,7 @@ extension MCICustomerTransaction : Swift.Equatable {
 public enum MCIBalanceStatus : Swift.String, Swift.Codable {
   case online
   case offline
+  case unknown
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {

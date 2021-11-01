@@ -110,6 +110,7 @@ public protocol MCIBaseTheme : AnyObject {
   var actionDisabledTintColor: UIKit.UIColor { get }
   var actionDisabledTextColor: UIKit.UIColor { get }
   var actionFlatTextColor: UIKit.UIColor { get }
+  var actionBarTintColor: UIKit.UIColor { get }
 }
 public protocol MCIWalletTheme : AnyObject {
   var walletNavBarTintColor: UIKit.UIColor { get }
@@ -136,6 +137,7 @@ public protocol MCIMarketPlaceTheme : AnyObject {
   var servicesActionTintColor: UIKit.UIColor { get }
   var servicesActionTextColor: UIKit.UIColor { get }
   var servicesActionAltTintColor: UIKit.UIColor { get }
+  var marketActionTintColor: UIKit.UIColor { get }
 }
 public protocol MCICheckoutTheme : AnyObject {
   var payTintColor: UIKit.UIColor { get }
@@ -313,6 +315,10 @@ extension NSNotification.Name {
     public static let Registered: Foundation.Notification.Name
     public static let Authenticated: Foundation.Notification.Name
     public static let Unauthenticated: Foundation.Notification.Name
+  }
+  public struct MyCard {
+    public static let ReloadMyCard: Foundation.Notification.Name
+    public static let ReloadMyCardAdditional: Foundation.Notification.Name
   }
   public struct Transaction {
     public static let Created: Foundation.Notification.Name
@@ -566,6 +572,7 @@ public enum MCIAlertAction {
 }
 public enum MCIAlertComponent {
   case title(text: Swift.String)
+  case subtitle(text: Swift.String)
   case description(text: Swift.String)
 }
 public enum UnrecoveryError : Swift.Int {
@@ -584,6 +591,7 @@ public enum UnrecoveryError : Swift.Int {
     set
   }
   final public class func allocate() -> MCIAlertVC
+  final public class func alert(title: Swift.String, subtitle: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
   final public class func alert(title: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
   final public class func error(_ error: Foundation.NSError, dismissable: Swift.Bool = true, talkToMerci: MCIHandler? = nil, handler: MCIHandler?) -> MCIAlertVC
   @objc override final public func viewDidLoad()
@@ -1116,6 +1124,9 @@ extension MerciStyle : MCIBaseTheme {
   final public var actionFlatTextColor: UIKit.UIColor {
     get
   }
+  final public var actionBarTintColor: UIKit.UIColor {
+    get
+  }
 }
 extension MerciStyle : MCIWalletTheme {
   final public var walletNavBarTintColor: UIKit.UIColor {
@@ -1186,6 +1197,9 @@ extension MerciStyle : MCIMarketPlaceTheme {
   final public var servicesActionAltTintColor: UIKit.UIColor {
     get
   }
+  final public var marketActionTintColor: UIKit.UIColor {
+    get
+  }
 }
 extension MerciStyle : MCICheckoutTheme {
   final public var payTintColor: UIKit.UIColor {
@@ -1216,6 +1230,7 @@ extension MCIPlaceTableCell {
 @objc @_inheritsConvenienceInitializers final public class MCICopyButton : UIKit.UIButton, Identifiable {
   @objc override final public func didMoveToWindow()
   final public func performCopy(_ onCompletion: @escaping () -> Swift.Void = {})
+  final public func updateColor(_ color: UIKit.UIColor)
   @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -1308,6 +1323,8 @@ extension MCITableViewControllerProtocol where Self : UIKit.UITableViewControlle
   }
   public func presentSupportVC(reason: Swift.String?)
   public func pushSupportVC(reason: Swift.String?, navigation: UIKit.UINavigationController)
+  public func presentForgotPasswordVC()
+  public func pushForgotPasswordVC(navigation: UIKit.UINavigationController)
 }
 public struct MCITicketShareController {
   public init(merchantName: Swift.String?, amount: Swift.Double?, pin: Swift.String?, url: Foundation.URL?)

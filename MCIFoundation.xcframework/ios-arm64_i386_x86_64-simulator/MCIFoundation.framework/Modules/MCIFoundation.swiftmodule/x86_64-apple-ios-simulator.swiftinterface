@@ -207,12 +207,12 @@ final public class MCIAliasBank : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
 }
-public enum ObfuscateVat {
+public enum ObfuscatePattern {
   case all
   case middle
   case borders
   case nothing
-  public static func == (a: ObfuscateVat, b: ObfuscateVat) -> Swift.Bool
+  public static func == (a: ObfuscatePattern, b: ObfuscatePattern) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
@@ -226,7 +226,7 @@ public enum ObfuscateVat {
   final public class func format(cnpj: Swift.String?) -> Swift.String
   final public class func normalize(string: Swift.String?) -> Swift.String
   final public class func format(vat: Swift.String?) -> Swift.String
-  final public class func obfuscate(vat: Swift.String?, obfuscate: ObfuscateVat? = .all) -> Swift.String
+  final public class func obfuscate(vat: Swift.String?, obfuscate: ObfuscatePattern? = .all) -> Swift.String
   final public class func format(boleto: Swift.String?) -> Swift.String
   final public class func normalize(boleto: Swift.String?) -> Swift.String
   final public class func format(cellphone: Swift.String?) -> Swift.String
@@ -237,6 +237,8 @@ public enum ObfuscateVat {
   final public class func format(zipCode: Swift.String?) -> Swift.String
   final public class func format(numberId: Swift.String?) -> Swift.String
   final public class func format(cardNumber: Swift.String?) -> Swift.String
+  final public class func obfuscateCardNumber(cardNumber: Swift.String?) -> Swift.String
+  final public class func obfuscateNumber(number: Swift.String?) -> Swift.String
   final public class func format(percentage: Swift.String?) -> Swift.String
   final public class func alphaNumeric(string: Swift.String?) -> Swift.String
   final public class func numeric(string: Swift.String?) -> Swift.String
@@ -534,6 +536,7 @@ public enum MCIAccountWalletActionType : Swift.String, Swift.Codable {
   case plServices
   case plVirtualCard
   case pix
+  case myCard
   public static let supported: [MCIAccountWalletActionType]
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -1043,7 +1046,7 @@ final public class MCIAccount : Swift.Codable {
   final public var product: MCIIssuerProduct? {
     get
   }
-  final public var token: MCICustomerAccountToken? {
+  final public var tokenEncrypted: Swift.String? {
     get
   }
   final public var status: MCICustomerAccountStatus
@@ -1075,6 +1078,9 @@ final public class MCIAccount : Swift.Codable {
     get
   }
   final public var accountAliasId: Swift.String? {
+    get
+  }
+  final public var companyAccount: Swift.Bool? {
     get
   }
   final public var pending: Swift.Bool? {
@@ -1151,6 +1157,7 @@ final public class MCIAccount : Swift.Codable {
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  final public func tokenDecrypted() -> MCICustomerAccountToken?
   final public func formattedAvailableLimit() -> Swift.String
   final public func formattedMerciAvailableLimit() -> Swift.String
   final public func formattedTotalLimit() -> Swift.String
@@ -3508,8 +3515,8 @@ extension ModuleCheckout : Swift.Hashable {}
 extension MCIFoundationSource : Swift.Equatable {}
 extension MCIFoundationSource : Swift.Hashable {}
 extension MCIFoundationSource : Swift.RawRepresentable {}
-extension ObfuscateVat : Swift.Equatable {}
-extension ObfuscateVat : Swift.Hashable {}
+extension ObfuscatePattern : Swift.Equatable {}
+extension ObfuscatePattern : Swift.Hashable {}
 extension MCIFaqGroupStatus : Swift.Equatable {}
 extension MCIFaqGroupStatus : Swift.Hashable {}
 extension MCIFaqGroupStatus : Swift.RawRepresentable {}

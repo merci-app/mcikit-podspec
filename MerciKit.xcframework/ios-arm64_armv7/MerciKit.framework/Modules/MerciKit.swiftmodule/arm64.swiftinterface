@@ -150,6 +150,9 @@ extension SDKStyle : MCIBaseTheme {
   final public var actionFlatTextColor: UIKit.UIColor {
     get
   }
+  final public var actionBarTintColor: UIKit.UIColor {
+    get
+  }
 }
 extension SDKStyle : MCIWalletTheme {
   final public var walletNavBarTintColor: UIKit.UIColor {
@@ -190,9 +193,6 @@ extension SDKStyle : MCIMarketPlaceTheme {
   final public var marketStatusBarStyle: UIKit.UIStatusBarStyle {
     get
   }
-  final public var actionBarTintColor: UIKit.UIColor {
-    get
-  }
   final public var categoriesBackgroundColor: UIKit.UIColor {
     get
   }
@@ -221,6 +221,9 @@ extension SDKStyle : MCIMarketPlaceTheme {
     get
   }
   final public var servicesActionAltTintColor: UIKit.UIColor {
+    get
+  }
+  final public var marketActionTintColor: UIKit.UIColor {
     get
   }
 }

@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIFoundation
 import AVFoundation
 import AdSupport
@@ -16,6 +16,7 @@ import MCILogger
 import MapKit
 import Swift
 import UIKit
+import _Concurrency
 final public class MCIAccountPixClaim : Swift.Codable {
   final public var claims: MCIPixClaim? {
     get
@@ -86,7 +87,7 @@ final public class MCIPixClaimActionParam : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
 }
-extension NSError {
+extension Foundation.NSError {
   public class func error(_ title: Swift.String, _ description: Swift.String) -> Foundation.NSError
   public class func error(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String) -> Foundation.NSError
   public class func error(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String, userInfo: [Swift.AnyHashable : Any]?) -> Foundation.NSError
@@ -155,17 +156,17 @@ extension MCIFoundation {
   final public func requestNewHome(completion: @escaping ((Swift.Result<MCIHome, Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerAccounts(completion: @escaping ((Swift.Result<[MCIAccount], Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerAccount(customerAccount: MCIAccount, completion: @escaping ((Swift.Result<MCIAccount, Foundation.NSError>) -> Swift.Void))
-  final public func requestCustomerAccountCreation(issuer: MCIIssuer, product: MCIIssuerProduct, failure: @escaping (Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (MCICustomerAccountQuiz) -> Swift.Void = { _ in })
+  final public func requestCustomerAccountCreation(issuer: MCIIssuer, product: MCIIssuerProduct, failure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (_ quiz: MCICustomerAccountQuiz) -> Swift.Void = { _ in })
   final public func validateNewCustomerAccount(quiz: MCICustomerAccountQuiz, answers: [MCICustomerAccountSelectedAnswer], completion: @escaping ((Swift.Result<MCICustomerAccountQuizSuccess, Foundation.NSError>) -> Swift.Void))
-  final public func requestCustomerAccountActivation(_ customerAccount: MCIAccount, failure: @escaping (Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (MCIAccount) -> Swift.Void = { _ in })
-  final public func requestCustomerAccountDeactivation(_ customerAccount: MCIAccount, failure: @escaping (Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (MCIAccount) -> Swift.Void = { _ in })
+  final public func requestCustomerAccountActivation(_ customerAccount: MCIAccount, failure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (_ account: MCIAccount) -> Swift.Void = { _ in })
+  final public func requestCustomerAccountDeactivation(_ customerAccount: MCIAccount, failure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (_ account: MCIAccount) -> Swift.Void = { _ in })
   final public func requestCustomerTransactions(_ account: MCIAccount, completion: @escaping ((Swift.Result<[MCICustomerTransaction], Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerTransactionDetails(transactionId: Swift.String, completion: @escaping ((Swift.Result<MCITransactionDetails, Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerExternalAvailableLimits(_ account: MCIAccount, completion: @escaping ((Swift.Result<MCIExternalAccountLimit, Foundation.NSError>) -> Swift.Void))
   final public func requestCustomerEligibleProducts(_ issuerId: Swift.String, completion: @escaping ((Swift.Result<[MCIIssuerProduct], Foundation.NSError>) -> Swift.Void))
 }
 extension MCIFoundation {
-  final public func requestPrefetchImages(failure: @escaping (Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping ([Swift.String]) -> Swift.Void = { _ in })
+  final public func requestPrefetchImages(failure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (_ images: [Swift.String]) -> Swift.Void = { _ in })
 }
 extension MCIFoundation {
   final public func store(key: Swift.String, value: Swift.String) -> Swift.Result<Swift.Void, Swift.Error>
@@ -230,6 +231,7 @@ public enum ObfuscatePattern {
   final public class func format(boleto: Swift.String?) -> Swift.String
   final public class func normalize(boleto: Swift.String?) -> Swift.String
   final public class func format(cellphone: Swift.String?) -> Swift.String
+  final public class func obfuscatePartialPhoneNumber(cellphone: Swift.String?) -> Swift.String
   final public class func format(supportCellphone: Swift.String?) -> Swift.String
   final public class func format(internationalCellphone: Swift.String?) -> Swift.String
   final public class func normalize(cellphone: Swift.String?) -> Swift.String
@@ -277,7 +279,7 @@ final public class MCIFaqGroup : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
 }
-extension Array where Element : MCIFaqGroup {
+extension Swift.Array where Element : MCIFaqGroup {
   public func activesOnly() -> [MCIFaqGroup]
 }
 @_hasMissingDesignatedInitializers final public class MCIPhoneValidationCustomer : Swift.Codable {
@@ -360,7 +362,7 @@ final public class MCICellphoneRechargeTransaction : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
 }
-extension UIColor {
+extension UIKit.UIColor {
   convenience public init(hexString: Swift.String)
   public func hexString() -> Swift.String
 }
@@ -537,6 +539,8 @@ public enum MCIAccountWalletActionType : Swift.String, Swift.Codable {
   case plVirtualCard
   case pix
   case myCard
+  case alterLimit
+  case travelNotification
   public static let supported: [MCIAccountWalletActionType]
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -711,7 +715,7 @@ extension MCIMerchantAccount : Swift.Equatable {
   public static func == (lhs: MCIMerchantAccount, rhs: MCIMerchantAccount) -> Swift.Bool
 }
 public protocol StatementInjectable {
-  func present(_ controller: UIKit.UIViewController, account: MCIAccount, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+  func present(_ controller: UIKit.UIViewController, account: MCIAccount, isEventEnabled: Swift.Bool, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
 }
 final public class MCIPayAccountLimit : Swift.Codable {
   final public var showBoxDetail: Swift.Bool? {
@@ -851,7 +855,7 @@ final public class MCIFaqQuestion : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
 }
-extension Array where Element : MCIFaqQuestion {
+extension Swift.Array where Element : MCIFaqQuestion {
   public func activesOnly() -> [MCIFaqQuestion]
 }
 final public class MCIExternalAccountLimit : Swift.Codable {
@@ -954,8 +958,6 @@ final public class MCICustomerAuthentication : Swift.Codable {
   final public func put(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
   final public func delete(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
   final public func patch(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
-  override public init(configuration: Foundation.URLSessionConfiguration = super, delegate: Alamofire.SessionDelegate = super, serverTrustPolicyManager: Alamofire.ServerTrustPolicyManager? = super)
-  override public init?(session: Foundation.URLSession, delegate: Alamofire.SessionDelegate, serverTrustPolicyManager: Alamofire.ServerTrustPolicyManager? = super)
   @objc deinit
 }
 final public class SwiftGCM {
@@ -1023,6 +1025,7 @@ public enum MCICustomerAccountStatus : Swift.String, Swift.Codable {
   case canceled
   case blocked
   case unknown
+  case pending
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -1071,6 +1074,9 @@ final public class MCIAccount : Swift.Codable {
   final public var externalVirtualCardId: Swift.String? {
     get
   }
+  final public var virtualCardBrand: Swift.String? {
+    get
+  }
   final public var isSync: Swift.Bool {
     get
   }
@@ -1081,6 +1087,9 @@ final public class MCIAccount : Swift.Codable {
     get
   }
   final public var companyAccount: Swift.Bool? {
+    get
+  }
+  final public var pendingAlert: Swift.Bool? {
     get
   }
   final public var pending: Swift.Bool? {
@@ -1177,7 +1186,7 @@ final public class MCIAccount : Swift.Codable {
 extension MCIAccount : Swift.Equatable {
   public static func == (lhs: MCIAccount, rhs: MCIAccount) -> Swift.Bool
 }
-extension Array where Element : MCIAccount {
+extension Swift.Array where Element : MCIAccount {
   public func activesOnly() -> [MCIAccount]
   public func digitalOnly() -> [MCIAccount]
   public func allowedWithdrawalOnly() -> [MCIAccount]
@@ -1239,10 +1248,10 @@ final public class MCIAlertUI {
   public init(title: Swift.String?, message: Swift.String?, dismissTitle: Swift.String?, actionUrl: Foundation.URL?, showSupport: Swift.Bool?)
   @objc deinit
 }
-extension CLLocationCoordinate2D : Swift.Equatable {
+extension CoreLocation.CLLocationCoordinate2D : Swift.Equatable {
   public static func == (lhs: CoreLocation.CLLocationCoordinate2D, rhs: CoreLocation.CLLocationCoordinate2D) -> Swift.Bool
 }
-extension CLLocationCoordinate2D {
+extension CoreLocation.CLLocationCoordinate2D {
   public static let zero: CoreLocation.CLLocationCoordinate2D
   public func rect(with location: CoreLocation.CLLocationCoordinate2D) -> MapKit.MKMapRect
   public var region: MapKit.MKCoordinateRegion {
@@ -1455,6 +1464,9 @@ final public class MCIIssuerProduct : Swift.Codable {
   final public var allowMarketplace: Swift.Bool {
     get
   }
+  final public var splitTimeline: Swift.Bool {
+    get
+  }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
@@ -1627,7 +1639,7 @@ public protocol PixCashOutInjectable {
   func push(navigation: UIKit.UINavigationController, model: MCIPixCashOutDecode)
   func configure(account: MCIAccount, qrCode: Swift.String, completionHandler: @escaping (Swift.Result<MCIPixCashOutDecode, Foundation.NSError>) -> Swift.Void)
 }
-extension Double {
+extension Swift.Double {
   public static func equal(_ lhs: Swift.Double, _ rhs: Swift.Double, precise value: Swift.Int? = nil) -> Swift.Bool
   public func precised(_ value: Swift.Int = 1) -> Swift.Double
 }
@@ -1702,13 +1714,13 @@ public protocol SupportInjectable {
   func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func push(navigation: UIKit.UINavigationController)
 }
-extension UIApplication {
-  public static var name: Swift.String?
-  public static var version: Swift.String?
-  public class func applicationName() -> Swift.String
-  public class func applicationVersion() -> Swift.String
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public static var name: Swift.String?
+  @_Concurrency.MainActor(unsafe) public static var version: Swift.String?
+  @_Concurrency.MainActor(unsafe) public class func applicationName() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public class func applicationVersion() -> Swift.String
 }
-extension String : Foundation.LocalizedError {
+extension Swift.String : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -1825,7 +1837,7 @@ final public class MCICategory : Swift.Codable {
   @objc deinit
 }
 extension MCIFoundation {
-  final public func requestIssuers(failure: @escaping (Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping ([MCIIssuer]) -> Swift.Void = { _ in })
+  final public func requestIssuers(failure: @escaping (_ error: Foundation.NSError) -> Swift.Void = { _ in }, success: @escaping (_ issuers: [MCIIssuer]) -> Swift.Void = { _ in })
 }
 final public class MCIVoucherAmount : Swift.Codable {
   final public var amount: Swift.String {
@@ -2034,7 +2046,7 @@ extension MCIFoundation {
 }
 extension MCISecurityController {
   final public func biometryIsAvailable() -> Swift.Bool
-  final public func performBiometryValidation(failureBlock: @escaping (Foundation.NSError, Swift.Bool) -> Swift.Void = { _,_ in }, successBlock: @escaping () -> Swift.Void = {})
+  final public func performBiometryValidation(failureBlock: @escaping (_ error: Foundation.NSError, _ lockout: Swift.Bool) -> Swift.Void = { _,_ in }, successBlock: @escaping () -> Swift.Void = {})
 }
 extension MCISecurityController {
   public enum SelfieValidation : Swift.Error {
@@ -2089,6 +2101,9 @@ final public class MCIAccounWalletUI : Swift.Codable {
     get
   }
   final public var limitValueTintColor: UIKit.UIColor {
+    get
+  }
+  final public var cardElementsTintColor: UIKit.UIColor {
     get
   }
   final public func encode(to encoder: Swift.Encoder) throws
@@ -2198,12 +2213,15 @@ final public class MCIAccountUI : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func makeCircular()
+}
 final public class MCIAccountLimits : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
 }
-extension String {
+extension Swift.String {
   public func toCurrency() -> Swift.String?
   public func toUncurrency() -> Swift.String?
 }
@@ -2292,6 +2310,9 @@ extension MCIHome {
 extension MCIHome {
   final public func sanitize()
 }
+extension MCIFoundation {
+  final public func requestCustomerAccountOnboardingViewed(_ account: MCIAccount, completion: @escaping MCIResult<Swift.Void>)
+}
 public protocol WithdrawalInjectable {
   func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
   func enableSupport(enabled: Swift.Bool)
@@ -2336,7 +2357,7 @@ public protocol FaqInjectable {
   func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func push(navigation: UIKit.UINavigationController)
 }
-extension UserDefaults {
+extension Foundation.UserDefaults {
   public func isApplicationRegistered() -> Swift.Bool
   public func registerApplication()
   public func set(pushToken: Swift.String)
@@ -2420,6 +2441,9 @@ final public class MCIHomeSettings : Swift.Codable {
     get
   }
   final public var pix: MCIPixSettings? {
+    get
+  }
+  final public var ui: MCISettingsUI? {
     get
   }
   @objc deinit
@@ -2569,6 +2593,23 @@ final public class MCIPixHomeUISettings : Swift.Codable {
     get
   }
   final public var maxRegisteredAccounts: Swift.Int {
+    get
+  }
+  final public var privateLabel: MCIPrivateLabelConfig? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIPrivateLabelConfig : Swift.Codable {
+  final public var virtualCard: Swift.Bool? {
+    get
+  }
+  final public var myCards: Swift.Bool? {
+    get
+  }
+  final public var isDownloadInvoicePdfAvailable: Swift.Bool? {
     get
   }
   @objc deinit
@@ -2946,15 +2987,15 @@ final public class MCIAuthenticationState : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-extension TimeZone {
+extension Foundation.TimeZone {
   public static let zero: Foundation.TimeZone?
   public static let utc: Foundation.TimeZone?
 }
-extension Locale {
+extension Foundation.Locale {
   public static let ptBr: Foundation.Locale
   public static let enUs: Foundation.Locale
 }
-extension DateFormatter {
+extension Foundation.DateFormatter {
   public static let iso3339: Foundation.DateFormatter
   public static let iso3339wz: Foundation.DateFormatter
   public static let iso8601: Foundation.DateFormatter
@@ -2985,10 +3026,10 @@ public protocol MCIAdditionalHeaderDelegate {
   func headers(_ completion: @escaping ([Swift.String : Swift.String]?) -> ())
   func retryHeaders(_ status: Swift.String, completion: @escaping ([Swift.String : Swift.String]?) -> ())
 }
-extension UIDevice {
-  public class func deviceIdentifier() -> Swift.String
-  public func userAgent() -> Swift.String
-  public func isJailbroken() -> (is: Swift.Bool, cause: Swift.String)
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public class func deviceIdentifier() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func userAgent() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func isJailbroken() -> (is: Swift.Bool, cause: Swift.String)
 }
 @_hasMissingDesignatedInitializers final public class MapPlace : Swift.Codable {
   final public var name: Swift.String? {
@@ -3125,6 +3166,17 @@ final public class MCICashIn : Swift.Codable {
 extension MCICashIn {
   final public func convertTo() -> MCICashInBankSlip
 }
+final public class MCISettingsUI : Swift.Codable {
+  final public var accountPendingTitle: Swift.String? {
+    get
+  }
+  final public var accountPendingDescription: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
 public enum MCICustomerAccountTokenError : Swift.Error {
   case genericError(Swift.String)
   case invalidURLScheme
@@ -3163,13 +3215,13 @@ extension MCICustomerAccountToken : Swift.Equatable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-extension Data {
+extension Foundation.Data {
   public init?(hexStringEncoded string: Swift.String)
   public var decrypt: Foundation.Data {
     get
   }
 }
-extension Bundle {
+extension Foundation.Bundle {
   public static var mciFoundation: Foundation.Bundle
 }
 public protocol AuthInjectable {

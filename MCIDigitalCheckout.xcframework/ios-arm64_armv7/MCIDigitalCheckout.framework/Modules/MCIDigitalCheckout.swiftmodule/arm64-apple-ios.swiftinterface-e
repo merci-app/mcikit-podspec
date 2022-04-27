@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIDigitalCheckout
 import CoreLocation
 import Kingfisher
@@ -11,69 +11,70 @@ import MCIKit
 import MCILogger
 import Swift
 import UIKit
-@objc @_inheritsConvenienceInitializers final public class CheckoutVC : MCIViewController, Checkoutable, Identifiable, Dismissable {
-  final public var strategy: CheckoutStrategy {
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class CheckoutVC : MCIViewController, Checkoutable, Identifiable, Dismissable {
+  @_Concurrency.MainActor(unsafe) final public var strategy: CheckoutStrategy {
     get
     set
   }
-  final public var accounts: [MCIAccount] {
+  @_Concurrency.MainActor(unsafe) final public var accounts: [MCIAccount] {
     get
     set
   }
-  weak final public var delegate: CheckoutDelegate?
-  final public var isOffline: Swift.Bool
-  final public var shouldDisplayViewMessage: Swift.Bool
-  final public var usePLAvailableLimit: Swift.Bool
-  final public var moduleCheckout: ModuleCheckout
-  final public class func allocate() -> CheckoutVC
-  final public func checkout(strategy: CheckoutStrategy, accounts: [MCIAccount]?, delegate: CheckoutDelegate?) -> CheckoutableVC
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  final public func prepopulate(activeAccounts: [MCIAccount]?)
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: CheckoutDelegate?
+  @_Concurrency.MainActor(unsafe) final public var isOffline: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var shouldDisplayViewMessage: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var usePLAvailableLimit: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var moduleCheckout: ModuleCheckout
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> CheckoutVC
+  @_Concurrency.MainActor(unsafe) final public func checkout(strategy: CheckoutStrategy, accounts: [MCIAccount]?, delegate: CheckoutDelegate?) -> CheckoutableVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func prepopulate(activeAccounts: [MCIAccount]?)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension CheckoutVC : UIKit.UIScrollViewDelegate {
-  @objc final public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
 }
 extension CheckoutVC : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
-  @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
-  @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
-  @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
-  @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
-  @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, didEndDisplaying cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
 }
 extension CheckoutVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-extension UIStoryboard {
-  public class var checkout: UIKit.UIStoryboard {
+extension UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var checkout: UIKit.UIStoryboard {
     get
   }
 }
 public protocol DigitalOperationFlowDelegate : AnyObject {
   func digitalOperation(_ digitalOperation: DigitalOperationFlowVC, didCompleteWith object: Any?)
 }
-@objc @_inheritsConvenienceInitializers public class DigitalOperationFlowVC : MCIFlowViewController, Identifiable {
-  public var strategy: AutoCheckoutStrategy!
-  public var dismissToWallet: Swift.Bool?
-  weak public var delegate: AutoCheckoutDelegate?
-  public class func allocate() -> DigitalOperationFlowVC
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @objc override dynamic public func viewDidLayoutSubviews()
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DigitalOperationFlowVC : MCIFlowViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) public var strategy: AutoCheckoutStrategy!
+  @_Concurrency.MainActor(unsafe) public var dismissToWallet: Swift.Bool?
+  @_Concurrency.MainActor(unsafe) weak public var delegate: AutoCheckoutDelegate?
+  @_Concurrency.MainActor(unsafe) public class func allocate() -> DigitalOperationFlowVC
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 extension DigitalOperationFlowVC : AutoCheckoutable {
-  public func checkout(strategy: AutoCheckoutStrategy, delegate: AutoCheckoutDelegate?, dismissToWallet: Swift.Bool?) -> AutoCheckoutVC
+  @_Concurrency.MainActor(unsafe) public func checkout(strategy: AutoCheckoutStrategy, delegate: AutoCheckoutDelegate?, dismissToWallet: Swift.Bool?) -> AutoCheckoutVC
 }
 extension DigitalOperationFlowVC : PasswordFlowDelegate {
-  public func passwordFlowDidAuthenticate(_ passwordFlowVC: PasswordFlowVC)
-  public func dismissView(_ passwordFlowVC: PasswordFlowVC)
+  @_Concurrency.MainActor(unsafe) public func passwordFlowDidAuthenticate(_ passwordFlowVC: PasswordFlowVC)
+  @_Concurrency.MainActor(unsafe) public func dismissView(_ passwordFlowVC: PasswordFlowVC)
 }
 extension CheckoutVC : UIKit.UICollectionViewDelegateFlowLayout {}

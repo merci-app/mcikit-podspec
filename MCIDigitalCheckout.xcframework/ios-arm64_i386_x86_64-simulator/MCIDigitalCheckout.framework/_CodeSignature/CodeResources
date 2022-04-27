@@ -6,23 +6,23 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		X8RIsymYGE4/kVV/ivJgNMAHdSE=
+		XnjWXWu0MAqMpQBAUNEN6Y6QdDk=
 		</data>
 		<key>Checkout.storyboardc/CheckoutVC.nib/objects-11.0+.nib</key>
 		<data>
-		Hvl9DNNNKd0Cbrj/C6fS3WwHCxs=
+		h4RvkfYBW//SnWqbN+pyS8tR+Mg=
 		</data>
 		<key>Checkout.storyboardc/CheckoutVC.nib/runtime.nib</key>
 		<data>
-		Gh6CIGM/82kSiofQs7FH/m/ASrk=
+		h4RvkfYBW//SnWqbN+pyS8tR+Mg=
 		</data>
 		<key>Checkout.storyboardc/CheckoutWaitVC.nib/objects-11.0+.nib</key>
 		<data>
-		E7DuwJ0mNGQEpT+XLPWMYL7YhQU=
+		lFzwTKWNz+Vofi2OdY3/OWV2+4E=
 		</data>
 		<key>Checkout.storyboardc/CheckoutWaitVC.nib/runtime.nib</key>
 		<data>
-		BpFPVTXjb74zzfxE2SR+AH8/EgU=
+		lFzwTKWNz+Vofi2OdY3/OWV2+4E=
 		</data>
 		<key>Checkout.storyboardc/Info.plist</key>
 		<data>
@@ -30,55 +30,55 @@
 		</data>
 		<key>Checkout.storyboardc/aRe-N2-bP9-view-wHF-IB-jke.nib/objects-11.0+.nib</key>
 		<data>
-		glhqxtPKb9LKomSYNOfrKWVfpHc=
+		Sb0BVz4dLN6iszDWu10gNgNhnAI=
 		</data>
 		<key>Checkout.storyboardc/aRe-N2-bP9-view-wHF-IB-jke.nib/runtime.nib</key>
 		<data>
-		NAy+Q3Knfjiyv0oksSSJj7i7BaM=
+		XIU1JnhMAa98oxE+oJZAcxZdITY=
 		</data>
 		<key>Checkout.storyboardc/tI6-7R-Inf-view-jOh-pu-Id4.nib/objects-11.0+.nib</key>
 		<data>
-		U/jSJ1IRB8srplHQvo6NN/jAZH0=
+		7VnYqgl9WMaXtulCYcqQB7OWMFg=
 		</data>
 		<key>Checkout.storyboardc/tI6-7R-Inf-view-jOh-pu-Id4.nib/runtime.nib</key>
 		<data>
-		jTNcgm5ecSQG+MDjzTztTHwhxGc=
+		tKHFgERkqqkSvoRnoNnKDiuPF+E=
 		</data>
 		<key>CheckoutAccountAltCollectionCell.nib/objects-11.0+.nib</key>
 		<data>
-		2p06yopebyDfBsla84XabpA4m4c=
+		cDz/hWD3GexRroIOWbRJBRTobxY=
 		</data>
 		<key>CheckoutAccountAltCollectionCell.nib/objects-12.3+.nib</key>
 		<data>
-		HIEPviZuJsoLhUuZsufNX7ZeQDY=
+		4S+HvREbhIZi3kihhr+DYfJ2pgA=
 		</data>
 		<key>CheckoutAccountAltCollectionCell.nib/runtime.nib</key>
 		<data>
-		0fwDLbtzqQStwL9ZAnDXi8wYQXw=
+		N+R4qBVNXK0YJ4FzikkE9KT9c3U=
 		</data>
 		<key>CheckoutAccountCollectionCell.nib/objects-11.0+.nib</key>
 		<data>
-		A/vyxEqfWexZOOlGSITTAyq9suQ=
+		QVyxb5X7A7yBzuz9rDWS2EKwDkI=
 		</data>
 		<key>CheckoutAccountCollectionCell.nib/objects-12.3+.nib</key>
 		<data>
-		nyRt+b8tqokD/dfKkk9QNhKdP/U=
+		r8qailZQjixU4cqK7vrafo6fB0Q=
 		</data>
 		<key>CheckoutAccountCollectionCell.nib/runtime.nib</key>
 		<data>
-		Pr4vsAhqw4ap4xJ0jjQyRdRWo9k=
+		uMNkU/u0yMpI5lR0qpnTYxad32I=
 		</data>
 		<key>CheckoutLoadingCollectionCell.nib/objects-12.3+.nib</key>
 		<data>
-		gqgwc/5s+36PppuTJIM/Dvq683k=
+		dpKn1sjWi7H9T152vdPZsN7HctU=
 		</data>
 		<key>CheckoutLoadingCollectionCell.nib/runtime.nib</key>
 		<data>
-		2HpzC6prBXsdtH7JrE/YjMrtltU=
+		Ye0LP0c1Ybd0p4UVk8k/4uUrgPs=
 		</data>
 		<key>Headers/MCIDigitalCheckout-Swift.h</key>
 		<data>
-		f1ue2xZ32e3+/0PKWTGh3QLEhrw=
+		OGMtSNIUsU/J5PKQRZ9H3gXswik=
 		</data>
 		<key>Headers/MCIDigitalCheckout.h</key>
 		<data>
@@ -86,79 +86,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		rfS7/oMLAGhicGssYPIQ2Qykvs8=
+		3skDx77lcF8kcWP2r4EGk6V8IQU=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		fubgkSMk6NAVYn+g8qyv+WQzdDE=
+		Lc0tU854FU2VlTpqmxo20ubwGlc=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hA/jOfsIt7XlYbkF84HdJf0FjAI=
+		3fJOu3Z62uSmChfIiVnCLhq24SU=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1BToOW4YJsj308a5VKM5LizyLaU=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		fubgkSMk6NAVYn+g8qyv+WQzdDE=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		hA/jOfsIt7XlYbkF84HdJf0FjAI=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		1BToOW4YJsj308a5VKM5LizyLaU=
+		rHIccrF4R2P/24H2fcXF8DwRHq8=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		cHeA89yFIcafUHETcOqLYvZB+m8=
+		0r047Zqm9rCtWIeh+WSbJTU+pl0=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		FKzMoqyGLeNdXLp0cQUnRlea/v0=
+		ClBYWoT0DzAngr+q1hjVziDzlm8=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		E99Vhi53ZEig3uq8iO6OAXLciFs=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftdoc</key>
-		<data>
-		cHeA89yFIcafUHETcOqLYvZB+m8=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftinterface</key>
-		<data>
-		FKzMoqyGLeNdXLp0cQUnRlea/v0=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftmodule</key>
-		<data>
-		E99Vhi53ZEig3uq8iO6OAXLciFs=
+		W1RsrqVasqdBC1WvDVzqb+81Qi8=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		i7s7gHdx7VfitFImN43L0C/qKsw=
+		f02iU2VWPkD6yuZhL3U9PrawllY=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		e9Gf2leU7C8kR4hdC3yIxn1vROI=
+		GOSg+MhVIgUnv0HfjKDK6Y/KWzo=
 		</data>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		CMpZEkdNSE26Ga2KQOlx78f5osU=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		i7s7gHdx7VfitFImN43L0C/qKsw=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		e9Gf2leU7C8kR4hdC3yIxn1vROI=
-		</data>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		CMpZEkdNSE26Ga2KQOlx78f5osU=
+		XNtYJNWirnfmt7IwQIF8EN+K5O8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -171,55 +135,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			X8RIsymYGE4/kVV/ivJgNMAHdSE=
+			XnjWXWu0MAqMpQBAUNEN6Y6QdDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			wqicD2yIhaScUYq4kLWgvFCx8Q2NOtsrZmKI9B1tJLA=
+			9tkwXQej2NIU+ZXZrfoI60mxwpN8N/ZMwOEZPROJ76c=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/CheckoutVC.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Hvl9DNNNKd0Cbrj/C6fS3WwHCxs=
+			h4RvkfYBW//SnWqbN+pyS8tR+Mg=
 			</data>
 			<key>hash2</key>
 			<data>
-			jUccrrVduQ5pLtNNr5V/+4H/E8901rUykABqXtw3PZM=
+			zRuP/sv+jpG/Wlyh+amQKl2Eu+Iv/Vjtm9bUTyT6Jw0=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/CheckoutVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Gh6CIGM/82kSiofQs7FH/m/ASrk=
+			h4RvkfYBW//SnWqbN+pyS8tR+Mg=
 			</data>
 			<key>hash2</key>
 			<data>
-			OPsQ/orUXunrjAkPlccAt68iV6v7VqUZx+36RpEc1h0=
+			zRuP/sv+jpG/Wlyh+amQKl2Eu+Iv/Vjtm9bUTyT6Jw0=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/CheckoutWaitVC.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			E7DuwJ0mNGQEpT+XLPWMYL7YhQU=
+			lFzwTKWNz+Vofi2OdY3/OWV2+4E=
 			</data>
 			<key>hash2</key>
 			<data>
-			JmiwEdLxKkKA2Vqz182STIZqV3FiPVRhT9hICtbdqjI=
+			Vt4p4EE4K2beLQPtxE+LAmPd2TDYl//1cnM0+Yt/HlU=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/CheckoutWaitVC.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BpFPVTXjb74zzfxE2SR+AH8/EgU=
+			lFzwTKWNz+Vofi2OdY3/OWV2+4E=
 			</data>
 			<key>hash2</key>
 			<data>
-			btdBe+x8+EVrP/gPT9mLnlQwfeaLmFbSUPliMOLPEPc=
+			Vt4p4EE4K2beLQPtxE+LAmPd2TDYl//1cnM0+Yt/HlU=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/Info.plist</key>
@@ -237,143 +201,143 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			glhqxtPKb9LKomSYNOfrKWVfpHc=
+			Sb0BVz4dLN6iszDWu10gNgNhnAI=
 			</data>
 			<key>hash2</key>
 			<data>
-			C4hyAGXeaEryVtSLMR8LTj2uuyNkhmlp4WsNmvwvXvY=
+			vixCf1F9ini7gNyHOjfKJ8tclb7ODX+XXub5DNFNv2Q=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/aRe-N2-bP9-view-wHF-IB-jke.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NAy+Q3Knfjiyv0oksSSJj7i7BaM=
+			XIU1JnhMAa98oxE+oJZAcxZdITY=
 			</data>
 			<key>hash2</key>
 			<data>
-			yxB/oTRNyA0oNmJvXV93+K5eXyMUa6XoYgxi2xAefjs=
+			tXJQ/qr1hxpHFhN2YA+GCdC/rm05RQWDV7cQmGFxFyw=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/tI6-7R-Inf-view-jOh-pu-Id4.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U/jSJ1IRB8srplHQvo6NN/jAZH0=
+			7VnYqgl9WMaXtulCYcqQB7OWMFg=
 			</data>
 			<key>hash2</key>
 			<data>
-			geJcfDuPkuYpqD0oBXrDtf95A4ednmXLppLCe5PVO50=
+			9XtDaaYpj6fJIbUjKeb9L17X1RAhEoImJBKc8lULAAc=
 			</data>
 		</dict>
 		<key>Checkout.storyboardc/tI6-7R-Inf-view-jOh-pu-Id4.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jTNcgm5ecSQG+MDjzTztTHwhxGc=
+			tKHFgERkqqkSvoRnoNnKDiuPF+E=
 			</data>
 			<key>hash2</key>
 			<data>
-			asBw6HRnGKcXfIqGEc/nU4/K79RwTg2a+3oPeNVJa9c=
+			CVrw7W7cp12T2+3eWb43aXI5eKL9z86mTIU/iubJvZQ=
 			</data>
 		</dict>
 		<key>CheckoutAccountAltCollectionCell.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2p06yopebyDfBsla84XabpA4m4c=
+			cDz/hWD3GexRroIOWbRJBRTobxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			orxD5c3kmgn1h32k5KmDW1Nl1tRJ2OHsuzCkUqoSsCc=
+			Scrn5L38FcYk7SnIjMCHs5Cpg0IZYPh8rso9WFvku48=
 			</data>
 		</dict>
 		<key>CheckoutAccountAltCollectionCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HIEPviZuJsoLhUuZsufNX7ZeQDY=
+			4S+HvREbhIZi3kihhr+DYfJ2pgA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ikOfZOB+gPWFiCbFEFRPqPqag9pdgddrcA3UUqisv2c=
+			7uS/oJUYpNH6Ni7gNRr6HRI2qqUhb7gAZzZhn7APlQg=
 			</data>
 		</dict>
 		<key>CheckoutAccountAltCollectionCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0fwDLbtzqQStwL9ZAnDXi8wYQXw=
+			N+R4qBVNXK0YJ4FzikkE9KT9c3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			uQhUCM6uui2gGE+MIRauQoTg42odl7nRieL5R/O4teE=
+			4SnvSKY1zJiwdJm0e3UQfTjYa2JLlrJIQzzhG3D57c4=
 			</data>
 		</dict>
 		<key>CheckoutAccountCollectionCell.nib/objects-11.0+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			A/vyxEqfWexZOOlGSITTAyq9suQ=
+			QVyxb5X7A7yBzuz9rDWS2EKwDkI=
 			</data>
 			<key>hash2</key>
 			<data>
-			J3iyth9ABx0JYYoeT0vWQ+lKO+WYeJ++OEtmbeTbovs=
+			iHQXLzTQeoQOJX9bI2H2nJigW923NAY66ywLl6TzCes=
 			</data>
 		</dict>
 		<key>CheckoutAccountCollectionCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nyRt+b8tqokD/dfKkk9QNhKdP/U=
+			r8qailZQjixU4cqK7vrafo6fB0Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			QHKbgbMzbFVV6dAmUfWmVD64EN/+lg09ZitYC4e4y1M=
+			zukgGsiBCbG8xGzyBPf7M3h+37OYfCC2sWuPcnflKvc=
 			</data>
 		</dict>
 		<key>CheckoutAccountCollectionCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Pr4vsAhqw4ap4xJ0jjQyRdRWo9k=
+			uMNkU/u0yMpI5lR0qpnTYxad32I=
 			</data>
 			<key>hash2</key>
 			<data>
-			WFDAQH8SIumGXgjJOAfljxYHWse58q9+yckIwoM5A+4=
+			lD/D1sVfTrvEhuPXlgWlsWP9i31+3xtg9/5bINkIEGo=
 			</data>
 		</dict>
 		<key>CheckoutLoadingCollectionCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gqgwc/5s+36PppuTJIM/Dvq683k=
+			dpKn1sjWi7H9T152vdPZsN7HctU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ctnu+TO8TBZm9qL9bAiLiwwmlHSvCciAwodwvzkwAys=
+			Od4bOebICRxpYOkkqvVS1F7qylOgiVpxI/aROi0I9Aw=
 			</data>
 		</dict>
 		<key>CheckoutLoadingCollectionCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2HpzC6prBXsdtH7JrE/YjMrtltU=
+			Ye0LP0c1Ybd0p4UVk8k/4uUrgPs=
 			</data>
 			<key>hash2</key>
 			<data>
-			T67Gqp6qH9IKPfviaOVnU8d92p3CW25TjNHMasQTO1o=
+			ccd7IvUgov1r3Xzsmvy7lZFgfA5MS15vrCLSC0aAiwg=
 			</data>
 		</dict>
 		<key>Headers/MCIDigitalCheckout-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			f1ue2xZ32e3+/0PKWTGh3QLEhrw=
+			OGMtSNIUsU/J5PKQRZ9H3gXswik=
 			</data>
 			<key>hash2</key>
 			<data>
-			wvuTCGdEcEE60DRqqiYs3mOriQpR3kwet70ioMVPKOc=
+			b293Cp6Utst+aTQE5tmM+MjCVnvvShOwsvFgz2RuQmc=
 			</data>
 		</dict>
 		<key>Headers/MCIDigitalCheckout.h</key>
@@ -391,198 +355,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fubgkSMk6NAVYn+g8qyv+WQzdDE=
+			Lc0tU854FU2VlTpqmxo20ubwGlc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Al0xINItCVb5VkaIff9RFuR0Cpp+EajhKLpZVQIOCBA=
+			W5CJHgPHtgN/HMGviGcFI5bg1CFi93nwtZEwDfU7mTY=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hA/jOfsIt7XlYbkF84HdJf0FjAI=
+			3fJOu3Z62uSmChfIiVnCLhq24SU=
 			</data>
 			<key>hash2</key>
 			<data>
-			CK8hJRjryct3pYoNWrSj426Yw2Wk1O8eI4hmuh3iFDQ=
+			QO4/sKD3A28MRnM6C3mTqdnpxcq2OdNOE9a4TzpcoJg=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1BToOW4YJsj308a5VKM5LizyLaU=
+			rHIccrF4R2P/24H2fcXF8DwRHq8=
 			</data>
 			<key>hash2</key>
 			<data>
-			EdsHH/2KK2jGsR8Rebio2Zntb5I/FBbA2Ai2z2Uddvo=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fubgkSMk6NAVYn+g8qyv+WQzdDE=
-			</data>
-			<key>hash2</key>
-			<data>
-			Al0xINItCVb5VkaIff9RFuR0Cpp+EajhKLpZVQIOCBA=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hA/jOfsIt7XlYbkF84HdJf0FjAI=
-			</data>
-			<key>hash2</key>
-			<data>
-			CK8hJRjryct3pYoNWrSj426Yw2Wk1O8eI4hmuh3iFDQ=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1BToOW4YJsj308a5VKM5LizyLaU=
-			</data>
-			<key>hash2</key>
-			<data>
-			EdsHH/2KK2jGsR8Rebio2Zntb5I/FBbA2Ai2z2Uddvo=
+			inO9v2ozg7OKkylC9NPtVLLu4AgniTyDoUyjNQTVZZI=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cHeA89yFIcafUHETcOqLYvZB+m8=
+			0r047Zqm9rCtWIeh+WSbJTU+pl0=
 			</data>
 			<key>hash2</key>
 			<data>
-			WDUWuAOe0IAPvsM/cq1fUbK5Ys39H51DmaBgwkvwk+4=
+			D3NuNcWa+xZFtWSktuZSzsSNCMhgZn5IAizJlUTXA9E=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FKzMoqyGLeNdXLp0cQUnRlea/v0=
+			ClBYWoT0DzAngr+q1hjVziDzlm8=
 			</data>
 			<key>hash2</key>
 			<data>
-			A2qXqlK/cKM7dfPSj8htDD90alvDpdLk2F4cdc20FlA=
+			S+hoEQ7JdYM2knNQSlWikCMyElY2SVU14TfKxYij3+o=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			E99Vhi53ZEig3uq8iO6OAXLciFs=
+			W1RsrqVasqdBC1WvDVzqb+81Qi8=
 			</data>
 			<key>hash2</key>
 			<data>
-			cRiU86WfAkmjc4O3GXlNck1kCb1p4F64yKX4gcnZ7/o=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			cHeA89yFIcafUHETcOqLYvZB+m8=
-			</data>
-			<key>hash2</key>
-			<data>
-			WDUWuAOe0IAPvsM/cq1fUbK5Ys39H51DmaBgwkvwk+4=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FKzMoqyGLeNdXLp0cQUnRlea/v0=
-			</data>
-			<key>hash2</key>
-			<data>
-			A2qXqlK/cKM7dfPSj8htDD90alvDpdLk2F4cdc20FlA=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/i386.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			E99Vhi53ZEig3uq8iO6OAXLciFs=
-			</data>
-			<key>hash2</key>
-			<data>
-			cRiU86WfAkmjc4O3GXlNck1kCb1p4F64yKX4gcnZ7/o=
+			eU40aBQZ9IDy4okChJ2N0uwhPA+LdW+y52iTxqvcREc=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			i7s7gHdx7VfitFImN43L0C/qKsw=
+			f02iU2VWPkD6yuZhL3U9PrawllY=
 			</data>
 			<key>hash2</key>
 			<data>
-			C1RqVhbVMy/PQAlFxCnyv3z6dq+KdbZiq2xNGjUcH0A=
+			uidPidQkm4hcPjMRPQQhA0qBYX5MdeZYhpgCjttwBOE=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			e9Gf2leU7C8kR4hdC3yIxn1vROI=
+			GOSg+MhVIgUnv0HfjKDK6Y/KWzo=
 			</data>
 			<key>hash2</key>
 			<data>
-			WE2iRk9iosBr7kNbMVBIQcssMhT0wdxISraAo0veow4=
+			h2eG8N3hoFqqEJEfzRAh5qWURfHi5S5enE1XeqhAhTY=
 			</data>
 		</dict>
 		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CMpZEkdNSE26Ga2KQOlx78f5osU=
+			XNtYJNWirnfmt7IwQIF8EN+K5O8=
 			</data>
 			<key>hash2</key>
 			<data>
-			PjXtglcWC1ycMFceOCRz5VYF0418h+NqRYSGguIqkMI=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			i7s7gHdx7VfitFImN43L0C/qKsw=
-			</data>
-			<key>hash2</key>
-			<data>
-			C1RqVhbVMy/PQAlFxCnyv3z6dq+KdbZiq2xNGjUcH0A=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			e9Gf2leU7C8kR4hdC3yIxn1vROI=
-			</data>
-			<key>hash2</key>
-			<data>
-			WE2iRk9iosBr7kNbMVBIQcssMhT0wdxISraAo0veow4=
-			</data>
-		</dict>
-		<key>Modules/MCIDigitalCheckout.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			CMpZEkdNSE26Ga2KQOlx78f5osU=
-			</data>
-			<key>hash2</key>
-			<data>
-			PjXtglcWC1ycMFceOCRz5VYF0418h+NqRYSGguIqkMI=
+			iT24K7ziPGjW7XxpAdbfph1+Ryhlkhmk0GnOqvPTG5k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

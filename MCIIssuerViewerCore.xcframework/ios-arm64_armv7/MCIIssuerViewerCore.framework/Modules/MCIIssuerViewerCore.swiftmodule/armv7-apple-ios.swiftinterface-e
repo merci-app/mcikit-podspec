@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIIssuerViewerCore
 import MCIFoundation
 @_exported import MCIIssuerViewerCore
@@ -7,6 +7,7 @@ import MCIKit
 import MCILogger
 import Swift
 import UIKit
+import _Concurrency
 public typealias IssuerViewableVC = UIKit.UIViewController & IssuerViewable
 public protocol IssuerViewable : AnyObject {
   static func allocate() -> IssuerViewable

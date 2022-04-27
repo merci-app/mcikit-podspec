@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIKit
 import AVFoundation
 import CoreGraphics
@@ -14,81 +14,83 @@ import StoreKit
 import Swift
 import UIKit
 import WebKit
+import _Concurrency
 public typealias ValueChanged<T> = (T) -> Swift.Void
 public protocol MCITextFieldDelegate : UIKit.UITextFieldDelegate {
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MCITextField : UIKit.UIView, Identifiable {
-  @objc @IBInspectable public var title: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class MCITextField : UIKit.UIView, Identifiable {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var title: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var placeholder: Swift.String? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var placeholder: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var text: Swift.String? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var text: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var titleColor: UIKit.UIColor? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var titleColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var underlineColor: UIKit.UIColor? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var underlineColor: UIKit.UIColor? {
     @objc get
     @objc set
   }
-  @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public var textField: UIKit.UITextField {
+  @_Concurrency.MainActor(unsafe) public var textField: UIKit.UITextField {
     get
   }
-  public var isErrored: Swift.Bool {
-    get
-    set
-  }
-  public var isValid: Swift.Bool
-  weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+  @_Concurrency.MainActor(unsafe) public var isErrored: Swift.Bool {
     get
     set
   }
-  public var onChanged: ValueChanged<MCITextField>?
-  public var onEditingComplete: ValueChanged<MCITextField>?
+  @_Concurrency.MainActor(unsafe) public var isValid: Swift.Bool
+  @_Concurrency.MainActor(unsafe) weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var onChanged: ValueChanged<MCITextField>?
+  @_Concurrency.MainActor(unsafe) public var onEditingComplete: ValueChanged<MCITextField>?
   @objc override dynamic public func awakeFromNib()
   @discardableResult
-  @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
-  public func setNormalState()
-  public func setTypingState()
-  public func setErrorState()
-  public func setErrorMessage(_ errorMessage: Swift.String?)
-  public func setErrorMessageWithTitle(_ errorMessage: Swift.String, title: Swift.String)
-  public func setSubtleMessage(_ message: Swift.String?)
-  public func setTitle(_ title: Swift.String)
-  public func resetState()
-  public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func setNormalState()
+  @_Concurrency.MainActor(unsafe) public func setTypingState()
+  @_Concurrency.MainActor(unsafe) public func setErrorState()
+  @_Concurrency.MainActor(unsafe) public func setErrorMessage(_ errorMessage: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func setErrorMessageWithTitle(_ errorMessage: Swift.String, title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func setSubtleMessage(_ message: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func setTitle(_ title: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func resetState()
+  @_Concurrency.MainActor(unsafe) public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
   @objc deinit
 }
 public protocol MCICardNumberViewDelegate : AnyObject {
   func cardNumberView(_ cardNumberView: MCICardNumberView, textDidChange text: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCICardNumberView : UIKit.UIView, Identifiable {
-  final public var text: Swift.String {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class MCICardNumberView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var text: Swift.String {
     get
   }
-  weak final public var delegate: MCICardNumberViewDelegate?
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: MCICardNumberViewDelegate?
   @discardableResult
-  @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public func becomeFirstResponder() -> Swift.Bool
   @objc deinit
 }
 extension MCICardNumberView : UIKit.UITextFieldDelegate {
-  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
-  @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
-  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
 }
 public protocol MCIStyle : AnyObject {
   var base: MCIBaseTheme { get }
   var wallet: MCIWalletTheme { get }
+  var pix: MCIPixTheme { get }
   var marketPlace: MCIMarketPlaceTheme { get }
   var checkout: MCICheckoutTheme { get }
 }
@@ -122,6 +124,11 @@ public protocol MCIWalletTheme : AnyObject {
   var accountsIndicatorColor: UIKit.UIColor? { get }
   var aliasBankTextColor: UIKit.UIColor? { get }
 }
+public protocol MCIPixTheme : AnyObject {
+  var pixNavBarTintColor: UIKit.UIColor { get }
+  var pixNavBarActionColor: UIKit.UIColor { get }
+  var pixStatusBarStyle: UIKit.UIStatusBarStyle { get }
+}
 public protocol MCIMarketPlaceTheme : AnyObject {
   var marketNavBarTintColor: UIKit.UIColor { get }
   var marketNavBarTextColor: UIKit.UIColor { get }
@@ -142,36 +149,36 @@ public protocol MCIMarketPlaceTheme : AnyObject {
 public protocol MCICheckoutTheme : AnyObject {
   var payTintColor: UIKit.UIColor { get }
 }
-extension UIWindow {
-  public func replaceRootViewControllerWith(_ replacementController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
+extension UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) public func replaceRootViewControllerWith(_ replacementController: UIKit.UIViewController, animated: Swift.Bool, completion: (() -> Swift.Void)?)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIPassVC : MCIViewController, MCIChildViewController, Identifiable, Dismissable {
-  final public class func allocate() -> MCIPassVC
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  final public func configure(authentication: ((MCIPassVC) -> Swift.Void)?, forgot: ((MCIPassVC) -> Swift.Void)?, lockedPassword: ((MCIPassVC) -> Swift.Void)?, dismiss: ((MCIPassVC) -> Swift.Void)? = nil)
-  @objc override final public func dismissAnimatedWithNotification()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIPassVC : MCIViewController, MCIChildViewController, Identifiable, Dismissable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIPassVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func configure(authentication: ((MCIPassVC) -> Swift.Void)?, forgot: ((MCIPassVC) -> Swift.Void)?, lockedPassword: ((MCIPassVC) -> Swift.Void)?, dismiss: ((MCIPassVC) -> Swift.Void)? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public func dismissAnimatedWithNotification()
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIPassVC : UIKit.UITextFieldDelegate {
-  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
-  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
 }
 extension MCIPassVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-@objc @_inheritsConvenienceInitializers final public class BadTimestampVC : MCIViewController, Identifiable {
-  final public class func allocate() -> BadTimestampVC
-  @objc override final public func viewDidLoad()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class BadTimestampVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> BadTimestampVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension FloatingPoint {
+extension Swift.FloatingPoint {
   public var degreesToRadians: Self {
     get
   }
@@ -179,14 +186,14 @@ extension FloatingPoint {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers final public class OfflineErrorVC : MCIViewController, Identifiable {
-  final public class func allocate() -> OfflineErrorVC
-  @objc override final public func viewDidLoad()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class OfflineErrorVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> OfflineErrorVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension UIImage {
+extension UIKit.UIImage {
   public func resized(scale: CoreGraphics.CGFloat, compressionQuality: CoreGraphics.CGFloat, size: CoreGraphics.CGSize) -> UIKit.UIImage?
   public func cropped(rect: CoreGraphics.CGRect, scale: CoreGraphics.CGFloat) -> UIKit.UIImage?
   public func jpegImage(maxSize: Swift.Int = 2000000, minSize: Swift.Int = 1000000, times: Swift.Int = 5) -> Foundation.Data?
@@ -198,17 +205,17 @@ public enum MCIActionComponent {
   case second(image: UIKit.UIImage?, text: Swift.String?, description: Swift.String?, completion: MCIActionHandler?)
   case third(image: UIKit.UIImage?, text: Swift.String?, description: Swift.String?, completion: MCIActionHandler?)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIActionVC : MCIViewController, Identifiable, Dismissable {
-  final public class func allocate() -> MCIActionVC
-  @objc override final public func viewDidLoad()
-  final public func configure(with components: [MCIActionComponent])
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIActionVC : MCIViewController, Identifiable, Dismissable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIActionVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) final public func configure(with components: [MCIActionComponent])
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIActionVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
 public protocol MCISupportable : AnyObject {
   func support(reason: Swift.String?) -> UIKit.UIViewController?
@@ -220,57 +227,57 @@ public protocol MCISupportableFlow : AnyObject {
   public func support(reason: Swift.String?) -> UIKit.UIViewController?
   @objc deinit
 }
-extension CAShapeLayer {
+extension QuartzCore.CAShapeLayer {
   public static func circleShape(radius: CoreGraphics.CGFloat = 100, lineWidth: CoreGraphics.CGFloat = 20, strokeColor: UIKit.UIColor, fillColor: UIKit.UIColor) -> QuartzCore.CAShapeLayer
 }
 public protocol MCINavigationStylable : AnyObject {
   var requireStyle: MCINavigationStyle { get }
 }
-@objc @_inheritsConvenienceInitializers open class MCINavigationController : UIKit.UINavigationController, MCIChildViewController, Identifiable {
-  public var statusBarStyle: UIKit.UIStatusBarStyle {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MCINavigationController : UIKit.UINavigationController, MCIChildViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) public var statusBarStyle: UIKit.UIStatusBarStyle {
     get
     set
   }
-  @objc override dynamic open func viewDidLoad()
-  @objc override dynamic open func setViewControllers(_ viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
-  @objc override dynamic open func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
-  @objc override dynamic open func popViewController(animated: Swift.Bool) -> UIKit.UIViewController?
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func setViewControllers(_ viewControllers: [UIKit.UIViewController], animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func popViewController(animated: Swift.Bool) -> UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public func makeClearAppearance()
-  public func makeSolidAppearance()
-  public func makeDarkAppearance()
-  public func makeCustomAppearance(style: MCINavigationStyle)
-  public func apply(_ data: MCINavigationStyleData)
+  @_Concurrency.MainActor(unsafe) public func makeClearAppearance()
+  @_Concurrency.MainActor(unsafe) public func makeSolidAppearance()
+  @_Concurrency.MainActor(unsafe) public func makeDarkAppearance()
+  @_Concurrency.MainActor(unsafe) public func makeCustomAppearance(style: MCINavigationStyle)
+  @_Concurrency.MainActor(unsafe) public func apply(_ data: MCINavigationStyleData)
   @objc deinit
   @available(iOS 5.0, *)
-  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
-  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
 }
 extension MCINavigationController : UIKit.UIGestureRecognizerDelegate {
-  @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
 }
 extension MCINavigationController {
-  public class func encapsulate(_ viewController: UIKit.UIViewController) -> MCINavigationController
-  public class func push(_ viewController: UIKit.UIViewController) -> MCINavigationController
+  @_Concurrency.MainActor(unsafe) public class func encapsulate(_ viewController: UIKit.UIViewController) -> MCINavigationController
+  @_Concurrency.MainActor(unsafe) public class func push(_ viewController: UIKit.UIViewController) -> MCINavigationController
 }
-@objc @_inheritsConvenienceInitializers final public class MCIActionView : UIKit.UIView, Identifiable {
-  final public var color: UIKit.UIColor? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIActionView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor? {
     get
     set
   }
-  @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension NSNotification.Name {
+extension Foundation.NSNotification.Name {
   public struct System {
     public static let ImageCacheReloaded: Foundation.Notification.Name
     public static let AccountCreated: Foundation.Notification.Name
@@ -396,42 +403,42 @@ extension NSNotification.Name {
     public static let Completed: Foundation.Notification.Name
   }
 }
-@objc @_inheritsConvenienceInitializers final public class MCIPrimaryView : UIKit.UIView, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIPrimaryView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIPrimaryLabel : UIKit.UILabel, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIPrimaryLabel : UIKit.UILabel, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCISecondaryLabel : UIKit.UILabel, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCISecondaryLabel : UIKit.UILabel, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIAppNameLabel : UIKit.UILabel, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIAppNameLabel : UIKit.UILabel, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIRefreshControl : UIKit.UIRefreshControl, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIRefreshControl : UIKit.UIRefreshControl, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
   @objc override dynamic public init()
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCISimpleTextField : UIKit.UITextField, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCISimpleTextField : UIKit.UITextField, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 public protocol MCIToogleButton : AnyObject {
   var activeColor: UIKit.UIColor { get set }
@@ -439,114 +446,110 @@ public protocol MCIToogleButton : AnyObject {
   func enable(_ animated: Swift.Bool)
   func disable(_ animated: Swift.Bool)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIRaisedButton : UIKit.UIButton, MCIToogleButton, Identifiable {
-  final public var activeColor: UIKit.UIColor
-  final public var inactiveColor: UIKit.UIColor
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIRaisedButton : UIKit.UIButton, MCIToogleButton, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var activeColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) final public var inactiveColor: UIKit.UIColor
   @objc override final public func awakeFromNib()
-  final public func enable(_ animated: Swift.Bool)
-  final public func disable(_ animated: Swift.Bool)
-  final public func setState(enabled: Swift.Bool, animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func enable(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func disable(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func setState(enabled: Swift.Bool, animated: Swift.Bool)
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIFlatButton : UIKit.UIButton, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIFlatButton : UIKit.UIButton, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIOutlineButton : UIKit.UIButton, MCIToogleButton, Identifiable {
-  final public var activeColor: UIKit.UIColor
-  final public var inactiveColor: UIKit.UIColor
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIOutlineButton : UIKit.UIButton, MCIToogleButton, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var activeColor: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) final public var inactiveColor: UIKit.UIColor
   @objc override final public func awakeFromNib()
-  final public func enable(_ animated: Swift.Bool)
-  final public func disable(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func enable(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func disable(_ animated: Swift.Bool)
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIImageTintedView : UIKit.UIImageView, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIImageTintedView : UIKit.UIImageView, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(image: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
   @available(iOS 3.0, *)
-  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIL10nLabel : UIKit.UILabel, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIL10nLabel : UIKit.UILabel, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIErrorTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIErrorTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension UICollectionView {
-  public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Reusable
-  public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Nibable, T : Reusable
-  public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell, T : Reusable
-  public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Reusable
-  public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Nibable, T : Reusable
-  public func dequeueReusableSupplementaryView<T>(ofKind elementKind: Swift.String, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionReusableView, T : Reusable
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UICollectionViewCell, T : Nibable, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionViewCell, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type, forSupplementaryViewOfKind kind: Swift.String) where T : UIKit.UICollectionReusableView, T : Nibable, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableSupplementaryView<T>(ofKind elementKind: Swift.String, for indexPath: Foundation.IndexPath) -> T where T : UIKit.UICollectionReusableView, T : Reusable
 }
-@objc @_inheritsConvenienceInitializers public class MCILoadingVC : MCIViewController {
-  public class func allocate() -> MCILoadingVC
-  @objc override dynamic public func viewDidLoad()
-  @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class MCILoadingVC : MCIViewController {
+  @_Concurrency.MainActor(unsafe) public class func allocate() -> MCILoadingVC
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_hasMissingDesignatedInitializers final public class MCILoadingView : UIKit.UIImageView, Identifiable {
-  final public func animateStart()
-  final public func animateStop()
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class MCILoadingView : UIKit.UIImageView, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public func animateStart()
+  @_Concurrency.MainActor(unsafe) final public func animateStop()
   @objc deinit
-  @objc override dynamic public init(image: UIKit.UIImage?)
-  @available(iOS 3.0, *)
-  @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
 }
-@objc @_inheritsConvenienceInitializers final public class MCILoadingTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCILoadingTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
   @objc override final public func awakeFromNib()
-  final public func animateStart()
-  final public func animateStop()
+  @_Concurrency.MainActor(unsafe) final public func animateStart()
+  @_Concurrency.MainActor(unsafe) final public func animateStop()
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class BlockedApplicationVC : MCIViewController, Identifiable {
-  final public class func allocate() -> BlockedApplicationVC
-  @objc override final public func viewDidLoad()
-  @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class BlockedApplicationVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> BlockedApplicationVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 @objc public class MCITimer : ObjectiveC.NSObject, Identifiable {
   public init(tickInterval: Swift.Int = 1, repeats: Swift.Bool = true, timerDuration: Swift.Int = 0, _ tickBlock: @escaping (Swift.Int) -> ())
   public func startTimer(tickInterval: Swift.Int = 1, repeats: Swift.Bool = true, timerDuration: Swift.Int = 0, _ tickBlock: @escaping (Swift.Int) -> ())
   public func stopTimer()
   @objc deinit
-  @objc override dynamic public init()
 }
-@objc @_inheritsConvenienceInitializers final public class MCISectionTitleTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCISectionTitleTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
   @objc override final public func awakeFromNib()
-  final public func configure(with label: Swift.String?)
+  @_Concurrency.MainActor(unsafe) final public func configure(with label: Swift.String?)
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension UIButton {
-  public func setBackgroundColor(_ color: UIKit.UIColor, for state: UIKit.UIControl.State)
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func setBackgroundColor(_ color: UIKit.UIColor, for state: UIKit.UIControl.State)
 }
 @objc @_inheritsConvenienceInitializers final public class MCISafariActivity : UIKit.UIActivity, Identifiable {
   @objc override final public var activityType: UIKit.UIActivity.ActivityType? {
@@ -584,28 +587,28 @@ public enum UnrecoveryError : Swift.Int {
     get
   }
 }
-@objc @_inheritsConvenienceInitializers final public class MCIAlertVC : MCIViewController, Identifiable, Dismissable, MCIChildViewController {
-  final public var dismissHandler: MCIHandler?
-  final public var alertTransition: MCIAlertTransition {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIAlertVC : MCIViewController, Identifiable, Dismissable, MCIChildViewController {
+  @_Concurrency.MainActor(unsafe) final public var dismissHandler: MCIHandler?
+  @_Concurrency.MainActor(unsafe) final public var alertTransition: MCIAlertTransition {
     get
     set
   }
-  final public class func allocate() -> MCIAlertVC
-  final public class func alert(title: Swift.String, subtitle: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
-  final public class func alert(title: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
-  final public class func error(_ error: Foundation.NSError, dismissable: Swift.Bool = true, talkToMerci: MCIHandler? = nil, handler: MCIHandler?) -> MCIAlertVC
-  @objc override final public func viewDidLoad()
-  @objc override final public func dismissAnimatedWithNotification()
-  final public func configure(with components: [MCIAlertComponent], actions: [MCIAlertAction], dismissable: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIAlertVC
+  @_Concurrency.MainActor(unsafe) final public class func alert(title: Swift.String, subtitle: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
+  @_Concurrency.MainActor(unsafe) final public class func alert(title: Swift.String, description: Swift.String, handler: MCIHandler?) -> MCIAlertVC
+  @_Concurrency.MainActor(unsafe) final public class func error(_ error: Foundation.NSError, dismissable: Swift.Bool = true, talkToMerci: MCIHandler? = nil, handler: MCIHandler?) -> MCIAlertVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func dismissAnimatedWithNotification()
+  @_Concurrency.MainActor(unsafe) final public func configure(with components: [MCIAlertComponent], actions: [MCIAlertAction], dismissable: Swift.Bool = true)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIAlertVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-extension CIImage {
+extension CoreImage.CIImage {
   public var transparent: CoreImage.CIImage? {
     get
   }
@@ -625,7 +628,7 @@ extension CIImage {
   final public var imageTermsError: UIKit.UIImage?
   @objc deinit
 }
-extension URL {
+extension Foundation.URL {
   public static func maps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
   public static func googleMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
   public static func waze(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
@@ -641,10 +644,10 @@ extension Notifiable where Self : ObjectiveC.NSObject {
   public func register(_ observers: [Self.RegisterType], in notificationCenter: Foundation.NotificationCenter = .default)
   public func unregister(_ observers: [Self.UnregisterType], in notificationCenter: Foundation.NotificationCenter = .default)
 }
-extension UIDevice {
-  public static let modelName: Swift.String
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public static let modelName: Swift.String
 }
-extension Bundle {
+extension Foundation.Bundle {
   public static var mciAppName: Swift.String?
   public func image(named: Swift.String) -> UIKit.UIImage?
   public func dataAsset(named: Swift.String) -> UIKit.NSDataAsset?
@@ -656,7 +659,7 @@ extension Bundle {
   }
   public func loadJSONArray<T>(named: Swift.String) -> T where T : Swift.Decodable, T : Swift.Encodable
 }
-extension NSDataAsset {
+extension UIKit.NSDataAsset {
   public func loadJSONArray<T>() -> T where T : Swift.Decodable, T : Swift.Encodable
 }
 public protocol MCIChildViewController : AnyObject {
@@ -667,16 +670,16 @@ extension MCIChildViewController where Self : UIKit.UIViewController {
 }
 public protocol AuthController : AnyObject {
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCISegmentedControl : UIKit.UIControl, Identifiable {
-  final public var titles: [Swift.String] {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class MCISegmentedControl : UIKit.UIControl, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var titles: [Swift.String] {
     get
     set
   }
-  final public var selectedSegmentIndex: Swift.Int {
+  @_Concurrency.MainActor(unsafe) final public var selectedSegmentIndex: Swift.Int {
     get
     set
   }
-  final public func perfomSegmentSelection(_ index: Swift.Int)
+  @_Concurrency.MainActor(unsafe) final public func perfomSegmentSelection(_ index: Swift.Int)
   @objc deinit
 }
 public protocol Nibable : AnyObject {
@@ -691,51 +694,51 @@ public typealias NibReusable = Nibable & Reusable
 extension Nibable {
   public static func loadFromNib() -> Self
 }
-@objc @_inheritsConvenienceInitializers final public class MCIReceiptView : UIKit.UIView, Identifiable {
-  @objc override final public func layoutSubviews()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIReceiptView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 public enum MCIWaitState {
   case loading(title: Swift.String = "Aguarde", body: Swift.String = "Estamos verificando seu pedido")
   case success(title: Swift.String = "Sucesso", body: Swift.String = "Seu pedido foi concluído")
 }
-@objc @_inheritsConvenienceInitializers final public class MCIWaitVC : MCIViewController, MCIChildViewController, Identifiable {
-  final public class func allocate() -> MCIWaitVC
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  final public func updateState(_ state: MCIWaitState)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIWaitVC : MCIViewController, MCIChildViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIWaitVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func updateState(_ state: MCIWaitState)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIWaitVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-@objc @_inheritsConvenienceInitializers final public class MCIWebView : MCIViewController, Identifiable {
-  final public var url: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIWebView : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var url: Swift.String? {
     get
   }
-  final public var hideCloseButton: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) final public var hideCloseButton: Swift.Bool {
     get
   }
-  final public class func allocate(title: Swift.String?, url: Swift.String?, hideCloseButton: Swift.Bool = false) -> MCIWebView
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public class func allocate(title: Swift.String?, url: Swift.String?, hideCloseButton: Swift.Bool = false) -> MCIWebView
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIWebView : WebKit.WKNavigationDelegate {
-  @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
-  @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
-  @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
-  @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc final public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationResponse: WebKit.WKNavigationResponse, decisionHandler: @escaping (WebKit.WKNavigationResponsePolicy) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) @objc final public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc final public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIAlertTransition : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIAlertTransition : ObjectiveC.NSObject, UIKit.UIViewControllerAnimatedTransitioning {
   public enum AlertTransition {
     case present
     case dismiss
@@ -754,63 +757,63 @@ extension MCIWebView : WebKit.WKNavigationDelegate {
       get
     }
   }
-  final public var transitionMode: MCIAlertTransition.AlertTransition
-  final public var shadowMode: MCIAlertTransition.ShadowMode
-  @objc final public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
-  @objc final public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @_Concurrency.MainActor(unsafe) final public var transitionMode: MCIAlertTransition.AlertTransition
+  @_Concurrency.MainActor(unsafe) final public var shadowMode: MCIAlertTransition.ShadowMode
+  @_Concurrency.MainActor(unsafe) @objc final public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc final public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
   @objc deinit
   @objc override dynamic public init()
 }
-@objc @_inheritsConvenienceInitializers final public class MCINonDismissableView : UIKit.UIView, Identifiable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCINonDismissableView : UIKit.UIView, Identifiable {
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCINonDismissableView : UIKit.UIGestureRecognizerDelegate {
-  @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldReceive touch: UIKit.UITouch) -> Swift.Bool
 }
 public protocol MCITextBoxDelegate : AnyObject {
   func textBox(_ textBox: MCITextBox, textDidChange text: Swift.String)
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class MCITextBox : UIKit.UIView, Identifiable {
-  final public var text: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class MCITextBox : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var text: Swift.String? {
     get
     set
   }
-  @objc @IBInspectable final public var fields: Swift.Int {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var fields: Swift.Int {
     @objc get
     @objc set
   }
-  final public var keyboardType: UIKit.UIKeyboardType {
+  @_Concurrency.MainActor(unsafe) final public var keyboardType: UIKit.UIKeyboardType {
     get
     set
   }
-  weak final public var delegate: MCITextBoxDelegate?
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: MCITextBoxDelegate?
   @discardableResult
-  @objc override final public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override final public func becomeFirstResponder() -> Swift.Bool
   @objc deinit
 }
 extension MCITextBox : UIKit.UITextFieldDelegate {
-  @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
-  @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
-  @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textFieldDidEndEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc final public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
 }
-@objc @_inheritsConvenienceInitializers final public class MCIExpandedTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIExpandedTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
   @objc override final public func awakeFromNib()
-  @objc override final public func prepareForReuse()
-  final public func configure(with description: Swift.String?, isMore: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) final public func configure(with description: Swift.String?, isMore: Swift.Bool)
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIEmptyVC : MCIViewController, Identifiable {
-  final public class func allocate() -> MCIEmptyVC
-  @objc override final public func viewDidLoad()
-  final public func configure(title: Swift.String?, subtitle: Swift.String?, message: Swift.String?, verticalConstant: CoreGraphics.CGFloat = -24)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIEmptyVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIEmptyVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) final public func configure(title: Swift.String?, subtitle: Swift.String?, message: Swift.String?, verticalConstant: CoreGraphics.CGFloat = -24)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 public enum CategoryViewType : Swift.String {
   case empty
@@ -842,38 +845,38 @@ extension MCIViewControllerProtocol where Self : UIKit.UIViewController {
   public func pushSupportVC(reason: Swift.String?, navigation: UIKit.UINavigationController)
   public func presentForgotPasswordVC()
 }
-extension UIBezierPath {
+extension UIKit.UIBezierPath {
   public static func circlePath(with radius: CoreGraphics.CGFloat = 100) -> UIKit.UIBezierPath
 }
-extension UIView {
-  @objc @IBInspectable dynamic public var mciCornerRadius: CoreGraphics.CGFloat {
+extension UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var mciCornerRadius: CoreGraphics.CGFloat {
     @objc get
     @objc set
   }
-  @objc @IBInspectable dynamic public var mciBorderColor: UIKit.UIColor {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var mciBorderColor: UIKit.UIColor {
     @objc get
     @objc set
   }
-  @objc @IBInspectable dynamic public var mciBorderWidth: CoreGraphics.CGFloat {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var mciBorderWidth: CoreGraphics.CGFloat {
     @objc get
     @objc set
   }
-  public func addShadow()
-  public func addShadowWith(opacity: Swift.Float)
-  public func snapshot() -> UIKit.UIImage?
-  public func shake(_ completion: (() -> Swift.Void)?)
-  public func convertProprotionsFrom(zeplinScreenWidth: CoreGraphics.CGFloat, viewSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
-  public func activateFinishEditing()
-  public func roundCorners(_ corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
-  public func isVisibleInWindow() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func addShadow()
+  @_Concurrency.MainActor(unsafe) public func addShadowWith(opacity: Swift.Float)
+  @_Concurrency.MainActor(unsafe) public func snapshot() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func shake(_ completion: (() -> Swift.Void)?)
+  @_Concurrency.MainActor(unsafe) public func convertProprotionsFrom(zeplinScreenWidth: CoreGraphics.CGFloat, viewSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) public func activateFinishEditing()
+  @_Concurrency.MainActor(unsafe) public func roundCorners(_ corners: UIKit.UIRectCorner, radius: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func isVisibleInWindow() -> Swift.Bool
 }
-extension CGRect {
+extension CoreGraphics.CGRect {
   public func center() -> CoreGraphics.CGPoint
 }
-extension UIApplication {
-  public class func isBranchAvailable() -> Swift.Bool
-  public func topViewController() -> UIKit.UIViewController?
-  public func clearLaunchScreenCache() throws
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public class func isBranchAvailable() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func topViewController() -> UIKit.UIViewController?
+  @_Concurrency.MainActor(unsafe) public func clearLaunchScreenCache() throws
 }
 public protocol MCIAccountable : AnyObject {
   func accountCreation()
@@ -899,40 +902,40 @@ public protocol MCIFlowViewControllerProtocol : AnyObject {
 extension MCIFlowViewControllerProtocol where Self : UIKit.UIViewController {
   public func viewLayoutSubviews()
 }
-@objc @_inheritsConvenienceInitializers final public class MCIInputOtherValueTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIInputOtherValueTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
   @objc override final public func awakeFromNib()
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers public class MCIDrawView : UIKit.UIView {
-  @objc @IBInspectable public var drawColor: UIKit.UIColor
-  @objc @IBInspectable public var lineWidth: CoreGraphics.CGFloat
-  @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
-  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
-  public func clear()
-  public func hasDraw() -> Swift.Bool
-  public func renderToImage() -> UIKit.UIImage?
-  public func renderFitToImage() -> UIKit.UIImage?
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class MCIDrawView : UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var drawColor: UIKit.UIColor
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var lineWidth: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) public func clear()
+  @_Concurrency.MainActor(unsafe) public func hasDraw() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func renderToImage() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func renderFitToImage() -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension UITableView {
-  public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Reusable
-  public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Nibable, T : Reusable
-  public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell, T : Reusable
-  public func cellForRow<T>(at indexPath: Foundation.IndexPath) -> T? where T : UIKit.UITableViewCell, T : Reusable
-  public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Reusable
-  public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Nibable, T : Reusable
-  public func dequeueReusableHeaderFooterView<T>() -> T where T : UIKit.UITableViewHeaderFooterView, T : Reusable
-  public func insertBackgroundView(withColor color: UIKit.UIColor)
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewCell, T : Nibable, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(for indexPath: Foundation.IndexPath) -> T where T : UIKit.UITableViewCell, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func cellForRow<T>(at indexPath: Foundation.IndexPath) -> T? where T : UIKit.UITableViewCell, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func register<T>(_: T.Type) where T : UIKit.UITableViewHeaderFooterView, T : Nibable, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableHeaderFooterView<T>() -> T where T : UIKit.UITableViewHeaderFooterView, T : Reusable
+  @_Concurrency.MainActor(unsafe) public func insertBackgroundView(withColor color: UIKit.UIColor)
 }
-extension UIColor {
+extension UIKit.UIColor {
   public static var style: MCIStyle
   @nonobjc public class var mciCoral0: UIKit.UIColor {
     get
@@ -941,7 +944,7 @@ extension UIColor {
     get
   }
 }
-extension UIColor {
+extension UIKit.UIColor {
   @nonobjc public class var mciYellow: UIKit.UIColor {
     get
   }
@@ -1054,14 +1057,25 @@ extension UIColor {
     get
   }
 }
-extension UIColor {
+extension UIKit.UIColor {
   public func image(with width: CoreGraphics.CGFloat, _ height: CoreGraphics.CGFloat) -> UIKit.UIImage
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIHighlightView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 @_hasMissingDesignatedInitializers final public class MerciStyle : MCIStyle, Identifiable {
   final public var base: MCIBaseTheme {
     get
   }
   final public var wallet: MCIWalletTheme {
+    get
+  }
+  final public var pix: MCIPixTheme {
     get
   }
   final public var marketPlace: MCIMarketPlaceTheme {
@@ -1154,6 +1168,17 @@ extension MerciStyle : MCIWalletTheme {
     get
   }
 }
+extension MerciStyle : MCIPixTheme {
+  final public var pixNavBarTintColor: UIKit.UIColor {
+    get
+  }
+  final public var pixNavBarActionColor: UIKit.UIColor {
+    get
+  }
+  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
+    get
+  }
+}
 extension MerciStyle : MCIMarketPlaceTheme {
   final public var marketNavBarTintColor: UIKit.UIColor {
     get
@@ -1206,67 +1231,67 @@ extension MerciStyle : MCICheckoutTheme {
     get
   }
 }
-extension UIAlertController {
-  convenience public init(title: Swift.String, message: Swift.String)
-  convenience public init(title: Swift.String, message: Swift.String, completion: @escaping () -> Swift.Void = {})
-  convenience public init(error: Foundation.NSError)
-  convenience public init(error: Foundation.NSError, completion: @escaping () -> Swift.Void = {})
+extension UIKit.UIAlertController {
+  @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String, message: Swift.String)
+  @_Concurrency.MainActor(unsafe) convenience public init(title: Swift.String, message: Swift.String, completion: @escaping () -> Swift.Void = {})
+  @_Concurrency.MainActor(unsafe) convenience public init(error: Foundation.NSError)
+  @_Concurrency.MainActor(unsafe) convenience public init(error: Foundation.NSError, completion: @escaping () -> Swift.Void = {})
 }
-extension String {
+extension Swift.String {
   public func nsRange(of string: Swift.String) -> Foundation.NSRange?
 }
-@objc @_inheritsConvenienceInitializers final public class MCIPlaceTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIPlaceTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
   @objc override final public func awakeFromNib()
-  @objc override final public func prepareForReuse()
-  final public func configure(with merchantName: Swift.String?, address: Swift.String?, distance: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc override final public func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) final public func configure(with merchantName: Swift.String?, address: Swift.String?, distance: Swift.String?)
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIPlaceTableCell {
-  final public func configure(with placedMerchant: MCIPlacedMerchant?)
+  @_Concurrency.MainActor(unsafe) final public func configure(with placedMerchant: MCIPlacedMerchant?)
 }
-@objc @_inheritsConvenienceInitializers final public class MCICopyButton : UIKit.UIButton, Identifiable {
-  @objc override final public func didMoveToWindow()
-  final public func performCopy(_ onCompletion: @escaping () -> Swift.Void = {})
-  final public func updateColor(_ color: UIKit.UIColor)
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCICopyButton : UIKit.UIButton, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) final public func performCopy(_ onCompletion: @escaping () -> Swift.Void = {})
+  @_Concurrency.MainActor(unsafe) final public func updateColor(_ color: UIKit.UIColor)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension NSAttributedString {
+extension Foundation.NSAttributedString {
   convenience public init?(html: Swift.String?)
 }
 public protocol MCIImagePreviewDelegate : AnyObject {
   func imagePreviewDidChange(_ viewController: MCIImagePreviewVC)
   func imagePreviewDidRemove(_ viewController: MCIImagePreviewVC)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIImagePreviewVC : MCIViewController, Identifiable {
-  final public var imageView: UIKit.UIImageView {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIImagePreviewVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var imageView: UIKit.UIImageView {
     get
     set
   }
-  weak final public var delegate: MCIImagePreviewDelegate?
-  final public class func allocate(with image: UIKit.UIImage?) -> MCIImagePreviewVC
-  @objc override final public func viewDidLoad()
-  @objc override final public var previewActionItems: [UIKit.UIPreviewActionItem] {
-    @objc get
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: MCIImagePreviewDelegate?
+  @_Concurrency.MainActor(unsafe) final public class func allocate(with image: UIKit.UIImage?) -> MCIImagePreviewVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public var previewActionItems: [UIKit.UIPreviewActionItem] {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCITermsErrorVC : MCIViewController, Identifiable {
-  final public class func allocate(title: Swift.String?) -> MCITermsErrorVC
-  @objc override final public func viewDidLoad()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCITermsErrorVC : MCIViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate(title: Swift.String?) -> MCITermsErrorVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCITermsErrorVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
 public protocol Dismissable : AnyObject {
 }
@@ -1294,6 +1319,7 @@ public enum MCINavigationStyle : Swift.CaseIterable {
   case dark
   case clear
   case wallet
+  case pix
   case marketPlace
   public var data: MCINavigationStyleData? {
     get
@@ -1330,39 +1356,39 @@ public struct MCITicketShareController {
   public init(merchantName: Swift.String?, amount: Swift.Double?, pin: Swift.String?, url: Foundation.URL?)
   public func present(in viewController: UIKit.UIViewController)
 }
-extension UserDefaults {
+extension Foundation.UserDefaults {
   public func set(splashCacheCleared: Swift.Bool)
   public func splashCacheCleared() -> Swift.Bool
 }
-@objc @_inheritsConvenienceInitializers final public class MCIBannerTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
-  final public func configure(with image: UIKit.UIImage?)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIBannerTableCell : UIKit.UITableViewCell, Identifiable, NibReusable {
+  @_Concurrency.MainActor(unsafe) final public func configure(with image: UIKit.UIImage?)
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-extension UIScrollView {
-  public func screenshot() -> UIKit.UIImage?
+extension UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) public func screenshot() -> UIKit.UIImage?
 }
-extension UIBarButtonItem {
-  public class func close(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
-  public class func back(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
+extension UIKit.UIBarButtonItem {
+  @_Concurrency.MainActor(unsafe) public class func close(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
+  @_Concurrency.MainActor(unsafe) public class func back(target: Any?, action: ObjectiveC.Selector?) -> UIKit.UIBarButtonItem
 }
-@objc @_inheritsConvenienceInitializers final public class MCICardView : UIKit.UIView, Identifiable {
-  final public var color: UIKit.UIColor {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCICardView : UIKit.UIView, Identifiable {
+  @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor {
     get
     set
   }
-  @objc override final public func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIPageControl : UIKit.UIPageControl, Identifiable {
-  @objc override final public func didMoveToWindow()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIPageControl : UIKit.UIPageControl, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func didMoveToWindow()
   @objc deinit
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 public protocol MCIAuthenticable : AnyObject {
   func authentication()
@@ -1374,125 +1400,125 @@ public protocol MCIAuthenticableFlow : AnyObject {
   public func authentication()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers final public class MCIInputValueVC : MCIViewController, Identifiable, Dismissable {
-  final public class func allocate() -> MCIInputValueVC
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  final public func configure(with merchantName: Swift.String?, min: Swift.Double?, max: Swift.Double?, then handler: ((MCIInputValueVC, Swift.String) -> Swift.Void)?)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIInputValueVC : MCIViewController, Identifiable, Dismissable {
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> MCIInputValueVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) final public func configure(with merchantName: Swift.String?, min: Swift.Double?, max: Swift.Double?, then handler: ((MCIInputValueVC, Swift.String) -> Swift.Void)?)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCIInputValueVC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-@objc @_inheritsConvenienceInitializers final public class FadeInPushSegue : UIKit.UIStoryboardSegue {
-  @objc override final public func perform()
-  @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class FadeInPushSegue : UIKit.UIStoryboardSegue {
+  @_Concurrency.MainActor(unsafe) @objc override final public func perform()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers final public class FadeOutPopSegue : UIKit.UIStoryboardSegue {
-  @objc override final public func perform()
-  @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class FadeOutPopSegue : UIKit.UIStoryboardSegue {
+  @_Concurrency.MainActor(unsafe) @objc override final public func perform()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(identifier: Swift.String?, source: UIKit.UIViewController, destination: UIKit.UIViewController)
   @objc deinit
 }
 public protocol MCIStackFieldDelegate : UIKit.UITextFieldDelegate {
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MCIStackField : UIKit.UIStackView, Identifiable {
-  @objc @IBInspectable public var title: Swift.String? {
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class MCIStackField : UIKit.UIStackView, Identifiable {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var title: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var placeholder: Swift.String? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var placeholder: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var text: Swift.String? {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var text: Swift.String? {
     @objc get
     @objc set
   }
-  @objc @IBInspectable public var separatorHeight: CoreGraphics.CGFloat
-  public var textField: UIKit.UITextField {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var separatorHeight: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public var textField: UIKit.UITextField {
     get
   }
-  public var isErrored: Swift.Bool {
-    get
-    set
-  }
-  public var isValid: Swift.Bool
-  weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+  @_Concurrency.MainActor(unsafe) public var isErrored: Swift.Bool {
     get
     set
   }
-  public var onChanged: ValueChanged<MCIStackField>?
-  public var onEditingComplete: ValueChanged<MCIStackField>?
+  @_Concurrency.MainActor(unsafe) public var isValid: Swift.Bool
+  @_Concurrency.MainActor(unsafe) weak public var textFieldDelegate: UIKit.UITextFieldDelegate? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var onChanged: ValueChanged<MCIStackField>?
+  @_Concurrency.MainActor(unsafe) public var onEditingComplete: ValueChanged<MCIStackField>?
   @objc override dynamic public func awakeFromNib()
   @discardableResult
-  @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
-  public func setNormalState()
-  public func setTypingState()
-  public func setErrorState()
-  public func setHintMessage(_ errorMessage: Swift.String?)
-  public func resetState()
-  public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func becomeFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func setNormalState()
+  @_Concurrency.MainActor(unsafe) public func setTypingState()
+  @_Concurrency.MainActor(unsafe) public func setErrorState()
+  @_Concurrency.MainActor(unsafe) public func setHintMessage(_ errorMessage: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func resetState()
+  @_Concurrency.MainActor(unsafe) public func triggerOnChanged(ignoreErrors: Swift.Bool = false)
   @objc deinit
 }
-extension UIViewController {
-  public func headerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
-  public func headerView(text: Swift.String?) -> UIKit.UIView?
-  public func footerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
-  public func footerView(text: Swift.String?) -> UIKit.UIView?
-  public func addChildViewController(_ child: UIKit.UIViewController)
-  public func addChild(_ child: UIKit.UIViewController, with frame: CoreGraphics.CGRect)
-  public func removeChildFromParent()
-  public func canPerformSegue(withIdentifier id: Swift.String) -> Swift.Bool
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func headerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public func headerView(text: Swift.String?) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) public func footerHeight(text: Swift.String?) -> CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public func footerView(text: Swift.String?) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) public func addChildViewController(_ child: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) public func addChild(_ child: UIKit.UIViewController, with frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public func removeChildFromParent()
+  @_Concurrency.MainActor(unsafe) public func canPerformSegue(withIdentifier id: Swift.String) -> Swift.Bool
 }
-extension UIViewController {
-  @objc dynamic public func dismissAnimatedWithNotification()
-  @objc dynamic public func popWithNotification()
-  public func presentError(_ error: Foundation.NSError, dismissable: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func dismissAnimatedWithNotification()
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func popWithNotification()
+  @_Concurrency.MainActor(unsafe) public func presentError(_ error: Foundation.NSError, dismissable: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
 }
-@objc @_inheritsConvenienceInitializers final public class MCIAlertNC : UIKit.UINavigationController, Identifiable {
-  @objc override final public func viewDidLoad()
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCIAlertNC : UIKit.UINavigationController, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
   @objc deinit
   @available(iOS 5.0, *)
-  @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
-  @objc override dynamic public init(rootViewController: UIKit.UIViewController)
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(navigationBarClass: Swift.AnyClass?, toolbarClass: Swift.AnyClass?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
 }
 extension MCIAlertNC : UIKit.UIViewControllerTransitioningDelegate {
-  @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc final public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
 }
-extension CGSize {
+extension CoreGraphics.CGSize {
   public func bestFit(into: CoreGraphics.CGSize) -> CoreGraphics.CGSize
 }
-extension UIView {
+extension UIKit.UIView {
   @discardableResult
-  public func topAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func topAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func bottomAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func bottomAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func leadingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func leadingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func trailingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func trailingAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func heightAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func heightAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func heightAnchor(equalTo height: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func heightAnchor(equalTo height: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func widthAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func widthAnchor(equalTo anchor: UIKit.NSLayoutDimension, constant: CoreGraphics.CGFloat = 0, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func widthAnchor(equalTo width: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func widthAnchor(equalTo width: CoreGraphics.CGFloat, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func centerXAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func centerXAnchor(equalTo anchor: UIKit.NSLayoutXAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func centerYAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
+  @_Concurrency.MainActor(unsafe) public func centerYAnchor(equalTo anchor: UIKit.NSLayoutYAxisAnchor, priority: UIKit.UILayoutPriority = .required) -> Self
   @discardableResult
-  public func anchors(equalTo superview: UIKit.UIView, constant: CoreGraphics.CGFloat = 0) -> Self
+  @_Concurrency.MainActor(unsafe) public func anchors(equalTo superview: UIKit.UIView, constant: CoreGraphics.CGFloat = 0) -> Self
 }
 public protocol Reusable : AnyObject {
   static var reuseIdentifier: Swift.String { get }
@@ -1509,62 +1535,61 @@ public protocol MCICoverImageDelegate : AnyObject {
 extension MCICoverImageDelegate {
   public func coverImageDidTapOnParticipantingStores()
 }
-@objc @_inheritsConvenienceInitializers final public class MCICoverImageTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
-  weak final public var delegate: MCICoverImageDelegate?
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class MCICoverImageTableCell : UIKit.UITableViewCell, NibReusable, Identifiable {
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: MCICoverImageDelegate?
   @objc override final public func awakeFromNib()
-  @objc override final public func prepareForReuse()
-  final public func configure(with displayName: Swift.String?, bannerURL: Swift.String?, iconURL: Swift.String?, serviceColor: UIKit.UIColor = .white, stores: Swift.Bool? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public func prepareForReuse()
+  @_Concurrency.MainActor(unsafe) final public func configure(with displayName: Swift.String?, bannerURL: Swift.String?, iconURL: Swift.String?, serviceColor: UIKit.UIColor = .white, stores: Swift.Bool? = nil)
   @objc deinit
   @available(iOS 3.0, *)
-  @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
 extension MCICoverImageTableCell {
-  final public func configure(with merchant: MCIMerchant?)
-  final public func configure(with category: MCICategory?)
+  @_Concurrency.MainActor(unsafe) final public func configure(with merchant: MCIMerchant?)
+  @_Concurrency.MainActor(unsafe) final public func configure(with category: MCICategory?)
 }
-@objc @_hasMissingDesignatedInitializers final public class MCINavBarTransitionVC : MCIFlowViewController, Identifiable {
-  @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
-    @objc get
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class MCINavBarTransitionVC : MCIFlowViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) @objc override final public var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  public init(destination: UIKit.UIViewController)
-  @objc override final public func viewDidLoad()
-  @objc override final public func viewWillAppear(_ animated: Swift.Bool)
-  @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  @objc override final public func viewDidLayoutSubviews()
-  @objc override final public func canPerformUnwindSegueAction(_ action: ObjectiveC.Selector, from fromViewController: UIKit.UIViewController, withSender sender: Any) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public init(destination: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override final public func canPerformUnwindSegueAction(_ action: ObjectiveC.Selector, from fromViewController: UIKit.UIViewController, withSender sender: Any) -> Swift.Bool
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
 }
-extension UIStoryboard {
-  public class var home: UIKit.UIStoryboard {
+extension UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var home: UIKit.UIStoryboard {
     get
   }
-  public class var main: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var main: UIKit.UIStoryboard {
     get
   }
-  public class var mciKit: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var mciKit: UIKit.UIStoryboard {
     get
   }
-  public class var wallet: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var wallet: UIKit.UIStoryboard {
     get
   }
-  public class var voucher: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var voucher: UIKit.UIStoryboard {
     get
   }
-  public class var api99Service: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var api99Service: UIKit.UIStoryboard {
     get
   }
-  public class var cellphoneRecharge: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var cellphoneRecharge: UIKit.UIStoryboard {
     get
   }
-  public class var tvRecharge: UIKit.UIStoryboard {
+  @_Concurrency.MainActor(unsafe) public class var tvRecharge: UIKit.UIStoryboard {
     get
   }
-  public func instantiate<T>(_: T.Type) -> T where T : UIKit.UIViewController
-  public func instantiate<T>(_: T.Type, identifier: Swift.String) -> T where T : UIKit.UINavigationController
+  @_Concurrency.MainActor(unsafe) public func instantiate<T>(_: T.Type) -> T where T : UIKit.UIViewController
+  @_Concurrency.MainActor(unsafe) public func instantiate<T>(_: T.Type, identifier: Swift.String) -> T where T : UIKit.UINavigationController
 }
-extension String {
+extension Swift.String {
   public enum BarcodeTypes : Swift.String {
     case aztec
     case code128

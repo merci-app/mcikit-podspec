@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MerciKit
 import Alamofire
 import Foundation
@@ -11,6 +11,7 @@ import MCILogger
 import Swift
 import SwiftyRSA
 import UIKit
+import _Concurrency
 public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   public var delegate: MerciClientSecurityDelegate?
   public init(delegate: MerciClientSecurityDelegate? = nil)
@@ -24,7 +25,7 @@ public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
     get
   }
   final public class func instantiate(clientId: Swift.String, clientSecret: Swift.String, environment: MerciEnvironment, clientName: Swift.String?, homeImage: UIKit.UIImage? = nil, merciBrandImage: UIKit.UIImage? = nil, homeBackgroundColor: UIKit.UIColor? = nil, homeTitleColor: UIKit.UIColor? = nil, actionBarTintColor: UIKit.UIColor? = nil, actionTintColor: UIKit.UIColor? = nil, actionTextTintColor: UIKit.UIColor? = nil, loadingTintColor: UIKit.UIColor? = nil, clientSecurityDelegate: MerciClientSecurityDelegate? = nil, delegate: MerciDelegate? = nil)
-  final public class func authenticate(cpf: Swift.String, completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
+  final public class func authenticate(cpf: Swift.String, completion: @escaping (_ result: Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
   final public class func revokeAuthentication(then completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
   final public class func isAuthenticated() -> Swift.Bool
   final public class func listAccounts(result: @escaping (Swift.Result<[MCICustomerAccountInfo], Swift.Error>) -> Swift.Void)
@@ -88,6 +89,9 @@ extension MCIFoundation {
     get
   }
   final public var wallet: MCIWalletTheme {
+    get
+  }
+  final public var pix: MCIPixTheme {
     get
   }
   final public var marketPlace: MCIMarketPlaceTheme {
@@ -177,6 +181,17 @@ extension SDKStyle : MCIWalletTheme {
     get
   }
   final public var aliasBankTextColor: UIKit.UIColor? {
+    get
+  }
+}
+extension SDKStyle : MCIPixTheme {
+  final public var pixNavBarTintColor: UIKit.UIColor {
+    get
+  }
+  final public var pixNavBarActionColor: UIKit.UIColor {
+    get
+  }
+  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
     get
   }
 }

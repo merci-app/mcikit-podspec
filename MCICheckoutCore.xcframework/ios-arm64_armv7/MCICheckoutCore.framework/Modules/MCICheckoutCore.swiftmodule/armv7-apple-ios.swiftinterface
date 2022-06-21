@@ -44,6 +44,9 @@ public struct UnknownCheckoutStrategy : CheckoutStrategy {
   public var buttonTitle: Swift.String? {
     get
   }
+  public var merchant: MCIMerchant? {
+    get
+  }
   public func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers final public class CheckoutConfig {
@@ -63,6 +66,7 @@ public protocol CheckoutStrategy {
   var automaticSelect: MCIAccount? { get }
   var shouldShowSuccess: Swift.Bool { get }
   var accountsInterceptor: (MCIAccount) -> Swift.Bool { get }
+  var merchant: MCIMerchant? { get }
   func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
 }
 extension CheckoutStrategy {

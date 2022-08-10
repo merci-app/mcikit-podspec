@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MCICheckoutCore-Swift.h</key>
 		<data>
-		yBg9P0fWEtxbVCIbsBHQZjfGxQ4=
+		9P5PBbMxxyzUkd9nElDMRRGEZgA=
 		</data>
 		<key>Headers/MCICheckoutCore.h</key>
 		<data>
@@ -14,43 +14,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Kvxd5RhDqbheOsox6xrSzo7ozXw=
+		ZFksqncdtdDaQoIkbg9mR/We77k=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		fAEiBNWtRAPOPQP5ColP/KhN6Xs=
+		lSi8+A7W4YIvN8QdHaGpKps2ECU=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wwFdF7eMNScaJCXMt3PsPnmawQk=
+		/1K6AXet3HL5VTq+yBvCOGtYoPo=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		KeAbrOg6OokHYuUTHmdVrXgzXbg=
+		dpoYF4aZSUMgRSSfgzW2oKJSihs=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NVdZchEClpy0VxPdPgxKvyM15Qc=
+		45O/97Jaky1j58w08m31aJC1aIA=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		5E4Bue+8j4lu9T/mU8Lq0voC7BY=
+		b32y+VpcDDUsG3rTMMiC0uTQwvI=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Etsldwwqpirabc57x/w8OVkjnhM=
+		GU/RpIcg5bVh++iiC6r37jxVtQ4=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		3xyF6UD88FPbRoFrbHF2abLQNtQ=
+		gqdPnHAX5E+05AZDKJCjgSCvx9Y=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Mo174RnZWAWwXuWd83F89czu9II=
+		KgZ4c0XvR4TNv3TVIpjMMbUb6T4=
 		</data>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PNSC1Tre5vLUqZyQH64naDxXnAs=
+		jMcYjGk5xqVEwjLsNZ7Sz9lck3M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yBg9P0fWEtxbVCIbsBHQZjfGxQ4=
+			9P5PBbMxxyzUkd9nElDMRRGEZgA=
 			</data>
 			<key>hash2</key>
 			<data>
-			t5sWkgRql2iV/7Pn7eVygha8nihs+Jny6/DIosIuJQk=
+			hmSdDeu2mdEq0mwsU7bETa9sjFBr3m3L+qMpxWCpthY=
 			</data>
 		</dict>
 		<key>Headers/MCICheckoutCore.h</key>
@@ -85,99 +85,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fAEiBNWtRAPOPQP5ColP/KhN6Xs=
+			lSi8+A7W4YIvN8QdHaGpKps2ECU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4C5q2DFyCExm3WAd4aSCwJS5Faaexc3F06xVDKWW6Xw=
+			R0drfVxZgYeAeGvJ2m/Oy44H1vy43MBqLZRxUa92xGE=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wwFdF7eMNScaJCXMt3PsPnmawQk=
+			/1K6AXet3HL5VTq+yBvCOGtYoPo=
 			</data>
 			<key>hash2</key>
 			<data>
-			sO5XwLZUQiyLmFnGaGZpukxNXrJjnp8nXf2u6S8hIpE=
+			LY8sWQT7Jtkz0tg1RPELO8gj9uiQqjqsEaQp+0ADPZI=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KeAbrOg6OokHYuUTHmdVrXgzXbg=
+			dpoYF4aZSUMgRSSfgzW2oKJSihs=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZdytbA2dnoZuCI2YKYcbsjMikIP2ymO8D1LPizYUVWo=
+			CeBddUM+VdecVedo5UJhzD5/zWDs1z+OBuE5qvRDm9U=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NVdZchEClpy0VxPdPgxKvyM15Qc=
+			45O/97Jaky1j58w08m31aJC1aIA=
 			</data>
 			<key>hash2</key>
 			<data>
-			SayCu1Ir8eMKgymAF0yXEg7pgTGvJOHmqNC5JA8UAg8=
+			WQZY/ZLgPN2x4t8YfEi62TMbV8tk6eNtGQoQGTLpFhE=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5E4Bue+8j4lu9T/mU8Lq0voC7BY=
+			b32y+VpcDDUsG3rTMMiC0uTQwvI=
 			</data>
 			<key>hash2</key>
 			<data>
-			0vtRYPhvnTkipQxQMITjXYZZmqeaWnqJBwL46xnZUf0=
+			hfEtS6QvvacHBQSM/+ynAuwccQxJSA6r6I/WYPnQPsM=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Etsldwwqpirabc57x/w8OVkjnhM=
+			GU/RpIcg5bVh++iiC6r37jxVtQ4=
 			</data>
 			<key>hash2</key>
 			<data>
-			aWHSgQgarrfltlXfM+Hh1V03qbj5grNl/khCYl4S200=
+			sr6ffvTT8a9D/MYY/K5RGxun1TdXtR122I0VdcN3dak=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			3xyF6UD88FPbRoFrbHF2abLQNtQ=
+			gqdPnHAX5E+05AZDKJCjgSCvx9Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			30wNOxT+pldsL7MVsodS3tyOUPcIvo0rsnV/kSXp4EQ=
+			OSsyHDzvdwGyQnJqYNf13StvybN/Pr3LZ5mIGMK3kDk=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Mo174RnZWAWwXuWd83F89czu9II=
+			KgZ4c0XvR4TNv3TVIpjMMbUb6T4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ny5TgV6JgCvb0DN/l9diVVI0HCPa3Dx1LAD4a0yk8pY=
+			GPzL3AAeYDf1qRGcpLPC4eEFxue78d+DBL8q05vPiSo=
 			</data>
 		</dict>
 		<key>Modules/MCICheckoutCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PNSC1Tre5vLUqZyQH64naDxXnAs=
+			jMcYjGk5xqVEwjLsNZ7Sz9lck3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			o+Kj8Oq65VGiP4McjclqnQbxyZJa6ca4B5b6r/NXvOo=
+			+nvOlrlk13UIjZivNn3/2yMTxoDmNt04Kt43tCzrofI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

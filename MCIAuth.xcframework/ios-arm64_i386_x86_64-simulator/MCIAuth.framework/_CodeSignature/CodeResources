@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MCIAuth-Swift.h</key>
 		<data>
-		0rLSfikJaOX6Lc35OOKEMGhNmTM=
+		3hoUlyBWcJd5pLN9wD2fLTxwiFY=
 		</data>
 		<key>Headers/MCIAuth.h</key>
 		<data>
@@ -14,43 +14,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2NAXkVzZ0Bu3d6lLaYEn21wEbQI=
+		O2jitItJdGciIMTOZmvI8MVC+tM=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		CA3IPRuQSVeVrLkJKQR9F7rakgs=
+		bbf0ja/uE3VfeV53QxCxCK+cY+I=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		F1mMVgDD51NyTLXtQF+bw9LYjas=
+		cbTyiTa7+yrirYlk2slNVO3Nn6g=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mmMvAvif1QxMqARWQjkUJDYAgrE=
+		zT61UlJnrtn1IXz7eAxzEfWO7f0=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		vVw/lKYyBNZM3ClxR6zkjAJqhu8=
+		pkPGClA1FeIH6L+/y/87wTq0s90=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hrGn8WKqXWSGxO3Zv1nOCUBmm4Q=
+		V0vHVOchJRxs43V4jWbou32BJos=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Yw5ZtOd0C99U9g/HYDt5U6+eYC8=
+		Q/lDku6fwfnE0+/vKPElCGmwPmo=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		0bsz5bFOT1g0lxetqmgnhQhzO6g=
+		s+gy6XaG7WTuZQwkUDQp+pUtffw=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EZ5MfRLqJswELTFbjRmiePw7LSs=
+		0gndNhv7bl/5QMbMs/2cuqpc7Ok=
 		</data>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		G+wfOHiIL9yMsCsQBxeYVulD0RA=
+		oZLXIwJJ4jvyJob3BwsjWhzCTEc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0rLSfikJaOX6Lc35OOKEMGhNmTM=
+			3hoUlyBWcJd5pLN9wD2fLTxwiFY=
 			</data>
 			<key>hash2</key>
 			<data>
-			re9w8oz18/l6DDSOERHgCPsbFbefLPQeJpoJXWO+ZWw=
+			fpARERgYqYd/68WfyiJ5bVePirXBP/RW7MuXeyqN7LM=
 			</data>
 		</dict>
 		<key>Headers/MCIAuth.h</key>
@@ -85,99 +85,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CA3IPRuQSVeVrLkJKQR9F7rakgs=
+			bbf0ja/uE3VfeV53QxCxCK+cY+I=
 			</data>
 			<key>hash2</key>
 			<data>
-			ECcc1inFvbl+GO/Gg0FWfD37TD5LUlkYP86H9Glb9wo=
+			YNWbUsdWHAo38HBR7eyhj81P4zjaF9HblMDGO16r1JA=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F1mMVgDD51NyTLXtQF+bw9LYjas=
+			cbTyiTa7+yrirYlk2slNVO3Nn6g=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZChmYPSNPGfN+8p7qWbYw4v1jZGXuGSJmxuugUdt+DI=
+			+8mge3YNl7XdnvOgNEQ2x7eM9VWBlr4WZxb3FLzF6V8=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mmMvAvif1QxMqARWQjkUJDYAgrE=
+			zT61UlJnrtn1IXz7eAxzEfWO7f0=
 			</data>
 			<key>hash2</key>
 			<data>
-			nXYFAHlfUsleF02fCGxxLw+N9FZ7eQ0uY8isspymGWE=
+			FIw9tl5e4vofuF4ZDMyqZ5ibwUUOjDYC88Fq8CJK26w=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			vVw/lKYyBNZM3ClxR6zkjAJqhu8=
+			pkPGClA1FeIH6L+/y/87wTq0s90=
 			</data>
 			<key>hash2</key>
 			<data>
-			MxA9gGcke5fhrfKO01TfwAV4e31kaLPZzf4f/RqHgAo=
+			vysOhtL2pmk2aHtu90OgetiehKQhZOPn6WW2INI3JBw=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hrGn8WKqXWSGxO3Zv1nOCUBmm4Q=
+			V0vHVOchJRxs43V4jWbou32BJos=
 			</data>
 			<key>hash2</key>
 			<data>
-			Qe9aGoc+cSKTX8pizxAXNKiQZXKAok1NqqANCUXl71c=
+			sMN3Jz1zngXROmY6JUezyvu0ehOwkRDUWNUIahZzjWA=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Yw5ZtOd0C99U9g/HYDt5U6+eYC8=
+			Q/lDku6fwfnE0+/vKPElCGmwPmo=
 			</data>
 			<key>hash2</key>
 			<data>
-			j6i6ZMyM4Mq6/qkyBax1wOWtyoEa4Rc4W+O2Ny50TPM=
+			tKgbINsYprntmVYjTFHldYmByI+SeA+oKWsaOZoffg8=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0bsz5bFOT1g0lxetqmgnhQhzO6g=
+			s+gy6XaG7WTuZQwkUDQp+pUtffw=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZWvxAEmOow82zVHc4KG5NRxLon7YMk1vXgaOFJhbx9E=
+			2sbC4Uib653yEFMgojOmyDjK7dIGvHPScBRVOcUuNkI=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			EZ5MfRLqJswELTFbjRmiePw7LSs=
+			0gndNhv7bl/5QMbMs/2cuqpc7Ok=
 			</data>
 			<key>hash2</key>
 			<data>
-			vyTJ2nIPL7UWoC0x9aPo9thvj9c5RHQjELL2b6ym0pg=
+			dN+FpQT0ZXZtsqPam+IUJuML2VuKmNdB8pCJVMjSHCk=
 			</data>
 		</dict>
 		<key>Modules/MCIAuth.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			G+wfOHiIL9yMsCsQBxeYVulD0RA=
+			oZLXIwJJ4jvyJob3BwsjWhzCTEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			GYjucZAGyKopw8+v7jXHQDRWA5uuq9FWTUcHCEIFpK0=
+			g/qzwdOj2aITcEirS0yt4r1Ew9/lasDlCK0xS0icXr4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

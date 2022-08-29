@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lkQyNDk068UaAIkWSCNCZrBO8B8=
+		ZDvMRPhfD0p81s597DHn+OTgFxg=
 		</data>
 		<key>Modules/MCIIssuerViewerCore.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MCIIssuerViewerCore.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		NhZAjlyFo0vJ48BRR8jEGfW6XgQ=
+		4adOJIa98y9dG/eQFwbLAo1x/jU=
 		</data>
 		<key>Modules/MCIIssuerViewerCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MCIIssuerViewerCore.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		JUjatL9qYpgNTLsBgxb3Rb99l2Q=
+		mij9XKYRKDjBpzz8FzjJk3BT6JQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -95,11 +95,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NhZAjlyFo0vJ48BRR8jEGfW6XgQ=
+			4adOJIa98y9dG/eQFwbLAo1x/jU=
 			</data>
 			<key>hash2</key>
 			<data>
-			WJ5verFTWYQ8LceVfG+fdKrF7dorOHK2Nbyelakr6U0=
+			OWiSghlWHr9kZiCCq2ys0rcGsHYbzgz8iGMIsUUJ5Ok=
 			</data>
 		</dict>
 		<key>Modules/MCIIssuerViewerCore.swiftmodule/armv7-apple-ios.swiftdoc</key>
@@ -128,11 +128,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JUjatL9qYpgNTLsBgxb3Rb99l2Q=
+			mij9XKYRKDjBpzz8FzjJk3BT6JQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			46HyHDSzQDyxEvyPcNVIBc3V4w8TpS/kWx4hm4bI8AE=
+			wb+/AkfkQnti++0Dk0Q+4emJ4Ba9UPzdA+95e4C53xU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

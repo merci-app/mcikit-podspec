@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		DR5YhOTMwfbCoLEklJ47uIkw0YM=
+		f16lPFpFNOyW7+JqvTAxyy/vfRU=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Zf2EvyZqlj8Y+2g9ZaiIXTiG6r0=
+		t/wcMHeQCAQEKdqY9kftoe3W9js=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		aFLX/MHEI0EkPgHfaSzFckl9Eog=
+		hu0TJ6EVw0aoy3rGgAIhAPRLoWY=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ofJWW7QoUnerw5shKhZVvv1Aous=
+		Lj9qoH82imI2ETAdQ/06YsWl5WI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Zf2EvyZqlj8Y+2g9ZaiIXTiG6r0=
+			t/wcMHeQCAQEKdqY9kftoe3W9js=
 			</data>
 			<key>hash2</key>
 			<data>
-			IRZh0d9ZFewy1b/u0e5s4W1zRIUoLVABOZwRr/NOAt4=
+			ys8EcMEqfgmCxjfHvohw3o+PZvdb/iOPPG+d3RbiOyk=
 			</data>
 		</dict>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aFLX/MHEI0EkPgHfaSzFckl9Eog=
+			hu0TJ6EVw0aoy3rGgAIhAPRLoWY=
 			</data>
 			<key>hash2</key>
 			<data>
-			UEQ2Xzhbs6xEswpkvGvdliW7z0Ae6qOrcRK2Gvz6qOU=
+			ralZtvVNGa1ec1UXKjQZ/jBhS0lAkLVnj2BJTW3ceig=
 			</data>
 		</dict>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ofJWW7QoUnerw5shKhZVvv1Aous=
+			Lj9qoH82imI2ETAdQ/06YsWl5WI=
 			</data>
 			<key>hash2</key>
 			<data>
-			hPB5NWVHIod+7cr/hfGA0yknris8Z1Ebl/lhRgMZhqA=
+			renQMuFBrpC7Ir4FNnZNnYoHnMDngISVLY7/HwTh0+Q=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

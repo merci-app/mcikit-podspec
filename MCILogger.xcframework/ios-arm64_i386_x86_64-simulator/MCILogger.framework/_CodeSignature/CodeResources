@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		n3jTLpWiuSnjOGlBHCVJB8heimo=
+		+7EwMozZvCopJLl6MQv2XWvUFc8=
 		</data>
 		<key>Modules/MCILogger.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		66XMfqiXgMdb6wHPzaKKHik8JiE=
+		ktAn3WqSd9N/SSdXt0ajzaEPi6s=
 		</data>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		0NbfQM23mZT6/iG6VSivgNb4OSo=
+		DTCTYrdg1YQY3NtWBnrbhnjNGJ8=
 		</data>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		sRCiXttDhoKecHqTaGq7Q0tBWZE=
+		EONQBABIiSOyqMv+kPFemCfY1CQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			66XMfqiXgMdb6wHPzaKKHik8JiE=
+			ktAn3WqSd9N/SSdXt0ajzaEPi6s=
 			</data>
 			<key>hash2</key>
 			<data>
-			a9S1MsbUckvYbNFMUMMwPjloTZxZQctZq01Wsk5VisE=
+			oMjRCLBXSf8QbwYFwHi9HWzw5i1s+FV9j61nd4wQu64=
 			</data>
 		</dict>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0NbfQM23mZT6/iG6VSivgNb4OSo=
+			DTCTYrdg1YQY3NtWBnrbhnjNGJ8=
 			</data>
 			<key>hash2</key>
 			<data>
-			31CoryUcLU0WfqK9ZKsQI0cfhTfq7qCgaglkEGf/8/E=
+			MR25z5JAAHReKmb7EXM/edL5uENc6WYS3pMd7Fn7POo=
 			</data>
 		</dict>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sRCiXttDhoKecHqTaGq7Q0tBWZE=
+			EONQBABIiSOyqMv+kPFemCfY1CQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vz4FoIacy6FnLLWMhW2OEZSeTSlCOrYCV1Pnv8Jhasw=
+			XWNAG9msKWtEC7rXT5HgBSD3qzYC1K3uFBkn+HLTFy8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

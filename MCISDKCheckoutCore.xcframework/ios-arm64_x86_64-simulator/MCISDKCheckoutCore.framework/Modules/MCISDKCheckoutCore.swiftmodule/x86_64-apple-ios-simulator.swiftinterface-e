@@ -1,0 +1,121 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCISDKCheckoutCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import MCISDKCheckoutCore
+import MCISDKFoundation
+import MCISDKKit
+import MCISDKLogger
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public typealias CheckoutableVC = UIKit.UIViewController & Checkoutable
+public protocol Checkoutable : AnyObject {
+  var strategy: CheckoutStrategy { get set }
+  var accounts: [MCIAccount] { get set }
+  var delegate: CheckoutDelegate? { get set }
+  var isOffline: Swift.Bool { get set }
+  var shouldDisplayViewMessage: Swift.Bool { get set }
+  var usePLAvailableLimit: Swift.Bool { get set }
+  var moduleCheckout: ModuleCheckout { get set }
+  func checkout(strategy: CheckoutStrategy, accounts: [MCIAccount]?, delegate: CheckoutDelegate?) -> CheckoutableVC
+  func prepopulate(activeAccounts: [MCIAccount]?)
+}
+public protocol CheckoutDelegate : AnyObject {
+  func didComplete(with object: Any?)
+  func didFail(with error: Foundation.NSError)
+  func shouldHandleError() -> Swift.Bool
+}
+extension CheckoutDelegate {
+  public func didFail(with error: Foundation.NSError)
+  public func shouldHandleError() -> Swift.Bool
+}
+public struct UnknownCheckoutStrategy : CheckoutStrategy {
+  public init()
+  public var amount: Swift.String {
+    get
+  }
+  public var needValidateAmount: Swift.Bool {
+    get
+  }
+  public var serviceTitle: Swift.String? {
+    get
+  }
+  public var buttonTitle: Swift.String? {
+    get
+  }
+  public var merchant: MCIMerchant? {
+    get
+  }
+  public func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers final public class CheckoutConfig {
+  public static let shared: CheckoutConfig
+  final public var hasPassword: Swift.Bool
+  final public var imageSuccess: UIKit.UIImage?
+  final public var imageReceipt: UIKit.UIImage?
+  @objc deinit
+}
+public protocol CheckoutStrategy {
+  var amount: Swift.String { get }
+  var needValidateAmount: Swift.Bool { get }
+  var serviceTitle: Swift.String? { get }
+  var serviceDescription: Swift.String? { get }
+  var buttonTitle: Swift.String? { get }
+  var needPassword: Swift.Bool { get }
+  var automaticSelect: MCIAccount? { get }
+  var shouldShowSuccess: Swift.Bool { get }
+  var accountsInterceptor: (MCIAccount) -> Swift.Bool { get }
+  var merchant: MCIMerchant? { get }
+  func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
+}
+extension CheckoutStrategy {
+  public var needPassword: Swift.Bool {
+    get
+  }
+  public var automaticSelect: MCIAccount? {
+    get
+  }
+  public var serviceDescription: Swift.String? {
+    get
+  }
+  public var shouldShowSuccess: Swift.Bool {
+    get
+  }
+  public var accountsInterceptor: (MCIAccount) -> Swift.Bool {
+    get
+  }
+  public func notifyTransctionState(to state: Swift.String)
+}
+extension Foundation.NSNotification.Name {
+  public struct Checkout {
+    public static let Transaction: Foundation.Notification.Name
+  }
+}
+public typealias AutoCheckoutVC = UIKit.UIViewController & AutoCheckoutable
+public protocol AutoCheckoutable : AnyObject {
+  var strategy: AutoCheckoutStrategy! { get set }
+  var delegate: AutoCheckoutDelegate? { get set }
+  var dismissToWallet: Swift.Bool? { get set }
+  func checkout(strategy: AutoCheckoutStrategy, delegate: AutoCheckoutDelegate?, dismissToWallet: Swift.Bool?) -> AutoCheckoutVC
+}
+public protocol AutoCheckoutStrategy {
+  var account: MCIAccount { get }
+  var amount: Swift.String? { get }
+  var serviceTitle: Swift.String? { get }
+  func execute(completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
+}
+extension AutoCheckoutStrategy {
+  public func notify(to state: Swift.String)
+}
+public protocol AutoCheckoutDelegate : AnyObject {
+  func autoCheckout(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWith object: Any?)
+  func autoCheckoutError(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWithError error: Foundation.NSError?)
+  func dismissView(_ autoCheckoutVC: AutoCheckoutVC)
+}
+extension AutoCheckoutDelegate {
+  public func autoCheckoutError(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWithError error: Foundation.NSError?)
+  public func dismissView(_ autoCheckoutVC: AutoCheckoutVC)
+}

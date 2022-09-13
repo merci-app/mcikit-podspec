@@ -1,0 +1,1100 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKKit",
+        "printedName": "MCISDKKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKLogger",
+        "printedName": "MCISDKLogger",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKKit",
+        "printedName": "MCISDKKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKAuth"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PasswordFlowDelegate",
+        "printedName": "PasswordFlowDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "passwordFlowDidAuthenticate",
+            "printedName": "passwordFlowDidAuthenticate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCISDKAuth.PasswordFlowVC",
+                "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10MCISDKAuth20PasswordFlowDelegateP08passwordC15DidAuthenticateyyAA0bC2VCCF",
+            "mangledName": "$s10MCISDKAuth20PasswordFlowDelegateP08passwordC15DidAuthenticateyyAA0bC2VCCF",
+            "moduleName": "MCISDKAuth",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKAuth.PasswordFlowDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKAuth.PasswordFlowDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismissView",
+            "printedName": "dismissView(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCISDKAuth.PasswordFlowVC",
+                "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10MCISDKAuth20PasswordFlowDelegateP11dismissViewyyAA0bC2VCCF",
+            "mangledName": "$s10MCISDKAuth20PasswordFlowDelegateP11dismissViewyyAA0bC2VCCF",
+            "moduleName": "MCISDKAuth",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKAuth.PasswordFlowDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKAuth.PasswordFlowDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismissView",
+            "printedName": "dismissView(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCISDKAuth.PasswordFlowVC",
+                "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10MCISDKAuth20PasswordFlowDelegatePAAE11dismissViewyyAA0bC2VCCF",
+            "mangledName": "$s10MCISDKAuth20PasswordFlowDelegatePAAE11dismissViewyyAA0bC2VCCF",
+            "moduleName": "MCISDKAuth",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKAuth.PasswordFlowDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKAuth.PasswordFlowDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "performUnwindToSplashVC",
+            "printedName": "performUnwindToSplashVC()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10MCISDKAuth20PasswordFlowDelegatePAASo16UIViewControllerCRbz9MCISDKKit21MCINavigationStylableRzAF07MCIViewF8ProtocolRzrlE23performUnwindToSplashVCyyF",
+            "mangledName": "$s10MCISDKAuth20PasswordFlowDelegatePAASo16UIViewControllerCRbz9MCISDKKit21MCINavigationStylableRzAF07MCIViewF8ProtocolRzrlE23performUnwindToSplashVCyyF",
+            "moduleName": "MCISDKAuth",
+            "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : MCISDKAuth.PasswordFlowDelegate, τ_0_0 : MCISDKKit.MCINavigationStylable, τ_0_0 : MCISDKKit.MCIViewControllerProtocol>",
+            "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : MCISDKAuth.PasswordFlowDelegate, Self : MCISDKKit.MCINavigationStylable, Self : MCISDKKit.MCIViewControllerProtocol>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:10MCISDKAuth20PasswordFlowDelegateP",
+        "mangledName": "$s10MCISDKAuth20PasswordFlowDelegateP",
+        "moduleName": "MCISDKAuth",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PasswordFlowVC",
+        "printedName": "PasswordFlowVC",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "MCISDKAuth.PasswordFlowDelegate?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvp",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvp",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKAuth.PasswordFlowDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PasswordFlowDelegate",
+                        "printedName": "MCISDKAuth.PasswordFlowDelegate",
+                        "usr": "s:10MCISDKAuth20PasswordFlowDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvg",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvg",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKAuth.PasswordFlowDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PasswordFlowDelegate",
+                        "printedName": "MCISDKAuth.PasswordFlowDelegate",
+                        "usr": "s:10MCISDKAuth20PasswordFlowDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvs",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvs",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvM",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC8delegateAA0bC8Delegate_pSgvM",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dismissToWallet",
+            "printedName": "dismissToWallet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvp",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvp",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvg",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvg",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvs",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvs",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvM",
+                "mangledName": "$s10MCISDKAuth14PasswordFlowVCC15dismissToWalletSbSgvM",
+                "moduleName": "MCISDKAuth",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "allocate",
+            "printedName": "allocate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCISDKAuth.PasswordFlowVC",
+                "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10MCISDKAuth14PasswordFlowVCC8allocateACyFZ",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC8allocateACyFZ",
+            "moduleName": "MCISDKAuth",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC(im)viewDidLoad",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC11viewDidLoadyyF",
+            "moduleName": "MCISDKAuth",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC(im)viewDidAppear:",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC13viewDidAppearyySbF",
+            "moduleName": "MCISDKAuth",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLayoutSubviews",
+            "printedName": "viewDidLayoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC(im)viewDidLayoutSubviews",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC21viewDidLayoutSubviewsyyF",
+            "moduleName": "MCISDKAuth",
+            "overriding": true,
+            "objc_name": "viewDidLayoutSubviews",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCISDKAuth.PasswordFlowVC",
+                "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC(im)initWithNibName:bundle:",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "MCISDKAuth",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKAuth.PasswordFlowVC?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PasswordFlowVC",
+                    "printedName": "MCISDKAuth.PasswordFlowVC",
+                    "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC(im)initWithCoder:",
+            "mangledName": "$s10MCISDKAuth14PasswordFlowVCC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "MCISDKAuth",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MCISDKAuth@objc(cs)PasswordFlowVC",
+        "mangledName": "$s10MCISDKAuth14PasswordFlowVCC",
+        "moduleName": "MCISDKAuth",
+        "declAttributes": [
+          "Custom",
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "MCIFlowViewControllerProtocol",
+            "printedName": "MCIFlowViewControllerProtocol",
+            "usr": "s:9MCISDKKit29MCIFlowViewControllerProtocolP",
+            "mangledName": "$s9MCISDKKit29MCIFlowViewControllerProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MCINavigationStylable",
+            "printedName": "MCINavigationStylable",
+            "usr": "s:9MCISDKKit21MCINavigationStylableP",
+            "mangledName": "$s9MCISDKKit21MCINavigationStylableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MCIViewControllerProtocol",
+            "printedName": "MCIViewControllerProtocol",
+            "usr": "s:9MCISDKKit25MCIViewControllerProtocolP",
+            "mangledName": "$s9MCISDKKit25MCIViewControllerProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Identifiable",
+            "printedName": "Identifiable",
+            "usr": "s:9MCISDKKit12IdentifiableP",
+            "mangledName": "$s9MCISDKKit12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "requestCustomerAuthenticationCode",
+            "printedName": "requestCustomerAuthenticationCode(phoneNumber:vatNumber:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<MCISDKFoundation.MCISDKAuthenticationState, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<MCISDKFoundation.MCISDKAuthenticationState, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCISDKAuthenticationState",
+                        "printedName": "MCISDKFoundation.MCISDKAuthenticationState",
+                        "usr": "s:16MCISDKFoundation25MCISDKAuthenticationStateC"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MCISDKFoundationAAC10MCISDKAuthE33requestCustomerAuthenticationCode11phoneNumber03vatH010completionySS_SSys6ResultOyAA25MCISDKAuthenticationStateCSo7NSErrorCGctF",
+            "mangledName": "$s16MCISDKFoundationAAC10MCISDKAuthE33requestCustomerAuthenticationCode11phoneNumber03vatH010completionySS_SSys6ResultOyAA25MCISDKAuthenticationStateCSo7NSErrorCGctF",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerAuthenticationCodeValidation",
+            "printedName": "requestCustomerAuthenticationCodeValidation(authId:sms:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<MCISDKFoundation.MCISDKAuthenticationState, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<MCISDKFoundation.MCISDKAuthenticationState, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCISDKAuthenticationState",
+                        "printedName": "MCISDKFoundation.MCISDKAuthenticationState",
+                        "usr": "s:16MCISDKFoundation25MCISDKAuthenticationStateC"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MCISDKFoundationAAC10MCISDKAuthE43requestCustomerAuthenticationCodeValidation6authId3sms10completionySS_SSys6ResultOyAA25MCISDKAuthenticationStateCSo7NSErrorCGctF",
+            "mangledName": "$s16MCISDKFoundationAAC10MCISDKAuthE43requestCustomerAuthenticationCodeValidation6authId3sms10completionySS_SSys6ResultOyAA25MCISDKAuthenticationStateCSo7NSErrorCGctF",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerAuthenticationCodeResend",
+            "printedName": "requestCustomerAuthenticationCodeResend(authId:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MCISDKFoundationAAC10MCISDKAuthE39requestCustomerAuthenticationCodeResend6authId10completionySS_ys6ResultOyytSo7NSErrorCGctF",
+            "mangledName": "$s16MCISDKFoundationAAC10MCISDKAuthE39requestCustomerAuthenticationCodeResend6authId10completionySS_ys6ResultOyytSo7NSErrorCGctF",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerAuthenticationProfile",
+            "printedName": "requestCustomerAuthenticationProfile(authId:cpf:name:email:password:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MCISDKFoundationAAC10MCISDKAuthE36requestCustomerAuthenticationProfile6authId3cpf4name5email8password10completionySS_S2SSgAKSSys6ResultOyytSo7NSErrorCGctF",
+            "mangledName": "$s16MCISDKFoundationAAC10MCISDKAuthE36requestCustomerAuthenticationProfile6authId3cpf4name5email8password10completionySS_S2SSgAKSSys6ResultOyytSo7NSErrorCGctF",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "revokeCustomerAuthentication",
+            "printedName": "revokeCustomerAuthentication(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16MCISDKFoundationAAC10MCISDKAuthE28revokeCustomerAuthentication10completionyys6ResultOyytSo7NSErrorCGc_tF",
+            "mangledName": "$s16MCISDKFoundationAAC10MCISDKAuthE28revokeCustomerAuthentication10completionyys6ResultOyytSo7NSErrorCGc_tF",
+            "moduleName": "MCISDKAuth",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:16MCISDKFoundationAAC",
+        "mangledName": "$s16MCISDKFoundationAAC",
+        "moduleName": "MCISDKFoundation",
+        "declAttributes": [
+          "Final"
+        ],
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/thais.morimoto\/Desktop\/legacy-sdk-ios\/MerciWorkspace\/Frameworks\/MCISDKAuth\/MCISDKAuth\/Password\/PasswordFlowVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1404,
+      "length": 5,
+      "value": "false"
+    }
+  ]
+}

@@ -1,0 +1,3768 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "MCISDKLogger",
+        "printedName": "MCISDKLogger",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKKit",
+        "printedName": "MCISDKKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Checkoutable",
+        "printedName": "Checkoutable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "strategy",
+            "printedName": "strategy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutStrategy",
+                "printedName": "MCISDKCheckoutCore.CheckoutStrategy",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutStrategy",
+                    "printedName": "MCISDKCheckoutCore.CheckoutStrategy",
+                    "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutStrategy",
+                    "printedName": "MCISDKCheckoutCore.CheckoutStrategy",
+                    "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8strategyAA16CheckoutStrategy_pvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accounts",
+            "printedName": "accounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[MCISDKFoundation.MCIAccount]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCISDKFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCISDKFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8accountsSay16MCISDKFoundation10MCIAccountCGvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKCheckoutCore.CheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutDelegate",
+                    "printedName": "MCISDKCheckoutCore.CheckoutDelegate",
+                    "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKCheckoutCore.CheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CheckoutDelegate",
+                        "printedName": "MCISDKCheckoutCore.CheckoutDelegate",
+                        "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKCheckoutCore.CheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CheckoutDelegate",
+                        "printedName": "MCISDKCheckoutCore.CheckoutDelegate",
+                        "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8delegateAA16CheckoutDelegate_pSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isOffline",
+            "printedName": "isOffline",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP9isOfflineSbvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "shouldDisplayViewMessage",
+            "printedName": "shouldDisplayViewMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP24shouldDisplayViewMessageSbvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "usePLAvailableLimit",
+            "printedName": "usePLAvailableLimit",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP19usePLAvailableLimitSbvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "moduleCheckout",
+            "printedName": "moduleCheckout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ModuleCheckout",
+                "printedName": "MCISDKFoundation.ModuleCheckout",
+                "usr": "s:16MCISDKFoundation14ModuleCheckoutO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovp",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ModuleCheckout",
+                    "printedName": "MCISDKFoundation.ModuleCheckout",
+                    "usr": "s:16MCISDKFoundation14ModuleCheckoutO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovg",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ModuleCheckout",
+                    "printedName": "MCISDKFoundation.ModuleCheckout",
+                    "usr": "s:16MCISDKFoundation14ModuleCheckoutO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovs",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0Ovs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0OvM",
+                "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP14moduleCheckout16MCISDKFoundation06ModuleE0OvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "checkout",
+            "printedName": "checkout(strategy:accounts:delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.Checkoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutStrategy",
+                "printedName": "MCISDKCheckoutCore.CheckoutStrategy",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[MCISDKFoundation.MCIAccount]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCISDKFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKCheckoutCore.CheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutDelegate",
+                    "printedName": "MCISDKCheckoutCore.CheckoutDelegate",
+                    "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP8checkout8strategy8accounts8delegateAaB_So16UIViewControllerCXcAA16CheckoutStrategy_p_Say16MCISDKFoundation10MCIAccountCGSgAA0J8Delegate_pSgtF",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP8checkout8strategy8accounts8delegateAaB_So16UIViewControllerCXcAA16CheckoutStrategy_p_Say16MCISDKFoundation10MCIAccountCGSgAA0J8Delegate_pSgtF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "prepopulate",
+            "printedName": "prepopulate(activeAccounts:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[MCISDKFoundation.MCIAccount]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCISDKFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore12CheckoutableP11prepopulate14activeAccountsySay16MCISDKFoundation10MCIAccountCGSg_tF",
+            "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP11prepopulate14activeAccountsySay16MCISDKFoundation10MCIAccountCGSg_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.Checkoutable>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.Checkoutable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore12CheckoutableP",
+        "mangledName": "$s18MCISDKCheckoutCore12CheckoutableP",
+        "moduleName": "MCISDKCheckoutCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CheckoutDelegate",
+        "printedName": "CheckoutDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "didComplete",
+            "printedName": "didComplete(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP11didComplete4withyypSg_tF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegateP11didComplete4withyypSg_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFail",
+            "printedName": "didFail(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSError",
+                "printedName": "Foundation.NSError",
+                "usr": "c:objc(cs)NSError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP7didFail4withySo7NSErrorC_tF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegateP7didFail4withySo7NSErrorC_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldHandleError",
+            "printedName": "shouldHandleError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP17shouldHandleErrorSbyF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegateP17shouldHandleErrorSbyF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "didFail",
+            "printedName": "didFail(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSError",
+                "printedName": "Foundation.NSError",
+                "usr": "c:objc(cs)NSError"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutDelegatePAAE7didFail4withySo7NSErrorC_tF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegatePAAE7didFail4withySo7NSErrorC_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "shouldHandleError",
+            "printedName": "shouldHandleError()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutDelegatePAAE17shouldHandleErrorSbyF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegatePAAE17shouldHandleErrorSbyF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore16CheckoutDelegateP",
+        "mangledName": "$s18MCISDKCheckoutCore16CheckoutDelegateP",
+        "moduleName": "MCISDKCheckoutCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UnknownCheckoutStrategy",
+        "printedName": "UnknownCheckoutStrategy",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UnknownCheckoutStrategy",
+                "printedName": "MCISDKCheckoutCore.UnknownCheckoutStrategy",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyVACycfc",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyVACycfc",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "amount",
+            "printedName": "amount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV6amountSSvp",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV6amountSSvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV6amountSSvg",
+                "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV6amountSSvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "needValidateAmount",
+            "printedName": "needValidateAmount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV18needValidateAmountSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV18needValidateAmountSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV18needValidateAmountSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV18needValidateAmountSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceTitle",
+            "printedName": "serviceTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV12serviceTitleSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV12serviceTitleSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV12serviceTitleSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV12serviceTitleSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "buttonTitle",
+            "printedName": "buttonTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV11buttonTitleSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV11buttonTitleSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV11buttonTitleSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV11buttonTitleSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "merchant",
+            "printedName": "merchant",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKFoundation.MCIMerchant?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIMerchant",
+                    "printedName": "MCISDKFoundation.MCIMerchant",
+                    "usr": "s:16MCISDKFoundation11MCIMerchantC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV8merchant16MCISDKFoundation11MCIMerchantCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV8merchant16MCISDKFoundation11MCIMerchantCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKFoundation.MCIMerchant?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIMerchant",
+                        "printedName": "MCISDKFoundation.MCIMerchant",
+                        "usr": "s:16MCISDKFoundation11MCIMerchantC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV8merchant16MCISDKFoundation11MCIMerchantCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV8merchant16MCISDKFoundation11MCIMerchantCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "processPayment",
+            "printedName": "processPayment(account:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MCIAccount",
+                "printedName": "MCISDKFoundation.MCIAccount",
+                "usr": "s:16MCISDKFoundation10MCIAccountC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Any?, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Any?, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV14processPayment7account10completiony16MCISDKFoundation10MCIAccountC_ys6ResultOyypSgSo7NSErrorCGctF",
+            "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV14processPayment7account10completiony16MCISDKFoundation10MCIAccountC_ys6ResultOyypSgSo7NSErrorCGctF",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18MCISDKCheckoutCore23UnknownCheckoutStrategyV",
+        "mangledName": "$s18MCISDKCheckoutCore23UnknownCheckoutStrategyV",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "CheckoutStrategy",
+            "printedName": "CheckoutStrategy",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CheckoutConfig",
+        "printedName": "CheckoutConfig",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutConfig",
+                "printedName": "MCISDKCheckoutCore.CheckoutConfig",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC6sharedACvpZ",
+            "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC6sharedACvpZ",
+            "moduleName": "MCISDKCheckoutCore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutConfig",
+                    "printedName": "MCISDKCheckoutCore.CheckoutConfig",
+                    "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC6sharedACvgZ",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC6sharedACvgZ",
+                "moduleName": "MCISDKCheckoutCore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "hasPassword",
+            "printedName": "hasPassword",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvs",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvM",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC11hasPasswordSbvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "imageSuccess",
+            "printedName": "imageSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageSuccessSo7UIImageCSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "imageReceipt",
+            "printedName": "imageReceipt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC12imageReceiptSo7UIImageCSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:18MCISDKCheckoutCore14CheckoutConfigC",
+        "mangledName": "$s18MCISDKCheckoutCore14CheckoutConfigC",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CheckoutStrategy",
+        "printedName": "CheckoutStrategy",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "amount",
+            "printedName": "amount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP6amountSSvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP6amountSSvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP6amountSSvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP6amountSSvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "needValidateAmount",
+            "printedName": "needValidateAmount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP18needValidateAmountSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP18needValidateAmountSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP18needValidateAmountSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP18needValidateAmountSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceTitle",
+            "printedName": "serviceTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP12serviceTitleSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP12serviceTitleSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP12serviceTitleSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP12serviceTitleSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceDescription",
+            "printedName": "serviceDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP18serviceDescriptionSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP18serviceDescriptionSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP18serviceDescriptionSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP18serviceDescriptionSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "buttonTitle",
+            "printedName": "buttonTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP11buttonTitleSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP11buttonTitleSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP11buttonTitleSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP11buttonTitleSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "needPassword",
+            "printedName": "needPassword",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP12needPasswordSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP12needPasswordSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP12needPasswordSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP12needPasswordSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "automaticSelect",
+            "printedName": "automaticSelect",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKFoundation.MCIAccount?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP15automaticSelect16MCISDKFoundation10MCIAccountCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP15automaticSelect16MCISDKFoundation10MCIAccountCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKFoundation.MCIAccount?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP15automaticSelect16MCISDKFoundation10MCIAccountCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP15automaticSelect16MCISDKFoundation10MCIAccountCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "shouldShowSuccess",
+            "printedName": "shouldShowSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP17shouldShowSuccessSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP17shouldShowSuccessSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP17shouldShowSuccessSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP17shouldShowSuccessSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accountsInterceptor",
+            "printedName": "accountsInterceptor",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MCISDKFoundation.MCIAccount) -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MCISDKFoundation.MCIAccount) -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "merchant",
+            "printedName": "merchant",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKFoundation.MCIMerchant?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIMerchant",
+                    "printedName": "MCISDKFoundation.MCIMerchant",
+                    "usr": "s:16MCISDKFoundation11MCIMerchantC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP8merchant16MCISDKFoundation11MCIMerchantCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP8merchant16MCISDKFoundation11MCIMerchantCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKFoundation.MCIMerchant?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIMerchant",
+                        "printedName": "MCISDKFoundation.MCIMerchant",
+                        "usr": "s:16MCISDKFoundation11MCIMerchantC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP8merchant16MCISDKFoundation11MCIMerchantCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP8merchant16MCISDKFoundation11MCIMerchantCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "processPayment",
+            "printedName": "processPayment(account:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "MCIAccount",
+                "printedName": "MCISDKFoundation.MCIAccount",
+                "usr": "s:16MCISDKFoundation10MCIAccountC"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Any?, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Any?, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP14processPayment7account10completiony16MCISDKFoundation10MCIAccountC_ys6ResultOyypSgSo7NSErrorCGctF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP14processPayment7account10completiony16MCISDKFoundation10MCIAccountC_ys6ResultOyypSgSo7NSErrorCGctF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "needPassword",
+            "printedName": "needPassword",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE12needPasswordSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE12needPasswordSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE12needPasswordSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE12needPasswordSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "automaticSelect",
+            "printedName": "automaticSelect",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKFoundation.MCIAccount?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE15automaticSelect16MCISDKFoundation10MCIAccountCSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE15automaticSelect16MCISDKFoundation10MCIAccountCSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKFoundation.MCIAccount?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE15automaticSelect16MCISDKFoundation10MCIAccountCSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE15automaticSelect16MCISDKFoundation10MCIAccountCSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceDescription",
+            "printedName": "serviceDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE18serviceDescriptionSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE18serviceDescriptionSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE18serviceDescriptionSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE18serviceDescriptionSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "shouldShowSuccess",
+            "printedName": "shouldShowSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE17shouldShowSuccessSbvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE17shouldShowSuccessSbvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE17shouldShowSuccessSbvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE17shouldShowSuccessSbvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accountsInterceptor",
+            "printedName": "accountsInterceptor",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(MCISDKFoundation.MCIAccount) -> Swift.Bool",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvp",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(MCISDKFoundation.MCIAccount) -> Swift.Bool",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCISDKFoundation.MCIAccount",
+                        "usr": "s:16MCISDKFoundation10MCIAccountC"
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvg",
+                "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE19accountsInterceptorySb16MCISDKFoundation10MCIAccountCcvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "notifyTransctionState",
+            "printedName": "notifyTransctionState(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyPAAE21notifyTransctionState2toySS_tF",
+            "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyPAAE21notifyTransctionState2toySS_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.CheckoutStrategy>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.CheckoutStrategy>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore16CheckoutStrategyP",
+        "mangledName": "$s18MCISDKCheckoutCore16CheckoutStrategyP",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoCheckoutable",
+        "printedName": "AutoCheckoutable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "strategy",
+            "printedName": "strategy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCheckoutStrategy",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy",
+                    "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutStrategy",
+                        "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy",
+                        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutStrategy",
+                        "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy",
+                        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8strategyAA0C16CheckoutStrategy_pSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCheckoutDelegate",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate",
+                    "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutDelegate",
+                        "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate",
+                        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutDelegate",
+                        "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate",
+                        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8delegateAA0C16CheckoutDelegate_pSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dismissToWallet",
+            "printedName": "dismissToWallet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvs",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvs",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvM",
+                "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP15dismissToWalletSbSgvM",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+                "protocolReq": true,
+                "implicit": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "checkout",
+            "printedName": "checkout(strategy:delegate:dismissToWallet:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCheckoutStrategy",
+                "printedName": "MCISDKCheckoutCore.AutoCheckoutStrategy",
+                "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCheckoutDelegate",
+                    "printedName": "MCISDKCheckoutCore.AutoCheckoutDelegate",
+                    "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP8checkout8strategy8delegate15dismissToWalletAaB_So16UIViewControllerCXcAA0C16CheckoutStrategy_p_AA0cM8Delegate_pSgSbSgtF",
+            "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP8checkout8strategy8delegate15dismissToWalletAaB_So16UIViewControllerCXcAA0C16CheckoutStrategy_p_AA0cM8Delegate_pSgSbSgtF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutable>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore16AutoCheckoutableP",
+        "mangledName": "$s18MCISDKCheckoutCore16AutoCheckoutableP",
+        "moduleName": "MCISDKCheckoutCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoCheckoutStrategy",
+        "printedName": "AutoCheckoutStrategy",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "account",
+            "printedName": "account",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MCIAccount",
+                "printedName": "MCISDKFoundation.MCIAccount",
+                "usr": "s:16MCISDKFoundation10MCIAccountC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP7account16MCISDKFoundation10MCIAccountCvp",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP7account16MCISDKFoundation10MCIAccountCvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCISDKFoundation.MCIAccount",
+                    "usr": "s:16MCISDKFoundation10MCIAccountC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP7account16MCISDKFoundation10MCIAccountCvg",
+                "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP7account16MCISDKFoundation10MCIAccountCvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "amount",
+            "printedName": "amount",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP6amountSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP6amountSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP6amountSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP6amountSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "serviceTitle",
+            "printedName": "serviceTitle",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP12serviceTitleSSSgvp",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP12serviceTitleSSSgvp",
+            "moduleName": "MCISDKCheckoutCore",
+            "protocolReq": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP12serviceTitleSSSgvg",
+                "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP12serviceTitleSSSgvg",
+                "moduleName": "MCISDKCheckoutCore",
+                "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "execute",
+            "printedName": "execute(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Any?, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Any?, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Any?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP7execute10completionyys6ResultOyypSgSo7NSErrorCGc_tF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP7execute10completionyys6ResultOyypSgSo7NSErrorCGc_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "notify",
+            "printedName": "notify(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyPAAE6notify2toySS_tF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyPAAE6notify2toySS_tF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutStrategy>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutStrategyP",
+        "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutStrategyP",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AutoCheckoutDelegate",
+        "printedName": "AutoCheckoutDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "autoCheckout",
+            "printedName": "autoCheckout(_:didCompleteWith:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP04autoD0_15didCompleteWithyAA0C12Checkoutable_So16UIViewControllerCXc_ypSgtF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegateP04autoD0_15didCompleteWithyAA0C12Checkoutable_So16UIViewControllerCXc_ypSgtF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "autoCheckoutError",
+            "printedName": "autoCheckoutError(_:didCompleteWithError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP04autoD5Error_015didCompleteWithG0yAA0C12Checkoutable_So16UIViewControllerCXc_So7NSErrorCSgtF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegateP04autoD5Error_015didCompleteWithG0yAA0C12Checkoutable_So16UIViewControllerCXc_So7NSErrorCSgtF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismissView",
+            "printedName": "dismissView(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP11dismissViewyyAA0C12Checkoutable_So16UIViewControllerCXcF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegateP11dismissViewyyAA0C12Checkoutable_So16UIViewControllerCXcF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "autoCheckoutError",
+            "printedName": "autoCheckoutError(_:didCompleteWithError:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSError?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegatePAAE04autoD5Error_015didCompleteWithG0yAA0C12Checkoutable_So16UIViewControllerCXc_So7NSErrorCSgtF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegatePAAE04autoD5Error_015didCompleteWithG0yAA0C12Checkoutable_So16UIViewControllerCXc_So7NSErrorCSgtF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismissView",
+            "printedName": "dismissView(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKCheckoutCore.AutoCheckoutable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegatePAAE11dismissViewyyAA0C12Checkoutable_So16UIViewControllerCXcF",
+            "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegatePAAE11dismissViewyyAA0C12Checkoutable_So16UIViewControllerCXcF",
+            "moduleName": "MCISDKCheckoutCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "sugared_genericSig": "<Self where Self : MCISDKCheckoutCore.AutoCheckoutDelegate>",
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCISDKCheckoutCore20AutoCheckoutDelegateP",
+        "mangledName": "$s18MCISDKCheckoutCore20AutoCheckoutDelegateP",
+        "moduleName": "MCISDKCheckoutCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKCheckoutCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Name",
+        "printedName": "Name",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "Checkout",
+            "printedName": "Checkout",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "Transaction",
+                "printedName": "Transaction",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Name",
+                    "printedName": "Foundation.NSNotification.Name",
+                    "usr": "c:@T@NSNotificationName"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:So18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV11TransactionABvpZ",
+                "mangledName": "$sSo18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV11TransactionABvpZ",
+                "moduleName": "MCISDKCheckoutCore",
+                "static": true,
+                "declAttributes": [
+                  "HasInitialValue",
+                  "HasStorage",
+                  "AccessControl"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Name",
+                        "printedName": "Foundation.NSNotification.Name",
+                        "usr": "c:@T@NSNotificationName"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:So18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV11TransactionABvgZ",
+                    "mangledName": "$sSo18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV11TransactionABvgZ",
+                    "moduleName": "MCISDKCheckoutCore",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Struct",
+            "usr": "s:So18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV",
+            "mangledName": "$sSo18NSNotificationNamea18MCISDKCheckoutCoreE8CheckoutV",
+            "moduleName": "MCISDKCheckoutCore",
+            "isFromExtension": true
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "c:@T@NSNotificationName",
+        "moduleName": "Foundation",
+        "declAttributes": [
+          "SynthesizedProtocol",
+          "SynthesizedProtocol",
+          "SynthesizedProtocol",
+          "SynthesizedProtocol",
+          "SynthesizedProtocol",
+          "SynthesizedProtocol",
+          "Sendable"
+        ],
+        "isFromExtension": true,
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_SwiftNewtypeWrapper",
+            "printedName": "_SwiftNewtypeWrapper",
+            "usr": "s:s20_SwiftNewtypeWrapperP",
+            "mangledName": "$ss20_SwiftNewtypeWrapperP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasCustomAnyHashableRepresentation",
+            "printedName": "_HasCustomAnyHashableRepresentation",
+            "usr": "s:s35_HasCustomAnyHashableRepresentationP",
+            "mangledName": "$ss35_HasCustomAnyHashableRepresentationP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/thais.morimoto\/Desktop\/legacy-sdk-ios\/MerciWorkspace\/Frameworks\/MCISDKCheckoutCore\/MCISDKCheckoutCore\/Checkout\/CheckoutConfig.swift",
+      "kind": "BooleanLiteral",
+      "offset": 292,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/thais.morimoto\/Desktop\/legacy-sdk-ios\/MerciWorkspace\/Frameworks\/MCISDKCheckoutCore\/MCISDKCheckoutCore\/Extensions\/Notification+Checkout.swift",
+      "kind": "StringLiteral",
+      "offset": 300,
+      "length": 34,
+      "value": "\"MerciSDK_TransactionNotification\""
+    }
+  ]
+}

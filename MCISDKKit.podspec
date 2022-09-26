@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors      = { 'Thais Sadami' => 'thais dot sadami @ dock dot tech' }
   spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '2.0.0-alpha.1' }
- 
+
   spec.ios.deployment_target = '10.0'
   spec.vendored_frameworks   = [
     'MCISDKAuth.xcframework',

@@ -1,4 +1,0 @@
-framework module MCISDKIssuerViewerCore {
-  header "MCISDKIssuerViewerCore-Swift.h"
-  requires objc
-}

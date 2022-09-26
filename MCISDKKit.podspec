@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name            = "MCISDKKit"
-  spec.version         = "2.0.0-alpha.1"
+  spec.version         = "TODO_SET_VERSION"
   spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
   spec.swift_versions  = ['5.2']
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/merci-app/mcikit-podspec'
   spec.license      = { :type => 'MIT', :file => 'LICENSE' }
   spec.authors      = { 'Thais Sadami' => 'thais dot sadami @ dock dot tech' }
-  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '2.0.0-alpha.1' }
+  spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => 'TODO_SET_VERSION' }
 
   spec.ios.deployment_target = '10.0'
   spec.vendored_frameworks   = [

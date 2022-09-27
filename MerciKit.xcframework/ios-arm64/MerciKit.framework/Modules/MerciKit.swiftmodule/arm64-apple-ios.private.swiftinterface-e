@@ -91,12 +91,6 @@ extension MCISDKFoundation {
   final public var base: MCISDKKit.MCIBaseTheme {
     get
   }
-  final public var wallet: MCISDKKit.MCIWalletTheme {
-    get
-  }
-  final public var pix: MCISDKKit.MCIPixTheme {
-    get
-  }
   final public var marketPlace: MCISDKKit.MCIMarketPlaceTheme {
     get
   }
@@ -158,43 +152,6 @@ extension SDKStyle : MCISDKKit.MCIBaseTheme {
     get
   }
   final public var actionBarTintColor: UIKit.UIColor {
-    get
-  }
-}
-extension SDKStyle : MCISDKKit.MCIWalletTheme {
-  final public var walletNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var walletNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var walletStatusBarStyle: UIKit.UIStatusBarStyle {
-    get
-  }
-  final public var accountsBackgroundColor: UIKit.UIColor {
-    get
-  }
-  final public var accountsRefreshControlColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsActiveIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var aliasBankTextColor: UIKit.UIColor? {
-    get
-  }
-}
-extension SDKStyle : MCISDKKit.MCIPixTheme {
-  final public var pixNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var pixNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
     get
   }
 }

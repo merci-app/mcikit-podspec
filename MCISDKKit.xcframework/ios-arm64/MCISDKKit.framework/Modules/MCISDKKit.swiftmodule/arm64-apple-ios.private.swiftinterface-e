@@ -72,8 +72,6 @@ public protocol MCITextFieldDelegate : UIKit.UITextFieldDelegate {
 }
 public protocol MCIStyle : AnyObject {
   var base: MCISDKKit.MCIBaseTheme { get }
-  var wallet: MCISDKKit.MCIWalletTheme { get }
-  var pix: MCISDKKit.MCIPixTheme { get }
   var marketPlace: MCISDKKit.MCIMarketPlaceTheme { get }
   var checkout: MCISDKKit.MCICheckoutTheme { get }
 }
@@ -96,21 +94,6 @@ public protocol MCIBaseTheme : AnyObject {
   var actionDisabledTextColor: UIKit.UIColor { get }
   var actionFlatTextColor: UIKit.UIColor { get }
   var actionBarTintColor: UIKit.UIColor { get }
-}
-public protocol MCIWalletTheme : AnyObject {
-  var walletNavBarTintColor: UIKit.UIColor { get }
-  var walletNavBarActionColor: UIKit.UIColor { get }
-  var walletStatusBarStyle: UIKit.UIStatusBarStyle { get }
-  var accountsBackgroundColor: UIKit.UIColor { get }
-  var accountsActiveIndicatorColor: UIKit.UIColor? { get }
-  var accountsRefreshControlColor: UIKit.UIColor? { get }
-  var accountsIndicatorColor: UIKit.UIColor? { get }
-  var aliasBankTextColor: UIKit.UIColor? { get }
-}
-public protocol MCIPixTheme : AnyObject {
-  var pixNavBarTintColor: UIKit.UIColor { get }
-  var pixNavBarActionColor: UIKit.UIColor { get }
-  var pixStatusBarStyle: UIKit.UIStatusBarStyle { get }
 }
 public protocol MCIMarketPlaceTheme : AnyObject {
   var marketNavBarTintColor: UIKit.UIColor { get }
@@ -882,12 +865,6 @@ extension UIKit.UIColor {
   final public var base: MCISDKKit.MCIBaseTheme {
     get
   }
-  final public var wallet: MCISDKKit.MCIWalletTheme {
-    get
-  }
-  final public var pix: MCISDKKit.MCIPixTheme {
-    get
-  }
   final public var marketPlace: MCISDKKit.MCIMarketPlaceTheme {
     get
   }
@@ -949,43 +926,6 @@ extension MCISDKKit.MerciStyle : MCISDKKit.MCIBaseTheme {
     get
   }
   final public var actionBarTintColor: UIKit.UIColor {
-    get
-  }
-}
-extension MCISDKKit.MerciStyle : MCISDKKit.MCIWalletTheme {
-  final public var walletNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var walletNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var walletStatusBarStyle: UIKit.UIStatusBarStyle {
-    get
-  }
-  final public var accountsBackgroundColor: UIKit.UIColor {
-    get
-  }
-  final public var accountsRefreshControlColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsActiveIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var aliasBankTextColor: UIKit.UIColor? {
-    get
-  }
-}
-extension MCISDKKit.MerciStyle : MCISDKKit.MCIPixTheme {
-  final public var pixNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var pixNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
     get
   }
 }
@@ -1087,8 +1027,6 @@ public enum MCINavigationStyle : Swift.CaseIterable {
   case light
   case dark
   case clear
-  case wallet
-  case pix
   case marketPlace
   public var data: MCISDKKit.MCINavigationStyleData? {
     get

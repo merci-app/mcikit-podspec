@@ -691,7 +691,7 @@ public enum SwiftGCMError : Swift.Error {
 }
 public protocol MarketplaceInjectable {
   func present(_ controller: UIKit.UIViewController, title: Swift.String, image: UIKit.UIImage?, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, with: UIKit.UIImage?, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, navImage: UIKit.UIImage?, tabImage: UIKit.UIImage) -> UIKit.UIViewController
   func voucher(activeAccounts: [MCIAccount]?, serviceTittle: Swift.String?, merchant: MCIMerchant) -> UIKit.UIViewController
   func cellphoneRecharge(activeAccounts: [MCIAccount]?, merchant: MCIMerchant) -> UIKit.UIViewController
   func webView(activeAcounts: [MCIAccount]?, merchant: MCIMerchant) -> UIKit.UIViewController
@@ -1321,7 +1321,7 @@ extension Swift.String : Foundation.LocalizedError {
 }
 public protocol StorePaymentInjectable {
   func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
 }
 @_hasMissingDesignatedInitializers final public class MCILocation {
   final public var coordinate: CoreLocation.CLLocationCoordinate2D {
@@ -1781,7 +1781,7 @@ extension MCIHome {
 }
 public protocol WithdrawalInjectable {
   func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
   func enableSupport(enabled: Swift.Bool)
   func configureDelegate(delegate: WithdrawalInjectableDelegate)
 }

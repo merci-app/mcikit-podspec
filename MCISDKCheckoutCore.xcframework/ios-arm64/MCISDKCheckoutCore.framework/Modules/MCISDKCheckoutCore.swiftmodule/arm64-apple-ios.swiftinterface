@@ -49,11 +49,13 @@ public struct UnknownCheckoutStrategy : CheckoutStrategy {
   public var merchant: MCIMerchant? {
     get
   }
+  public var isPaymentProcessable: Swift.Bool {
+    get
+  }
   public func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
 }
 @_hasMissingDesignatedInitializers final public class CheckoutConfig {
   public static let shared: CheckoutConfig
-  final public var hasPassword: Swift.Bool
   final public var imageSuccess: UIKit.UIImage?
   final public var imageReceipt: UIKit.UIImage?
   @objc deinit
@@ -64,17 +66,14 @@ public protocol CheckoutStrategy {
   var serviceTitle: Swift.String? { get }
   var serviceDescription: Swift.String? { get }
   var buttonTitle: Swift.String? { get }
-  var needPassword: Swift.Bool { get }
   var automaticSelect: MCIAccount? { get }
   var shouldShowSuccess: Swift.Bool { get }
   var accountsInterceptor: (MCIAccount) -> Swift.Bool { get }
   var merchant: MCIMerchant? { get }
+  var isPaymentProcessable: Swift.Bool { get }
   func processPayment(account: MCIAccount, completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
 }
 extension CheckoutStrategy {
-  public var needPassword: Swift.Bool {
-    get
-  }
   public var automaticSelect: MCIAccount? {
     get
   }
@@ -88,29 +87,4 @@ extension CheckoutStrategy {
     get
   }
   public func notifyTransctionState(to state: Swift.String)
-}
-public typealias AutoCheckoutVC = UIKit.UIViewController & AutoCheckoutable
-public protocol AutoCheckoutable : AnyObject {
-  var strategy: AutoCheckoutStrategy! { get set }
-  var delegate: AutoCheckoutDelegate? { get set }
-  var dismissToWallet: Swift.Bool? { get set }
-  func checkout(strategy: AutoCheckoutStrategy, delegate: AutoCheckoutDelegate?, dismissToWallet: Swift.Bool?) -> AutoCheckoutVC
-}
-public protocol AutoCheckoutStrategy {
-  var account: MCIAccount { get }
-  var amount: Swift.String? { get }
-  var serviceTitle: Swift.String? { get }
-  func execute(completion: @escaping (Swift.Result<Any?, Foundation.NSError>) -> Swift.Void)
-}
-extension AutoCheckoutStrategy {
-  public func notify(to state: Swift.String)
-}
-public protocol AutoCheckoutDelegate : AnyObject {
-  func autoCheckout(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWith object: Any?)
-  func autoCheckoutError(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWithError error: Foundation.NSError?)
-  func dismissView(_ autoCheckoutVC: AutoCheckoutVC)
-}
-extension AutoCheckoutDelegate {
-  public func autoCheckoutError(_ autoCheckoutVC: AutoCheckoutVC, didCompleteWithError error: Foundation.NSError?)
-  public func dismissView(_ autoCheckoutVC: AutoCheckoutVC)
 }

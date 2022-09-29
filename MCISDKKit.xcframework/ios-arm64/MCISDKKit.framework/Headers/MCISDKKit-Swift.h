@@ -768,7 +768,6 @@ SWIFT_CLASS("_TtC9MCISDKKit14OfflineErrorVC")
 
 
 
-
 @interface UIView (SWIFT_EXTENSION(MCISDKKit))
 @property (nonatomic) IBInspectable CGFloat mciCornerRadius;
 @property (nonatomic, strong) IBInspectable UIColor * _Nonnull mciBorderColor;

@@ -278,8 +278,6 @@ SWIFT_CLASS("_TtC9MCISDKKit20BlockedApplicationVC")
 
 
 
-
-
 SWIFT_CLASS("_TtC9MCISDKKit15FadeInPushSegue")
 @interface FadeInPushSegue : UIStoryboardSegue
 - (void)perform;
@@ -345,7 +343,7 @@ SWIFT_CLASS("_TtC9MCISDKKit18MCIAlertTransition")
 SWIFT_CLASS("_TtC9MCISDKKit10MCIAlertVC")
 @interface MCIAlertVC : UIViewController
 - (void)viewDidLoad;
-- (void)dismissAnimatedWithNotification;
+- (void)mciSdkDismissAnimatedWithNotification;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -555,7 +553,7 @@ SWIFT_CLASS("_TtC9MCISDKKit9MCIPassVC")
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)animated;
 - (void)viewWillDisappear:(BOOL)animated;
-- (void)dismissAnimatedWithNotification;
+- (void)mciSdkDismissAnimatedWithNotification;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -744,8 +742,6 @@ SWIFT_CLASS("_TtC9MCISDKKit10MCIWebView")
 @end
 
 
-
-
 SWIFT_CLASS("_TtC9MCISDKKit14OfflineErrorVC")
 @interface OfflineErrorVC : UIViewController
 - (void)viewDidLoad;
@@ -762,27 +758,19 @@ SWIFT_CLASS("_TtC9MCISDKKit14OfflineErrorVC")
 
 
 
-
-
-
-
-
-
-
 @interface UIView (SWIFT_EXTENSION(MCISDKKit))
-@property (nonatomic) IBInspectable CGFloat mciCornerRadius;
-@property (nonatomic, strong) IBInspectable UIColor * _Nonnull mciBorderColor;
-@property (nonatomic) IBInspectable CGFloat mciBorderWidth;
+@property (nonatomic) IBInspectable CGFloat mciSdkCornerRadius;
+@property (nonatomic, strong) IBInspectable UIColor * _Nonnull mciSdkBorderColor;
+@property (nonatomic) IBInspectable CGFloat mciSdkBorderWidth;
 @end
+
+
 
 
 @interface UIViewController (SWIFT_EXTENSION(MCISDKKit))
-- (void)dismissAnimatedWithNotification;
-- (void)popWithNotification;
+- (void)mciSdkDismissAnimatedWithNotification;
+- (void)mciSdkPopWithNotification;
 @end
-
-
-
 
 #endif
 #if defined(__cplusplus)

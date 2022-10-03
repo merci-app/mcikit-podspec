@@ -292,18 +292,6 @@ SWIFT_CLASS("_TtC21MCISDKDigitalCheckout10CheckoutVC")
 
 
 
-SWIFT_CLASS("_TtC21MCISDKDigitalCheckout22DigitalOperationFlowVC")
-@interface DigitalOperationFlowVC : UIViewController
-- (void)viewDidLoad;
-- (void)viewDidAppear:(BOOL)animated;
-- (void)viewDidLayoutSubviews;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-
-
 #endif
 #if defined(__cplusplus)
 #endif

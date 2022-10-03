@@ -32,7 +32,7 @@ public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   final public class func isAuthenticated() -> Swift.Bool
   final public class func listAccounts(result: @escaping (Swift.Result<[MCICustomerAccountInfo], Swift.Error>) -> Swift.Void)
   final public class func launch(viewController: UIKit.UIViewController, module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
-  final public class func launchEmbed(viewController: inout UIKit.UIViewController, module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, title: Swift.String, tabImage: UIKit.UIImage, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
+  final public class func embed(module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, title: Swift.String, tabImage: UIKit.UIImage, completion: @escaping ((Swift.Result<UIKit.UIViewController, Swift.Error>) -> Swift.Void))
   @objc deinit
 }
 extension Merci {
@@ -89,12 +89,6 @@ extension MCISDKFoundation {
     get
   }
   final public var base: MCISDKKit.MCIBaseTheme {
-    get
-  }
-  final public var wallet: MCISDKKit.MCIWalletTheme {
-    get
-  }
-  final public var pix: MCISDKKit.MCIPixTheme {
     get
   }
   final public var marketPlace: MCISDKKit.MCIMarketPlaceTheme {
@@ -158,43 +152,6 @@ extension SDKStyle : MCISDKKit.MCIBaseTheme {
     get
   }
   final public var actionBarTintColor: UIKit.UIColor {
-    get
-  }
-}
-extension SDKStyle : MCISDKKit.MCIWalletTheme {
-  final public var walletNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var walletNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var walletStatusBarStyle: UIKit.UIStatusBarStyle {
-    get
-  }
-  final public var accountsBackgroundColor: UIKit.UIColor {
-    get
-  }
-  final public var accountsRefreshControlColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsActiveIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var aliasBankTextColor: UIKit.UIColor? {
-    get
-  }
-}
-extension SDKStyle : MCISDKKit.MCIPixTheme {
-  final public var pixNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var pixNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
     get
   }
 }
@@ -278,7 +235,7 @@ public struct MCICustomerAccountInfo {
   public var lastFour: Swift.String
 }
 public enum MerciModule {
-  case marketpay(Swift.String)
+  case marketpay(UIKit.UIImage?)
   case pay
   case withdrawal(enableSupport: Swift.Bool)
   case merchant(Swift.String)

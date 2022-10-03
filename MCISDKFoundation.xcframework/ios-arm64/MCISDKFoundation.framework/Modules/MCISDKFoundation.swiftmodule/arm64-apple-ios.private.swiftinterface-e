@@ -6,7 +6,6 @@ import AVFoundation
 import AdSupport
 import Alamofire
 import CommonCrypto
-import Contacts
 import CoreImage
 import CoreLocation
 import Foundation
@@ -14,18 +13,17 @@ import KeychainAccess
 import LocalAuthentication
 @_exported import MCISDKFoundation
 import MCISDKLogger
-import MapKit
 import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
 extension Foundation.NSError {
-  public class func error(_ title: Swift.String, _ description: Swift.String) -> Foundation.NSError
-  public class func error(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String) -> Foundation.NSError
-  public class func error(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String, userInfo: [Swift.AnyHashable : Any]?) -> Foundation.NSError
-  public class func genericError() -> Foundation.NSError
-  public class func unexpectedResponseError() -> Foundation.NSError
-  public class func outdatedAppCode() -> Swift.Int
+  public class func mciSdkError(_ title: Swift.String, _ description: Swift.String) -> Foundation.NSError
+  public class func mciSdkError(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String) -> Foundation.NSError
+  public class func mciSdkError(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String, userInfo: [Swift.AnyHashable : Any]?) -> Foundation.NSError
+  public class func mciSdkGenericError() -> Foundation.NSError
+  public class func mciSdkUnexpectedResponseError() -> Foundation.NSError
+  public class func mciSdkOutdatedAppCode() -> Swift.Int
 }
 public enum ModuleCheckout {
   case pay
@@ -60,7 +58,6 @@ public typealias MCISDKAuthClient = (id: Swift.String, secret: Swift.String)
   final public var currentSession: MCISession?
   final public var support: MCISupport?
   final public var settings: MCISettings?
-  final public var customer: MCIPhoneValidationCustomer?
   final public let accounts: MCISDKFoundationAccounts
   final public var timeServerDiff: Swift.Double
   final public var needBlockTransactions: Swift.Bool {
@@ -74,7 +71,7 @@ public typealias MCISDKAuthClient = (id: Swift.String, secret: Swift.String)
     get
     set
   }
-  final public class func instantiate(source: MCISDKFoundationSource, environment: MCISDKFoundationEnvironment, auth: MCISDKAuthClient)
+  final public class func instantiate(source: MCISDKFoundationSource, environment: MCISDKFoundationEnvironment, auth: MCISDKAuthClient, additionalHeaderDelegate: MCIAdditionalHeaderDelegate? = nil)
   final public func revokeCurrentSession(sendNotification: Swift.Bool)
   final public func sessionAvailable() -> Swift.Bool
   final public func isSandbox() -> Swift.Bool
@@ -168,60 +165,6 @@ public enum ObfuscatePattern {
   final public class func normalize(bankAccountWithDigit: Swift.String?) -> (Swift.String?, Swift.String?)
   @objc deinit
 }
-@_hasMissingDesignatedInitializers final public class MCIPhoneValidationCustomer : Swift.Codable {
-  final public var emailVerified: Swift.Bool
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-public typealias AnalyticsEvent = (view: Swift.String?, category: Swift.String?, action: Swift.String?, label: Swift.String?)
-public protocol AnalyticsInjectable {
-  func trackEvent(event: AnalyticsEvent)
-}
-public protocol AnalyticsArea {
-  associatedtype ScreenView : Swift.RawRepresentable
-  associatedtype EventCategory : Swift.RawRepresentable
-  associatedtype EventAction : Swift.RawRepresentable
-  associatedtype EventLabel : Swift.RawRepresentable
-  static func trackEvent(view: Self.ScreenView, category: Self.EventCategory, action: Self.EventAction, label: Self.EventLabel?)
-}
-final public class MCICashInAliasBank : Swift.Codable {
-  final public var userName: Swift.String? {
-    get
-  }
-  final public var bank: Swift.String? {
-    get
-  }
-  final public var accountNumber: Swift.String? {
-    get
-  }
-  final public var accountDigit: Swift.String? {
-    get
-  }
-  final public var branchNumber: Swift.String? {
-    get
-  }
-  final public var branchDigit: Swift.String? {
-    get
-  }
-  final public var accountType: Swift.String? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers final public class MapCoordinate : Swift.Codable {
-  final public var latitude: Swift.Double {
-    get
-  }
-  final public var longitude: Swift.Double {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 final public class MCICellphoneRechargeTransaction : Swift.Codable {
   final public var id: Swift.String? {
     get
@@ -248,71 +191,26 @@ final public class MCICellphoneRechargeTransaction : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
 }
+public class MCISDKLocalizedError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init(description: Swift.String?)
+  @objc deinit
+}
 extension UIKit.UIColor {
-  convenience public init(hexString: Swift.String)
-  public func hexString() -> Swift.String
+  convenience public init(mciSdkHexString: Swift.String)
+  public func mciSdkHexString() -> Swift.String
 }
 public enum MCISDKFoundationEnvironment {
   case development(raw: [Swift.UInt8])
   case sandbox(data: [Swift.UInt8], raw: [Swift.UInt8])
   case production(data: [Swift.UInt8], raw: [Swift.UInt8])
 }
-@_hasMissingDesignatedInitializers final public class MapReverseGeocode : Swift.Codable {
-  final public var address: Swift.String? {
-    get
-  }
-  final public var formattedAddress: Swift.String? {
-    get
-  }
-  final public var coordinate: MapCoordinate? {
-    get
-  }
-  final public var addressComponents: MapAddressComponents? {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-@_hasMissingDesignatedInitializers final public class MapAddressComponents : Swift.Codable {
-  final public var streetName: Swift.String? {
-    get
-  }
-  final public var streetNumber: Swift.String? {
-    get
-  }
-  final public var neighborhood: Swift.String? {
-    get
-  }
-  final public var city: Swift.String? {
-    get
-  }
-  final public var state: Swift.String? {
-    get
-  }
-  final public var countryLong: Swift.String? {
-    get
-  }
-  final public var countryShort: Swift.String? {
-    get
-  }
-  final public var postalCode: Swift.String? {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-extension MapReverseGeocode {
-  convenience public init(placemark: CoreLocation.CLPlacemark)
-}
 public enum MCITransactionServiceType {
   case cellphoneRecharge(transaction: MCICellphoneRechargeTransaction?)
   case uber(transaction: MCIVoucherTransaction?)
   case voucher(transaction: MCIVoucherTransaction?)
-  case offline(transaction: MCIVoucherTransaction?)
-  case online(transaction: MCIVoucherTransaction?)
-  case webview(transaction: MCIVoucherTransaction?)
   case unknown
 }
 extension MCITransactionServiceType : Swift.Codable, Swift.CustomStringConvertible {
@@ -329,20 +227,6 @@ final public class MCITransactionDetails : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   final public func encode(to encoder: Swift.Encoder) throws
   @objc deinit
-}
-public protocol ProfileInjectable : AnyObject {
-  static func allocate() -> ProfileInjectable
-  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
-  func push(navigation: UIKit.UINavigationController)
-}
-public protocol PasswordCreateInjectable : AnyObject {
-  static func allocate() -> PasswordCreateInjectable
-  func present(uuid: Swift.String, controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
-}
-public protocol PasswordForgotInjectable : AnyObject {
-  static func allocate() -> PasswordForgotInjectable
-  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
-  func push(navigation: UIKit.UINavigationController)
 }
 final public class MCIVoucherTransaction : Swift.Codable {
   final public var id: Swift.String? {
@@ -468,6 +352,12 @@ extension MCICacheController {
   final public func storeAccounts(accounts: [MCIAccount]) throws
   final public func retrieveWallet() throws -> [MCIAccount]?
 }
+extension Foundation.URL {
+  public static func mciSdkMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkGoogleMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkWaze(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkUber(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+}
 @_hasMissingDesignatedInitializers final public class MCIMerchantAccount : Swift.Codable {
   final public var id: Swift.String? {
     get
@@ -535,9 +425,6 @@ final public class MCIWalletLimits : Swift.Codable {
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
 }
-public protocol CashInInjectable {
-  func present(_ controller: UIKit.UIViewController, account: MCIAccount, action: MCIAccountWalletAction, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-}
 @_hasMissingDesignatedInitializers final public class MCIMerchantMcc : Swift.Codable {
   final public var id: Swift.UInt {
     get
@@ -551,9 +438,6 @@ public protocol CashInInjectable {
 }
 extension MCIMerchantMcc : Swift.Equatable {
   public static func == (lhs: MCIMerchantMcc, rhs: MCIMerchantMcc) -> Swift.Bool
-}
-public protocol CashOutInjectable {
-  func present(_ controller: UIKit.UIViewController, account: MCIAccount, action: MCIAccountWalletAction, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
 }
 final public class MCIExternalAccountLimit : Swift.Codable {
   final public var totalLimit: Swift.String? {
@@ -656,6 +540,9 @@ final public class MCICustomerAuthentication : Swift.Codable {
   final public func patch(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
   @objc deinit
 }
+extension UIKit.UIBezierPath {
+  public static func mciSdkCirclePath(with radius: CoreFoundation.CGFloat = 100) -> UIKit.UIBezierPath
+}
 final public class SwiftGCM {
   public static let tagSize128: Swift.Int
   public static let tagSize120: Swift.Int
@@ -691,10 +578,9 @@ public enum SwiftGCMError : Swift.Error {
 }
 public protocol MarketplaceInjectable {
   func present(_ controller: UIKit.UIViewController, title: Swift.String, image: UIKit.UIImage?, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, with: UIKit.UIImage?, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, navImage: UIKit.UIImage?, tabImage: UIKit.UIImage) -> UIKit.UIViewController
   func voucher(activeAccounts: [MCIAccount]?, serviceTittle: Swift.String?, merchant: MCIMerchant) -> UIKit.UIViewController
   func cellphoneRecharge(activeAccounts: [MCIAccount]?, merchant: MCIMerchant) -> UIKit.UIViewController
-  func webView(activeAcounts: [MCIAccount]?, merchant: MCIMerchant) -> UIKit.UIViewController
   func empty() -> UIKit.UIViewController
 }
 public enum MCIAccountType : Swift.String {
@@ -773,9 +659,6 @@ final public class MCIAccount : Swift.Codable {
     get
   }
   final public var isSync: Swift.Bool {
-    get
-  }
-  final public var pix: MCIAccountPixClaim? {
     get
   }
   final public var accountAliasId: Swift.String? {
@@ -894,141 +777,6 @@ final public class MCIAlertUI {
   public init(title: Swift.String?, message: Swift.String?, dismissTitle: Swift.String?, actionUrl: Foundation.URL?, showSupport: Swift.Bool?)
   @objc deinit
 }
-extension CoreLocation.CLLocationCoordinate2D : Swift.Equatable {
-  public static func == (lhs: CoreLocation.CLLocationCoordinate2D, rhs: CoreLocation.CLLocationCoordinate2D) -> Swift.Bool
-}
-extension CoreLocation.CLLocationCoordinate2D {
-  public static let zero: CoreLocation.CLLocationCoordinate2D
-  public func rect(with location: CoreLocation.CLLocationCoordinate2D) -> MapKit.MKMapRect
-  public var region: MapKit.MKCoordinateRegion {
-    get
-  }
-}
-final public class MCIPixCashOutDecode : Swift.Codable {
-  final public var codeType: Swift.String? {
-    get
-  }
-  final public var amount: Swift.String? {
-    get
-  }
-  final public var discount: Swift.String? {
-    get
-  }
-  final public var finalAmount: Swift.String?
-  final public var allowPayerChange: Swift.Bool? {
-    get
-  }
-  final public var allowAcceptance: Swift.Bool? {
-    get
-  }
-  final public var acceptance: Swift.String? {
-    get
-  }
-  final public var expirationDate: Swift.String? {
-    get
-  }
-  final public var dueToDate: Swift.String? {
-    get
-  }
-  final public var details: Swift.String? {
-    get
-  }
-  final public var createdDate: Swift.String? {
-    get
-  }
-  final public var key: Swift.String? {
-    get
-  }
-  final public var idtx: Swift.String? {
-    get
-  }
-  final public var postalCode: Swift.String? {
-    get
-  }
-  final public var city: Swift.String? {
-    get
-  }
-  final public var payee: MCIPayeeModel? {
-    get
-  }
-  final public var payer: MCIPayerModel? {
-    get
-  }
-  final public var fees: MCIFeeModel? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  final public func formattedAmount() -> Swift.String
-  final public func formattedTotalAmount() -> Swift.String
-  @objc deinit
-}
-final public class MCIPayeeModel : Swift.Codable {
-  final public var ispb: Swift.String? {
-    get
-  }
-  final public var bankName: Swift.String? {
-    get
-  }
-  final public var bankAccountNumber: Swift.String? {
-    get
-  }
-  final public var bankAccountType: Swift.String? {
-    get
-  }
-  final public var nationalRegistration: Swift.String? {
-    get
-  }
-  final public var nationalRegistrationMask: Swift.String? {
-    get
-  }
-  final public var personType: Swift.String? {
-    get
-  }
-  final public var keyMask: Swift.String? {
-    get
-  }
-  final public var key: Swift.String? {
-    get
-  }
-  final public var payeeName: Swift.String? {
-    get
-  }
-  final public var keyType: MCIPixKeyType? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-final public class MCIPayerModel : Swift.Codable {
-  final public var payerName: Swift.String? {
-    get
-  }
-  final public var nationalRegistration: Swift.String? {
-    get
-  }
-  final public var personType: Swift.String? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers final public class MCIFeeModel : Swift.Codable {
-  final public var code: Swift.String? {
-    get
-  }
-  final public var interest: Swift.String? {
-    get
-  }
-  final public var fine: Swift.String? {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 public enum MCIIssuerProductType : Swift.String, Swift.Codable {
   case unknown
   case credit
@@ -1137,33 +885,6 @@ extension Foundation.NSNotification.Name {
     }
   }
 }
-final public class MCIEmailUpdateModel : Swift.Codable {
-  final public var id: Swift.String {
-    get
-  }
-  final public var status: Swift.String {
-    get
-  }
-  final public var expirationTime: Swift.Int
-  final public var passingExpirationTime: Swift.Int {
-    get
-  }
-  final public func retriveExpirationDate()
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-final public class MCIEmailValidateModel : Swift.Codable {
-  final public var id: Swift.String {
-    get
-  }
-  final public var status: Swift.String {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
 @_hasMissingDesignatedInitializers final public class MCICustomerAccountQuizSuccess : Swift.Codable {
   final public var successTitle: Swift.String? {
     get
@@ -1180,6 +901,11 @@ final public class MCIEmailValidateModel : Swift.Codable {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+}
+extension Swift.FloatingPoint {
+  public var mciSdkDegreesToRadians: Self {
+    get
+  }
 }
 @_hasMissingDesignatedInitializers final public class MCICustomerAccountQuiz : Swift.Codable {
   final public var id: Swift.String? {
@@ -1218,91 +944,21 @@ final public class MCICustomerAccountSelectedAnswer : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-extension Swift.Double {
-  public static func equal(_ lhs: Swift.Double, _ rhs: Swift.Double, precise value: Swift.Int? = nil) -> Swift.Bool
-  public func precised(_ value: Swift.Int = 1) -> Swift.Double
-}
-public typealias MCIResult<Data> = (Swift.Result<Data, Foundation.NSError>) -> Swift.Void
-@_hasMissingDesignatedInitializers final public class MCICashInBankSlip : Swift.Codable {
-  final public var transactionId: Swift.String? {
-    get
-  }
-  final public var barCode: Swift.String? {
-    get
-  }
-  final public var amount: Swift.String? {
-    get
-  }
-  final public var dueDate: Foundation.Date? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-public enum MCIPLInvoiceReceiptEmailStatus : Swift.String, Swift.Codable {
-  case enabled
-  case disabled
-  case pending
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public enum MCIPLServiceInvoiceReceiptOption : Swift.String, Swift.Codable {
-  case email
-  case sms
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-final public class MCIPLServiceInvoiceReceipt : Swift.Codable {
-  final public var email: MCIPLInvoiceReceiptEmail? {
-    get
-  }
-  final public var sms: MCIPLInvoiceReceiptSMS? {
-    get
-  }
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-}
-final public class MCIPLInvoiceReceiptEmail : Swift.Codable {
-  final public var address: Swift.String? {
-    get
-  }
-  final public var status: MCIPLInvoiceReceiptEmailStatus?
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-}
-final public class MCIPLInvoiceReceiptSMS : Swift.Codable {
-  final public var phoneNumber: Swift.String? {
-    get
-  }
-  final public var enabled: Swift.Bool?
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-}
+public typealias MCISDKResult<Data> = (Swift.Result<Data, Foundation.NSError>) -> Swift.Void
 public protocol SupportInjectable {
   static func allocate() -> SupportInjectable
   func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func push(navigation: UIKit.UINavigationController)
 }
 extension UIKit.UIApplication {
-  @_Concurrency.MainActor(unsafe) public static var name: Swift.String?
-  @_Concurrency.MainActor(unsafe) public static var version: Swift.String?
-  @_Concurrency.MainActor(unsafe) public class func applicationName() -> Swift.String
-  @_Concurrency.MainActor(unsafe) public class func applicationVersion() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public static var mciSdkName: Swift.String?
+  @_Concurrency.MainActor(unsafe) public static var mciSdkVersion: Swift.String?
+  @_Concurrency.MainActor(unsafe) public class func mciSdkApplicationName() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public class func mciSdkApplicationVersion() -> Swift.String
 }
-extension Swift.String : Foundation.LocalizedError {
-  public var errorDescription: Swift.String? {
-    get
-  }
+extension Swift.String {
+  public func mciSdkPadding(leftTo paddedLength: Swift.Int, withPad pad: Swift.String, startingAt padStart: Swift.Int = 0) -> Swift.String
+  public func mciSdkAddingPercentEncodingForURL() -> Swift.String?
 }
 @_hasMissingDesignatedInitializers final public class MCISubCategory : Swift.Codable {
   final public var id: Swift.String {
@@ -1321,7 +977,7 @@ extension Swift.String : Foundation.LocalizedError {
 }
 public protocol StorePaymentInjectable {
   func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
 }
 @_hasMissingDesignatedInitializers final public class MCILocation {
   final public var coordinate: CoreLocation.CLLocationCoordinate2D {
@@ -1491,76 +1147,6 @@ extension MCISecurityController {
   final public func updatePassword(_ password: Swift.String?)
   @objc deinit
 }
-final public class MCIAccountPixClaim : Swift.Codable {
-  final public var claims: MCIPixClaim? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-final public class MCIPixClaim : Swift.Codable {
-  final public var confirmed: [MCIPixClaimData]? {
-    get
-  }
-  final public var pending: [MCIPixClaimData]? {
-    get
-  }
-  final public var denied: [MCIPixClaimData]? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-final public class MCIPixClaimData : Swift.Codable {
-  final public var title: Swift.String? {
-    get
-  }
-  final public var message: Swift.String? {
-    get
-  }
-  final public var subtitle: Swift.String? {
-    get
-  }
-  final public var actions: [MCIPixClaimActions]? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-final public class MCIPixClaimActions : Swift.Codable {
-  final public var text: Swift.String? {
-    get
-  }
-  final public var action: Swift.String? {
-    get
-  }
-  final public var params: MCIPixClaimActionParam? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-final public class MCIPixClaimActionParam : Swift.Codable {
-  final public var playerType: Swift.String? {
-    get
-  }
-  final public var deleteType: Swift.String? {
-    get
-  }
-  final public var claimUuid: Swift.String? {
-    get
-  }
-  final public var id: Swift.String? {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
 final public class MCIAccounWalletUI : Swift.Codable {
   final public var textTintColor: UIKit.UIColor {
     get
@@ -1668,31 +1254,10 @@ final public class MCIAccountUI : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
-@_hasMissingDesignatedInitializers final public class MapDirections : Swift.Codable {
-  final public var origin: MapPlace? {
-    get
-  }
-  final public var destination: MapPlace? {
-    get
-  }
-  final public var steps: [MapCoordinate]? {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public func makeCircular()
-}
 final public class MCIAccountLimits : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
   @objc deinit
-}
-extension Swift.String {
-  public func toCurrency() -> Swift.String?
-  public func toUncurrency() -> Swift.String?
 }
 @_hasMissingDesignatedInitializers final public class MCIInjectionController {
   public static let shared: MCIInjectionController
@@ -1767,9 +1332,6 @@ extension MCIIssuer : Swift.Equatable {
   final public var support: MCISupport? {
     get
   }
-  final public var customer: MCIPhoneValidationCustomer? {
-    get
-  }
   @objc deinit
 }
 extension MCIHome {
@@ -1781,7 +1343,7 @@ extension MCIHome {
 }
 public protocol WithdrawalInjectable {
   func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
-  func presentEmbed(_ controller: inout UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
   func enableSupport(enabled: Swift.Bool)
   func configureDelegate(delegate: WithdrawalInjectableDelegate)
 }
@@ -1820,12 +1382,12 @@ final public class MCIMarketplaceAccountLimit : Swift.Codable {
   @objc deinit
 }
 extension Foundation.UserDefaults {
-  public func isApplicationRegistered() -> Swift.Bool
-  public func registerApplication()
-  public func set(pushToken: Swift.String)
-  public func pushToken() -> Swift.String?
-  public func set(pushTokenRegistered: Swift.Bool)
-  public func pushTokenRegistered() -> Swift.Bool
+  public func mciSdkIsApplicationRegistered() -> Swift.Bool
+  public func mciSdkRegisterApplication()
+  public func mciSdkSet(pushToken: Swift.String)
+  public func mciSdkPushToken() -> Swift.String?
+  public func mciSdkSet(pushTokenRegistered: Swift.Bool)
+  public func mciSdkPushTokenRegistered() -> Swift.Bool
 }
 final public class MCIWithdrawAccountLimit : Swift.Codable {
   final public var showBoxDetail: Swift.Bool? {
@@ -2174,13 +1736,9 @@ extension MCIMerchantActionType : Swift.Codable {
 }
 public enum MCIMerchantServiceType : Swift.String {
   case cellphoneRecharge
-  case none
   case uber
   case unknown
   case voucher
-  case offline
-  case online
-  case webview
   public static let supported: [MCIMerchantServiceType]
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
@@ -2324,153 +1882,40 @@ final public class MCISDKAuthenticationState : Swift.Codable {
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
 }
+public enum MCISDKDeviceModel : Swift.String {
+  case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPadAir5, iPad5, iPad6, iPad7, iPad8, iPad9, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadMini6, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, iPhoneSE3, iPhone14, iPhone14Plus, iPhone14Pro, iPhone14ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleWatchS7, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, AppleTV2_4K, unrecognized
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 extension Foundation.TimeZone {
-  public static let zero: Foundation.TimeZone?
-  public static let utc: Foundation.TimeZone?
+  public static let mciSdkZero: Foundation.TimeZone?
+  public static let mciSdkUtc: Foundation.TimeZone?
 }
 extension Foundation.Locale {
-  public static let ptBr: Foundation.Locale
-  public static let enUs: Foundation.Locale
+  public static let mciSdkPtBr: Foundation.Locale
+  public static let mciSdkEnUs: Foundation.Locale
 }
 extension Foundation.DateFormatter {
-  public static let iso3339: Foundation.DateFormatter
-  public static let iso3339wz: Foundation.DateFormatter
-  public static let iso8601: Foundation.DateFormatter
-  public static let shortYearMonth: Foundation.DateFormatter
-  public static let shortYearMonthDay: Foundation.DateFormatter
-  public static let monthYear: Foundation.DateFormatter
-  public static let month: Foundation.DateFormatter
-  public static let dayMonth: Foundation.DateFormatter
-  public static let shortDayMonth: Foundation.DateFormatter
-  public static let shortDayMonthYear: Foundation.DateFormatter
-  public static let longDayMonthYear: Foundation.DateFormatter
-  public static let brazilianDate: Foundation.DateFormatter
-  public static let brazilianUTCDate: Foundation.DateFormatter
-  public static let shortBrazilianDate: Foundation.DateFormatter
-  public static let shortExpiration: Foundation.DateFormatter
-  public static let longExpiration: Foundation.DateFormatter
-  public static let brazilianDateWithTime: Foundation.DateFormatter
-  public static let brazilianDateWithTimeAndHifen: Foundation.DateFormatter
-  public static let fullBrazilianDateWithTime: Foundation.DateFormatter
-  public static let hour: Foundation.DateFormatter
-  public static let hourMilliseconds: Foundation.DateFormatter
-  public static let time: Foundation.DateFormatter
-  public static let awsDate: Foundation.DateFormatter
-  public static let awsShortDate: Foundation.DateFormatter
-  public static let year: Foundation.DateFormatter
+  public static let mciSdkIso3339: Foundation.DateFormatter
+  public static let mciSdkShortYearMonth: Foundation.DateFormatter
+  public static let mciSdkMonth: Foundation.DateFormatter
+  public static let mciSdkDayMonth: Foundation.DateFormatter
+  public static let mciSdkBrazilianDate: Foundation.DateFormatter
+  public static let mciSdkBrazilianDateWithTime: Foundation.DateFormatter
+  public static let mciSdkBrazilianDateWithTimeAndHifen: Foundation.DateFormatter
+  public static let mciSdkAwsDate: Foundation.DateFormatter
 }
 public protocol MCIAdditionalHeaderDelegate {
   func headers(_ completion: @escaping ([Swift.String : Swift.String]?) -> ())
   func retryHeaders(_ status: Swift.String, completion: @escaping ([Swift.String : Swift.String]?) -> ())
 }
 extension UIKit.UIDevice {
-  @_Concurrency.MainActor(unsafe) public class func deviceIdentifier() -> Swift.String
-  @_Concurrency.MainActor(unsafe) public func userAgent() -> Swift.String
-  @_Concurrency.MainActor(unsafe) public func isJailbroken() -> (is: Swift.Bool, cause: Swift.String)
-}
-@_hasMissingDesignatedInitializers final public class MapPlace : Swift.Codable {
-  final public var name: Swift.String? {
-    get
-  }
-  final public var address: Swift.String? {
-    get
-  }
-  final public var formattedAddress: Swift.String? {
-    get
-  }
-  final public var number: Swift.String? {
-    get
-  }
-  final public var coordinate: MapCoordinate? {
-    get
-  }
-  @objc deinit
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-}
-extension MapPlace {
-  convenience public init(_ geocode: MapReverseGeocode)
-}
-public enum MCICashInType : Swift.String {
-  case cashIn
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-extension MCICashInType : Swift.Codable {
-}
-public enum MCICashInMethod : Swift.String {
-  case bankSlip
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-extension MCICashInMethod : Swift.Codable {
-}
-public enum MCICashInStatus : Swift.String {
-  case unknown
-  case confirmed
-  case pending
-  case expired
-  case failed
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-extension MCICashInStatus : Swift.Codable {
-}
-extension MCICashInStatus : Swift.CustomStringConvertible {
-  public var description: Swift.String {
-    get
-  }
-}
-final public class MCICashIn : Swift.Codable {
-  final public var transactionId: Swift.String? {
-    get
-  }
-  final public var amount: Swift.String? {
-    get
-  }
-  final public var barCode: Swift.String? {
-    get
-  }
-  final public var dueDate: Foundation.Date? {
-    get
-  }
-  final public var documentDate: Foundation.Date? {
-    get
-  }
-  final public var status: MCICashInStatus {
-    get
-  }
-  final public func encode(to encoder: Swift.Encoder) throws
-  public init(from decoder: Swift.Decoder) throws
-  @objc deinit
-}
-extension MCICashIn {
-  final public func convertTo() -> MCICashInBankSlip
-}
-public protocol PixInjectable {
-  static func allocate() -> PixInjectable
-  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
-  func present(controller: UIKit.UIViewController, account: MCIAccount, completion: (() -> Swift.Void)?)
-  func push(navigation: UIKit.UINavigationController)
-  func configure(account: MCIAccount, qrCode: Swift.String, completionHandler: @escaping (Swift.Result<Swift.Bool, Foundation.NSError>) -> Swift.Void)
-}
-extension PixInjectable {
-  public func present(controller: UIKit.UIViewController, account: MCIAccount, completion: (() -> Swift.Void)?)
-}
-public protocol PixCashOutInjectable {
-  static func allocate() -> PixCashOutInjectable
-  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
-  func push(navigation: UIKit.UINavigationController, model: MCIPixCashOutDecode)
-  func configure(account: MCIAccount, qrCode: Swift.String, completionHandler: @escaping (Swift.Result<MCIPixCashOutDecode, Foundation.NSError>) -> Swift.Void)
+  @_Concurrency.MainActor(unsafe) public class func mciSdkDeviceIdentifier() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func mciSdkUserAgent() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func mciSdkDeviceModel() -> MCISDKDeviceModel
 }
 final public class MCISettingsUI : Swift.Codable {
   final public var accountPendingTitle: Swift.String? {
@@ -2481,6 +1926,21 @@ final public class MCISettingsUI : Swift.Codable {
   }
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MCISDKBarcodeGenerator {
+  public enum BarcodeTypes : Swift.String {
+    case aztec
+    case code128
+    case pdf417
+    case qr
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func barcode(input: Swift.String, format: MCISDKBarcodeGenerator.BarcodeTypes, size: CoreFoundation.CGSize, color: UIKit.UIColor = .black, image: UIKit.UIImage? = nil) -> UIKit.UIImage?
   @objc deinit
 }
 public enum MCICustomerAccountTokenError : Swift.Error {
@@ -2511,13 +1971,10 @@ extension MCICustomerAccountToken : Swift.Equatable {
   public static func == (lhs: MCICustomerAccountToken, rhs: MCICustomerAccountToken) -> Swift.Bool
 }
 extension Foundation.Data {
-  public init?(hexStringEncoded string: Swift.String)
-  public var decrypt: Foundation.Data {
+  public init?(mciSdkHexStringEncoded string: Swift.String)
+  public var mciSdkDecrypt: Foundation.Data {
     get
   }
-}
-extension Foundation.Bundle {
-  public static var MCIFoundation: Foundation.Bundle
 }
 public protocol AuthInjectable {
   static func allocate() -> AuthInjectable
@@ -2647,18 +2104,6 @@ public protocol MCISupportOption {
   @objc deinit
   final public func encode(to encoder: Swift.Encoder) throws
   public init(from decoder: Swift.Decoder) throws
-}
-public enum MCIPixKeyType : Swift.String, Swift.Codable {
-  case phoneNumber
-  case nationalRegistration
-  case email
-  case evp
-  case unknown
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
 }
 @_hasMissingDesignatedInitializers final public class MCICellphoneRecharge : Swift.Codable {
   final public var transactionId: Swift.String? {
@@ -2852,12 +2297,6 @@ extension MCIIssuerProductStatus : Swift.RawRepresentable {}
 extension MCIDocumentType : Swift.Equatable {}
 extension MCIDocumentType : Swift.Hashable {}
 extension MCIDocumentType : Swift.RawRepresentable {}
-extension MCIPLInvoiceReceiptEmailStatus : Swift.Equatable {}
-extension MCIPLInvoiceReceiptEmailStatus : Swift.Hashable {}
-extension MCIPLInvoiceReceiptEmailStatus : Swift.RawRepresentable {}
-extension MCIPLServiceInvoiceReceiptOption : Swift.Equatable {}
-extension MCIPLServiceInvoiceReceiptOption : Swift.Hashable {}
-extension MCIPLServiceInvoiceReceiptOption : Swift.RawRepresentable {}
 extension MCICategoryType : Swift.Equatable {}
 extension MCICategoryType : Swift.Hashable {}
 extension MCICategoryType : Swift.RawRepresentable {}
@@ -2878,20 +2317,14 @@ extension MCIMerchantMCCType : Swift.RawRepresentable {}
 extension MCIMerchantServiceType : Swift.Equatable {}
 extension MCIMerchantServiceType : Swift.Hashable {}
 extension MCIMerchantServiceType : Swift.RawRepresentable {}
-extension MCICashInType : Swift.Equatable {}
-extension MCICashInType : Swift.Hashable {}
-extension MCICashInType : Swift.RawRepresentable {}
-extension MCICashInMethod : Swift.Equatable {}
-extension MCICashInMethod : Swift.Hashable {}
-extension MCICashInMethod : Swift.RawRepresentable {}
-extension MCICashInStatus : Swift.Equatable {}
-extension MCICashInStatus : Swift.Hashable {}
-extension MCICashInStatus : Swift.RawRepresentable {}
+extension MCISDKDeviceModel : Swift.Equatable {}
+extension MCISDKDeviceModel : Swift.Hashable {}
+extension MCISDKDeviceModel : Swift.RawRepresentable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.Equatable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.Hashable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.RawRepresentable {}
 extension MCISupportOptionType : Swift.Equatable {}
 extension MCISupportOptionType : Swift.Hashable {}
-extension MCIPixKeyType : Swift.Equatable {}
-extension MCIPixKeyType : Swift.Hashable {}
-extension MCIPixKeyType : Swift.RawRepresentable {}
 extension MCICustomerTransactionStatus : Swift.Equatable {}
 extension MCICustomerTransactionStatus : Swift.Hashable {}
 extension MCICustomerTransactionStatus : Swift.RawRepresentable {}

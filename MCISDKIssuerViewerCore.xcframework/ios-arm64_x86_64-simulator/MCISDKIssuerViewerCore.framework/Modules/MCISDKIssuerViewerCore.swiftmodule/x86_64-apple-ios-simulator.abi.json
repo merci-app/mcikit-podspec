@@ -1,0 +1,333 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKIssuerViewerCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IssuerViewable",
+        "printedName": "IssuerViewable",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "allocate",
+            "printedName": "allocate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IssuerViewable",
+                "printedName": "MCISDKIssuerViewerCore.IssuerViewable",
+                "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP8allocateAaB_pyFZ",
+            "mangledName": "$s22MCISDKIssuerViewerCore14IssuerViewableP8allocateAaB_pyFZ",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCISDKIssuerViewerCore.IssuerViewable>",
+            "static": true,
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(controller:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP7present10controller10completionySo16UIViewControllerC_yycSgtF",
+            "mangledName": "$s22MCISDKIssuerViewerCore14IssuerViewableP7present10controller10completionySo16UIViewControllerC_yycSgtF",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCISDKIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "push",
+            "printedName": "push(navController:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UINavigationController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UINavigationController",
+                    "printedName": "UIKit.UINavigationController",
+                    "usr": "c:objc(cs)UINavigationController"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP4push13navControllerySo012UINavigationH0CSg_tF",
+            "mangledName": "$s22MCISDKIssuerViewerCore14IssuerViewableP4push13navControllerySo012UINavigationH0CSg_tF",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCISDKIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "instance",
+            "printedName": "instance()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCISDKIssuerViewerCore.IssuerViewable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP8instanceAaB_So16UIViewControllerCXcyF",
+            "mangledName": "$s22MCISDKIssuerViewerCore14IssuerViewableP8instanceAaB_So16UIViewControllerCXcyF",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCISDKIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCISDKIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:22MCISDKIssuerViewerCore14IssuerViewableP",
+        "mangledName": "$s22MCISDKIssuerViewerCore14IssuerViewableP",
+        "moduleName": "MCISDKIssuerViewerCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKIssuerViewerCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKLogger",
+        "printedName": "MCISDKLogger",
+        "declKind": "Import",
+        "moduleName": "MCISDKIssuerViewerCore"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MCISDKIssuerViewerCore"
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKKit",
+        "printedName": "MCISDKKit",
+        "declKind": "Import",
+        "moduleName": "MCISDKIssuerViewerCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MCIInitAccountFlow",
+        "printedName": "MCIInitAccountFlow",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(in:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22MCISDKIssuerViewerCore18MCIInitAccountFlowC7present2inySo16UIViewControllerC_tFZ",
+            "mangledName": "$s22MCISDKIssuerViewerCore18MCIInitAccountFlowC7present2inySo16UIViewControllerC_tFZ",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MCIInitAccountFlow",
+                "printedName": "MCISDKIssuerViewerCore.MCIInitAccountFlow",
+                "usr": "c:@M@MCISDKIssuerViewerCore@objc(cs)MCIInitAccountFlow"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCISDKIssuerViewerCore@objc(cs)MCIInitAccountFlow(im)init",
+            "mangledName": "$s22MCISDKIssuerViewerCore18MCIInitAccountFlowCACycfc",
+            "moduleName": "MCISDKIssuerViewerCore",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MCISDKIssuerViewerCore@objc(cs)MCIInitAccountFlow",
+        "mangledName": "$s22MCISDKIssuerViewerCore18MCIInitAccountFlowC",
+        "moduleName": "MCISDKIssuerViewerCore",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Identifiable",
+            "printedName": "Identifiable",
+            "usr": "s:9MCISDKKit12IdentifiableP",
+            "mangledName": "$s9MCISDKKit12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

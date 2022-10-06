@@ -1,0 +1,3247 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIAuth",
+        "printedName": "MCIAuth",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCICheckoutCore",
+        "printedName": "MCICheckoutCore",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CheckoutVC",
+        "printedName": "CheckoutVC",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "strategy",
+            "printedName": "strategy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutStrategy",
+                "printedName": "MCICheckoutCore.CheckoutStrategy",
+                "usr": "s:15MCICheckoutCore16CheckoutStrategyP"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "Lazy",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutStrategy",
+                    "printedName": "MCICheckoutCore.CheckoutStrategy",
+                    "usr": "s:15MCICheckoutCore16CheckoutStrategyP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutStrategy",
+                    "printedName": "MCICheckoutCore.CheckoutStrategy",
+                    "usr": "s:15MCICheckoutCore16CheckoutStrategyP"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8strategy15MCICheckoutCore0B8Strategy_pvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "accounts",
+            "printedName": "accounts",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[MCIFoundation.MCIAccount]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MCIAccount",
+                    "printedName": "MCIFoundation.MCIAccount",
+                    "usr": "s:13MCIFoundation10MCIAccountC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "Lazy",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCIFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCIFoundation.MCIAccount",
+                        "usr": "s:13MCIFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCIFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCIFoundation.MCIAccount",
+                        "usr": "s:13MCIFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8accountsSay13MCIFoundation10MCIAccountCGvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "MCICheckoutCore.CheckoutDelegate?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCICheckoutCore.CheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CheckoutDelegate",
+                        "printedName": "MCICheckoutCore.CheckoutDelegate",
+                        "usr": "s:15MCICheckoutCore16CheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCICheckoutCore.CheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CheckoutDelegate",
+                        "printedName": "MCICheckoutCore.CheckoutDelegate",
+                        "usr": "s:15MCICheckoutCore16CheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC8delegate15MCICheckoutCore0B8Delegate_pSgvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isOffline",
+            "printedName": "isOffline",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC9isOfflineSbvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC9isOfflineSbvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC9isOfflineSbvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC9isOfflineSbvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC9isOfflineSbvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC9isOfflineSbvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC9isOfflineSbvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC9isOfflineSbvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "shouldDisplayViewMessage",
+            "printedName": "shouldDisplayViewMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC24shouldDisplayViewMessageSbvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "usePLAvailableLimit",
+            "printedName": "usePLAvailableLimit",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC19usePLAvailableLimitSbvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "moduleCheckout",
+            "printedName": "moduleCheckout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ModuleCheckout",
+                "printedName": "MCIFoundation.ModuleCheckout",
+                "usr": "s:13MCIFoundation14ModuleCheckoutO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovp",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ModuleCheckout",
+                    "printedName": "MCIFoundation.ModuleCheckout",
+                    "usr": "s:13MCIFoundation14ModuleCheckoutO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovg",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ModuleCheckout",
+                    "printedName": "MCIFoundation.ModuleCheckout",
+                    "usr": "s:13MCIFoundation14ModuleCheckoutO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovs",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0Ovs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0OvM",
+                "mangledName": "$s18MCIDigitalCheckout0B2VCC06moduleB013MCIFoundation06ModuleB0OvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "allocate",
+            "printedName": "allocate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutVC",
+                "printedName": "MCIDigitalCheckout.CheckoutVC",
+                "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout0B2VCC8allocateACyFZ",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC8allocateACyFZ",
+            "moduleName": "MCIDigitalCheckout",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "checkout",
+            "printedName": "checkout(strategy:accounts:delegate:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCICheckoutCore.Checkoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutStrategy",
+                "printedName": "MCICheckoutCore.CheckoutStrategy",
+                "usr": "s:15MCICheckoutCore16CheckoutStrategyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[MCIFoundation.MCIAccount]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCIFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCIFoundation.MCIAccount",
+                        "usr": "s:13MCIFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCICheckoutCore.CheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutDelegate",
+                    "printedName": "MCICheckoutCore.CheckoutDelegate",
+                    "usr": "s:15MCICheckoutCore16CheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout0B2VCC8checkout8strategy8accounts8delegate15MCICheckoutCore12Checkoutable_So16UIViewControllerCXcAH0B8Strategy_p_Say13MCIFoundation10MCIAccountCGSgAH0B8Delegate_pSgtF",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC8checkout8strategy8accounts8delegate15MCICheckoutCore12Checkoutable_So16UIViewControllerCXcAH0B8Strategy_p_Say13MCIFoundation10MCIAccountCGSgAH0B8Delegate_pSgtF",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC(im)viewDidLoad",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC11viewDidLoadyyF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC(im)viewDidAppear:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC13viewDidAppearyySbF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewWillDisappear",
+            "printedName": "viewWillDisappear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC(im)viewWillDisappear:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC17viewWillDisappearyySbF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewWillDisappear:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "prepopulate",
+            "printedName": "prepopulate(activeAccounts:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[MCIFoundation.MCIAccount]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[MCIFoundation.MCIAccount]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIAccount",
+                        "printedName": "MCIFoundation.MCIAccount",
+                        "usr": "s:13MCIFoundation10MCIAccountC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout0B2VCC11prepopulate14activeAccountsySay13MCIFoundation10MCIAccountCGSg_tF",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC11prepopulate14activeAccountsySay13MCIFoundation10MCIAccountCGSg_tF",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CheckoutVC",
+                "printedName": "MCIDigitalCheckout.CheckoutVC",
+                "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC(im)initWithNibName:bundle:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCIDigitalCheckout.CheckoutVC?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CheckoutVC",
+                    "printedName": "MCIDigitalCheckout.CheckoutVC",
+                    "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC(im)initWithCoder:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "scrollViewWillBeginDragging",
+            "printedName": "scrollViewWillBeginDragging(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIScrollView",
+                "printedName": "UIKit.UIScrollView",
+                "usr": "c:objc(cs)UIScrollView"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)scrollViewWillBeginDragging:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC27scrollViewWillBeginDraggingyySo08UIScrollE0CF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "scrollViewWillBeginDragging:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectionView",
+            "printedName": "collectionView(_:willDisplay:forItemAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionView",
+                "printedName": "UIKit.UICollectionView",
+                "usr": "c:objc(cs)UICollectionView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionViewCell",
+                "printedName": "UIKit.UICollectionViewCell",
+                "usr": "c:objc(cs)UICollectionViewCell"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IndexPath",
+                "printedName": "Foundation.IndexPath",
+                "usr": "s:10Foundation9IndexPathV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)collectionView:willDisplayCell:forItemAtIndexPath:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC14collectionView_11willDisplay9forItemAtySo012UICollectionE0C_So0kE4CellC10Foundation9IndexPathVtF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "collectionView:willDisplayCell:forItemAtIndexPath:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectionView",
+            "printedName": "collectionView(_:didEndDisplaying:forItemAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionView",
+                "printedName": "UIKit.UICollectionView",
+                "usr": "c:objc(cs)UICollectionView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionViewCell",
+                "printedName": "UIKit.UICollectionViewCell",
+                "usr": "c:objc(cs)UICollectionViewCell"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IndexPath",
+                "printedName": "Foundation.IndexPath",
+                "usr": "s:10Foundation9IndexPathV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)collectionView:didEndDisplayingCell:forItemAtIndexPath:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC14collectionView_16didEndDisplaying9forItemAtySo012UICollectionE0C_So0lE4CellC10Foundation9IndexPathVtF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "collectionView:didEndDisplayingCell:forItemAtIndexPath:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectionView",
+            "printedName": "collectionView(_:numberOfItemsInSection:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionView",
+                "printedName": "UIKit.UICollectionView",
+                "usr": "c:objc(cs)UICollectionView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)collectionView:numberOfItemsInSection:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC14collectionView_22numberOfItemsInSectionSiSo012UICollectionE0C_SitF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "collectionView:numberOfItemsInSection:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectionView",
+            "printedName": "collectionView(_:cellForItemAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionViewCell",
+                "printedName": "UIKit.UICollectionViewCell",
+                "usr": "c:objc(cs)UICollectionViewCell"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionView",
+                "printedName": "UIKit.UICollectionView",
+                "usr": "c:objc(cs)UICollectionView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IndexPath",
+                "printedName": "Foundation.IndexPath",
+                "usr": "s:10Foundation9IndexPathV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)collectionView:cellForItemAtIndexPath:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC14collectionView_13cellForItemAtSo012UICollectionE4CellCSo0jE0C_10Foundation9IndexPathVtF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "collectionView:cellForItemAtIndexPath:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "collectionView",
+            "printedName": "collectionView(_:didSelectItemAt:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UICollectionView",
+                "printedName": "UIKit.UICollectionView",
+                "usr": "c:objc(cs)UICollectionView"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "IndexPath",
+                "printedName": "Foundation.IndexPath",
+                "usr": "s:10Foundation9IndexPathV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)collectionView:didSelectItemAtIndexPath:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC14collectionView_15didSelectItemAtySo012UICollectionE0C_10Foundation9IndexPathVtF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "collectionView:didSelectItemAtIndexPath:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "animationController",
+            "printedName": "animationController(forPresented:presenting:source:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewControllerAnimatedTransitioning?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewControllerAnimatedTransitioning",
+                    "printedName": "UIKit.UIViewControllerAnimatedTransitioning",
+                    "usr": "c:objc(pl)UIViewControllerAnimatedTransitioning"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)animationControllerForPresentedController:presentingController:sourceController:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC19animationController12forPresented10presenting6sourceSo06UIViewE21AnimatedTransitioning_pSgSo0jE0C_A2KtF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "animationControllerForPresentedController:presentingController:sourceController:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "animationController",
+            "printedName": "animationController(forDismissed:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIViewControllerAnimatedTransitioning?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIViewControllerAnimatedTransitioning",
+                    "printedName": "UIKit.UIViewControllerAnimatedTransitioning",
+                    "usr": "c:objc(pl)UIViewControllerAnimatedTransitioning"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@CM@MCIDigitalCheckout@objc(cs)CheckoutVC(im)animationControllerForDismissedController:",
+            "mangledName": "$s18MCIDigitalCheckout0B2VCC19animationController12forDismissedSo06UIViewE21AnimatedTransitioning_pSgSo0hE0C_tF",
+            "moduleName": "MCIDigitalCheckout",
+            "objc_name": "animationControllerForDismissedController:",
+            "declAttributes": [
+              "Final",
+              "ObjC",
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MCIDigitalCheckout@objc(cs)CheckoutVC",
+        "mangledName": "$s18MCIDigitalCheckout0B2VCC",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "Custom",
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "MCINavigationStylable",
+            "printedName": "MCINavigationStylable",
+            "usr": "s:6MCIKit21MCINavigationStylableP",
+            "mangledName": "$s6MCIKit21MCINavigationStylableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MCIViewControllerProtocol",
+            "printedName": "MCIViewControllerProtocol",
+            "usr": "s:6MCIKit25MCIViewControllerProtocolP",
+            "mangledName": "$s6MCIKit25MCIViewControllerProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Checkoutable",
+            "printedName": "Checkoutable",
+            "usr": "s:15MCICheckoutCore12CheckoutableP",
+            "mangledName": "$s15MCICheckoutCore12CheckoutableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Identifiable",
+            "printedName": "Identifiable",
+            "usr": "s:6MCIKit12IdentifiableP",
+            "mangledName": "$s6MCIKit12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Dismissable",
+            "printedName": "Dismissable",
+            "usr": "s:6MCIKit11DismissableP",
+            "mangledName": "$s6MCIKit11DismissableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCICheckoutCore",
+        "printedName": "MCICheckoutCore",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIAuth",
+        "printedName": "MCIAuth",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCICheckoutCore",
+        "printedName": "MCICheckoutCore",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DigitalOperationFlowDelegate",
+        "printedName": "DigitalOperationFlowDelegate",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "digitalOperation",
+            "printedName": "digitalOperation(_:didCompleteWith:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "DigitalOperationFlowVC",
+                "printedName": "MCIDigitalCheckout.DigitalOperationFlowVC",
+                "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Any?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout28DigitalOperationFlowDelegateP07digitalD0_15didCompleteWithyAA0cdE2VCC_ypSgtF",
+            "mangledName": "$s18MCIDigitalCheckout28DigitalOperationFlowDelegateP07digitalD0_15didCompleteWithyAA0cdE2VCC_ypSgtF",
+            "moduleName": "MCIDigitalCheckout",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCIDigitalCheckout.DigitalOperationFlowDelegate>",
+            "sugared_genericSig": "<Self where Self : MCIDigitalCheckout.DigitalOperationFlowDelegate>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18MCIDigitalCheckout28DigitalOperationFlowDelegateP",
+        "mangledName": "$s18MCIDigitalCheckout28DigitalOperationFlowDelegateP",
+        "moduleName": "MCIDigitalCheckout",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DigitalOperationFlowVC",
+        "printedName": "DigitalOperationFlowVC",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "strategy",
+            "printedName": "strategy",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ImplicitlyUnwrappedOptional",
+                "printedName": "MCICheckoutCore.AutoCheckoutStrategy?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCheckoutStrategy",
+                    "printedName": "MCICheckoutCore.AutoCheckoutStrategy",
+                    "usr": "s:15MCICheckoutCore20AutoCheckoutStrategyP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvp",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "MCICheckoutCore.AutoCheckoutStrategy?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutStrategy",
+                        "printedName": "MCICheckoutCore.AutoCheckoutStrategy",
+                        "usr": "s:15MCICheckoutCore20AutoCheckoutStrategyP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvg",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ImplicitlyUnwrappedOptional",
+                    "printedName": "MCICheckoutCore.AutoCheckoutStrategy?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutStrategy",
+                        "printedName": "MCICheckoutCore.AutoCheckoutStrategy",
+                        "usr": "s:15MCICheckoutCore20AutoCheckoutStrategyP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvs",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvM",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8strategy15MCICheckoutCore04AutoB8Strategy_pSgvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dismissToWallet",
+            "printedName": "dismissToWallet",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvp",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvg",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Bool?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvs",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvM",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC15dismissToWalletSbSgvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "delegate",
+            "printedName": "delegate",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "MCICheckoutCore.AutoCheckoutDelegate?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvp",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvp",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "ownership": 1,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCICheckoutCore.AutoCheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutDelegate",
+                        "printedName": "MCICheckoutCore.AutoCheckoutDelegate",
+                        "usr": "s:15MCICheckoutCore20AutoCheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvg",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvg",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MCICheckoutCore.AutoCheckoutDelegate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "AutoCheckoutDelegate",
+                        "printedName": "MCICheckoutCore.AutoCheckoutDelegate",
+                        "usr": "s:15MCICheckoutCore20AutoCheckoutDelegateP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvs",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvs",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvM",
+                "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8delegate15MCICheckoutCore04AutoB8Delegate_pSgvM",
+                "moduleName": "MCIDigitalCheckout",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "allocate",
+            "printedName": "allocate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DigitalOperationFlowVC",
+                "printedName": "MCIDigitalCheckout.DigitalOperationFlowVC",
+                "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8allocateACyFZ",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8allocateACyFZ",
+            "moduleName": "MCIDigitalCheckout",
+            "static": true,
+            "declAttributes": [
+              "Custom",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLoad",
+            "printedName": "viewDidLoad()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC(im)viewDidLoad",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC11viewDidLoadyyF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewDidLoad",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidAppear",
+            "printedName": "viewDidAppear(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC(im)viewDidAppear:",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC13viewDidAppearyySbF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewDidAppear:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "viewDidLayoutSubviews",
+            "printedName": "viewDidLayoutSubviews()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC(im)viewDidLayoutSubviews",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC21viewDidLayoutSubviewsyyF",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "objc_name": "viewDidLayoutSubviews",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "AccessControl",
+              "Override"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(nibName:bundle:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DigitalOperationFlowVC",
+                "printedName": "MCIDigitalCheckout.DigitalOperationFlowVC",
+                "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Bundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bundle",
+                    "printedName": "Foundation.Bundle",
+                    "usr": "c:objc(cs)NSBundle"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC(im)initWithNibName:bundle:",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC7nibName6bundleACSSSg_So8NSBundleCSgtcfc",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithNibName:bundle:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coder:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCIDigitalCheckout.DigitalOperationFlowVC?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DigitalOperationFlowVC",
+                    "printedName": "MCIDigitalCheckout.DigitalOperationFlowVC",
+                    "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "NSCoder",
+                "printedName": "Foundation.NSCoder",
+                "usr": "c:objc(cs)NSCoder"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC(im)initWithCoder:",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC5coderACSgSo7NSCoderC_tcfc",
+            "moduleName": "MCIDigitalCheckout",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "initWithCoder:",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Custom",
+              "Required"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "checkout",
+            "printedName": "checkout(strategy:delegate:dismissToWallet:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCICheckoutCore.AutoCheckoutable"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "AutoCheckoutStrategy",
+                "printedName": "MCICheckoutCore.AutoCheckoutStrategy",
+                "usr": "s:15MCICheckoutCore20AutoCheckoutStrategyP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MCICheckoutCore.AutoCheckoutDelegate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "AutoCheckoutDelegate",
+                    "printedName": "MCICheckoutCore.AutoCheckoutDelegate",
+                    "usr": "s:15MCICheckoutCore20AutoCheckoutDelegateP"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC8checkout8strategy8delegate15dismissToWallet15MCICheckoutCore16AutoCheckoutable_So16UIViewControllerCXcAH0oB8Strategy_p_AH0oB8Delegate_pSgSbSgtF",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC8checkout8strategy8delegate15dismissToWallet15MCICheckoutCore16AutoCheckoutable_So16UIViewControllerCXcAH0oB8Strategy_p_AH0oB8Delegate_pSgSbSgtF",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "passwordFlowDidAuthenticate",
+            "printedName": "passwordFlowDidAuthenticate(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCIAuth.PasswordFlowVC",
+                "usr": "c:@M@MCIAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC08passwordE15DidAuthenticateyy7MCIAuth08PasswordeF0CF",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC08passwordE15DidAuthenticateyy7MCIAuth08PasswordeF0CF",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dismissView",
+            "printedName": "dismissView(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordFlowVC",
+                "printedName": "MCIAuth.PasswordFlowVC",
+                "usr": "c:@M@MCIAuth@objc(cs)PasswordFlowVC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18MCIDigitalCheckout22DigitalOperationFlowVCC11dismissViewyy7MCIAuth08PasswordeF0CF",
+            "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC11dismissViewyy7MCIAuth08PasswordeF0CF",
+            "moduleName": "MCIDigitalCheckout",
+            "declAttributes": [
+              "Custom",
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MCIDigitalCheckout@objc(cs)DigitalOperationFlowVC",
+        "mangledName": "$s18MCIDigitalCheckout22DigitalOperationFlowVCC",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "Custom",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)UIViewController",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "UIKit.UIViewController",
+          "UIKit.UIResponder",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "MCIFlowViewControllerProtocol",
+            "printedName": "MCIFlowViewControllerProtocol",
+            "usr": "s:6MCIKit29MCIFlowViewControllerProtocolP",
+            "mangledName": "$s6MCIKit29MCIFlowViewControllerProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MCINavigationStylable",
+            "printedName": "MCINavigationStylable",
+            "usr": "s:6MCIKit21MCINavigationStylableP",
+            "mangledName": "$s6MCIKit21MCINavigationStylableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MCIViewControllerProtocol",
+            "printedName": "MCIViewControllerProtocol",
+            "usr": "s:6MCIKit25MCIViewControllerProtocolP",
+            "mangledName": "$s6MCIKit25MCIViewControllerProtocolP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Identifiable",
+            "printedName": "Identifiable",
+            "usr": "s:6MCIKit12IdentifiableP",
+            "mangledName": "$s6MCIKit12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "AutoCheckoutable",
+            "printedName": "AutoCheckoutable",
+            "usr": "s:15MCICheckoutCore16AutoCheckoutableP",
+            "mangledName": "$s15MCICheckoutCore16AutoCheckoutableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "PasswordFlowDelegate",
+            "printedName": "PasswordFlowDelegate",
+            "usr": "s:7MCIAuth20PasswordFlowDelegateP",
+            "mangledName": "$s7MCIAuth20PasswordFlowDelegateP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Kingfisher",
+        "printedName": "Kingfisher",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Kingfisher",
+        "printedName": "Kingfisher",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIDigitalCheckout"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "UIStoryboard",
+        "printedName": "UIStoryboard",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "checkout",
+            "printedName": "checkout",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UIStoryboard",
+                "printedName": "UIKit.UIStoryboard",
+                "usr": "c:objc(cs)UIStoryboard"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:So12UIStoryboardC18MCIDigitalCheckoutE8checkoutABvpZ",
+            "mangledName": "$sSo12UIStoryboardC18MCIDigitalCheckoutE8checkoutABvpZ",
+            "moduleName": "MCIDigitalCheckout",
+            "static": true,
+            "declAttributes": [
+              "Custom"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIStoryboard",
+                    "printedName": "UIKit.UIStoryboard",
+                    "usr": "c:objc(cs)UIStoryboard"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:So12UIStoryboardC18MCIDigitalCheckoutE8checkoutABvgZ",
+                "mangledName": "$sSo12UIStoryboardC18MCIDigitalCheckoutE8checkoutABvgZ",
+                "moduleName": "MCIDigitalCheckout",
+                "static": true,
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:objc(cs)UIStoryboard",
+        "moduleName": "UIKit",
+        "isOpen": true,
+        "intro_iOS": "5.0",
+        "objc_name": "UIStoryboard",
+        "declAttributes": [
+          "Available",
+          "ObjC",
+          "NonSendable",
+          "Custom",
+          "Dynamic"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "isExternal": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1421,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1468,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1560,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1614,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1662,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "StringLiteral",
+      "offset": 966,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1007,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1037,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1068,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "StringLiteral",
+      "offset": 1222,
+      "length": 22,
+      "value": "\"transform.rotation.z\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1283,
+      "length": 3,
+      "value": "360"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CheckoutWaitVC.swift",
+      "kind": "FloatLiteral",
+      "offset": 1334,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/DigitalOperation\/DigitalOperationFlowVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 336,
+      "length": 4,
+      "value": "6120"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/DigitalOperation\/DigitalOperationFlowVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 336,
+      "length": 4,
+      "value": "6120"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/DigitalOperation\/DigitalOperationFlowVC.swift",
+      "kind": "IntegerLiteral",
+      "offset": 336,
+      "length": 4,
+      "value": "6120"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/DigitalOperation\/DigitalOperationFlowVC.swift",
+      "kind": "BooleanLiteral",
+      "offset": 764,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 450,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 491,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 521,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 552,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 706,
+      "length": 22,
+      "value": "\"transform.rotation.z\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 767,
+      "length": 3,
+      "value": "360"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutLoadingCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 818,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1219,
+      "length": 20,
+      "value": "\"transform.scale.xy\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1287,
+      "length": 4,
+      "value": "0.56"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1337,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1369,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1406,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1558,
+      "length": 13,
+      "value": "\"borderWidth\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1619,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1666,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1699,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1736,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1892,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1931,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1936,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1970,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2007,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 2169,
+      "length": 3,
+      "value": "1.5"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2687,
+      "length": 2,
+      "value": "23"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2736,
+      "length": 3,
+      "value": "11"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2744,
+      "length": 3,
+      "value": "11"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2769,
+      "length": 2,
+      "value": "46"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2781,
+      "length": 2,
+      "value": "46"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 3226,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3368,
+      "length": 20,
+      "value": "\"ico_check_selected\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3637,
+      "length": 7,
+      "value": "\"pulse\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 3782,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3924,
+      "length": 22,
+      "value": "\"ico_check_unselected\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 4253,
+      "length": 7,
+      "value": "\"pulse\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1216,
+      "length": 20,
+      "value": "\"transform.scale.xy\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1284,
+      "length": 4,
+      "value": "0.56"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1334,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1366,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1403,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1555,
+      "length": 13,
+      "value": "\"borderWidth\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1616,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1663,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1696,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1733,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 1889,
+      "length": 9,
+      "value": "\"opacity\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1928,
+      "length": 3,
+      "value": "0.9"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1933,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 1967,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2004,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 2166,
+      "length": 3,
+      "value": "1.5"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2684,
+      "length": 2,
+      "value": "23"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2733,
+      "length": 3,
+      "value": "11"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2741,
+      "length": 3,
+      "value": "11"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2766,
+      "length": 2,
+      "value": "46"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2778,
+      "length": 2,
+      "value": "46"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 3223,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3365,
+      "length": 20,
+      "value": "\"ico_check_selected\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3670,
+      "length": 7,
+      "value": "\"pulse\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "FloatLiteral",
+      "offset": 3815,
+      "length": 4,
+      "value": "0.35"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 3957,
+      "length": 22,
+      "value": "\"ico_check_unselected\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIDigitalCheckout\/MCIDigitalCheckout\/Checkout\/CollectionViewCells\/CheckoutAccountAltCollectionCell.swift",
+      "kind": "StringLiteral",
+      "offset": 4322,
+      "length": 7,
+      "value": "\"pulse\""
+    }
+  ]
+}

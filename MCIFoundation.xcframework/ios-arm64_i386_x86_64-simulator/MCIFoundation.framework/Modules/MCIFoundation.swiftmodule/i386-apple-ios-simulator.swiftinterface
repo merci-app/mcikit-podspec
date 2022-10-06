@@ -143,7 +143,7 @@ public typealias MCIAuthClient = (id: Swift.String, secret: Swift.String)
     get
     set
   }
-  final public class func instantiate(source: MCIFoundationSource, environment: MCIFoundationEnvironment, auth: MCIAuthClient)
+  final public class func instantiate(source: MCIFoundationSource, environment: MCIFoundationEnvironment, auth: MCIAuthClient, additionalHeaderDelegate: MCIAdditionalHeaderDelegate? = nil)
   final public func revokeCurrentSession(sendNotification: Swift.Bool)
   final public func sessionAvailable() -> Swift.Bool
   final public func isSandbox() -> Swift.Bool

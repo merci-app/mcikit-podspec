@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.name            = "MCISDKKit"
   spec.version         = "TODO_SET_VERSION"
   spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
-  spec.swift_versions  = ['5.2']
+  spec.swift_versions  = ['5']
 
   spec.description  = <<-DESC
   Esse framework é de uso da Merci e seus parceiros a fim de construir recursos de integração entre nosso sistemas.

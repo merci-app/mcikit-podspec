@@ -1360,10 +1360,10 @@ public protocol WithdrawalInjectable {
   func configureDelegate(delegate: WithdrawalInjectableDelegate)
 }
 public protocol WithdrawalInjectableDelegate {
-  func withdrawSupport() -> UIKit.UIViewController?
+  func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 extension WithdrawalInjectableDelegate {
-  public func withdrawSupport() -> UIKit.UIViewController?
+  public func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 final public class MCIMarketplaceAccountLimit : Swift.Codable {
   final public var showBoxDetail: Swift.Bool? {

@@ -211,6 +211,7 @@ public protocol MerciBaseDelegate {
   func unauthorizedFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func noCustomerAccountFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func supportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
   func unavailableServiceFlow(viewController: UIKit.UIViewController?, completion: (() -> Swift.Void)?)
 }
 extension MerciBaseDelegate {

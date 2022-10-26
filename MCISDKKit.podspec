@@ -27,7 +27,6 @@ Pod::Spec.new do |spec|
     'MCISDKCheckoutCore.xcframework',
     'MCISDKDigitalCheckout.xcframework',
     'MCISDKFoundation.xcframework',
-    'MCISDKIssuerViewerCore.xcframework',
     'MCISDKKit.xcframework',
     'MCISDKLogger.xcframework',
     'MerciKit.xcframework'

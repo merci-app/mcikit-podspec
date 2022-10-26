@@ -26,8 +26,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks   = [
     'MCISDKCheckoutCore.xcframework',
     'MCISDKDigitalCheckout.xcframework',
-    'MCISDKFoundation.xcframework',
-    'MCISDKIssuerViewerCore.xcframework',
+    'MCISDKFoundation.xcframework',    
     'MCISDKKit.xcframework',
     'MCISDKLogger.xcframework',
     'MerciKit.xcframework'

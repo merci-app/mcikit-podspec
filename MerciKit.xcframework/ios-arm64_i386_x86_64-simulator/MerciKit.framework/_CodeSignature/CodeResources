@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MerciKit-Swift.h</key>
 		<data>
-		w2A68LPUHk14BsCeyqAVvGhkxRY=
+		Nn++cWTdt+rJonzLve7mKHYLW5Y=
 		</data>
 		<key>Headers/MobileSDK.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lkT9CN3lWwFbfPR2ReVi+186XRc=
+		SYfpGk+NSuw0b0D5GYIHwyc0yGM=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		02on1fjKYqiASnKZCHN73X9pHSA=
+		XC9BU5ERP9CUt7o4iWbP4vkE6KM=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		w37W1uZq0EM4BA3T8kixuaAxKpo=
+		76aK5Z3RvCqJH39T2j97FNHMziM=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		l31eGUSijrFQtkVIJlEv+s6XhFg=
+		MCkcp67pXEYn+sjQTzEv1NVDtos=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RrWXv+ANLPKjLT5CZUDC6SL8If0=
+		+A50skb87nABCN63785OXWPVDME=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		m4MVk1DdT0TKF4X4X5evW85ph4I=
+		aAPFrysSXP3KdRL2Cyg2xmUDEw8=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		XxQADwNfLXQ0OEL0f2UyZD3vRjU=
+		R3CW+sFmslvvU1N0ITblMBdIQ3I=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w2A68LPUHk14BsCeyqAVvGhkxRY=
+			Nn++cWTdt+rJonzLve7mKHYLW5Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			KxElKrSfEuTNxUNgfW3gTJLoIaHMDQTLEVGc+DAH4gE=
+			q0U6rVR0l42pqomk4p6vU0QGuoMRXKv8ZSib8IpiW84=
 			</data>
 		</dict>
 		<key>Headers/MobileSDK.h</key>
@@ -96,22 +96,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			02on1fjKYqiASnKZCHN73X9pHSA=
+			XC9BU5ERP9CUt7o4iWbP4vkE6KM=
 			</data>
 			<key>hash2</key>
 			<data>
-			4hf+MjiC6zrrA2UusL26/iLnLmHAsuQJkqjZrKqLKx0=
+			Rc6wdqWUkpD1Cjo7/BuawAiJnenVkfqUfntLYzSzvKA=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w37W1uZq0EM4BA3T8kixuaAxKpo=
+			76aK5Z3RvCqJH39T2j97FNHMziM=
 			</data>
 			<key>hash2</key>
 			<data>
-			w3FSfFZAeDOiYNzjVZ2cO67VZiQTevUiLbplxsH4fvo=
+			tsDcf4SrNr5RWVAVOYFeVK0AK0ANg08Dh8uoijyvL+U=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -129,22 +129,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			l31eGUSijrFQtkVIJlEv+s6XhFg=
+			MCkcp67pXEYn+sjQTzEv1NVDtos=
 			</data>
 			<key>hash2</key>
 			<data>
-			vfQ6E08zvGyxJI1b9L2EsuKp4L3BBW/yjRv5bjK1RY4=
+			NCz3amqLMmhiCaJ2MDJnFRAHiXxfehsZIMbXK8xo82I=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RrWXv+ANLPKjLT5CZUDC6SL8If0=
+			+A50skb87nABCN63785OXWPVDME=
 			</data>
 			<key>hash2</key>
 			<data>
-			oUGbkTxiVqZD/PTaWYBmRCQNnQM0xawo+9C8ePFG3AU=
+			ZQI0CgbwlsE5cdsFoLLUVZS5Xg5A9ZkElKQEzLUYRFA=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -162,22 +162,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			m4MVk1DdT0TKF4X4X5evW85ph4I=
+			aAPFrysSXP3KdRL2Cyg2xmUDEw8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ArYOfsW8zwJTEdjJ28cPsx7DPSieP1Fw7/6a0zz8yWQ=
+			rgaLJBaGbhU0asaT4VGwVYtF0LoudySFc06vmDtwiSE=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XxQADwNfLXQ0OEL0f2UyZD3vRjU=
+			R3CW+sFmslvvU1N0ITblMBdIQ3I=
 			</data>
 			<key>hash2</key>
 			<data>
-			R21Non4CIua6dCatyGJf2NXqRnyHZQm2pijEpis/MHk=
+			CZ+938LXNRCpkdEOCVgfQLjFEPMN+wQm6rwgQRK45ZY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

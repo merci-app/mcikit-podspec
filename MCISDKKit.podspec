@@ -35,7 +35,6 @@ Pod::Spec.new do |spec|
   spec.frameworks  = 'UIKit', 'MapKit'
   spec.dependency 'Alamofire', '<= 4.9.1'
   spec.dependency 'Kingfisher'
-  spec.dependency 'SwiftyRSA'
   spec.dependency 'KeychainAccess', '~> 4.2.2'
   spec.dependency 'TPKeyboardAvoiding', '~> 1.3'
 end

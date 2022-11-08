@@ -1,0 +1,11 @@
+framework module MCISDKKit {
+  umbrella header "MCISDKKit.h"
+
+  export *
+  module * { export * }
+}
+
+module MCISDKKit.Swift {
+    header "MCISDKKit-Swift.h"
+    requires objc
+}

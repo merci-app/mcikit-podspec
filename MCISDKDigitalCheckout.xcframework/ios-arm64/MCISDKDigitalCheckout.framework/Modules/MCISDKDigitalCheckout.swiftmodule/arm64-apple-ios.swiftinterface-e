@@ -1,11 +1,8 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCISDKDigitalCheckout
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCISDKDigitalCheckout
 import CoreLocation
-import Foundation
 import Kingfisher
-import MCISDKAuth
 import MCISDKCheckoutCore
 @_exported import MCISDKDigitalCheckout
 import MCISDKFoundation
@@ -14,13 +11,12 @@ import MCISDKLogger
 import Swift
 import UIKit
 import _Concurrency
-import _StringProcessing
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class CheckoutVC : MCISDKKit.MCIViewController, Checkoutable, MCISDKKit.Identifiable, MCISDKKit.Dismissable {
   @_Concurrency.MainActor(unsafe) final public var strategy: CheckoutStrategy {
     get
     set
   }
-  @_Concurrency.MainActor(unsafe) final public var accounts: [MCIAccount] {
+  @_Concurrency.MainActor(unsafe) final public var accounts: [MCISDKAccount] {
     get
     set
   }
@@ -30,11 +26,11 @@ import _StringProcessing
   @_Concurrency.MainActor(unsafe) final public var usePLAvailableLimit: Swift.Bool
   @_Concurrency.MainActor(unsafe) final public var moduleCheckout: ModuleCheckout
   @_Concurrency.MainActor(unsafe) final public class func allocate() -> CheckoutVC
-  @_Concurrency.MainActor(unsafe) final public func checkout(strategy: CheckoutStrategy, accounts: [MCIAccount]?, delegate: CheckoutDelegate?) -> CheckoutableVC
+  @_Concurrency.MainActor(unsafe) final public func checkout(strategy: CheckoutStrategy, accounts: [MCISDKAccount]?, delegate: CheckoutDelegate?) -> CheckoutableVC
   @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
   @_Concurrency.MainActor(unsafe) @objc override final public func viewDidAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override final public func viewWillDisappear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) final public func prepopulate(activeAccounts: [MCIAccount]?)
+  @_Concurrency.MainActor(unsafe) final public func prepopulate(activeAccounts: [MCISDKAccount]?)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -57,27 +53,5 @@ extension UIKit.UIStoryboard {
   @_Concurrency.MainActor(unsafe) public class var checkout: UIKit.UIStoryboard {
     get
   }
-}
-public protocol DigitalOperationFlowDelegate : AnyObject {
-  func digitalOperation(_ digitalOperation: DigitalOperationFlowVC, didCompleteWith object: Any?)
-}
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DigitalOperationFlowVC : MCISDKKit.MCIFlowViewController, MCISDKKit.Identifiable {
-  @_Concurrency.MainActor(unsafe) public var strategy: AutoCheckoutStrategy!
-  @_Concurrency.MainActor(unsafe) public var dismissToWallet: Swift.Bool?
-  @_Concurrency.MainActor(unsafe) weak public var delegate: AutoCheckoutDelegate?
-  @_Concurrency.MainActor(unsafe) public class func allocate() -> DigitalOperationFlowVC
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
-extension DigitalOperationFlowVC : AutoCheckoutable {
-  @_Concurrency.MainActor(unsafe) public func checkout(strategy: AutoCheckoutStrategy, delegate: AutoCheckoutDelegate?, dismissToWallet: Swift.Bool?) -> AutoCheckoutVC
-}
-extension DigitalOperationFlowVC : PasswordFlowDelegate {
-  @_Concurrency.MainActor(unsafe) public func passwordFlowDidAuthenticate(_ passwordFlowVC: PasswordFlowVC)
-  @_Concurrency.MainActor(unsafe) public func dismissView(_ passwordFlowVC: PasswordFlowVC)
 }
 extension CheckoutVC : UIKit.UICollectionViewDelegateFlowLayout {}

@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
-// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MerciKit
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MerciKit
 import Alamofire
 import Foundation
 import MCISDKCheckoutCore
@@ -13,7 +12,7 @@ import Swift
 import SwiftyRSA
 import UIKit
 import _Concurrency
-import _StringProcessing
+public let dataPubCert: Foundation.Data
 public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   public var delegate: MerciClientSecurityDelegate?
   public init(delegate: MerciClientSecurityDelegate? = nil)
@@ -26,20 +25,16 @@ public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   public static var isInstanciate: Swift.Bool {
     get
   }
-  final public class func instantiate(clientId: Swift.String, clientSecret: Swift.String, environment: MerciEnvironment, clientName: Swift.String?, homeImage: UIKit.UIImage? = nil, merciBrandImage: UIKit.UIImage? = nil, homeBackgroundColor: UIKit.UIColor? = nil, homeTitleColor: UIKit.UIColor? = nil, actionBarTintColor: UIKit.UIColor? = nil, actionTintColor: UIKit.UIColor? = nil, actionTextTintColor: UIKit.UIColor? = nil, loadingTintColor: UIKit.UIColor? = nil, clientSecurityDelegate: MerciClientSecurityDelegate? = nil, delegate: MerciDelegate? = nil)
+  final public class func instantiate(clientId: Swift.String, clientSecret: Swift.String, environment: MerciEnvironment, clientName: Swift.String?, homeImage: UIKit.UIImage? = nil, merciBrandImage: UIKit.UIImage? = nil, homeBackgroundColor: UIKit.UIColor? = nil, homeTitleColor: UIKit.UIColor? = nil, marketPlaceCategoryBackgroundColor: UIKit.UIColor? = nil, actionBarTintColor: UIKit.UIColor? = nil, actionTintColor: UIKit.UIColor? = nil, actionTextTintColor: UIKit.UIColor? = nil, loadingTintColor: UIKit.UIColor? = nil, clientSecurityDelegate: MerciClientSecurityDelegate? = nil, delegate: MerciDelegate? = nil)
   final public class func authenticate(cpf: Swift.String, completion: @escaping (_ result: Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
   final public class func revokeAuthentication(then completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
   final public class func isAuthenticated() -> Swift.Bool
   final public class func listAccounts(result: @escaping (Swift.Result<[MCICustomerAccountInfo], Swift.Error>) -> Swift.Void)
   final public class func launch(viewController: UIKit.UIViewController, module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
-  final public class func launchEmbed(viewController: inout UIKit.UIViewController, module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, title: Swift.String, tabImage: UIKit.UIImage, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
+  final public class func embed(module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, title: Swift.String, tabImage: UIKit.UIImage, completion: @escaping ((Swift.Result<UIKit.UIViewController, Swift.Error>) -> Swift.Void))
+  final public class func set(externalIds: [Swift.String])
+  final public class func cleanExternalIds()
   @objc deinit
-}
-extension Merci {
-  public static let userAuthenticationNotification: Foundation.Notification.Name
-  public static let modulePresentationNotification: Foundation.Notification.Name
-  public static let merchantPresentationNotification: Foundation.Notification.Name
-  public static let transactionNotification: Foundation.Notification.Name
 }
 public enum MCILogTag : Swift.String, Swift.Codable {
   case INSTANTIATE
@@ -48,6 +43,10 @@ public enum MCILogTag : Swift.String, Swift.Codable {
   case REVOKE_AUTHENTICATION
   case LAUNCH
   case DATA_LOAD
+  case X_SESSION_ID_1
+  case X_SESSION_ID_2
+  case X_SESSION_ID_3
+  case X_SESSION_ID_4
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -79,6 +78,9 @@ extension MCISDKFoundation {
   final public var _actionBarTintColor: UIKit.UIColor? {
     get
   }
+  final public var _marketPlaceCategoryBackgroundColor: UIKit.UIColor? {
+    get
+  }
   final public var _actionTintColor: UIKit.UIColor? {
     get
   }
@@ -89,12 +91,6 @@ extension MCISDKFoundation {
     get
   }
   final public var base: MCISDKKit.MCIBaseTheme {
-    get
-  }
-  final public var wallet: MCISDKKit.MCIWalletTheme {
-    get
-  }
-  final public var pix: MCISDKKit.MCIPixTheme {
     get
   }
   final public var marketPlace: MCISDKKit.MCIMarketPlaceTheme {
@@ -160,41 +156,7 @@ extension SDKStyle : MCISDKKit.MCIBaseTheme {
   final public var actionBarTintColor: UIKit.UIColor {
     get
   }
-}
-extension SDKStyle : MCISDKKit.MCIWalletTheme {
-  final public var walletNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var walletNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var walletStatusBarStyle: UIKit.UIStatusBarStyle {
-    get
-  }
-  final public var accountsBackgroundColor: UIKit.UIColor {
-    get
-  }
-  final public var accountsRefreshControlColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsActiveIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var accountsIndicatorColor: UIKit.UIColor? {
-    get
-  }
-  final public var aliasBankTextColor: UIKit.UIColor? {
-    get
-  }
-}
-extension SDKStyle : MCISDKKit.MCIPixTheme {
-  final public var pixNavBarTintColor: UIKit.UIColor {
-    get
-  }
-  final public var pixNavBarActionColor: UIKit.UIColor {
-    get
-  }
-  final public var pixStatusBarStyle: UIKit.UIStatusBarStyle {
+  final public var marketPlaceCategoryBackgroundColor: UIKit.UIColor {
     get
   }
 }
@@ -256,15 +218,22 @@ extension SDKStyle : MCISDKKit.MCICheckoutTheme {
 }
 public typealias MerciDelegate = WithdrawalInjectableDelegate & MerciBaseDelegate
 public protocol MerciBaseDelegate {
-  func supportFlow(reason: Swift.String?) -> UIKit.UIViewController?
-  func authenticationFlow() -> UIKit.UIViewController
+  func authenticationFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func unauthorizedFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func noCustomerAccountFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func supportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func unavailableServiceFlow(viewController: UIKit.UIViewController?, completion: (() -> Swift.Void)?)
 }
 extension MerciBaseDelegate {
-  public func supportFlow(reason: Swift.String?) -> UIKit.UIViewController?
+  public func unauthorizedFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  public func noCustomerAccountFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  public func supportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
 }
 public class BaseDelegate : MerciDelegate {
   public init()
-  public func authenticationFlow() -> UIKit.UIViewController
+  public func authenticationFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  public func unavailableServiceFlow(viewController: UIKit.UIViewController?, completion: (() -> Swift.Void)?)
   @objc deinit
 }
 public protocol MerciClientSecurityDelegate {
@@ -278,9 +247,9 @@ public struct MCICustomerAccountInfo {
   public var lastFour: Swift.String
 }
 public enum MerciModule {
-  case marketpay(Swift.String)
-  case pay
-  case withdrawal(enableSupport: Swift.Bool)
+  case marketpay(navigationBarLogo: UIKit.UIImage? = nil)
+  case pay(enableSupport: Swift.Bool = false)
+  case withdrawal(enableSupport: Swift.Bool = false)
   case merchant(Swift.String)
 }
 public enum MerciEnvironment {

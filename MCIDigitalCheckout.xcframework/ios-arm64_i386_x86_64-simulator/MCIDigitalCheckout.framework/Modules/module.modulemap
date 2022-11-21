@@ -1,0 +1,11 @@
+framework module MCIDigitalCheckout {
+  umbrella header "MCIDigitalCheckout.h"
+
+  export *
+  module * { export * }
+}
+
+module MCIDigitalCheckout.Swift {
+    header "MCIDigitalCheckout-Swift.h"
+    requires objc
+}

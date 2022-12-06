@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JaukB9yJpsJOse46T+6HRogWFZk=
+		R2xUz6K+PCdnFAVJuUQ2PiIL0ZA=
 		</data>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bZfGturyRuyooH/iMVqWtc0rkH4=
+		A7bNM0csczD3Sz49n4rUuR0CjNE=
 		</data>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		cG2JcBiOlwyYgujQecyhs0L72xo=
+		LJZ4CyqzzutV+MQhVwIN25E9fD8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JaukB9yJpsJOse46T+6HRogWFZk=
+			R2xUz6K+PCdnFAVJuUQ2PiIL0ZA=
 			</data>
 			<key>hash2</key>
 			<data>
-			/hlni0qFaEPO+RUd5R7T8b2tDvxtQGqhDhc+DJKZ1u4=
+			L+pDd5lAzQ7Lz0V7VdhoCj0oziAq30kPAzafMbPeXKs=
 			</data>
 		</dict>
 		<key>Modules/MCILogger.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bZfGturyRuyooH/iMVqWtc0rkH4=
+			A7bNM0csczD3Sz49n4rUuR0CjNE=
 			</data>
 			<key>hash2</key>
 			<data>
-			EO0nG5cdEBksVS3WgF9TxV8F3owSaAvHtioZIU5ufhI=
+			URZdz6YAWYrfpoTdiBw+qWacCOMQ+Cmo/YuIw6mEHQ0=
 			</data>
 		</dict>
 		<key>Modules/MCILogger.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			cG2JcBiOlwyYgujQecyhs0L72xo=
+			LJZ4CyqzzutV+MQhVwIN25E9fD8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ozSsyP+30DlrIbuArCe4dlt4JWJdRr8eZ3Jy9pgGClA=
+			Cgv/j2VKzIaJ3oV6sxQ46ai+L5jNgQF/HzLbAZvJiCU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

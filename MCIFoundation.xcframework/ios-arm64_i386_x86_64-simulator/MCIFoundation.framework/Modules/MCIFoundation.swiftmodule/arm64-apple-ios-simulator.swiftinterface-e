@@ -138,6 +138,7 @@ public typealias MCIAuthClient = (id: Swift.String, secret: Swift.String)
   final public var issuerKey: Swift.String {
     get
   }
+  final public var sdkVersion: Swift.String?
   final public var additionalHeaderDelegate: MCIAdditionalHeaderDelegate?
   final public var inject: MCIInjectionController {
     get
@@ -2039,6 +2040,7 @@ extension MCIFoundation {
 }
 @_hasMissingDesignatedInitializers final public class MCISecurityController {
   public static let shared: MCISecurityController
+  final public let isSSLPinningEnabled: Swift.Bool
   final public func compare(password: Swift.String?) -> (equal: Swift.Bool, locked: Swift.Bool)
   final public func encrypt(_ plainText: Swift.String) -> Swift.String
   final public func decrypt(hexValue: Swift.String?) -> Swift.String

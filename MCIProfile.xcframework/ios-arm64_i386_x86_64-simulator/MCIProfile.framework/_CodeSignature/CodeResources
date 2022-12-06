@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		f16lPFpFNOyW7+JqvTAxyy/vfRU=
+		DPNUo6jDsrEvsl0klaQ4YuRcBe4=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ko9Z5SQAT4Zl5sV+Tm0EDE7htWw=
+		symhJi/WirKyzCta8dZfAjW5mcQ=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		d4ZYb+YndEpeJ862QV9/io8Hvk4=
+		TA3eMfFa1m/C/v9cErHaKnjHzOo=
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		H4rEWt9E4BjiUkGmM4ioYOP3sf0=
+		Wpg4pWxljScng2EE8a6OO49QBlw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ko9Z5SQAT4Zl5sV+Tm0EDE7htWw=
+			symhJi/WirKyzCta8dZfAjW5mcQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			5+GBpqF8W9ahpjZfF5L2o+NTS24SZHFDj7F11cRrbc4=
+			6I3QjJM8hvOBoNdjhZ+FvhrekGSPHRDkWCYdRkPMaQM=
 			</data>
 		</dict>
 		<key>Modules/MCIProfile.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
@@ -140,11 +140,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d4ZYb+YndEpeJ862QV9/io8Hvk4=
+			TA3eMfFa1m/C/v9cErHaKnjHzOo=
 			</data>
 			<key>hash2</key>
 			<data>
-			U2gkmZCZsCxfVGCUsuFPYkcBLJOcWifYDVmwZJVXF4Q=
+			kI7YybW7y9s5Jsv+OPd2zW2W2nYu0JFWFhXTBdp9Lgk=
 			</data>
 		</dict>
 		<key>Modules/MCIProfile.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			H4rEWt9E4BjiUkGmM4ioYOP3sf0=
+			Wpg4pWxljScng2EE8a6OO49QBlw=
 			</data>
 			<key>hash2</key>
 			<data>
-			O2CtR9hNKYOvuwZgFNlG+dby/qwlntcDRCezWGSp3dg=
+			pBQBQUfYXlbj1X13uSPfUSVx5TJDCmLQ7C/L9oc+0IM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

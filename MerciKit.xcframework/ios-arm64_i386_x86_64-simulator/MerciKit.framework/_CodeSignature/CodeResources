@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/MerciKit-Swift.h</key>
 		<data>
-		w2A68LPUHk14BsCeyqAVvGhkxRY=
+		Nn++cWTdt+rJonzLve7mKHYLW5Y=
 		</data>
 		<key>Headers/MobileSDK.h</key>
 		<data>
@@ -14,43 +14,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Soyqt3Xm5m4rXKtBu7oi17rBUyo=
+		vr9YKiwo05bLiF42WrMb9AFStKk=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		uqRxPDlLmNhaUy/F8p4y5ayJxlw=
+		WTuNXz9mI+ffcb43kRzge15hsBM=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		02on1fjKYqiASnKZCHN73X9pHSA=
+		poYYe1DhSCz3QL47UJUOXoP1EHo=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ux7h7EkYzStrGYxm09gSGAonRTY=
+		re19Kz4KNcMpeu29lkmf0v+kNHo=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		9jFpN25PGWKM93cXdR7Ayc/eyCU=
+		GB7WTxP+G7oTcrlhmX3IH+r92II=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		l31eGUSijrFQtkVIJlEv+s6XhFg=
+		OZQZLsdFYfeOdGc58Yg4kQ9LMQo=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Fu2a1Sz2ZWhHzG55+Tg+WZmrD9k=
+		m3nQZIB8xyzsTvKrBNKh0v1oZuQ=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		nhQkVeMT6o8a7rp7K4l581f7fg4=
+		RDP8laa+Ec8IImlrTiIKKxv/Omg=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		m4MVk1DdT0TKF4X4X5evW85ph4I=
+		+lyEpFmM1kqeSuU3CpLQ5/yUH/A=
 		</data>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		alP2f9IeOFHQa2OabQ94F4mdnwg=
+		5EVCycIaQc1Cwnw9oGbVImROv0s=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,11 +63,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			w2A68LPUHk14BsCeyqAVvGhkxRY=
+			Nn++cWTdt+rJonzLve7mKHYLW5Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			KxElKrSfEuTNxUNgfW3gTJLoIaHMDQTLEVGc+DAH4gE=
+			q0U6rVR0l42pqomk4p6vU0QGuoMRXKv8ZSib8IpiW84=
 			</data>
 		</dict>
 		<key>Headers/MobileSDK.h</key>
@@ -85,99 +85,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uqRxPDlLmNhaUy/F8p4y5ayJxlw=
+			WTuNXz9mI+ffcb43kRzge15hsBM=
 			</data>
 			<key>hash2</key>
 			<data>
-			m6jAaWB0cPUZ80XziqAHOuISOThELmI76JQ8C0uD+JM=
+			XGLGQXVouIvvuth3axoh3VVgdXpUQBd6jm3qRVJlkGU=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			02on1fjKYqiASnKZCHN73X9pHSA=
+			poYYe1DhSCz3QL47UJUOXoP1EHo=
 			</data>
 			<key>hash2</key>
 			<data>
-			4hf+MjiC6zrrA2UusL26/iLnLmHAsuQJkqjZrKqLKx0=
+			g6BbFZIMrY8GRARxboinu+wM7pIGyQsom4DxNP8t+uw=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ux7h7EkYzStrGYxm09gSGAonRTY=
+			re19Kz4KNcMpeu29lkmf0v+kNHo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Aq02eeeONulFhNqao7YzqkUUayB0ILkIE41HYEa1zzs=
+			j9Xquj9hXklkIXOoaYQkv4hwnCbr/odiEQneUJfYadE=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9jFpN25PGWKM93cXdR7Ayc/eyCU=
+			GB7WTxP+G7oTcrlhmX3IH+r92II=
 			</data>
 			<key>hash2</key>
 			<data>
-			mxtL3qXlsWPILGR33GcCeNt16T9W3oQSgtlpfaEnjB4=
+			7YNR9Scxyu0XHU+VIGzp7TiJx8osdVsmTJPVewaEd9s=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l31eGUSijrFQtkVIJlEv+s6XhFg=
+			OZQZLsdFYfeOdGc58Yg4kQ9LMQo=
 			</data>
 			<key>hash2</key>
 			<data>
-			vfQ6E08zvGyxJI1b9L2EsuKp4L3BBW/yjRv5bjK1RY4=
+			O9Vww8KdWg/xglRmVl9KElsrElIfE80bOMElc8QXJvU=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Fu2a1Sz2ZWhHzG55+Tg+WZmrD9k=
+			m3nQZIB8xyzsTvKrBNKh0v1oZuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			5CfhZNETTck7PfCHfjvcgUNsJU2e/mI+n+lxKVl/RxI=
+			l/YJIfeKuQtAaXV3f2h9dtfFabywKpYrddbSO/RK7Fw=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nhQkVeMT6o8a7rp7K4l581f7fg4=
+			RDP8laa+Ec8IImlrTiIKKxv/Omg=
 			</data>
 			<key>hash2</key>
 			<data>
-			MRmWfbNN2DhWgBKBF2dgzmsLgM/bbz2qeTDOUozgcEM=
+			5aUxS2v8Qf/0H+qiYET1Dyv8om3k4ydJKwZ24j95emY=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			m4MVk1DdT0TKF4X4X5evW85ph4I=
+			+lyEpFmM1kqeSuU3CpLQ5/yUH/A=
 			</data>
 			<key>hash2</key>
 			<data>
-			ArYOfsW8zwJTEdjJ28cPsx7DPSieP1Fw7/6a0zz8yWQ=
+			jAm9ObAbgWQ9MjH0RFVe6tEFTOy1mApe5Hh6avMyauI=
 			</data>
 		</dict>
 		<key>Modules/MerciKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			alP2f9IeOFHQa2OabQ94F4mdnwg=
+			5EVCycIaQc1Cwnw9oGbVImROv0s=
 			</data>
 			<key>hash2</key>
 			<data>
-			jFk2db6Ej3TApmjVWkxuALNhgjnxGKx9g9ekpygTu0c=
+			LXk9znFHC3itTHHDuxa86cTTb/4jvdLFW0+5jIRSigY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

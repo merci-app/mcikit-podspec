@@ -126,6 +126,7 @@ public struct MCIFoundationAccounts {
 public typealias MCIAuthClient = (id: Swift.String, secret: Swift.String)
 @_hasMissingDesignatedInitializers final public class MCIFoundation {
   public static let shared: MCIFoundation
+  final public var contextUI: UIKit.UINavigationController?
   final public var currentSession: MCISession?
   final public var support: MCISupport?
   final public var settings: MCISettings?

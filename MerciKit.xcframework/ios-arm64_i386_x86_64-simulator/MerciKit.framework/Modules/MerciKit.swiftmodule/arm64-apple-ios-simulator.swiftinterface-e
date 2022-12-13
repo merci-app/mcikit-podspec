@@ -29,6 +29,7 @@ public class AddtionalHeaderDelegate : MCIAdditionalHeaderDelegate {
   final public class func revokeAuthentication(then completion: @escaping (Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void)
   final public class func isAuthenticated() -> Swift.Bool
   final public class func listAccounts(result: @escaping (Swift.Result<[MCICustomerAccountInfo], Swift.Error>) -> Swift.Void)
+  final public class func close()
   final public class func launch(viewController: UIKit.UIViewController, module: MerciModule, transition: UIKit.UIModalTransitionStyle = UIModalTransitionStyle.coverVertical, completion: @escaping ((Swift.Result<Swift.Void, Swift.Error>) -> Swift.Void))
   @objc deinit
 }

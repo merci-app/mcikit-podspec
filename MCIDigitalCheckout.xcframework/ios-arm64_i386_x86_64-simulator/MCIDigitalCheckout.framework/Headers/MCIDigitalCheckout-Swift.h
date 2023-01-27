@@ -232,6 +232,7 @@ SWIFT_CLASS("_TtC18MCIDigitalCheckout10CheckoutVC")
 
 @interface CheckoutVC (SWIFT_EXTENSION(MCIDigitalCheckout)) <UIScrollViewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
 
 @protocol UIViewControllerAnimatedTransitioning;
@@ -507,6 +508,7 @@ SWIFT_CLASS("_TtC18MCIDigitalCheckout10CheckoutVC")
 
 @interface CheckoutVC (SWIFT_EXTENSION(MCIDigitalCheckout)) <UIScrollViewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
 
 @protocol UIViewControllerAnimatedTransitioning;
@@ -782,6 +784,7 @@ SWIFT_CLASS("_TtC18MCIDigitalCheckout10CheckoutVC")
 
 @interface CheckoutVC (SWIFT_EXTENSION(MCIDigitalCheckout)) <UIScrollViewDelegate>
 - (void)scrollViewWillBeginDragging:(UIScrollView * _Nonnull)scrollView;
+- (void)scrollViewDidEndDecelerating:(UIScrollView * _Nonnull)scrollView;
 @end
 
 @protocol UIViewControllerAnimatedTransitioning;

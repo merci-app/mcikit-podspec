@@ -38,6 +38,7 @@ import _Concurrency
 }
 extension CheckoutVC : UIKit.UIScrollViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc final public func scrollViewWillBeginDragging(_ scrollView: UIKit.UIScrollView)
+  @_Concurrency.MainActor(unsafe) @objc final public func scrollViewDidEndDecelerating(_ scrollView: UIKit.UIScrollView)
 }
 extension CheckoutVC : UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
   @_Concurrency.MainActor(unsafe) @objc final public func collectionView(_ collectionView: UIKit.UICollectionView, willDisplay cell: UIKit.UICollectionViewCell, forItemAt indexPath: Foundation.IndexPath)

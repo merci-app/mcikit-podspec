@@ -1,0 +1,77 @@
+name: Legacy SDK iOS - Build
+run-name: Legacy SDK iOS build by @${{ github.actor }}
+
+on: 
+  workflow_dispatch:
+    inputs:
+      branch_legacy_sdk_ios:
+        description: "Source branch @legacy-sdk-ios"
+        required: true
+        type: "string"
+      release_name:
+        description: "The release name. E.g.: 1.0.1"
+        required: true
+        type: "string"
+
+jobs:
+  deploy:
+    name: Releasing Legacy SDK iOS
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout mcikit-podspec
+        uses: actions/checkout@v3
+      - name: Create release branch
+        run: |
+          git branch release/${{ inputs.release_name }}
+          git switch release/${{ inputs.release_name }}
+          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" MCISDKKit.podspec
+          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" MarketPlaceKit.podspec
+          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" PayKit.podspec
+          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" WithdrawalKit.podspec
+          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" MCISDKLogger.podspec
+          git add .
+          git commit -m "${{ inputs.release_name }}: preparing podspecs"
+          git push origin release/${{ inputs.release_name }}
+      - name: Checkout merci-app/legacy-sdk-ios
+        uses: actions/checkout@v3
+        with:
+          repository: merci-app/legacy-sdk-ios
+          token: ${{ secrets.LEGACY_SDK_IOS_PERSONAL_ACCESS_TOKEN }}
+          path: ./legacy-sdk-ios
+          ref: ${{ inputs.branch_legacy_sdk_ios }}
+      - name: Setup cocoapods
+        uses: maxim-lobanov/setup-cocoapods@v1
+        with:
+          podfile-path: legacy-sdk-ios/MerciWorkspace/Podfile.lock
+      - name: Install pods
+        run: |
+          cd legacy-sdk-ios/MerciWorkspace
+          pod install
+      - name: Setup Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '13.4.1'
+      - name: Run build script
+        run: |
+          cd legacy-sdk-ios/MerciWorkspace
+          ./build-legacy-sdk-ios.sh
+      - name: Commit frameworks
+        run: |
+          cd legacy-sdk-ios/MerciWorkspace
+          for name in *xcframework; do
+            echo "Coping $name"
+            cp -R "$name" ../..
+          done
+          cd ../..
+          for name in *xcframework; do
+            git add $name
+          done
+          git commit -m "${{ inputs.release_name }}: adding frameworks"
+          git push origin release/${{ inputs.release_name }}
+      - name: Create Github release
+        uses: ncipollo/release-action@v1
+        with:
+          commit: release/${{ inputs.release_name }}
+          name: ${{ inputs.release_name }}
+          tag: ${{ inputs.release_name }}
+          

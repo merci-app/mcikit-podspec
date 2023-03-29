@@ -4,7 +4,7 @@ run-name: Legacy SDK iOS build by @${{ github.actor }}
 on: 
   workflow_dispatch:
     inputs:
-      branch_mcikit-podspec:
+      branch_mcikit_podspec:
         description: "Podspec branch @mcikit-podspec"
         required: true
         type: "string"
@@ -23,10 +23,10 @@ jobs:
     name: Releasing Legacy SDK iOS
     runs-on: macOS-latest
     steps:
-      - name: Checkout branch_mcikit-podspec
+      - name: Checkout merci-app/mcikit-podspec
         uses: actions/checkout@v3
         with:
-          ref: $${{ inputs.branch_mcikit }}
+          ref: $${{ inputs.branch_mcikit_podspec }}
       - name: Create release branch
         run: |
           git branch release/${{ inputs.release_name }}

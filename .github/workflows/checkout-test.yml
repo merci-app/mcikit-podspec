@@ -10,4 +10,4 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: merci-app/mcikit-podspec
-          ref: version/2.0.0
+          ref: version/2.0.0-base

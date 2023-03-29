@@ -1,0 +1,10 @@
+on: 
+  workflow_dispatch:
+  
+jobs:
+deploy:
+  name: Releasing Legacy SDK iOS
+  runs-on: macOS-latest
+  steps:
+    - name: Checkout merci-app/mcikit-podspec
+      uses: actions/checkout@v3

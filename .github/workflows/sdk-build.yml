@@ -36,7 +36,6 @@ jobs:
           sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" MarketPlaceKit.podspec
           sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" PayKit.podspec
           sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" WithdrawalKit.podspec
-          sed -i '' "s/MCI_POD_SPEC_VERSION/${{ inputs.release_name }}/" MCISDKLogger.podspec
           git add .
           git commit -m "${{ inputs.release_name }}: preparing podspecs"
           git push origin release/${{ inputs.release_name }}

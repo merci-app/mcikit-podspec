@@ -4,6 +4,11 @@ run-name: Legacy SDK iOS build by @${{ github.actor }}
 on: 
   workflow_dispatch:
     inputs:
+      branch_mcikit-podspec:
+        description: "Podspec branch @mcikit-podspec"
+        required: true
+        type: "string"
+        default: "version/2.0.0-base"
       branch_legacy_sdk_ios:
         description: "Source branch @legacy-sdk-ios"
         required: true
@@ -20,6 +25,8 @@ jobs:
     steps:
       - name: Checkout mcikit-podspec
         uses: actions/checkout@v3
+        with:
+          ref: $${{ inputs.branch_mcikit }}
       - name: Create release branch
         run: |
           git branch release/${{ inputs.release_name }}

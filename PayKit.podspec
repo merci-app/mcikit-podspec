@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint MCISDKKit.podspec' to ensure this is a
+#  Be sure to run `pod spec lint PayKit.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |spec|
 
-    spec.name            = "MCISDKKit"
+    spec.name            = "PayKit"
     spec.version         = "MCI_POD_SPEC_VERSION"
-    spec.summary         = "MerciKit é framework destinado a Merci e seus parceiros."
+    spec.summary         = "PayKit é framework destinado a Merci e seus parceiros."
     spec.swift_versions  = ['5']
 
     spec.description  = <<-DESC
@@ -24,18 +24,13 @@ Pod::Spec.new do |spec|
 
     spec.ios.deployment_target = '10.0'
     spec.vendored_frameworks   = [
-        'MCISDKCheckoutCore.xcframework',
-        'MCISDKDigitalCheckout.xcframework',
-        'MCISDKFoundation.xcframework',
-        'MCISDKKit.xcframework',
-        'MCISDKLogger.xcframework',
-        'MerciKit.xcframework'
+        'MCISDKStorePayment.xcframework',
+        'PayKit.xcframework'
     ]
 
     spec.frameworks  = 'UIKit', 'MapKit'
     spec.dependency 'Alamofire', '<= 4.9.1'
     spec.dependency 'Kingfisher', '~> 5.15.8'
-    spec.dependency 'SwiftyRSA', '~> 1.5.0'
     spec.dependency 'KeychainAccess', '~> 4.2.2'
     spec.dependency 'TPKeyboardAvoiding', '~> 1.3'
 end

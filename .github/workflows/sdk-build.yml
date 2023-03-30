@@ -8,7 +8,7 @@ on:
         description: "Podspec branch @mcikit-podspec"
         required: true
         type: "string"
-        default: "version/2.0.0-base"
+        default: "master"
       branch_legacy_sdk_ios:
         description: "Source branch @legacy-sdk-ios"
         required: true

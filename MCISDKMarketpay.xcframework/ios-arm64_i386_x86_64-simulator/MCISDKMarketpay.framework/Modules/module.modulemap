@@ -1,0 +1,11 @@
+framework module MCISDKMarketpay {
+  umbrella header "MCISDKMarketpay.h"
+
+  export *
+  module * { export * }
+}
+
+module MCISDKMarketpay.Swift {
+    header "MCISDKMarketpay-Swift.h"
+    requires objc
+}

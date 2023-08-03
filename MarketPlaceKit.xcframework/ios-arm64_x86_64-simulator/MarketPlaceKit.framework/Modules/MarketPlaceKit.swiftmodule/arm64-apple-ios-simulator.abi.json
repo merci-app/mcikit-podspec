@@ -1,0 +1,66 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "MCISDKFoundation",
+        "printedName": "MCISDKFoundation",
+        "declKind": "Import",
+        "moduleName": "MarketPlaceKit",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCISDKMarketpay",
+        "printedName": "MCISDKMarketpay",
+        "declKind": "Import",
+        "moduleName": "MarketPlaceKit"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MarketPlace",
+        "printedName": "MarketPlace",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "register",
+            "printedName": "register()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14MarketPlaceKit0aB0C8registeryyFZ",
+            "mangledName": "$s14MarketPlaceKit0aB0C8registeryyFZ",
+            "moduleName": "MarketPlaceKit",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:14MarketPlaceKit0aB0C",
+        "mangledName": "$s14MarketPlaceKit0aB0C",
+        "moduleName": "MarketPlaceKit",
+        "declAttributes": [
+          "Final",
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": []
+}

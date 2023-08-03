@@ -57,7 +57,7 @@ jobs:
       - name: Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '13.4.1'
+          xcode-version: '14.2'
       - name: Run build script
         run: |
           cd legacy-sdk-ios/MerciWorkspace

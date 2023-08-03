@@ -21,7 +21,7 @@ on:
 jobs:
   deploy:
     name: Releasing Legacy SDK iOS
-    runs-on: macOS-latest
+    runs-on: macos-13
     steps:
       - name: Checkout merci-app/mcikit-podspec
         uses: actions/checkout@v3

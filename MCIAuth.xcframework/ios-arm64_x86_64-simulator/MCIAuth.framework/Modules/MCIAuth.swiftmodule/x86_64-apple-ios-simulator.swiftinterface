@@ -1,0 +1,41 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIAuth
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Alamofire
+@_exported import MCIAuth
+import MCIFoundation
+import MCIKit
+import MCILogger
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+extension MCIFoundation {
+  final public func requestCustomerAuthenticationCode(phoneNumber: Swift.String, vatNumber: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
+  final public func requestCustomerAuthenticationCodeValidation(authId: Swift.String, sms: Swift.String, completion: @escaping MCIResult<MCIAuthenticationState>)
+  final public func requestCustomerAuthenticationCodeResend(authId: Swift.String, completion: @escaping MCIResult<Swift.Void>)
+  final public func requestCustomerAuthenticationProfile(authId: Swift.String, cpf: Swift.String, name: Swift.String? = nil, email: Swift.String? = nil, password: Swift.String, completion: @escaping MCIResult<Swift.Void>)
+  final public func revokeCustomerAuthentication(completion: @escaping ((Swift.Result<Swift.Void, Foundation.NSError>) -> Swift.Void))
+}
+public protocol PasswordFlowDelegate : AnyObject {
+  func passwordFlowDidAuthenticate(_ passwordFlowVC: PasswordFlowVC)
+  func dismissView(_ passwordFlowVC: PasswordFlowVC)
+}
+extension PasswordFlowDelegate {
+  public func dismissView(_ passwordFlowVC: PasswordFlowVC)
+}
+extension PasswordFlowDelegate where Self : UIKit.UIViewController, Self : MCINavigationStylable, Self : MCIViewControllerProtocol {
+  public func performUnwindToSplashVC()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class PasswordFlowVC : MCIFlowViewController, Identifiable {
+  @_Concurrency.MainActor(unsafe) weak final public var delegate: (any PasswordFlowDelegate)?
+  @_Concurrency.MainActor(unsafe) final public var dismissToWallet: Swift.Bool?
+  @_Concurrency.MainActor(unsafe) final public class func allocate() -> PasswordFlowVC
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewDidLayoutSubviews()
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}

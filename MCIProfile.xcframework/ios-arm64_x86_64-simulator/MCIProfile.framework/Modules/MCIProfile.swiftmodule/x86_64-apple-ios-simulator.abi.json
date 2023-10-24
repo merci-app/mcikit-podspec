@@ -1,0 +1,1263 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Alamofire",
+        "printedName": "Alamofire",
+        "declKind": "Import",
+        "moduleName": "MCIProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIProfile"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MCIProfile",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "requestCustomerNameValidation",
+            "printedName": "requestCustomerNameValidation(firstName:lastName:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<(), Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<(), Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE29requestCustomerNameValidation05firstE004lastE010completionySS_SSys6ResultOyytSo7NSErrorCGctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE29requestCustomerNameValidation05firstE004lastE010completionySS_SSys6ResultOyytSo7NSErrorCGctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPasswordUpdate",
+            "printedName": "requestCustomerPasswordUpdate(oldPassword:newPassword:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE29requestCustomerPasswordUpdate03oldE003newE07failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE29requestCustomerPasswordUpdate03oldE003newE07failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPhoneUpdate",
+            "printedName": "requestCustomerPhoneUpdate(newDDI:newPhone:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE26requestCustomerPhoneUpdate6newDDI0gE07failure7successySSSg_AIySo7NSErrorCcySSctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE26requestCustomerPhoneUpdate6newDDI0gE07failure7successySSSg_AIySo7NSErrorCcySSctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPhoneUpdate",
+            "printedName": "requestCustomerPhoneUpdate(newDDI:newPhone:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<MCIFoundation.MCIPhoneNumberUpdate, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<MCIFoundation.MCIPhoneNumberUpdate, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIPhoneNumberUpdate",
+                        "printedName": "MCIFoundation.MCIPhoneNumberUpdate",
+                        "usr": "s:13MCIFoundation20MCIPhoneNumberUpdateC"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE26requestCustomerPhoneUpdate6newDDI0gE010completionySSSg_AHys6ResultOyAA014MCIPhoneNumberF0CSo7NSErrorCGctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE26requestCustomerPhoneUpdate6newDDI0gE010completionySSSg_AHys6ResultOyAA014MCIPhoneNumberF0CSo7NSErrorCGctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPhoneUpdateConfirmation",
+            "printedName": "requestCustomerPhoneUpdateConfirmation(id:sms:phoneNumber:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE38requestCustomerPhoneUpdateConfirmation2id3sms11phoneNumber7failure7successySSSg_A2JySo7NSErrorCcyyctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE38requestCustomerPhoneUpdateConfirmation2id3sms11phoneNumber7failure7successySSSg_A2JySo7NSErrorCcyyctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPhoneUpdateCodeResend",
+            "printedName": "requestCustomerPhoneUpdateCodeResend(authId:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE36requestCustomerPhoneUpdateCodeResend6authId7failure7successySSSg_ySo7NSErrorCcyyctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE36requestCustomerPhoneUpdateCodeResend6authId7failure7successySSSg_ySo7NSErrorCcyyctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerPhoneUpdateResend",
+            "printedName": "requestCustomerPhoneUpdateResend(authCode:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<MCIFoundation.MCIPhoneNumberUpdate, Foundation.NSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<MCIFoundation.MCIPhoneNumberUpdate, Foundation.NSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MCIPhoneNumberUpdate",
+                        "printedName": "MCIFoundation.MCIPhoneNumberUpdate",
+                        "usr": "s:13MCIFoundation20MCIPhoneNumberUpdateC"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE32requestCustomerPhoneUpdateResend8authCode10completionySSSg_ys6ResultOyAA014MCIPhoneNumberF0CSo7NSErrorCGctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE32requestCustomerPhoneUpdateResend8authCode10completionySSSg_ys6ResultOyAA014MCIPhoneNumberF0CSo7NSErrorCGctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerForgotPassword",
+            "printedName": "requestCustomerForgotPassword(cpf:email:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE29requestCustomerForgotPassword3cpf5email7failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE29requestCustomerForgotPassword3cpf5email7failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "requestCustomerForgotPasswordValidation",
+            "printedName": "requestCustomerForgotPasswordValidation(uuid:password:failure:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSError",
+                    "printedName": "Foundation.NSError",
+                    "usr": "c:objc(cs)NSError"
+                  }
+                ],
+                "hasDefaultArg": true
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "hasDefaultArg": true
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13MCIFoundationAAC10MCIProfileE39requestCustomerForgotPasswordValidation4uuid8password7failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "mangledName": "$s13MCIFoundationAAC10MCIProfileE39requestCustomerForgotPasswordValidation4uuid8password7failure7successySSSg_AIySo7NSErrorCcyyctF",
+            "moduleName": "MCIProfile",
+            "declAttributes": [
+              "Final"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13MCIFoundationAAC",
+        "mangledName": "$s13MCIFoundationAAC",
+        "moduleName": "MCIFoundation",
+        "declAttributes": [
+          "Final"
+        ],
+        "isExternal": true,
+        "hasMissingDesignatedInitializers": true
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 896,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 905,
+      "length": 20,
+      "value": "\"Invalid CustomerID\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1112,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1121,
+      "length": 18,
+      "value": "\"Invalid password\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1923,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1932,
+      "length": 20,
+      "value": "\"Invalid CustomerID\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2123,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2132,
+      "length": 22,
+      "value": "\"Invalid phone-number\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2447,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2456,
+      "length": 12,
+      "value": "\"Invalid id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2886,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2895,
+      "length": 20,
+      "value": "\"Invalid CustomerID\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3099,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3108,
+      "length": 22,
+      "value": "\"Invalid phone-number\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3476,
+      "length": 6,
+      "value": "\"Erro\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3484,
+      "length": 12,
+      "value": "\"Invalid id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4047,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4056,
+      "length": 20,
+      "value": "\"Invalid parameters\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4242,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4251,
+      "length": 18,
+      "value": "\"Invalid Customer\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5298,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5307,
+      "length": 20,
+      "value": "\"Invalid CustomerID\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5473,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5482,
+      "length": 20,
+      "value": "\"Invalid parameters\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6093,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6102,
+      "length": 20,
+      "value": "\"Invalid CustomerID\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6285,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6294,
+      "length": 20,
+      "value": "\"Invalid parameters\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6642,
+      "length": 6,
+      "value": "\"Erro\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6650,
+      "length": 12,
+      "value": "\"Invalid id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7173,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7182,
+      "length": 20,
+      "value": "\"Invalid parameters\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7918,
+      "length": 7,
+      "value": "\"Error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MCIFoundation+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7927,
+      "length": 20,
+      "value": "\"Invalid parameters\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 936,
+      "length": 8,
+      "value": "\"status\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1005,
+      "length": 7,
+      "value": "\"error\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1427,
+      "length": 12,
+      "value": "\"vat-number\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 1475,
+      "length": 34,
+      "value": "\"\/customers\/authentication\/issuer\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2061,
+      "length": 34,
+      "value": "\"\/customers\/authentication\/revoke\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2247,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 2816,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3055,
+      "length": 14,
+      "value": "\"country-code\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3092,
+      "length": 14,
+      "value": "\"phone-number\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 3149,
+      "length": 37,
+      "value": "\"\/customers\/profile\/cellphone\/update\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4141,
+      "length": 14,
+      "value": "\"country-code\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4178,
+      "length": 14,
+      "value": "\"phone-number\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4235,
+      "length": 37,
+      "value": "\"\/customers\/profile\/cellphone\/update\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4891,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4914,
+      "length": 6,
+      "value": "\"code\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 4959,
+      "length": 41,
+      "value": "\"\/customers\/profile\/cellphone\/validation\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5558,
+      "length": 44,
+      "value": "\"\/customers\/profile\/cellphone\/\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 5597,
+      "length": 1,
+      "value": "\"\/sms\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6516,
+      "length": 46,
+      "value": "\"\/customers\/profile\/cellphone\/\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 6557,
+      "length": 1,
+      "value": "\"\/sms\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7197,
+      "length": 5,
+      "value": "\"cpf\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7222,
+      "length": 7,
+      "value": "\"email\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7270,
+      "length": 39,
+      "value": "\"\/customers\/profile\/password\/forgotten\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7932,
+      "length": 14,
+      "value": "\"old-password\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 7974,
+      "length": 14,
+      "value": "\"new-password\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 8034,
+      "length": 36,
+      "value": "\"\/customers\/profile\/password\/update\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 8692,
+      "length": 12,
+      "value": "\"first-name\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 8730,
+      "length": 11,
+      "value": "\"last-name\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 8785,
+      "length": 36,
+      "value": "\"\/customers\/profile\/name\/validation\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 9417,
+      "length": 4,
+      "value": "\"id\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 9456,
+      "length": 10,
+      "value": "\"password\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/MobileSC_Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 9493,
+      "length": 50,
+      "value": "\"\/customers\/profile\/password\/forgotten\/validation\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIProfile\/MCIProfile\/API\/Notification+Profile.swift",
+      "kind": "StringLiteral",
+      "offset": 359,
+      "length": 51,
+      "value": "\"com.gccore.cdtfoundation.customer.profile.updated\""
+    }
+  ]
+}

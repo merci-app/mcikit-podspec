@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCIIssuerViewerCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import MCIFoundation
+@_exported import MCIIssuerViewerCore
+import MCIKit
+import MCILogger
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public typealias IssuerViewableVC = UIKit.UIViewController & IssuerViewable
+public protocol IssuerViewable : AnyObject {
+  static func allocate() -> any IssuerViewable
+  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func push(navController: UIKit.UINavigationController?)
+  func instance() -> any UIKit.UIViewController & IssuerViewable
+}
+@objc @_inheritsConvenienceInitializers final public class MCIInitAccountFlow : ObjectiveC.NSObject, Identifiable {
+  final public class func present(in viewController: UIKit.UIViewController)
+  @objc deinit
+  @objc override dynamic public init()
+}

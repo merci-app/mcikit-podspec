@@ -1,0 +1,397 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIIssuerViewerCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IssuerViewable",
+        "printedName": "IssuerViewable",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "allocate",
+            "printedName": "allocate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "IssuerViewable",
+                "printedName": "MCIIssuerViewerCore.IssuerViewable",
+                "usr": "s:19MCIIssuerViewerCore14IssuerViewableP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MCIIssuerViewerCore14IssuerViewableP8allocateAaB_pyFZ",
+            "mangledName": "$s19MCIIssuerViewerCore14IssuerViewableP8allocateAaB_pyFZ",
+            "moduleName": "MCIIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCIIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCIIssuerViewerCore.IssuerViewable>",
+            "static": true,
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(controller:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "(() -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "() -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MCIIssuerViewerCore14IssuerViewableP7present10controller10completionySo16UIViewControllerC_yycSgtF",
+            "mangledName": "$s19MCIIssuerViewerCore14IssuerViewableP7present10controller10completionySo16UIViewControllerC_yycSgtF",
+            "moduleName": "MCIIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCIIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCIIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "push",
+            "printedName": "push(navController:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UINavigationController?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UINavigationController",
+                    "printedName": "UIKit.UINavigationController",
+                    "usr": "c:objc(cs)UINavigationController"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MCIIssuerViewerCore14IssuerViewableP4push13navControllerySo012UINavigationH0CSg_tF",
+            "mangledName": "$s19MCIIssuerViewerCore14IssuerViewableP4push13navControllerySo012UINavigationH0CSg_tF",
+            "moduleName": "MCIIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCIIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCIIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "instance",
+            "printedName": "instance()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "UIKit.UIViewController & MCIIssuerViewerCore.IssuerViewable"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MCIIssuerViewerCore14IssuerViewableP8instanceAaB_So16UIViewControllerCXcyF",
+            "mangledName": "$s19MCIIssuerViewerCore14IssuerViewableP8instanceAaB_So16UIViewControllerCXcyF",
+            "moduleName": "MCIIssuerViewerCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : MCIIssuerViewerCore.IssuerViewable>",
+            "sugared_genericSig": "<Self where Self : MCIIssuerViewerCore.IssuerViewable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:19MCIIssuerViewerCore14IssuerViewableP",
+        "mangledName": "$s19MCIIssuerViewerCore14IssuerViewableP",
+        "moduleName": "MCIIssuerViewerCore",
+        "genericSig": "<τ_0_0 : AnyObject>",
+        "sugared_genericSig": "<Self : AnyObject>",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MCIIssuerViewerCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MCILogger",
+        "printedName": "MCILogger",
+        "declKind": "Import",
+        "moduleName": "MCIIssuerViewerCore"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIFoundation",
+        "printedName": "MCIFoundation",
+        "declKind": "Import",
+        "moduleName": "MCIIssuerViewerCore"
+      },
+      {
+        "kind": "Import",
+        "name": "MCIKit",
+        "printedName": "MCIKit",
+        "declKind": "Import",
+        "moduleName": "MCIIssuerViewerCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MCIInitAccountFlow",
+        "printedName": "MCIInitAccountFlow",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(in:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19MCIIssuerViewerCore18MCIInitAccountFlowC7present2inySo16UIViewControllerC_tFZ",
+            "mangledName": "$s19MCIIssuerViewerCore18MCIInitAccountFlowC7present2inySo16UIViewControllerC_tFZ",
+            "moduleName": "MCIIssuerViewerCore",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MCIInitAccountFlow",
+                "printedName": "MCIIssuerViewerCore.MCIInitAccountFlow",
+                "usr": "c:@M@MCIIssuerViewerCore@objc(cs)MCIInitAccountFlow"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MCIIssuerViewerCore@objc(cs)MCIInitAccountFlow(im)init",
+            "mangledName": "$s19MCIIssuerViewerCore18MCIInitAccountFlowCACycfc",
+            "moduleName": "MCIIssuerViewerCore",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MCIIssuerViewerCore@objc(cs)MCIInitAccountFlow",
+        "mangledName": "$s19MCIIssuerViewerCore18MCIInitAccountFlowC",
+        "moduleName": "MCIIssuerViewerCore",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Identifiable",
+            "printedName": "Identifiable",
+            "usr": "s:6MCIKit12IdentifiableP",
+            "mangledName": "$s6MCIKit12IdentifiableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 505,
+      "length": 20,
+      "value": "\"Adicione uma conta\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 563,
+      "length": 49,
+      "value": "\"Você precisa de uma conta ativa pra continuar.\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 681,
+      "length": 13,
+      "value": "\"OK, entendi\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "BooleanLiteral",
+      "offset": 769,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 1133,
+      "length": 10,
+      "value": "\"Cancelar\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1196,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1321,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 1404,
+      "length": 26,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/rodrigobrauwers\/Developer\/Dock\/customer-ios\/MerciWorkspace\/Frameworks\/MCIIssuerViewerCore\/MCIIssuerViewerCore\/IssuerViewer\/MCIInitAccountFlow.swift",
+      "kind": "StringLiteral",
+      "offset": 1418,
+      "length": 1,
+      "value": "\") -> deinit\""
+    }
+  ]
+}

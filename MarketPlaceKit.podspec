@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
     spec.name            = "MarketPlaceKit"
-    spec.version         = "MCI_POD_SPEC_VERSION"
+    spec.version         = "2.2.0"
     spec.summary         = "MarketPlaceKit é framework destinado a Merci e seus parceiros."
     spec.swift_versions  = ['5']
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
     spec.homepage     = 'https://github.com/merci-app/mcikit-podspec'
     spec.license      = { :type => 'MIT', :file => 'LICENSE' }
     spec.authors      = { 'Rodrigo Brauwers' => 'rbrauwers @ dock dot tech' }
-    spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => 'MCI_POD_SPEC_VERSION' }
+    spec.source       = { :git => 'https://github.com/merci-app/mcikit-podspec.git', :tag => '2.2.0' }
 
     spec.ios.deployment_target = '10.0'
     spec.vendored_frameworks   = [

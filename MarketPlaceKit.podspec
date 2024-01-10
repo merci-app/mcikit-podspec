@@ -24,6 +24,7 @@ Pod::Spec.new do |spec|
 
     spec.ios.deployment_target = '10.0'
     spec.vendored_frameworks   = [
+        'MCISDKKingfisher',
         'MCISDKMarketpay.xcframework',
         'MarketPlaceKit.xcframework'
     ]

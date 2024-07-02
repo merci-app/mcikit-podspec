@@ -1,0 +1,11 @@
+framework module MarketPlaceKit {
+  umbrella header "MarketPlaceKit.h"
+
+  export *
+  module * { export * }
+}
+
+module MarketPlaceKit.Swift {
+  header "MarketPlaceKit-Swift.h"
+  requires objc
+}

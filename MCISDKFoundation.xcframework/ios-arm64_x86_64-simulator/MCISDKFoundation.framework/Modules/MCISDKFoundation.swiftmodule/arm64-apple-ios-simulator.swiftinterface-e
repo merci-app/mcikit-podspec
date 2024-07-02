@@ -1,0 +1,3359 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name MCISDKFoundation
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+import Accelerate
+import AdSupport
+import Alamofire
+import CommonCrypto
+import CoreGraphics
+import CoreImage
+import CoreLocation
+import Foundation
+import ImageIO
+import KeychainAccess
+import LocalAuthentication
+@_exported import MCISDKFoundation
+import MCISDKLogger
+import MobileCoreServices
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+extension Foundation.NSError {
+  public class func mciSdkError(_ title: Swift.String, _ description: Swift.String) -> Foundation.NSError
+  public class func mciSdkError(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String) -> Foundation.NSError
+  public class func mciSdkError(code: ObjectiveC.NSInteger, title: Swift.String, description: Swift.String, userInfo: [Swift.AnyHashable : Any]?) -> Foundation.NSError
+  public class func mciSdkGenericError() -> Foundation.NSError
+  public class func mciSdkUnexpectedResponseError() -> Foundation.NSError
+  public class func mciSdkOutdatedAppCode() -> Swift.Int
+}
+public enum ModuleCheckout {
+  case pay
+  case withdraw
+  case marketplace
+  case general
+  public static func == (a: ModuleCheckout, b: ModuleCheckout) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum MCISDKFoundationSource : Swift.String {
+  case unknown
+  case customer
+  case merchant
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct MCISDKFoundationAccounts {
+  public struct Uber {
+    public let clientId: Swift.String
+  }
+  public let uber: MCISDKFoundationAccounts.Uber
+}
+public typealias MCISDKAuthClient = (id: Swift.String, secret: Swift.String)
+@_hasMissingDesignatedInitializers final public class MCISDKFoundation {
+  public static let shared: MCISDKFoundation
+  final public var contextUI: UIKit.UINavigationController?
+  final public var currentSession: MCISession?
+  final public var support: MCISupport?
+  final public var settings: MCISettings?
+  final public let accounts: MCISDKFoundationAccounts
+  final public var timeServerDiff: Swift.Double
+  final public var externalIds: [Swift.String]?
+  final public var needBlockTransactions: Swift.Bool {
+    get
+  }
+  final public var issuerKey: Swift.String {
+    get
+  }
+  final public var sdkVersion: Swift.String?
+  final public var additionalHeaderDelegate: MCIAdditionalHeaderDelegate?
+  final public var inject: MCIInjectionController {
+    get
+    set
+  }
+  final public class func instantiate(source: MCISDKFoundationSource, environment: MCISDKFoundationEnvironment, auth: MCISDKAuthClient, additionalHeaderDelegate: MCIAdditionalHeaderDelegate? = nil)
+  final public func revokeCurrentSession(sendNotification: Swift.Bool)
+  final public func sessionAvailable() -> Swift.Bool
+  final public func isSandbox() -> Swift.Bool
+  final public func registerRemoteNotificationToken(_ deviceToken: Foundation.Data)
+  final public func currentLocation() -> MCILocation?
+  final public func setIssuerKey(_ issuerKey: [Swift.UInt8])
+  @objc deinit
+}
+extension MCISDKFoundation {
+  final public func requestNewHome(completion: @escaping ((Swift.Result<MCISDKHome, Foundation.NSError>) -> Swift.Void))
+  final public func requestCustomerAccounts(completion: @escaping ((Swift.Result<[MCISDKAccount], Foundation.NSError>) -> Swift.Void))
+}
+extension MCISDKFoundation {
+  final public func cachedCPF() -> Swift.Result<Swift.String?, Swift.Error>
+  final public func storeCPF(cpf: Swift.String) -> Swift.Result<Swift.Void, Swift.Error>
+  final public func cachedHome(completion: @escaping ((Swift.Result<MCISDKHome, Swift.Error>) -> Swift.Void))
+  final public func cachedMerchant(id: Swift.String) -> Swift.Result<MCISDKMerchant, Swift.Error>
+  final public func cachedMerchant(merchantId: Swift.String, completion: @escaping ((Swift.Result<MCISDKMerchant, Swift.Error>) -> Swift.Void))
+  final public func cachedAccounts(completion: @escaping ((Swift.Result<[MCISDKAccount], Swift.Error>) -> Swift.Void))
+}
+final public class MCIAliasBank : Swift.Codable {
+  final public var accountType: Swift.String? {
+    get
+  }
+  final public var accountNumber: Swift.String? {
+    get
+  }
+  final public var accountDigit: Swift.String? {
+    get
+  }
+  final public var bankNumber: Swift.String? {
+    get
+  }
+  final public var branchNumber: Swift.String? {
+    get
+  }
+  final public var branchDigit: Swift.String? {
+    get
+  }
+  final public var status: Swift.String? {
+    get
+  }
+  final public var createdAt: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension Swift.String : MCISDKKingfisherCompatibleValue {
+}
+public enum ObfuscatePattern {
+  case all
+  case middle
+  case borders
+  case nothing
+  public static func == (a: ObfuscatePattern, b: ObfuscatePattern) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class MCIFormatter {
+  final public class func obfuscate(email: Swift.String?) -> Swift.String
+  final public class func obfuscateEmailDomain(email: Swift.String?) -> Swift.String
+  final public class func format(cpf: Swift.String?) -> Swift.String
+  final public class func normalize(cpf: Swift.String?) -> Swift.String
+  final public class func format(cnpj: Swift.String?) -> Swift.String
+  final public class func normalize(string: Swift.String?) -> Swift.String
+  final public class func format(vat: Swift.String?) -> Swift.String
+  final public class func obfuscate(vat: Swift.String?, obfuscate: ObfuscatePattern? = .all) -> Swift.String
+  final public class func format(boleto: Swift.String?) -> Swift.String
+  final public class func normalize(boleto: Swift.String?) -> Swift.String
+  final public class func format(cellphone: Swift.String?) -> Swift.String
+  final public class func obfuscatePartialPhoneNumber(cellphone: Swift.String?) -> Swift.String
+  final public class func format(supportCellphone: Swift.String?) -> Swift.String
+  final public class func format(internationalCellphone: Swift.String?) -> Swift.String
+  final public class func normalize(cellphone: Swift.String?) -> Swift.String
+  final public class func format(date: Swift.String?) -> Swift.String
+  final public class func format(zipCode: Swift.String?) -> Swift.String
+  final public class func format(numberId: Swift.String?) -> Swift.String
+  final public class func format(cardNumber: Swift.String?) -> Swift.String
+  final public class func obfuscateCardNumber(cardNumber: Swift.String?) -> Swift.String
+  final public class func obfuscateNumber(number: Swift.String?) -> Swift.String
+  final public class func format(percentage: Swift.String?) -> Swift.String
+  final public class func alphaNumeric(string: Swift.String?) -> Swift.String
+  final public class func numeric(string: Swift.String?) -> Swift.String
+  public static let usdFormatter: Foundation.NumberFormatter
+  public static let currencyFormatter: Foundation.NumberFormatter
+  public static let unroundedCurrencyFormatter: Foundation.NumberFormatter
+  final public class func normalize(currency: Swift.String?) -> Swift.String
+  final public class func format(bankAccountWithDigit: Swift.String?) -> Swift.String?
+  final public class func normalize(bankAccountWithDigit: Swift.String?) -> (Swift.String?, Swift.String?)
+  @objc deinit
+}
+final public class MCICellphoneRechargeTransaction : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var amount: Swift.Double? {
+    get
+  }
+  final public var createdAt: Foundation.Date? {
+    get
+  }
+  final public var phoneNumber: Swift.String? {
+    get
+  }
+  final public var receipt: Swift.String? {
+    get
+  }
+  final public var merchantId: Swift.String? {
+    get
+  }
+  final public var merchant: MCISDKMerchant? {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+public class MCISDKLocalizedError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public init(description: Swift.String?)
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(mciSdkHexString: Swift.String)
+  public func mciSdkHexString() -> Swift.String
+}
+public enum MCISDKFoundationEnvironment {
+  case development(raw: [Swift.UInt8])
+  case sandbox(data: [Swift.UInt8], raw: [Swift.UInt8])
+  case production(data: [Swift.UInt8], raw: [Swift.UInt8])
+}
+public enum MCITransactionServiceType {
+  case cellphoneRecharge(transaction: MCICellphoneRechargeTransaction?)
+  case uber(transaction: MCIVoucherTransaction?)
+  case voucher(transaction: MCIVoucherTransaction?)
+  case unknown
+}
+extension MCITransactionServiceType : Swift.Codable, Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+final public class MCITransactionDetails : Swift.Codable {
+  final public var serviceType: MCITransactionServiceType {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+final public class MCIVoucherTransaction : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var amount: Swift.Double? {
+    get
+  }
+  final public var receipt: Swift.String? {
+    get
+  }
+  final public var serial: Swift.String? {
+    get
+  }
+  final public var pin: Swift.String? {
+    get
+  }
+  final public var createdAt: Foundation.Date? {
+    get
+  }
+  final public var merchantId: Swift.String? {
+    get
+  }
+  final public var merchant: MCISDKMerchant? {
+    get
+  }
+  final public var actionURL: Swift.String? {
+    get
+  }
+  final public var qrCode: Swift.String? {
+    get
+  }
+  public init(id: Swift.String?, amount: Swift.Double?, receipt: Swift.String?, serial: Swift.String?, pin: Swift.String?, createdAt: Foundation.Date?, actionURL: Swift.String? = nil, qrCode: Swift.String? = nil)
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIPhoneNumberUpdate : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var status: Swift.String? {
+    get
+  }
+  final public var expirationTime: Swift.Int? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.NSTextAttachment {
+  @discardableResult
+  public func setImage(with source: MCISDKSource?, attributedView: MCISDKKFCrossPlatformView, placeholder: MCISDKKFCrossPlatformImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  public func setImage(with resource: MCISDKResource?, attributedView: MCISDKKFCrossPlatformView, placeholder: MCISDKKFCrossPlatformImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  public func cancelDownloadTask()
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.NSTextAttachment {
+  public var taskIdentifier: MCISDKSource.Identifier.Value? {
+    get
+  }
+}
+public enum MCIAccountWalletActionService : Swift.String, Swift.Codable {
+  case bankSlip
+  case ted
+  case p2p
+  case pl
+  case invoiceReceipt
+  case smsPackage
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCIAccountWalletActionType : Swift.String, Swift.Codable {
+  case cashOut
+  case cashIn
+  case statement
+  case bankSlip
+  case virtualCard
+  case invoice
+  case physycalCardActivate
+  case physicalCardRequest
+  case physycalCardBlock
+  case physycalCardUnblock
+  case servicePortalUrl
+  case plServices
+  case plVirtualCard
+  case pix
+  case myCard
+  case alterLimit
+  case travelNotification
+  public static let supported: [MCIAccountWalletActionType]
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class MCIAccountWalletAction : Swift.Codable {
+  final public var name: Swift.String? {
+    get
+  }
+  final public var type: MCIAccountWalletActionType? {
+    get
+  }
+  final public var enabled: Swift.Bool? {
+    get
+  }
+  final public var iconUrl: Swift.String? {
+    get
+  }
+  final public var services: [MCIAccountWalletActionService]? {
+    get
+  }
+  final public var actionUrl: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCICacheController {
+  public static let shared: MCICacheController
+  final public func store<T>(_ encodable: T, _ key: Swift.String = "") throws where T : Swift.Encodable
+  final public func retrieve<T>(type: T.Type, key: Swift.String = "") throws -> T? where T : Swift.Decodable
+  @objc deinit
+}
+extension MCICacheController {
+  final public func store(home: MCISDKHome) throws
+}
+extension MCICacheController {
+  final public func storeAccounts(accounts: [MCISDKAccount]) throws
+  final public func retrieveWallet() throws -> [MCISDKAccount]?
+}
+extension Foundation.URL {
+  public static func mciSdkMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkGoogleMaps(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkWaze(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+  public static func mciSdkUber(place: Swift.String?, latitude: Swift.Double?, longitude: Swift.Double?) -> Foundation.URL?
+}
+public struct MCISDKImageLoadingResult {
+  public let image: MCISDKKFCrossPlatformImage
+  public let url: Foundation.URL?
+  public let originalData: Foundation.Data
+}
+public struct MCISDKDownloadTask {
+  public let sessionTask: MCISDKSessionDataTask
+  public let cancelToken: MCISDKSessionDataTask.CancelToken
+  public func cancel()
+}
+open class MCISDKImageDownloader {
+  public static let `default`: MCISDKImageDownloader
+  open var downloadTimeout: Swift.Double
+  open var trustedHosts: Swift.Set<Swift.String>?
+  open var sessionConfiguration: Foundation.URLSessionConfiguration {
+    get
+    set
+  }
+  open var requestsUsePipelining: Swift.Bool
+  weak open var delegate: MCISDKImageDownloaderDelegate?
+  weak open var authenticationChallengeResponder: MCISDKAuthenticationChallengeResponsable?
+  public init(name: Swift.String)
+  @objc deinit
+  @discardableResult
+  open func downloadImage(with url: Foundation.URL, options: MCISDKKingfisherParsedOptionsInfo, completionHandler: ((Swift.Result<MCISDKImageLoadingResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  open func downloadImage(with url: Foundation.URL, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKImageLoadingResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+}
+extension MCISDKImageDownloader {
+  public func cancelAll()
+  public func cancel(url: Foundation.URL)
+}
+extension MCISDKImageDownloader : MCISDKAuthenticationChallengeResponsable {
+}
+extension MCISDKImageDownloader : MCISDKImageDownloaderDelegate {
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantAccount : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension MCIMerchantAccount : Swift.Equatable {
+  public static func == (lhs: MCIMerchantAccount, rhs: MCIMerchantAccount) -> Swift.Bool
+}
+final public class MCIPayAccountLimit : Swift.Codable {
+  final public var showBoxDetail: Swift.Bool? {
+    get
+  }
+  final public var availableLimit: Swift.String? {
+    get
+  }
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case showBoxDetail
+    case availableLimit
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public typealias MCISDKIndicatorView = UIKit.UIView
+public enum MCISDKIndicatorType {
+  case none
+  case activity
+  case image(imageData: Foundation.Data)
+  case custom(indicator: MCISDKIndicator)
+}
+public protocol MCISDKIndicator {
+  func startAnimatingView()
+  func stopAnimatingView()
+  var centerOffset: CoreFoundation.CGPoint { get }
+  var view: MCISDKIndicatorView { get }
+  func sizeStrategy(in imageView: MCISDKKFCrossPlatformImageView) -> MCISDKIndicatorSizeStrategy
+}
+public enum MCISDKIndicatorSizeStrategy {
+  case intrinsicSize
+  case full
+  case size(CoreFoundation.CGSize)
+}
+extension MCISDKIndicator {
+  public var centerOffset: CoreFoundation.CGPoint {
+    get
+  }
+  public func sizeStrategy(in imageView: MCISDKKFCrossPlatformImageView) -> MCISDKIndicatorSizeStrategy
+}
+public struct MCISDKKingfisherFormatIndicatedCacheSerializer : MCISDKKingfisherCacheSerializer {
+  public static let png: MCISDKKingfisherFormatIndicatedCacheSerializer
+  public static let jpeg: MCISDKKingfisherFormatIndicatedCacheSerializer
+  public static func jpeg(compressionQuality: CoreFoundation.CGFloat) -> MCISDKKingfisherFormatIndicatedCacheSerializer
+  public static let gif: MCISDKKingfisherFormatIndicatedCacheSerializer
+  public func data(with image: MCISDKKFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  public func image(with data: Foundation.Data, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+final public class MCIWalletLimits : Swift.Codable {
+  final public var showBoxDetail: Swift.Bool? {
+    get
+  }
+  final public var availableLimit: Swift.String? {
+    get
+  }
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case showBoxDetail
+    case availableLimit
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantMcc : Swift.Codable {
+  final public var id: Swift.UInt {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension MCIMerchantMcc : Swift.Equatable {
+  public static func == (lhs: MCIMerchantMcc, rhs: MCIMerchantMcc) -> Swift.Bool
+}
+final public class MCIExternalAccountLimit : Swift.Codable {
+  final public var totalLimit: Swift.String? {
+    get
+  }
+  final public var openCosts: Swift.String? {
+    get
+  }
+  final public var availableLimit: Swift.String? {
+    get
+  }
+  final public var merciLimit: Swift.String? {
+    get
+  }
+  final public var installmentLimit: Swift.String? {
+    get
+  }
+  final public var availableInstallmentLimit: Swift.String? {
+    get
+  }
+  final public var withdrawLimit: Swift.String? {
+    get
+  }
+  final public var availableWithdrawLimit: Swift.String? {
+    get
+  }
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case totalLimit
+    case openCosts
+    case availableLimit
+    case merciLimit
+    case installmentLimit
+    case availableInstallmentLimit
+    case withdrawLimit
+    case availableWithdrawLimit
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public static func percentage(of limit: Swift.String?, from totalLimit: Swift.String?) -> Swift.Double
+  public static func percentage(of limit: Swift.Double?, from totalLimit: Swift.Double?) -> Swift.Double
+  public static func formattedLimit(limit: Swift.String?, absolute: Swift.Bool = false) -> Swift.String
+  @objc deinit
+}
+public struct MCISDKImageProgressive {
+  public static let `default`: MCISDKImageProgressive
+  public init(isBlur: Swift.Bool, isFastestScan: Swift.Bool, scanInterval: Foundation.TimeInterval)
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public func image(withBlendMode blendMode: CoreGraphics.CGBlendMode, alpha: CoreFoundation.CGFloat = 1.0, backgroundColor: MCISDKKFCrossPlatformColor? = nil) -> MCISDKKFCrossPlatformImage
+  public func image(withRoundRadius radius: CoreFoundation.CGFloat, fit size: CoreFoundation.CGSize, roundingCorners corners: MCISDKRectCorner = .all, backgroundColor: MCISDKKFCrossPlatformColor? = nil) -> MCISDKKFCrossPlatformImage
+  public func resize(to size: CoreFoundation.CGSize) -> MCISDKKFCrossPlatformImage
+  public func resize(to targetSize: CoreFoundation.CGSize, for contentMode: MCISDKContentMode) -> MCISDKKFCrossPlatformImage
+  public func crop(to size: CoreFoundation.CGSize, anchorOn anchor: CoreFoundation.CGPoint) -> MCISDKKFCrossPlatformImage
+  public func blurred(withRadius radius: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage
+  public func overlaying(with color: MCISDKKFCrossPlatformColor, fraction: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage
+  public func tinted(with color: MCISDKKFCrossPlatformColor) -> MCISDKKFCrossPlatformImage
+  public func adjusted(brightness: CoreFoundation.CGFloat, contrast: CoreFoundation.CGFloat, saturation: CoreFoundation.CGFloat, inputEV: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage
+  public func scaled(to scale: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public var decoded: MCISDKKFCrossPlatformImage {
+    get
+  }
+  public func decoded(scale: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage
+}
+public enum MCICustomerAuthenticationType : Swift.String {
+  case denied
+  case pendingSms
+  case smsVerified
+  case newAccount
+  case newPhone
+  case samePhone
+  case authenticated
+  case reviewed
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCICustomerAuthenticationType : Swift.Codable {
+}
+final public class MCICustomerAuthentication : Swift.Codable {
+  final public var id: Swift.String
+  final public var status: MCICustomerAuthenticationType
+  final public var phoneNumber: Swift.String?
+  final public var cpf: Swift.String?
+  final public var firstName: Swift.String?
+  final public var lastName: Swift.String?
+  final public var socialName: Swift.String?
+  final public var email: Swift.String?
+  final public var password: Swift.String?
+  final public var name: Swift.String? {
+    get
+  }
+  public init()
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MobileServiceController : Alamofire.SessionManager {
+  public static let shared: MobileServiceController
+  final public func serviceUrl(_ url: Swift.String) -> Swift.String
+  final public func defaultHeader() -> (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> ()
+  final public func get(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func post(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), ignoreUnauthorizedSession: Swift.Bool = false, success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func put(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func delete(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  final public func patch(_ url: Swift.String, parameters: Alamofire.Parameters?, encoding: Alamofire.ParameterEncoding, headers: @escaping (Swift.String?, @escaping (Alamofire.HTTPHeaders?) -> ()) -> (), success: @escaping (Alamofire.DataResponse<Any>) -> (), failure: @escaping (Foundation.NSError) -> ())
+  @objc deinit
+}
+extension MobileServiceController {
+  final public func registerTokenEvent(type: MCISDKTokenEventType, customerAccountId: Swift.String, token: Swift.String)
+}
+public enum MCISDKTokenEventType : Swift.String {
+  case payment
+  case withdrawal
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol MCISDKImageModifier {
+  func modify(_ image: MCISDKKFCrossPlatformImage) -> MCISDKKFCrossPlatformImage
+}
+public struct MCISDKAnyImageModifier : MCISDKImageModifier {
+  public init(modify: @escaping (MCISDKKFCrossPlatformImage) throws -> MCISDKKFCrossPlatformImage)
+  public func modify(_ image: MCISDKKFCrossPlatformImage) -> MCISDKKFCrossPlatformImage
+}
+public struct MCISDKRenderingModeImageModifier : MCISDKImageModifier {
+  public let renderingMode: UIKit.UIImage.RenderingMode
+  public init(renderingMode: UIKit.UIImage.RenderingMode = .automatic)
+  public func modify(_ image: MCISDKKFCrossPlatformImage) -> MCISDKKFCrossPlatformImage
+}
+public struct MCISDKFlipsForRightToLeftLayoutDirectionImageModifier : MCISDKImageModifier {
+  public init()
+  public func modify(_ image: MCISDKKFCrossPlatformImage) -> MCISDKKFCrossPlatformImage
+}
+public struct MCISDKAlignmentRectInsetsImageModifier : MCISDKImageModifier {
+  public let alignmentInsets: UIKit.UIEdgeInsets
+  public init(alignmentInsets: UIKit.UIEdgeInsets)
+  public func modify(_ image: MCISDKKFCrossPlatformImage) -> MCISDKKFCrossPlatformImage
+}
+@_hasMissingDesignatedInitializers public class MCISDKSessionDataTask {
+  public typealias CancelToken = Swift.Int
+  public var mutableData: Foundation.Data {
+    get
+  }
+  final public let task: Foundation.URLSessionDataTask
+  @objc deinit
+}
+extension UIKit.UIBezierPath {
+  public static func mciSdkCirclePath(with radius: CoreFoundation.CGFloat = 100) -> UIKit.UIBezierPath
+}
+final public class SwiftGCM {
+  public static let tagSize128: Swift.Int
+  public static let tagSize120: Swift.Int
+  public static let tagSize112: Swift.Int
+  public static let tagSize104: Swift.Int
+  public static let tagSize96: Swift.Int
+  public static let tagSize64: Swift.Int
+  public static let tagSize32: Swift.Int
+  public init(key: Foundation.Data, nonce: Foundation.Data, tagSize: Swift.Int) throws
+  final public func encrypt(auth: Foundation.Data?, plaintext: Foundation.Data) throws -> Foundation.Data
+  final public func decrypt(auth: Foundation.Data?, ciphertext: Foundation.Data) throws -> Foundation.Data
+  @objc deinit
+}
+public enum SwiftGCMError : Swift.Error {
+  case invalidKeySize
+  case invalidDataSize
+  case invalidTagSize
+  case instanceAlreadyUsed
+  case commonCryptoError(err: Swift.Int32)
+  case authTagValidation
+}
+@_hasMissingDesignatedInitializers final public class MCISession : Swift.Codable {
+  final public var customer: MCICustomer? {
+    get
+  }
+  final public var token: Swift.String? {
+    get
+  }
+  final public class func session(_ customer: MCICustomer?) -> MCISession?
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol MarketplaceInjectable {
+  func present(_ controller: UIKit.UIViewController, title: Swift.String, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
+  func voucher(activeAccounts: [MCISDKAccount]?, serviceTittle: Swift.String?, merchant: MCISDKMerchant) -> UIKit.UIViewController
+  func cellphoneRecharge(activeAccounts: [MCISDKAccount]?, merchant: MCISDKMerchant) -> UIKit.UIViewController
+  func empty() -> UIKit.UIViewController
+  func setNavigationBarLogo(_ image: UIKit.UIImage?)
+}
+public enum MCISDKKingfisherError : Swift.Error {
+  public enum RequestErrorReason {
+    case emptyRequest
+    case invalidURL(request: Foundation.URLRequest)
+    case taskCancelled(task: MCISDKSessionDataTask, token: MCISDKSessionDataTask.CancelToken)
+  }
+  public enum ResponseErrorReason {
+    case invalidURLResponse(response: Foundation.URLResponse)
+    case invalidHTTPStatusCode(response: Foundation.HTTPURLResponse)
+    case URLSessionError(error: Swift.Error)
+    case dataModifyingFailed(task: MCISDKSessionDataTask)
+    case noURLResponse(task: MCISDKSessionDataTask)
+  }
+  public enum CacheErrorReason {
+    case fileEnumeratorCreationFailed(url: Foundation.URL)
+    case invalidFileEnumeratorContent(url: Foundation.URL)
+    case invalidURLResource(error: Swift.Error, key: Swift.String, url: Foundation.URL)
+    case cannotLoadDataFromDisk(url: Foundation.URL, error: Swift.Error)
+    case cannotCreateDirectory(path: Swift.String, error: Swift.Error)
+    case imageNotExisting(key: Swift.String)
+    case cannotConvertToData(object: Any, error: Swift.Error)
+    case cannotSerializeImage(image: MCISDKKFCrossPlatformImage?, original: Foundation.Data?, serializer: MCISDKKingfisherCacheSerializer)
+    case cannotCreateCacheFile(fileURL: Foundation.URL, key: Swift.String, data: Foundation.Data, error: Swift.Error)
+    case cannotSetCacheFileAttribute(filePath: Swift.String, attributes: [Foundation.FileAttributeKey : Any], error: Swift.Error)
+  }
+  public enum ProcessorErrorReason {
+    case processingFailed(processor: MCISDKImageProcessor, item: MCISDKImageProcessItem)
+  }
+  public enum ImageSettingErrorReason {
+    case emptySource
+    case notCurrentSourceTask(result: MCISDKRetrieveImageResult?, error: Swift.Error?, source: MCISDKSource)
+    case dataProviderError(provider: MCISDKImageDataProvider, error: Swift.Error)
+    case alternativeSourcesExhausted([MCISDKPropagationError])
+  }
+  case requestError(reason: MCISDKKingfisherError.RequestErrorReason)
+  case responseError(reason: MCISDKKingfisherError.ResponseErrorReason)
+  case cacheError(reason: MCISDKKingfisherError.CacheErrorReason)
+  case processorError(reason: MCISDKKingfisherError.ProcessorErrorReason)
+  case imageSettingError(reason: MCISDKKingfisherError.ImageSettingErrorReason)
+  public var isTaskCancelled: Swift.Bool {
+    get
+  }
+  public func isInvalidResponseStatusCode(_ code: Swift.Int) -> Swift.Bool
+  public var isInvalidResponseStatusCode: Swift.Bool {
+    get
+  }
+  public var isNotCurrentTask: Swift.Bool {
+    get
+  }
+}
+extension MCISDKKingfisherError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension MCISDKKingfisherError : Foundation.CustomNSError {
+  public static let domain: Swift.String
+  public var errorCode: Swift.Int {
+    get
+  }
+}
+public enum MCIAccountType : Swift.String {
+  case digital
+  case privateLabel
+  case benefits
+  case unknow
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCIAccountType : Swift.Codable {
+}
+extension MCIAccountType : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public enum MCICustomerAccountStatus : Swift.String, Swift.Codable {
+  case active
+  case canceled
+  case blocked
+  case unknown
+  case pending
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+final public class MCISDKAccount : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var type: MCIAccountType {
+    get
+  }
+  final public var issuerId: Swift.String? {
+    get
+  }
+  final public var issuer: MCIIssuer? {
+    get
+  }
+  final public var productId: Swift.String?
+  final public var product: MCIIssuerProduct? {
+    get
+  }
+  final public var tokenEncrypted: Swift.String? {
+    get
+  }
+  final public var status: MCICustomerAccountStatus
+  final public var lastUsed: Foundation.Date? {
+    get
+  }
+  final public var ui: MCIAccountUI? {
+    get
+  }
+  final public var walletActions: [MCIAccountWalletAction]? {
+    get
+  }
+  final public var lastFourPan: Swift.String? {
+    get
+  }
+  final public var aliasBank: MCIAliasBank? {
+    get
+  }
+  final public var externalCardId: Swift.String? {
+    get
+  }
+  final public var externalVirtualCardId: Swift.String? {
+    get
+  }
+  final public var virtualCardBrand: Swift.String? {
+    get
+  }
+  final public var isSync: Swift.Bool {
+    get
+  }
+  final public var accountAliasId: Swift.String? {
+    get
+  }
+  final public var companyAccount: Swift.Bool? {
+    get
+  }
+  final public var pendingAlert: Swift.Bool? {
+    get
+  }
+  final public var pending: Swift.Bool? {
+    get
+  }
+  final public var hasBankInfo: Swift.Bool {
+    get
+  }
+  final public var hasExternalCard: Swift.Bool {
+    get
+  }
+  final public var availableLimit: Swift.Double {
+    get
+  }
+  final public var payAvailableLimit: Swift.Double {
+    get
+  }
+  final public var marketplaceAvailableLimit: Swift.Double {
+    get
+  }
+  final public var withdrawplaceAvailableLimit: Swift.Double {
+    get
+  }
+  final public var merciAvailableLimit: Swift.Double {
+    get
+  }
+  final public var totalLimit: Swift.Double {
+    get
+  }
+  final public var usedLimit: Swift.Double {
+    get
+  }
+  final public var totalInstallmentLimit: Swift.Double {
+    get
+  }
+  final public var availableInstallmentLimit: Swift.Double {
+    get
+  }
+  final public var usedInstallmentLimit: Swift.Double {
+    get
+  }
+  final public var totalWithdrawLimit: Swift.Double {
+    get
+  }
+  final public var availableWithdrawLimit: Swift.Double {
+    get
+  }
+  final public var usedWithdrawLimit: Swift.Double {
+    get
+  }
+  final public var payBoxAvailability: Swift.Bool {
+    get
+  }
+  final public var marketplaceBoxAvailability: Swift.Bool {
+    get
+  }
+  final public var withdrawBoxAvailability: Swift.Bool {
+    get
+  }
+  final public var payPrivateLabelAvailableLimit: Swift.Double {
+    get
+  }
+  final public var marketplacePrivateLabelAvailableLimit: Swift.Double {
+    get
+  }
+  final public var withdrawPrivateLabelAvailableLimit: Swift.Double {
+    get
+  }
+  final public var walletAvailableLimit: Swift.Double {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  final public func tokenDecrypted() -> MCICustomerAccountToken?
+  final public func formattedAvailableLimit() -> Swift.String
+  final public func formattedMerciAvailableLimit() -> Swift.String
+  final public func formattedTotalLimit() -> Swift.String
+  final public func formattedUsedLimit() -> Swift.String
+  final public func formattedTotalInstallmentLimit() -> Swift.String
+  final public func formattedUsedInstallmentLimit() -> Swift.String
+  final public func formattedTotalWithdrawLimit() -> Swift.String
+  final public func formattedUsedWithdrawLimit() -> Swift.String
+  final public func formattedCheckoutPayLimit() -> Swift.String
+  final public func formattedCheckoutPayFormattedLimit() -> Swift.String
+  final public func formattedCheckoutMarketplaceLimit() -> Swift.String
+  final public func formattedCheckoutWithdrawLimit() -> Swift.String
+  final public func formattedCheckoutWalletLimit() -> Swift.String
+  final public func shouldDisplayBox(module: ModuleCheckout = .general) -> Swift.Bool
+  @objc deinit
+}
+extension MCISDKAccount : Swift.Equatable {
+  public static func == (lhs: MCISDKAccount, rhs: MCISDKAccount) -> Swift.Bool
+}
+extension Swift.Array where Element : MCISDKAccount {
+  public func activesOnly() -> [MCISDKAccount]
+  public func digitalOnly() -> [MCISDKAccount]
+  public func allowedWithdrawalOnly() -> [MCISDKAccount]
+  public func allowedPaymentOnly() -> [MCISDKAccount]
+  public func allowedMarketPlaceOnly() -> [MCISDKAccount]
+}
+public protocol UnavailableServiceInjectable {
+  static func allocate() -> UnavailableServiceInjectable
+  func present(controller: UIKit.UIViewController?, completion: (() -> Swift.Void)?)
+}
+public protocol MCISDKImageDownloadRedirectHandler {
+  func handleHTTPRedirection(for task: MCISDKSessionDataTask, response: Foundation.HTTPURLResponse, newRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+}
+public struct MCISDKAnyRedirectHandler : MCISDKImageDownloadRedirectHandler {
+  public func handleHTTPRedirection(for task: MCISDKSessionDataTask, response: Foundation.HTTPURLResponse, newRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.URLRequest?) -> Swift.Void)
+  public init(handle: @escaping (MCISDKSessionDataTask, Foundation.HTTPURLResponse, Foundation.URLRequest, (Foundation.URLRequest?) -> Swift.Void) -> Swift.Void)
+}
+final public class MCIAlertUI {
+  final public var title: Swift.String?
+  final public var message: Swift.String?
+  final public var dismissTitle: Swift.String?
+  final public var actionUrl: Foundation.URL?
+  final public var showSupport: Swift.Bool?
+  public init(title: Swift.String?, message: Swift.String?, dismissTitle: Swift.String?, actionUrl: Foundation.URL?, showSupport: Swift.Bool?)
+  @objc deinit
+}
+public struct MCISDKAVAssetImageDataProvider : MCISDKImageDataProvider {
+  public enum AVAssetImageDataProviderError : Swift.Error {
+    case userCancelled
+    case invalidImage(_: CoreGraphics.CGImage?)
+  }
+  public let assetImageGenerator: AVFoundation.AVAssetImageGenerator
+  public let time: CoreMedia.CMTime
+  public var cacheKey: Swift.String {
+    get
+  }
+  public init(assetImageGenerator: AVFoundation.AVAssetImageGenerator, time: CoreMedia.CMTime)
+  public init(assetURL: Foundation.URL, time: CoreMedia.CMTime)
+  public init(assetURL: Foundation.URL, seconds: Foundation.TimeInterval)
+  public func data(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+}
+public enum MCISDKKingfisherStorageExpiration {
+  case never
+  case seconds(Foundation.TimeInterval)
+  case days(Swift.Int)
+  case date(Foundation.Date)
+  case expired
+}
+public enum MCISDKKingfisherExpirationExtending {
+  case none
+  case cacheTime
+  case expirationTime(_: MCISDKKingfisherStorageExpiration)
+}
+public protocol MCISDKKingfisherCacheCostCalculable {
+  var cacheCost: Swift.Int { get }
+}
+public protocol MCISDKKingfisherDataTransformable {
+  func toData() throws -> Foundation.Data
+  static func fromData(_ data: Foundation.Data) throws -> Self
+  static var empty: Self { get }
+}
+public enum MCIIssuerProductType : Swift.String, Swift.Codable {
+  case unknown
+  case credit
+  case debit
+  case prepaid
+  case benefits
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCIIssuerProductStatus : Swift.String, Swift.Codable {
+  case unknown
+  case quiz
+  case onboarding
+  case onboardingV2
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCIDocumentType : Swift.String, Swift.Codable {
+  case rg
+  case cnh
+  case rne
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class MCIIssuerProductData : Swift.Codable {
+  final public var status: Swift.String? {
+    get
+  }
+  final public var imageDocFront: Swift.Bool {
+    get
+  }
+  final public var imageDocBack: Swift.Bool {
+    get
+  }
+  final public var imageSelfie: Swift.Bool {
+    get
+  }
+  final public var imageSignature: Swift.Bool {
+    get
+  }
+  final public var documentType: MCIDocumentType? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCIIssuerProduct : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var type: MCIIssuerProductType {
+    get
+  }
+  final public var description: Swift.String? {
+    get
+  }
+  final public var status: MCIIssuerProductStatus {
+    get
+  }
+  final public var data: MCIIssuerProductData? {
+    get
+  }
+  final public var allowWithdrawal: Swift.Bool {
+    get
+  }
+  final public var allowPayment: Swift.Bool {
+    get
+  }
+  final public var allowMarketplace: Swift.Bool {
+    get
+  }
+  final public var splitTimeline: Swift.Bool {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension MCIIssuerProduct : Swift.Equatable {
+  public static func == (lhs: MCIIssuerProduct, rhs: MCIIssuerProduct) -> Swift.Bool
+}
+extension Foundation.NSNotification.Name {
+  public struct MCISDKFoundation {
+    public struct Session {
+      public static let Unauthorized: Foundation.Notification.Name
+    }
+    public struct Customer {
+      public static let Authenticated: Foundation.Notification.Name
+      public static let Unauthenticated: Foundation.Notification.Name
+      public struct Home {
+        public static let Refreshed: Foundation.Notification.Name
+      }
+      public struct Accounts {
+        public static let Refreshed: Foundation.Notification.Name
+      }
+    }
+  }
+  public struct MCISDKAnalytics {
+    public static let UserAuthentication: Foundation.Notification.Name
+    public static let ModulePresentation: Foundation.Notification.Name
+    public static let MerchantPresentation: Foundation.Notification.Name
+    public static let Transaction: Foundation.Notification.Name
+  }
+  public struct MCISDKTransaction {
+    public static let Created: Foundation.Notification.Name
+  }
+}
+extension CoreFoundation.CGSize : MCISDKKingfisherCompatibleValue {
+}
+extension MCISDKKingfisherWrapper where Base == CoreFoundation.CGSize {
+  public func resize(to size: CoreFoundation.CGSize, for contentMode: MCISDKContentMode) -> CoreFoundation.CGSize
+  public func constrained(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  public func filling(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  public func constrainedRect(for size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint) -> CoreFoundation.CGRect
+}
+@_hasMissingDesignatedInitializers final public class MCICustomerAccountQuizSuccess : Swift.Codable {
+  final public var successTitle: Swift.String? {
+    get
+  }
+  final public var successMessage: Swift.String? {
+    get
+  }
+  final public var successDismissTitle: Swift.String? {
+    get
+  }
+  final public var account: MCISDKAccount? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum MCISDKCallbackQueue {
+  case mainAsync
+  case mainCurrentOrAsync
+  case untouch
+  case dispatch(Dispatch.DispatchQueue)
+  public func execute(_ block: @escaping () -> Swift.Void)
+}
+extension Swift.FloatingPoint {
+  public var mciSdkDegreesToRadians: Self {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class MCICustomerAccountQuiz : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var quiz: [MCICustomerAccountQuizQuestion]? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCICustomerAccountQuizQuestion : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var question: Swift.String? {
+    get
+  }
+  final public var answers: [Swift.String]? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCICustomerAccountSelectedAnswer : Swift.Codable {
+  final public var questionId: Swift.String? {
+    get
+  }
+  final public var answer: Swift.String? {
+    get
+  }
+  public init(questionId: Swift.String, answer: Swift.String)
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public typealias MCISDKResult<Data> = (Swift.Result<Data, Foundation.NSError>) -> Swift.Void
+public typealias MCISDKPrefetcherProgressBlock = ((_ skippedResources: [MCISDKResource], _ failedResources: [MCISDKResource], _ completedResources: [MCISDKResource]) -> Swift.Void)
+public typealias MCISDKPrefetcherSourceProgressBlock = ((_ skippedSources: [MCISDKSource], _ failedSources: [MCISDKSource], _ completedSources: [MCISDKSource]) -> Swift.Void)
+public typealias MCISDKPrefetcherCompletionHandler = ((_ skippedResources: [MCISDKResource], _ failedResources: [MCISDKResource], _ completedResources: [MCISDKResource]) -> Swift.Void)
+public typealias MCISDKPrefetcherSourceCompletionHandler = ((_ skippedSources: [MCISDKSource], _ failedSources: [MCISDKSource], _ completedSources: [MCISDKSource]) -> Swift.Void)
+@_hasMissingDesignatedInitializers public class MCISDKImagePrefetcher : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var maxConcurrentDownloads: Swift.Int
+  convenience public init(urls: [Foundation.URL], options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKPrefetcherProgressBlock? = nil, completionHandler: MCISDKPrefetcherCompletionHandler? = nil)
+  convenience public init(resources: [MCISDKResource], options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKPrefetcherProgressBlock? = nil, completionHandler: MCISDKPrefetcherCompletionHandler? = nil)
+  convenience public init(sources: [MCISDKSource], options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKPrefetcherSourceProgressBlock? = nil, completionHandler: MCISDKPrefetcherSourceCompletionHandler? = nil)
+  public func start()
+  public func stop()
+  @objc deinit
+}
+public protocol SupportInjectable {
+  static func allocate() -> SupportInjectable
+  func present(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+public enum MCISDKImageTransition {
+  case none
+  case fade(Foundation.TimeInterval)
+  case flipFromLeft(Foundation.TimeInterval)
+  case flipFromRight(Foundation.TimeInterval)
+  case flipFromTop(Foundation.TimeInterval)
+  case flipFromBottom(Foundation.TimeInterval)
+  case custom(duration: Foundation.TimeInterval, options: UIKit.UIView.AnimationOptions, animations: ((UIKit.UIImageView, UIKit.UIImage) -> Swift.Void)?, completion: ((Swift.Bool) -> Swift.Void)?)
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public static var mciSdkName: Swift.String?
+  @_Concurrency.MainActor(unsafe) public static var mciSdkVersion: Swift.String?
+  @_Concurrency.MainActor(unsafe) public class func mciSdkApplicationName() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public class func mciSdkApplicationVersion() -> Swift.String
+}
+extension Swift.String {
+  public func mciSdkPadding(leftTo paddedLength: Swift.Int, withPad pad: Swift.String, startingAt padStart: Swift.Int = 0) -> Swift.String
+  public func mciSdkAddingPercentEncodingForURL() -> Swift.String?
+}
+public protocol MCISDKKingfisherCacheSerializer {
+  func data(with image: MCISDKKFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  func image(with data: Foundation.Data, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+  @available(*, deprecated, message: "Deprecated. Implement the method with same name but with `KingfisherParsedOptionsInfo` instead.")
+  func image(with data: Foundation.Data, options: MCISDKKingfisherOptionsInfo?) -> MCISDKKFCrossPlatformImage?
+}
+extension MCISDKKingfisherCacheSerializer {
+  public func image(with data: Foundation.Data, options: MCISDKKingfisherOptionsInfo?) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKKingfisherDefaultCacheSerializer : MCISDKKingfisherCacheSerializer {
+  public static let `default`: MCISDKKingfisherDefaultCacheSerializer
+  public var compressionQuality: CoreFoundation.CGFloat
+  public var preferCacheOriginalData: Swift.Bool
+  public init()
+  public func data(with image: MCISDKKFCrossPlatformImage, original: Foundation.Data?) -> Foundation.Data?
+  public func image(with data: Foundation.Data, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public protocol MCISDKImageDownloadRequestModifier {
+  func modified(for request: Foundation.URLRequest) -> Foundation.URLRequest?
+}
+public struct MCISDKAnyModifier : MCISDKImageDownloadRequestModifier {
+  public func modified(for request: Foundation.URLRequest) -> Foundation.URLRequest?
+  public init(modify: @escaping (Foundation.URLRequest) -> Foundation.URLRequest?)
+}
+@_hasMissingDesignatedInitializers final public class MCISubCategory : Swift.Codable {
+  final public var id: Swift.String {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  final public var merchants: [MCISDKMerchant]?
+  final public var numberOfMerchants: Swift.Int {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol StorePaymentInjectable {
+  func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
+  func setEnableSupport(_ enable: Swift.Bool)
+}
+@_hasMissingDesignatedInitializers final public class MCILocation {
+  final public var coordinate: CoreLocation.CLLocationCoordinate2D {
+    get
+  }
+  final public var horizontalAccuracy: Swift.Double {
+    get
+  }
+  final public var timestamp: Foundation.Date {
+    get
+  }
+  final public func asCLLocation() -> CoreLocation.CLLocation
+  @objc deinit
+}
+public enum MCISDKImageFormat {
+  case unknown
+  case PNG
+  case JPEG
+  case GIF
+  public enum JPEGMarker {
+    case SOF0
+    case SOF2
+    case DHT
+    case DQT
+    case DRI
+    case SOS
+    case RSTn(Swift.UInt8)
+    case APPn
+    case COM
+    case EOI
+  }
+  public static func == (a: MCISDKImageFormat, b: MCISDKImageFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Foundation.Data : MCISDKKingfisherCompatibleValue {
+}
+extension MCISDKKingfisherWrapper where Base == Foundation.Data {
+  public var imageFormat: MCISDKImageFormat {
+    get
+  }
+  public func contains(jpeg marker: MCISDKImageFormat.JPEGMarker) -> Swift.Bool
+}
+public protocol MCISDKImageDataProvider {
+  var cacheKey: Swift.String { get }
+  func data(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  var contentURL: Foundation.URL? { get }
+}
+extension MCISDKImageDataProvider {
+  public var contentURL: Foundation.URL? {
+    get
+  }
+}
+public struct MCISDKLocalFileImageDataProvider : MCISDKImageDataProvider {
+  public let fileURL: Foundation.URL
+  public init(fileURL: Foundation.URL, cacheKey: Swift.String? = nil)
+  public var cacheKey: Swift.String
+  public func data(handler: (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+  public var contentURL: Foundation.URL? {
+    get
+  }
+}
+public struct MCISDKBase64ImageDataProvider : MCISDKImageDataProvider {
+  public let base64String: Swift.String
+  public init(base64String: Swift.String, cacheKey: Swift.String)
+  public var cacheKey: Swift.String
+  public func data(handler: (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+}
+public struct MCISDKRawImageDataProvider : MCISDKImageDataProvider {
+  public let data: Foundation.Data
+  public init(data: Foundation.Data, cacheKey: Swift.String)
+  public var cacheKey: Swift.String
+  public func data(handler: @escaping (Swift.Result<Foundation.Data, Swift.Error>) -> Swift.Void)
+}
+public enum MCISDKImageProcessItem {
+  case image(MCISDKKFCrossPlatformImage)
+  case data(Foundation.Data)
+}
+public protocol MCISDKImageProcessor {
+  var identifier: Swift.String { get }
+  @available(*, deprecated, message: "Deprecated. Implement the method with same name but with `KingfisherParsedOptionsInfo` instead.")
+  func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherOptionsInfo) -> MCISDKKFCrossPlatformImage?
+  func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+extension MCISDKImageProcessor {
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+extension MCISDKImageProcessor {
+  public func append(another: MCISDKImageProcessor) -> MCISDKImageProcessor
+}
+public struct MCISDKDefaultImageProcessor : MCISDKImageProcessor {
+  public static let `default`: MCISDKDefaultImageProcessor
+  public let identifier: Swift.String
+  public init()
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKRectCorner : Swift.OptionSet {
+  public let rawValue: Swift.Int
+  public static let topLeft: MCISDKRectCorner
+  public static let topRight: MCISDKRectCorner
+  public static let bottomLeft: MCISDKRectCorner
+  public static let bottomRight: MCISDKRectCorner
+  public static let all: MCISDKRectCorner
+  public init(rawValue: Swift.Int)
+  public typealias ArrayLiteralElement = MCISDKRectCorner
+  public typealias Element = MCISDKRectCorner
+  public typealias RawValue = Swift.Int
+}
+public struct MCISDKBlendImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let blendMode: CoreGraphics.CGBlendMode
+  public let alpha: CoreFoundation.CGFloat
+  public let backgroundColor: MCISDKKFCrossPlatformColor?
+  public init(blendMode: CoreGraphics.CGBlendMode, alpha: CoreFoundation.CGFloat = 1.0, backgroundColor: MCISDKKFCrossPlatformColor? = nil)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKRoundCornerImageProcessor : MCISDKImageProcessor {
+  public enum Radius {
+    case widthFraction(CoreFoundation.CGFloat)
+    case heightFraction(CoreFoundation.CGFloat)
+    case point(CoreFoundation.CGFloat)
+  }
+  public let identifier: Swift.String
+  @available(*, deprecated, message: "Use `radius` property instead.")
+  public var cornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  public let radius: MCISDKRoundCornerImageProcessor.Radius
+  public let roundingCorners: MCISDKRectCorner
+  public let targetSize: CoreFoundation.CGSize?
+  public let backgroundColor: MCISDKKFCrossPlatformColor?
+  public init(cornerRadius: CoreFoundation.CGFloat, targetSize: CoreFoundation.CGSize? = nil, roundingCorners corners: MCISDKRectCorner = .all, backgroundColor: MCISDKKFCrossPlatformColor? = nil)
+  public init(radius: MCISDKRoundCornerImageProcessor.Radius, targetSize: CoreFoundation.CGSize? = nil, roundingCorners corners: MCISDKRectCorner = .all, backgroundColor: MCISDKKFCrossPlatformColor? = nil)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public enum MCISDKContentMode {
+  case none
+  case aspectFit
+  case aspectFill
+  public static func == (a: MCISDKContentMode, b: MCISDKContentMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct MCISDKResizingImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let referenceSize: CoreFoundation.CGSize
+  public let targetContentMode: MCISDKContentMode
+  public init(referenceSize: CoreFoundation.CGSize, mode: MCISDKContentMode = .none)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKBlurImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let blurRadius: CoreFoundation.CGFloat
+  public init(blurRadius: CoreFoundation.CGFloat)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKOverlayImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let overlay: MCISDKKFCrossPlatformColor
+  public let fraction: CoreFoundation.CGFloat
+  public init(overlay: MCISDKKFCrossPlatformColor, fraction: CoreFoundation.CGFloat = 0.5)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKTintImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let tint: MCISDKKFCrossPlatformColor
+  public init(tint: MCISDKKFCrossPlatformColor)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKColorControlsProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let brightness: CoreFoundation.CGFloat
+  public let contrast: CoreFoundation.CGFloat
+  public let saturation: CoreFoundation.CGFloat
+  public let inputEV: CoreFoundation.CGFloat
+  public init(brightness: CoreFoundation.CGFloat, contrast: CoreFoundation.CGFloat, saturation: CoreFoundation.CGFloat, inputEV: CoreFoundation.CGFloat)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKBlackWhiteProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public init()
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKCroppingImageProcessor : MCISDKImageProcessor {
+  public let identifier: Swift.String
+  public let size: CoreFoundation.CGSize
+  public let anchor: CoreFoundation.CGPoint
+  public init(size: CoreFoundation.CGSize, anchor: CoreFoundation.CGPoint = CGPoint(x: 0.5, y: 0.5))
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKDownsamplingImageProcessor : MCISDKImageProcessor {
+  public let size: CoreFoundation.CGSize
+  public let identifier: Swift.String
+  public init(size: CoreFoundation.CGSize)
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+@available(*, deprecated, renamed: "|>", message: "Will be removed soon. Use `|>` instead.")
+public func >> (left: MCISDKImageProcessor, right: MCISDKImageProcessor) -> MCISDKImageProcessor
+infix operator |> : AdditionPrecedence
+public func |> (left: MCISDKImageProcessor, right: MCISDKImageProcessor) -> MCISDKImageProcessor
+extension Foundation.NSNotification.Name {
+  public static let KingfisherDidCleanDiskCache: Foundation.Notification.Name
+}
+public let MCISDKKingfisherKingfisherDiskCacheCleanedHashKey: Swift.String
+public enum MCISDKKingfisherCacheType {
+  case none
+  case memory
+  case disk
+  public var cached: Swift.Bool {
+    get
+  }
+  public static func == (a: MCISDKKingfisherCacheType, b: MCISDKKingfisherCacheType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct MCISDKKingfisherCacheStoreResult {
+  public let memoryCacheResult: Swift.Result<(), Swift.Never>
+  public let diskCacheResult: Swift.Result<(), MCISDKKingfisherError>
+}
+extension UIKit.UIImage : MCISDKKingfisherCacheCostCalculable {
+  public var cacheCost: Swift.Int {
+    get
+  }
+}
+extension Foundation.Data : MCISDKKingfisherDataTransformable {
+  public func toData() throws -> Foundation.Data
+  public static func fromData(_ data: Foundation.Data) throws -> Foundation.Data
+  public static let empty: Foundation.Data
+}
+public enum MCISDKKingfisherImageCacheResult {
+  case disk(MCISDKKFCrossPlatformImage)
+  case memory(MCISDKKFCrossPlatformImage)
+  case none
+  public var image: MCISDKKFCrossPlatformImage? {
+    get
+  }
+  public var cacheType: MCISDKKingfisherCacheType {
+    get
+  }
+}
+open class MCISDKKingfisherImageCache {
+  public static let `default`: MCISDKKingfisherImageCache
+  final public let memoryStorage: MCISDKKingfisherMemoryStorage.Backend<MCISDKKFCrossPlatformImage>
+  final public let diskStorage: MCISDKKingfisherDiskStorage.Backend<Foundation.Data>
+  public typealias DiskCachePathClosure = (Foundation.URL, Swift.String) -> Foundation.URL
+  public init(memoryStorage: MCISDKKingfisherMemoryStorage.Backend<MCISDKKFCrossPlatformImage>, diskStorage: MCISDKKingfisherDiskStorage.Backend<Foundation.Data>)
+  convenience public init(name: Swift.String)
+  convenience public init(name: Swift.String, cacheDirectoryURL: Foundation.URL?, diskCachePathClosure: MCISDKKingfisherImageCache.DiskCachePathClosure? = nil) throws
+  @objc deinit
+  open func store(_ image: MCISDKKFCrossPlatformImage, original: Foundation.Data? = nil, forKey key: Swift.String, options: MCISDKKingfisherParsedOptionsInfo, toDisk: Swift.Bool = true, completionHandler: ((MCISDKKingfisherCacheStoreResult) -> Swift.Void)? = nil)
+  open func store(_ image: MCISDKKFCrossPlatformImage, original: Foundation.Data? = nil, forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", cacheSerializer serializer: MCISDKKingfisherCacheSerializer = MCISDKKingfisherDefaultCacheSerializer.default, toDisk: Swift.Bool = true, callbackQueue: MCISDKCallbackQueue = .untouch, completionHandler: ((MCISDKKingfisherCacheStoreResult) -> Swift.Void)? = nil)
+  open func storeToDisk(_ data: Foundation.Data, forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", expiration: MCISDKKingfisherStorageExpiration? = nil, callbackQueue: MCISDKCallbackQueue = .untouch, completionHandler: ((MCISDKKingfisherCacheStoreResult) -> Swift.Void)? = nil)
+  open func removeImage(forKey key: Swift.String, processorIdentifier identifier: Swift.String = "", fromMemory: Swift.Bool = true, fromDisk: Swift.Bool = true, callbackQueue: MCISDKCallbackQueue = .untouch, completionHandler: (() -> Swift.Void)? = nil)
+  open func retrieveImage(forKey key: Swift.String, options: MCISDKKingfisherOptionsInfo? = nil, callbackQueue: MCISDKCallbackQueue = .mainCurrentOrAsync, completionHandler: ((Swift.Result<MCISDKKingfisherImageCacheResult, MCISDKKingfisherError>) -> Swift.Void)?)
+  open func retrieveImageInMemoryCache(forKey key: Swift.String, options: MCISDKKingfisherOptionsInfo? = nil) -> MCISDKKFCrossPlatformImage?
+  open func retrieveImageInDiskCache(forKey key: Swift.String, options: MCISDKKingfisherOptionsInfo? = nil, callbackQueue: MCISDKCallbackQueue = .untouch, completionHandler: @escaping (Swift.Result<MCISDKKFCrossPlatformImage?, MCISDKKingfisherError>) -> Swift.Void)
+  public func clearCache(completion handler: (() -> Swift.Void)? = nil)
+  @objc public func clearMemoryCache()
+  open func clearDiskCache(completion handler: (() -> Swift.Void)? = nil)
+  open func cleanExpiredCache(completion handler: (() -> Swift.Void)? = nil)
+  open func cleanExpiredMemoryCache()
+  open func cleanExpiredDiskCache(completion handler: (() -> Swift.Void)? = nil)
+  @objc public func backgroundCleanExpiredDiskCache()
+  open func imageCachedType(forKey key: Swift.String, processorIdentifier identifier: Swift.String = MCISDKDefaultImageProcessor.default.identifier) -> MCISDKKingfisherCacheType
+  public func isCached(forKey key: Swift.String, processorIdentifier identifier: Swift.String = MCISDKDefaultImageProcessor.default.identifier) -> Swift.Bool
+  open func hash(forKey key: Swift.String, processorIdentifier identifier: Swift.String = MCISDKDefaultImageProcessor.default.identifier) -> Swift.String
+  open func calculateDiskStorageSize(completion handler: @escaping ((Swift.Result<Swift.UInt, MCISDKKingfisherError>) -> Swift.Void))
+  open func cachePath(forKey key: Swift.String, processorIdentifier identifier: Swift.String = MCISDKDefaultImageProcessor.default.identifier) -> Swift.String
+}
+extension UIKit.UIApplication : MCISDKKingfisherCompatible {
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIApplication {
+  public static var shared: UIKit.UIApplication? {
+    get
+  }
+}
+extension MCISDKKingfisherImageCache {
+  @available(*, deprecated, renamed: "init(name:cacheDirectoryURL:diskCachePathClosure:)", message: "Use `init(name:cacheDirectoryURL:diskCachePathClosure:)` instead")
+  convenience public init(name: Swift.String, path: Swift.String?, diskCachePathClosure: MCISDKKingfisherImageCache.DiskCachePathClosure? = nil) throws
+}
+public enum MCISDKKingfisherMemoryStorage {
+  public class Backend<T> where T : MCISDKKingfisherCacheCostCalculable {
+    public var config: MCISDKKingfisherMemoryStorage.Config {
+      get
+      set
+    }
+    public init(config: MCISDKKingfisherMemoryStorage.Config)
+    @objc deinit
+  }
+}
+extension MCISDKKingfisherMemoryStorage {
+  public struct Config {
+    public var totalCostLimit: Swift.Int
+    public var countLimit: Swift.Int
+    public var expiration: MCISDKKingfisherStorageExpiration
+    public let cleanInterval: Foundation.TimeInterval
+    public init(totalCostLimit: Swift.Int, cleanInterval: Foundation.TimeInterval = 120)
+  }
+}
+public enum MCICategoryType : Swift.String {
+  case voucher
+  case cellphoneRecharge
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCICategoryType : Swift.Codable {
+}
+final public class MCICategory : Swift.Codable {
+  final public var id: Swift.String {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  final public var imageUrl: Swift.String {
+    get
+  }
+  final public var bannerUrl: Swift.String {
+    get
+  }
+  final public var type: MCICategoryType {
+    get
+  }
+  final public var description: Swift.String? {
+    get
+  }
+  final public var subcategories: [MCISubCategory] {
+    get
+  }
+  final public var numberOfSubcategories: Swift.Int {
+    get
+  }
+  final public var numberOfMerchants: Swift.Int {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public struct MCISDKImageCreatingOptions {
+  public let scale: CoreFoundation.CGFloat
+  public let duration: Foundation.TimeInterval
+  public let preloadAll: Swift.Bool
+  public let onlyFirstFrame: Swift.Bool
+  public init(scale: CoreFoundation.CGFloat = 1.0, duration: Foundation.TimeInterval = 0.0, preloadAll: Swift.Bool = false, onlyFirstFrame: Swift.Bool = false)
+}
+final public class MCIVoucherAmount : Swift.Codable {
+  final public var amount: Swift.String {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  public init(amount: Swift.String, title: Swift.String?)
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCIVoucherAmountsRange : Swift.Codable {
+  final public var minRange: Swift.String {
+    get
+  }
+  final public var maxRange: Swift.String {
+    get
+  }
+  final public var min: Swift.Double {
+    get
+  }
+  final public var max: Swift.Double {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIVoucher : Swift.Codable {
+  final public var transactionId: Swift.String? {
+    get
+  }
+  final public var buttonStyle: Swift.String? {
+    get
+  }
+  final public var amounts: [MCIVoucherAmount]? {
+    get
+  }
+  final public var amountsRange: MCIVoucherAmountsRange? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantLocation : Swift.Codable {
+  final public var latitude: Swift.Double? {
+    get
+  }
+  final public var longitude: Swift.Double? {
+    get
+  }
+  final public var distance: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantAddress : Swift.Codable {
+  final public var short: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISecurityController {
+  public static let shared: MCISecurityController
+  final public let isSSLPinningEnabled: Swift.Bool
+  final public func compare(password: Swift.String?) -> (equal: Swift.Bool, locked: Swift.Bool)
+  final public func encrypt(_ plainText: Swift.String) -> Swift.String
+  final public func decrypt(hexValue: Swift.String?) -> Swift.String
+  @objc deinit
+}
+extension MCISecurityController {
+  final public func biometryIsAvailable() -> Swift.Bool
+  final public func performBiometryValidation(failureBlock: @escaping (_ error: Foundation.NSError, _ lockout: Swift.Bool) -> Swift.Void = { _,_ in }, successBlock: @escaping () -> Swift.Void = {})
+}
+extension MCISecurityController {
+  public enum SelfieValidation : Swift.Error {
+    case invalidImage
+    case noFaceDetected
+    case moreThanOneFaceDetected
+    case processingFailed
+    case eyesNotDetected
+    case eyesClosed
+    case mouthNotDetected
+    public static func == (a: MCISecurityController.SelfieValidation, b: MCISecurityController.SelfieValidation) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public func validate(selfie: UIKit.UIImage?) throws
+  final public func validate(editingEmail: Swift.String?) -> Swift.Bool
+  final public func validate(email: Swift.String?) -> Swift.Bool
+  final public func validate(cpf: Swift.String?) -> Swift.Bool
+  final public func validate(cnpj: Swift.String?) -> Swift.Bool
+  final public func validate(phone: Swift.String?) -> Swift.Bool
+  final public func validate(internationalPhone: Swift.String?) -> Swift.Bool
+  final public func validate(date: Swift.String?) -> Swift.Bool
+  final public func validate(zipCode: Swift.String?) -> Swift.Bool
+  final public func validate(numberId: Swift.String?) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers final public class MCIKeychainController {
+  public static let shared: MCIKeychainController
+  final public func registerCurrentSession(session: MCISession?, password: Swift.String?)
+  final public func updateCurrentSession()
+  final public func updatePassword(_ password: Swift.String?)
+  @objc deinit
+}
+final public class MCIAccounWalletUI : Swift.Codable {
+  final public var textTintColor: UIKit.UIColor {
+    get
+  }
+  final public var backgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var iconTintColor: UIKit.UIColor {
+    get
+  }
+  final public var actionTintColor: UIKit.UIColor {
+    get
+  }
+  final public var limitBackgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var limitLabelTintColor: UIKit.UIColor {
+    get
+  }
+  final public var limitValueTintColor: UIKit.UIColor {
+    get
+  }
+  final public var cardElementsTintColor: UIKit.UIColor {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIAccountUI : Swift.Codable {
+  final public var backgroundColor: UIKit.UIColor {
+    get
+  }
+  final public var iconUrl: Swift.String {
+    get
+  }
+  final public var wallet: MCIAccounWalletUI? {
+    get
+  }
+  public init(backgroundColor: UIKit.UIColor, iconUrl: Swift.String)
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImageView {
+  @discardableResult
+  public func setImage(with source: MCISDKSource?, placeholder: MCISDKPlaceholder? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  public func setImage(with resource: MCISDKResource?, placeholder: MCISDKPlaceholder? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  public func setImage(with provider: MCISDKImageDataProvider?, placeholder: MCISDKPlaceholder? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  public func cancelDownloadTask()
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImageView {
+  public var taskIdentifier: MCISDKSource.Identifier.Value? {
+    get
+  }
+  public var indicatorType: MCISDKIndicatorType {
+    get
+    set
+  }
+  public var indicator: MCISDKIndicator? {
+    get
+  }
+  public var placeholder: MCISDKPlaceholder? {
+    get
+  }
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  @available(*, deprecated, message: "Use `taskIdentifier` instead to identify a setting task.")
+  public var webURL: Foundation.URL? {
+    get
+  }
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public var normalized: MCISDKKFCrossPlatformImage {
+    get
+  }
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public func pngRepresentation() -> Foundation.Data?
+  public func jpegRepresentation(compressionQuality: CoreFoundation.CGFloat) -> Foundation.Data?
+  public func gifRepresentation() -> Foundation.Data?
+  public func data(format: MCISDKImageFormat, compressionQuality: CoreFoundation.CGFloat = 1.0) -> Foundation.Data?
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public static func animatedImage(data: Foundation.Data, options: MCISDKImageCreatingOptions) -> MCISDKKFCrossPlatformImage?
+  public static func image(data: Foundation.Data, options: MCISDKImageCreatingOptions) -> MCISDKKFCrossPlatformImage?
+  public static func downsampledImage(data: Foundation.Data, to pointSize: CoreFoundation.CGSize, scale: CoreFoundation.CGFloat) -> MCISDKKFCrossPlatformImage?
+}
+@_hasMissingDesignatedInitializers final public class MCISupport : Swift.Codable {
+  final public var email: Swift.String? {
+    get
+  }
+  final public var eula: Swift.String? {
+    get
+  }
+  final public var subject: Swift.String? {
+    get
+  }
+  final public var acceptedCards: Swift.String? {
+    get
+  }
+  final public var accountLimits: Swift.String? {
+    get
+  }
+  final public var contactUs: MCISupportContact? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public protocol MCISDKAuthenticationChallengeResponsable : AnyObject {
+  func downloader(_ downloader: MCISDKImageDownloader, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  func downloader(_ downloader: MCISDKImageDownloader, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+extension MCISDKAuthenticationChallengeResponsable {
+  public func downloader(_ downloader: MCISDKImageDownloader, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+  public func downloader(_ downloader: MCISDKImageDownloader, task: Foundation.URLSessionTask, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+@_hasMissingDesignatedInitializers final public class MCIPlacedMerchant : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var name: Swift.String? {
+    get
+  }
+  final public var description: Swift.String? {
+    get
+  }
+  final public var location: MCIMerchantLocation? {
+    get
+  }
+  final public var address: MCIMerchantAddress? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIBank : Swift.Codable {
+  final public var id: Swift.Int? {
+    get
+  }
+  final public var name: Swift.String? {
+    get
+  }
+  final public var description: Swift.String? {
+    get
+  }
+  final public var digit: Swift.String? {
+    get
+  }
+  final public var ispb: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCIAccountLimits : Swift.Codable {
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIInjectionController {
+  public static let shared: MCIInjectionController
+  final public func register<T>(_ type: T.Type, resolver: @escaping (() -> T))
+  final public func resolve<T>() throws -> T?
+  @objc deinit
+}
+final public class MCIIssuerUI : Swift.Codable {
+  final public var backgroundColor: UIKit.UIColor {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIIssuerDeprecated : Swift.Codable {
+  final public var description: Swift.String? {
+    get
+  }
+  final public var urlLogo: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCIIssuer : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  final public var iconUrl: Swift.String? {
+    get
+  }
+  final public var products: [MCIIssuerProduct]?
+  final public var ui: MCIIssuerUI? {
+    get
+  }
+  final public var deprecated: MCIIssuerDeprecated? {
+    get
+  }
+  final public var primaryColor: UIKit.UIColor {
+    get
+  }
+  final public var secondaryColor: UIKit.UIColor {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension MCIIssuer : Swift.Equatable {
+  public static func == (lhs: MCIIssuer, rhs: MCIIssuer) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers final public class MCISDKHome : Swift.Codable {
+  final public var issuers: [MCIIssuer]? {
+    get
+  }
+  final public var merchants: [MCISDKMerchant]?
+  final public var categories: [MCICategory]?
+  final public var favorites: [MCISDKMerchant]? {
+    get
+  }
+  final public var popular: [MCISDKMerchant]? {
+    get
+  }
+  final public var settings: MCISettings? {
+    get
+  }
+  final public var support: MCISupport? {
+    get
+  }
+  @objc deinit
+}
+extension MCISDKHome {
+  final public func encode(to encoder: Swift.Encoder) throws
+  convenience public init(from decoder: Swift.Decoder) throws
+}
+extension MCISDKHome {
+  final public func sanitize()
+}
+public typealias MCISDKTransformer = (CoreImage.CIImage) -> CoreImage.CIImage?
+public protocol MCISDKCIImageProcessor : MCISDKImageProcessor {
+  var filter: MCISDKFilter { get }
+}
+extension MCISDKCIImageProcessor {
+  public func process(item: MCISDKImageProcessItem, options: MCISDKKingfisherParsedOptionsInfo) -> MCISDKKFCrossPlatformImage?
+}
+public struct MCISDKFilter {
+  public init(transform: @escaping MCISDKTransformer)
+  public static var tint: (_ color: MCISDKKFCrossPlatformColor) -> MCISDKFilter
+  public typealias ColorElement = (CoreFoundation.CGFloat, CoreFoundation.CGFloat, CoreFoundation.CGFloat, CoreFoundation.CGFloat)
+  public static var colorControl: (_ arg: MCISDKFilter.ColorElement) -> MCISDKFilter
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIImage {
+  public func apply(_ filter: MCISDKFilter) -> MCISDKKFCrossPlatformImage
+}
+public protocol WithdrawalInjectable {
+  func present(_ controller: UIKit.UIViewController, transition: UIKit.UIModalTransitionStyle, completion: (() -> Swift.Void)?)
+  func embed(transition: UIKit.UIModalTransitionStyle, title: Swift.String, tabImage: UIKit.UIImage) -> UIKit.UIViewController
+  func configureDelegate(delegate: WithdrawalInjectableDelegate)
+  func setEnableSupport(_ enabled: Swift.Bool)
+}
+public protocol WithdrawalInjectableDelegate {
+  func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+extension WithdrawalInjectableDelegate {
+  public func withdrawSupportFlow(viewController: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+public protocol MCISDKAnimatedImageViewDelegate : AnyObject {
+  func animatedImageView(_ imageView: MCISDKAnimatedImageView, didPlayAnimationLoops count: Swift.UInt)
+  func animatedImageViewDidFinishAnimating(_ imageView: MCISDKAnimatedImageView)
+}
+extension MCISDKAnimatedImageViewDelegate {
+  public func animatedImageView(_ imageView: MCISDKAnimatedImageView, didPlayAnimationLoops count: Swift.UInt)
+  public func animatedImageViewDidFinishAnimating(_ imageView: MCISDKAnimatedImageView)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class MCISDKAnimatedImageView : UIKit.UIImageView {
+  public enum RepeatCount : Swift.Equatable {
+    case once
+    case finite(count: Swift.UInt)
+    case infinite
+    public static func == (lhs: MCISDKAnimatedImageView.RepeatCount, rhs: MCISDKAnimatedImageView.RepeatCount) -> Swift.Bool
+  }
+  @_Concurrency.MainActor(unsafe) public var autoPlayAnimatedImage: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var framePreloadCount: Swift.Int
+  @_Concurrency.MainActor(unsafe) public var needsPrescaling: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var backgroundDecode: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var runLoopMode: Foundation.RunLoop.Mode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) public var repeatCount: MCISDKAnimatedImageView.RepeatCount {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) weak public var delegate: MCISDKAnimatedImageViewDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var image: MCISDKKFCrossPlatformImage? {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isAnimating: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func startAnimating()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func stopAnimating()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func display(_ layer: QuartzCore.CALayer)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToWindow()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func didMoveToSuperview()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?)
+  @available(iOS 3.0, *)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(image: UIKit.UIImage?, highlightedImage: UIKit.UIImage?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+final public class MCIMarketplaceAccountLimit : Swift.Codable {
+  final public var showBoxDetail: Swift.Bool? {
+    get
+  }
+  final public var availableLimit: Swift.String? {
+    get
+  }
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case showBoxDetail
+    case availableLimit
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension UIKit.UIApplication {
+  @_Concurrency.MainActor(unsafe) public func mciSdkTopViewController() -> UIKit.UIViewController?
+}
+extension Foundation.UserDefaults {
+  public func mciSdkIsApplicationRegistered() -> Swift.Bool
+  public func mciSdkRegisterApplication()
+  public func mciSdkSet(pushToken: Swift.String)
+  public func mciSdkPushToken() -> Swift.String?
+  public func mciSdkSet(pushTokenRegistered: Swift.Bool)
+  public func mciSdkPushTokenRegistered() -> Swift.Bool
+  public func mciSdkSet(keychainMigrationIsDone: Swift.Bool)
+  public func mciSdkMigrationKeychainIsDone() -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class MCISDKRetryContext {
+  final public let source: MCISDKSource
+  final public let error: MCISDKKingfisherError
+  public var retriedCount: Swift.Int
+  public var userInfo: Any? {
+    get
+  }
+  @objc deinit
+}
+public enum MCISDKRetryDecision {
+  case retry(userInfo: Any?)
+  case stop
+}
+public protocol MCISDKRetryStrategy {
+  func retry(context: MCISDKRetryContext, retryHandler: @escaping (MCISDKRetryDecision) -> Swift.Void)
+}
+public struct MCISDKDelayRetryStrategy : MCISDKRetryStrategy {
+  public enum Interval {
+    case seconds(Foundation.TimeInterval)
+    case accumulated(Foundation.TimeInterval)
+    case custom(block: (_ retriedCount: Swift.Int) -> Foundation.TimeInterval)
+  }
+  public let maxRetryCount: Swift.Int
+  public let retryInterval: MCISDKDelayRetryStrategy.Interval
+  public init(maxRetryCount: Swift.Int, retryInterval: MCISDKDelayRetryStrategy.Interval = .seconds(3))
+  public func retry(context: MCISDKRetryContext, retryHandler: @escaping (MCISDKRetryDecision) -> Swift.Void)
+}
+final public class MCIWithdrawAccountLimit : Swift.Codable {
+  final public var showBoxDetail: Swift.Bool? {
+    get
+  }
+  final public var availableLimit: Swift.String? {
+    get
+  }
+  public enum CodingKeys : Swift.String, Swift.CodingKey {
+    case showBoxDetail
+    case availableLimit
+    public init?(rawValue: Swift.String)
+    public init?(stringValue: Swift.String)
+    public init?(intValue: Swift.Int)
+    public typealias RawValue = Swift.String
+    public var intValue: Swift.Int? {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+    public var stringValue: Swift.String {
+      get
+    }
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCISettings : Swift.Codable {
+  final public var home: MCIHomeSettings? {
+    get
+  }
+  final public var wallet: MCIWalletSettings? {
+    get
+  }
+  final public var availability: MCIAvailabilitySettings? {
+    get
+  }
+  final public var messages: MCIMessageError? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCIHomeSettings : Swift.Codable {
+  final public var categories: Swift.Int {
+    get
+  }
+  final public var favorites: Swift.Int {
+    get
+  }
+  final public var popular: Swift.Int {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIWalletSettings : Swift.Codable {
+  final public var cashIn: MCICashInSettings? {
+    get
+  }
+  final public var cashOut: MCICashOutSettings? {
+    get
+  }
+  final public var quiz: MCIQuizSettings? {
+    get
+  }
+  final public var virtualCard: MCIVirtualCardSettings? {
+    get
+  }
+  final public var pix: MCIPixSettings? {
+    get
+  }
+  final public var ui: MCISettingsUI? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCICashInSettings : Swift.Codable {
+  final public var bankSlipMinValue: Swift.Double {
+    get
+  }
+  final public var bankSlipMaxValue: Swift.Double {
+    get
+  }
+  final public var bankSlipFee: Swift.Double {
+    get
+  }
+  final public var bankSlipFree: Swift.Int {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCICashOutSettings : Swift.Codable {
+  final public var p2pMinValue: Swift.Double {
+    get
+  }
+  final public var p2pMaxValue: Swift.Double {
+    get
+  }
+  final public var tedMinValue: Swift.Double {
+    get
+  }
+  final public var tedMaxValue: Swift.Double {
+    get
+  }
+  final public var tedFee: Swift.Double {
+    get
+  }
+  final public var withdrawalMinValue: Swift.Double {
+    get
+  }
+  final public var withdrawalMaxValue: Swift.Double {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIQuizSettings : Swift.Codable {
+  final public var timerInSeconds: Swift.Int {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIVirtualCardSettings : Swift.Codable {
+  final public var virtualCardRefreshTime: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIPixSettings : Swift.Codable {
+  final public var transfer: MCIPixTransferSettings? {
+    get
+  }
+  final public var qrCode: MCIPixQrCodeSettings? {
+    get
+  }
+  final public var home: MCIPixHomeSettings? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIPixTransferSettings : Swift.Codable {
+  final public var minValue: Swift.Double? {
+    get
+  }
+  final public var maxValue: Swift.Double? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIPixQrCodeSettings : Swift.Codable {
+  final public var minValue: Swift.Double? {
+    get
+  }
+  final public var maxValue: Swift.Double? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIPixHomeSettings : Swift.Codable {
+  final public var ui: MCIPixHomeUISettings? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCIPixHomeUISettings : Swift.Codable {
+  final public var topCircleColor: Swift.String? {
+    get
+  }
+  final public var topTextColor: Swift.String? {
+    get
+  }
+  final public var topKeyColor: Swift.String? {
+    get
+  }
+  final public var topBackgroundColor: Swift.String? {
+    get
+  }
+  final public var centerButtonColor: Swift.String? {
+    get
+  }
+  final public var centerBackgroundColor: Swift.String? {
+    get
+  }
+  final public var bottomBackgroundColor: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilitySettings : Swift.Codable {
+  final public var faq: Swift.Bool? {
+    get
+  }
+  final public var payment: MCIAvailabilityPaymentSettings? {
+    get
+  }
+  final public var availableTabs: MCIAvailabilityHomeTab? {
+    get
+  }
+  final public var mandatoryEmailValidation: Swift.Bool {
+    get
+  }
+  final public var maxRegisteredAccounts: Swift.Int {
+    get
+  }
+  final public var privateLabel: MCIPrivateLabelConfig? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIPrivateLabelConfig : Swift.Codable {
+  final public var virtualCard: Swift.Bool? {
+    get
+  }
+  final public var myCards: Swift.Bool? {
+    get
+  }
+  final public var isDownloadInvoicePdfAvailable: Swift.Bool? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilityPaymentSettings : Swift.Codable {
+  final public var qrcode: MCIAvailabilityQRCodeSettings? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeSettings : Swift.Codable {
+  final public var reading: MCIAvailabilityQRCodeReadingSettings? {
+    get
+  }
+  final public var writing: MCIAvailabilityQRCodeWritingSettings? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeReadingSettings : Swift.Codable {
+  final public var enabled: Swift.Bool? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilityQRCodeWritingSettings : Swift.Codable {
+  final public var enabled: Swift.Bool? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIAvailabilityHomeTab : Swift.Codable {
+  final public var marketplace: Swift.Bool? {
+    get
+  }
+  final public var payment: Swift.Bool? {
+    get
+  }
+  final public var wallet: Swift.Bool? {
+    get
+  }
+  final public var withdraw: Swift.Bool? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMessageError : Swift.Codable {
+  final public var defaultError: MCIDefaultError? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIDefaultError : Swift.Codable {
+  final public var title: Swift.String? {
+    get
+  }
+  final public var body: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum MCIMerchantActionType : Swift.String {
+  case unknown
+  case app
+  case www
+  case dynamicURL
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MCIMerchantMCCType : Swift.Int {
+  case recharge
+  case food
+  case health
+  case softwareStore
+  case transport
+  case unknown
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension MCIMerchantActionType : Swift.Codable {
+}
+public enum MCIMerchantServiceType : Swift.String {
+  case cellphoneRecharge
+  case uber
+  case unknown
+  case voucher
+  public static let supported: [MCIMerchantServiceType]
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCIMerchantServiceType : Swift.Codable {
+}
+final public class MCIMerchantSimpleAction : Swift.Codable {
+  final public var type: MCIMerchantActionType {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  final public var url: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantAction : Swift.Codable {
+  final public var title: Swift.String? {
+    get
+  }
+  final public var type: MCIMerchantActionType? {
+    get
+  }
+  final public var callToActionTitle: Swift.String? {
+    get
+  }
+  final public var callToActionUrl: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantCallToAction : Swift.Codable {
+  final public var buttons: [MCIMerchantAction]? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantUrls : Swift.Codable {
+  final public var icon: Swift.String? {
+    get
+  }
+  final public var banner: Swift.String? {
+    get
+  }
+  final public var terms: Swift.String? {
+    get
+  }
+  final public var tutorial: Swift.String? {
+    get
+  }
+  final public var webview: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCIMerchantDeprecated : Swift.Codable {
+  final public var urlLogo: Swift.String? {
+    get
+  }
+  final public var urlThumb: Swift.String? {
+    get
+  }
+  final public var urlReceipt: Swift.String? {
+    get
+  }
+  final public var urlStatement: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISDKMerchant {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  final public var description: Swift.String? {
+    get
+  }
+  final public var serviceType: MCIMerchantServiceType {
+    get
+  }
+  final public var urls: MCIMerchantUrls? {
+    get
+  }
+  final public var action: MCIMerchantSimpleAction? {
+    get
+  }
+  final public var deprecated: MCIMerchantDeprecated? {
+    get
+  }
+  final public var howToUse: Swift.String? {
+    get
+  }
+  final public var categories: Swift.String {
+    get
+  }
+  final public var participatingStores: Swift.Bool {
+    get
+  }
+  final public var mcc: MCIMerchantMCCType {
+    get
+  }
+  @objc deinit
+}
+extension MCISDKMerchant : Swift.Codable {
+  final public func encode(to encoder: Swift.Encoder) throws
+  convenience public init(from decoder: Swift.Decoder) throws
+}
+extension MCISDKMerchant : Swift.Equatable {
+  public static func == (lhs: MCISDKMerchant, rhs: MCISDKMerchant) -> Swift.Bool
+}
+extension MCISDKMerchant {
+  final public class func from(merchantTransaction: MCICustomerMerchantTransaction) -> MCISDKMerchant
+}
+public enum MCISDKKingfisherDiskStorage {
+  public class Backend<T> where T : MCISDKKingfisherDataTransformable {
+    public var config: MCISDKKingfisherDiskStorage.Config
+    final public let directoryURL: Foundation.URL
+    public init(config: MCISDKKingfisherDiskStorage.Config) throws
+    public func cacheFileURL(forKey key: Swift.String) -> Foundation.URL
+    @objc deinit
+  }
+}
+extension MCISDKKingfisherDiskStorage {
+  public struct Config {
+    public var sizeLimit: Swift.UInt
+    public var expiration: MCISDKKingfisherStorageExpiration
+    public var pathExtension: Swift.String?
+    public var usesHashedFileName: Swift.Bool
+    public init(name: Swift.String, sizeLimit: Swift.UInt, fileManager: Foundation.FileManager = .default, directory: Foundation.URL? = nil)
+  }
+}
+final public class MCISDKAuthenticationState : Swift.Codable {
+  final public var id: Swift.String {
+    get
+  }
+  final public var status: MCICustomerAuthenticationType {
+    get
+  }
+  public init()
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum MCISDKDeviceModel : Swift.String {
+  case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPadAir5, iPad5, iPad6, iPad7, iPad8, iPad9, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadMini6, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, iPhoneSE3, iPhone14, iPhone14Plus, iPhone14Pro, iPhone14ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleWatchS7, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, AppleTV2_4K, unrecognized
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension Foundation.TimeZone {
+  public static let mciSdkZero: Foundation.TimeZone?
+  public static let mciSdkUtc: Foundation.TimeZone?
+}
+extension Foundation.Locale {
+  public static let mciSdkPtBr: Foundation.Locale
+  public static let mciSdkEnUs: Foundation.Locale
+}
+extension Foundation.DateFormatter {
+  public static let mciSdkIso3339: Foundation.DateFormatter
+  public static let mciSdkShortYearMonth: Foundation.DateFormatter
+  public static let mciSdkMonth: Foundation.DateFormatter
+  public static let mciSdkDayMonth: Foundation.DateFormatter
+  public static let mciSdkBrazilianDate: Foundation.DateFormatter
+  public static let mciSdkBrazilianDateWithTime: Foundation.DateFormatter
+  public static let mciSdkBrazilianDateWithTimeAndHifen: Foundation.DateFormatter
+  public static let mciSdkAwsDate: Foundation.DateFormatter
+}
+public protocol MCIAdditionalHeaderDelegate {
+  func headers(_ completion: @escaping ([Swift.String : Swift.String]?) -> ())
+  func retryHeaders(_ status: Swift.String, completion: @escaping ([Swift.String : Swift.String]?) -> ())
+}
+public enum MCISDKSource {
+  public enum Identifier {
+    public typealias Value = Swift.UInt
+  }
+  case network(MCISDKResource)
+  case provider(MCISDKImageDataProvider)
+  public var cacheKey: Swift.String {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public class func mciSdkDeviceIdentifier() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func mciSdkUserAgent() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func mciSdkDeviceModel() -> MCISDKDeviceModel
+}
+public protocol MCISDKPlaceholder {
+  func add(to imageView: MCISDKKFCrossPlatformImageView)
+  func remove(from imageView: MCISDKKFCrossPlatformImageView)
+}
+extension UIKit.UIImage : MCISDKPlaceholder {
+  public func add(to imageView: MCISDKKFCrossPlatformImageView)
+  public func remove(from imageView: MCISDKKFCrossPlatformImageView)
+}
+extension MCISDKPlaceholder where Self : UIKit.UIImageView {
+  public func add(to imageView: MCISDKKFCrossPlatformImageView)
+  public func remove(from imageView: MCISDKKFCrossPlatformImage)
+}
+public protocol MCISDKImageDownloaderDelegate : AnyObject {
+  func imageDownloader(_ downloader: MCISDKImageDownloader, willDownloadImageForURL url: Foundation.URL, with request: Foundation.URLRequest?)
+  func imageDownloader(_ downloader: MCISDKImageDownloader, didFinishDownloadingImageForURL url: Foundation.URL, with response: Foundation.URLResponse?, error: Swift.Error?)
+  func imageDownloader(_ downloader: MCISDKImageDownloader, didDownload data: Foundation.Data, for url: Foundation.URL) -> Foundation.Data?
+  func imageDownloader(_ downloader: MCISDKImageDownloader, didDownload image: MCISDKKFCrossPlatformImage, for url: Foundation.URL, with response: Foundation.URLResponse?)
+  func isValidStatusCode(_ code: Swift.Int, for downloader: MCISDKImageDownloader) -> Swift.Bool
+}
+extension MCISDKImageDownloaderDelegate {
+  public func imageDownloader(_ downloader: MCISDKImageDownloader, willDownloadImageForURL url: Foundation.URL, with request: Foundation.URLRequest?)
+  public func imageDownloader(_ downloader: MCISDKImageDownloader, didFinishDownloadingImageForURL url: Foundation.URL, with response: Foundation.URLResponse?, error: Swift.Error?)
+  public func imageDownloader(_ downloader: MCISDKImageDownloader, didDownload image: MCISDKKFCrossPlatformImage, for url: Foundation.URL, with response: Foundation.URLResponse?)
+  public func isValidStatusCode(_ code: Swift.Int, for downloader: MCISDKImageDownloader) -> Swift.Bool
+  public func imageDownloader(_ downloader: MCISDKImageDownloader, didDownload data: Foundation.Data, for url: Foundation.URL) -> Foundation.Data?
+}
+public typealias MCISDKKFCrossPlatformImage = UIKit.UIImage
+public typealias MCISDKKFCrossPlatformColor = UIKit.UIColor
+public typealias MCISDKKFCrossPlatformImageView = UIKit.UIImageView
+public typealias MCISDKKFCrossPlatformView = UIKit.UIView
+public typealias MCISDKKFCrossPlatformButton = UIKit.UIButton
+public struct MCISDKKingfisherWrapper<Base> {
+  public let base: Base
+  public init(_ base: Base)
+}
+public protocol MCISDKKingfisherCompatible : AnyObject {
+}
+public protocol MCISDKKingfisherCompatibleValue {
+}
+extension MCISDKKingfisherCompatible {
+  public var mciSdkKf: MCISDKKingfisherWrapper<Self> {
+    get
+    set
+  }
+}
+extension MCISDKKingfisherCompatibleValue {
+  public var mciSdkKf: MCISDKKingfisherWrapper<Self> {
+    get
+    set
+  }
+}
+extension UIKit.UIImage : MCISDKKingfisherCompatible {
+}
+extension UIKit.UIImageView : MCISDKKingfisherCompatible {
+}
+extension UIKit.UIButton : MCISDKKingfisherCompatible {
+}
+extension UIKit.NSTextAttachment : MCISDKKingfisherCompatible {
+}
+final public class MCISettingsUI : Swift.Codable {
+  final public var accountPendingTitle: Swift.String? {
+    get
+  }
+  final public var accountPendingDescription: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class MCISDKBarcodeGenerator {
+  public enum BarcodeTypes : Swift.String {
+    case aztec
+    case code128
+    case pdf417
+    case qr
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public static func barcode(input: Swift.String, format: MCISDKBarcodeGenerator.BarcodeTypes, size: CoreFoundation.CGSize, color: UIKit.UIColor = .black, image: UIKit.UIImage? = nil) -> UIKit.UIImage?
+  @objc deinit
+}
+public enum MCICustomerAccountTokenError : Swift.Error {
+  case genericError(Swift.String)
+  case invalidURLScheme
+  case invalidTimerPeriod(Swift.String)
+  case invalidDigits(Swift.String)
+  case invalidSecret(Swift.String)
+  case missingSecret
+  case invalidExpirationDate
+}
+final public class MCICustomerAccountToken : Swift.Codable {
+  final public var expirationDate: Foundation.Date {
+    get
+  }
+  final public var currentPassword: Swift.String? {
+    get
+  }
+  final public var remainingSeconds: Swift.String {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public init(url: Swift.String) throws
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+}
+extension MCICustomerAccountToken : Swift.Equatable {
+  public static func == (lhs: MCICustomerAccountToken, rhs: MCICustomerAccountToken) -> Swift.Bool
+}
+extension Foundation.Data {
+  public init?(mciSdkHexStringEncoded string: Swift.String)
+  public var mciSdkDecrypt: Foundation.Data {
+    get
+  }
+}
+public protocol MCISDKResource {
+  var cacheKey: Swift.String { get }
+  var downloadURL: Foundation.URL { get }
+}
+extension MCISDKResource {
+  public func convertToSource() -> MCISDKSource
+}
+public struct MCISDKImageResource : MCISDKResource {
+  public init(downloadURL: Foundation.URL, cacheKey: Swift.String? = nil)
+  public let cacheKey: Swift.String
+  public let downloadURL: Foundation.URL
+}
+extension Foundation.URL : MCISDKResource {
+  public var cacheKey: Swift.String {
+    get
+  }
+  public var downloadURL: Foundation.URL {
+    get
+  }
+}
+public protocol AuthInjectable {
+  static func allocate() -> AuthInjectable
+  func authenticationFlow(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+  func unauthorizedFlow(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+public protocol CustomerAccountInjectable {
+  static func allocate() -> CustomerAccountInjectable
+  func presentNoCustomerAccountFlow(controller: UIKit.UIViewController, completion: (() -> Swift.Void)?)
+}
+public typealias MCISDKDownloadProgressBlock = ((_ receivedSize: Swift.Int64, _ totalSize: Swift.Int64) -> Swift.Void)
+public struct MCISDKRetrieveImageResult {
+  public let image: MCISDKKFCrossPlatformImage
+  public let cacheType: MCISDKKingfisherCacheType
+  public let source: MCISDKSource
+  public let originalSource: MCISDKSource
+}
+public struct MCISDKPropagationError {
+  public let source: MCISDKSource
+  public let error: MCISDKKingfisherError
+}
+public typealias MCISDKDownloadTaskUpdatedBlock = ((_ newTask: MCISDKDownloadTask?) -> Swift.Void)
+public class MCISDKKingfisherManager {
+  public static let shared: MCISDKKingfisherManager
+  public var cache: MCISDKKingfisherImageCache
+  public var downloader: MCISDKImageDownloader
+  public var defaultOptions: MCISDKKingfisherOptionsInfo
+  public init(downloader: MCISDKImageDownloader, cache: MCISDKKingfisherImageCache)
+  @discardableResult
+  public func retrieveImage(with resource: MCISDKResource, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, downloadTaskUpdated: MCISDKDownloadTaskUpdatedBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)?) -> MCISDKDownloadTask?
+  public func retrieveImage(with source: MCISDKSource, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, downloadTaskUpdated: MCISDKDownloadTaskUpdatedBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)?) -> MCISDKDownloadTask?
+  @objc deinit
+}
+public enum MCISupportOptionType {
+  case email
+  case phone
+  case whatsapp
+  case callcenter
+  public static func == (a: MCISupportOptionType, b: MCISupportOptionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol MCISupportOption {
+  var available: Swift.Bool { get }
+  var title: Swift.String? { get }
+  var type: MCISupportOptionType { get }
+}
+@_hasMissingDesignatedInitializers final public class MCISupportContact : Swift.Codable {
+  final public var email: MCISupportContactByEmail? {
+    get
+  }
+  final public var phone: MCISupportContactByPhone? {
+    get
+  }
+  final public var whatsapp: MCISupportContactByWhatsapp? {
+    get
+  }
+  final public var callcenter: MCISupportContactByCallcenter? {
+    get
+  }
+  final public var availableOptions: [MCISupportOption] {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISupportContactByEmail : MCISupportOption, Swift.Codable {
+  final public var available: Swift.Bool {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  final public var email: Swift.String? {
+    get
+  }
+  final public var subject: Swift.String? {
+    get
+  }
+  final public var type: MCISupportOptionType {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISupportContactByPhone : MCISupportOption, Swift.Codable {
+  final public var available: Swift.Bool {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  final public var numbers: [MCISupportPhoneNumber]? {
+    get
+  }
+  final public var type: MCISupportOptionType {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISupportContactByCallcenter : MCISupportOption, Swift.Codable {
+  final public var available: Swift.Bool {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  final public var url: Swift.String? {
+    get
+  }
+  final public var type: MCISupportOptionType {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISupportContactByWhatsapp : MCISupportOption, Swift.Codable {
+  final public var available: Swift.Bool {
+    get
+  }
+  final public var title: Swift.String? {
+    get
+  }
+  final public var url: Swift.String? {
+    get
+  }
+  final public var type: MCISupportOptionType {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class MCISupportPhoneNumber : Swift.Codable {
+  final public var title: Swift.String? {
+    get
+  }
+  final public var number: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public typealias MCISDKKingfisherOptionsInfo = [MCISDKKingfisherOptionsInfoItem]
+public enum MCISDKKingfisherOptionsInfoItem {
+  case targetCache(MCISDKKingfisherImageCache)
+  case originalCache(MCISDKKingfisherImageCache)
+  case downloader(MCISDKImageDownloader)
+  case transition(MCISDKImageTransition)
+  case downloadPriority(Swift.Float)
+  case forceRefresh
+  case fromMemoryCacheOrRefresh
+  case forceTransition
+  case cacheMemoryOnly
+  case waitForCache
+  case onlyFromCache
+  case backgroundDecode
+  @available(*, deprecated, message: "Use `.callbackQueue(CallbackQueue)` instead.")
+  case callbackDispatchQueue(Dispatch.DispatchQueue?)
+  case callbackQueue(MCISDKCallbackQueue)
+  case scaleFactor(CoreFoundation.CGFloat)
+  case preloadAllAnimationData
+  case requestModifier(MCISDKImageDownloadRequestModifier)
+  case redirectHandler(MCISDKImageDownloadRedirectHandler)
+  case processor(MCISDKImageProcessor)
+  case cacheSerializer(MCISDKKingfisherCacheSerializer)
+  case imageModifier(MCISDKImageModifier)
+  case keepCurrentImageWhileLoading
+  case onlyLoadFirstFrame
+  case cacheOriginalImage
+  case onFailureImage(MCISDKKFCrossPlatformImage?)
+  case alsoPrefetchToMemory
+  case loadDiskFileSynchronously
+  case memoryCacheExpiration(MCISDKKingfisherStorageExpiration)
+  case memoryCacheAccessExtendingExpiration(MCISDKKingfisherExpirationExtending)
+  case diskCacheExpiration(MCISDKKingfisherStorageExpiration)
+  case diskCacheAccessExtendingExpiration(MCISDKKingfisherExpirationExtending)
+  case processingQueue(MCISDKCallbackQueue)
+  case progressiveJPEG(MCISDKImageProgressive)
+  case alternativeSources([MCISDKSource])
+  case retryStrategy(MCISDKRetryStrategy)
+}
+public struct MCISDKKingfisherParsedOptionsInfo {
+  public var targetCache: MCISDKKingfisherImageCache?
+  public var originalCache: MCISDKKingfisherImageCache?
+  public var downloader: MCISDKImageDownloader?
+  public var transition: MCISDKImageTransition
+  public var downloadPriority: Swift.Float
+  public var forceRefresh: Swift.Bool
+  public var fromMemoryCacheOrRefresh: Swift.Bool
+  public var forceTransition: Swift.Bool
+  public var cacheMemoryOnly: Swift.Bool
+  public var waitForCache: Swift.Bool
+  public var onlyFromCache: Swift.Bool
+  public var backgroundDecode: Swift.Bool
+  public var preloadAllAnimationData: Swift.Bool
+  public var callbackQueue: MCISDKCallbackQueue
+  public var scaleFactor: CoreFoundation.CGFloat
+  public var requestModifier: MCISDKImageDownloadRequestModifier?
+  public var redirectHandler: MCISDKImageDownloadRedirectHandler?
+  public var processor: MCISDKImageProcessor
+  public var imageModifier: MCISDKImageModifier?
+  public var cacheSerializer: MCISDKKingfisherCacheSerializer
+  public var keepCurrentImageWhileLoading: Swift.Bool
+  public var onlyLoadFirstFrame: Swift.Bool
+  public var cacheOriginalImage: Swift.Bool
+  public var onFailureImage: MCISDKKFCrossPlatformImage??
+  public var alsoPrefetchToMemory: Swift.Bool
+  public var loadDiskFileSynchronously: Swift.Bool
+  public var memoryCacheExpiration: MCISDKKingfisherStorageExpiration?
+  public var memoryCacheAccessExtendingExpiration: MCISDKKingfisherExpirationExtending
+  public var diskCacheExpiration: MCISDKKingfisherStorageExpiration?
+  public var diskCacheAccessExtendingExpiration: MCISDKKingfisherExpirationExtending
+  public var processingQueue: MCISDKCallbackQueue?
+  public var progressiveJPEG: MCISDKImageProgressive?
+  public var alternativeSources: [MCISDKSource]?
+  public var retryStrategy: MCISDKRetryStrategy?
+  public init(_ info: MCISDKKingfisherOptionsInfo?)
+}
+@_hasMissingDesignatedInitializers final public class MCICellphoneRecharge : Swift.Codable {
+  final public var transactionId: Swift.String? {
+    get
+  }
+  final public var amounts: [Swift.String]? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIButton {
+  @discardableResult
+  public func setImage(with source: MCISDKSource?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  public func setImage(with resource: MCISDKResource?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  public func cancelImageDownloadTask()
+  @discardableResult
+  public func setBackgroundImage(with source: MCISDKSource?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  @discardableResult
+  public func setBackgroundImage(with resource: MCISDKResource?, for state: UIKit.UIControl.State, placeholder: UIKit.UIImage? = nil, options: MCISDKKingfisherOptionsInfo? = nil, progressBlock: MCISDKDownloadProgressBlock? = nil, completionHandler: ((Swift.Result<MCISDKRetrieveImageResult, MCISDKKingfisherError>) -> Swift.Void)? = nil) -> MCISDKDownloadTask?
+  public func cancelBackgroundImageDownloadTask()
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIButton {
+  public func taskIdentifier(for state: UIKit.UIControl.State) -> MCISDKSource.Identifier.Value?
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIButton {
+  public func backgroundTaskIdentifier(for state: UIKit.UIControl.State) -> MCISDKSource.Identifier.Value?
+}
+extension MCISDKKingfisherWrapper where Base : UIKit.UIButton {
+  @available(*, deprecated, message: "Use `taskIdentifier` instead to identify a setting task.")
+  public func webURL(for state: UIKit.UIControl.State) -> Foundation.URL?
+  @available(*, deprecated, message: "Use `backgroundTaskIdentifier` instead to identify a setting task.")
+  public func backgroundWebURL(for state: UIKit.UIControl.State) -> Foundation.URL?
+}
+public enum MCICustomerTransactionStatus : Swift.String {
+  case pending
+  case confirmed
+  case reverted
+  case canceled
+  case expired
+  case none
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCICustomerTransactionStatus : Swift.Codable, Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public enum MCICustomerTransactionType : Swift.String {
+  case purchase
+  case reversal
+  case unknown
+  case installment
+  case adjustment
+  case none
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension MCICustomerTransactionType : Swift.Codable, Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class MCICustomerMerchantTransaction : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var name: Swift.String? {
+    get
+  }
+  final public var icon: Swift.String? {
+    get
+  }
+  @objc deinit
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+final public class MCICustomerTransaction : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var amount: Swift.String {
+    get
+  }
+  final public var date: Foundation.Date {
+    get
+  }
+  final public var merchantId: Swift.String? {
+    get
+  }
+  final public var merchant: MCICustomerMerchantTransaction? {
+    get
+  }
+  final public var type: MCICustomerTransactionType {
+    get
+  }
+  final public var status: MCICustomerTransactionStatus {
+    get
+  }
+  final public var currency: Swift.String? {
+    get
+  }
+  final public var numberOfInstallments: Swift.UInt? {
+    get
+  }
+  final public var adjustmentDescription: Swift.String? {
+    get
+  }
+  final public var reversalTransactionID: Swift.String? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  final public func formattedAmount() -> Swift.String
+  @objc deinit
+}
+extension MCICustomerTransaction : Swift.Equatable {
+  public static func == (lhs: MCICustomerTransaction, rhs: MCICustomerTransaction) -> Swift.Bool
+}
+public enum MCIBalanceStatus : Swift.String, Swift.Codable {
+  case online
+  case offline
+  case unknown
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class MCIBalance : Swift.Codable {
+  final public var currencyLimit: Swift.String {
+    get
+  }
+  final public var status: MCIBalanceStatus {
+    get
+  }
+  final public var accountLimit: MCIAccountLimits? {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+final public class MCICustomer : Swift.Codable {
+  final public var id: Swift.String? {
+    get
+  }
+  final public var status: MCICustomerAuthenticationType? {
+    get
+  }
+  final public var name: Swift.String {
+    get
+  }
+  final public var cpf: Swift.String {
+    get
+  }
+  final public var email: Swift.String
+  final public var phoneNumber: Swift.String
+  final public var firstName: Swift.String {
+    get
+  }
+  final public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension MCICustomer : Swift.Equatable {
+  public static func == (lhs: MCICustomer, rhs: MCICustomer) -> Swift.Bool
+}
+extension ModuleCheckout : Swift.Equatable {}
+extension ModuleCheckout : Swift.Hashable {}
+extension MCISDKFoundationSource : Swift.Equatable {}
+extension MCISDKFoundationSource : Swift.Hashable {}
+extension MCISDKFoundationSource : Swift.RawRepresentable {}
+extension ObfuscatePattern : Swift.Equatable {}
+extension ObfuscatePattern : Swift.Hashable {}
+extension MCIAccountWalletActionService : Swift.Equatable {}
+extension MCIAccountWalletActionService : Swift.Hashable {}
+extension MCIAccountWalletActionService : Swift.RawRepresentable {}
+extension MCIAccountWalletActionType : Swift.Equatable {}
+extension MCIAccountWalletActionType : Swift.Hashable {}
+extension MCIAccountWalletActionType : Swift.RawRepresentable {}
+extension MCIPayAccountLimit.CodingKeys : Swift.Equatable {}
+extension MCIPayAccountLimit.CodingKeys : Swift.Hashable {}
+extension MCIPayAccountLimit.CodingKeys : Swift.RawRepresentable {}
+extension MCIWalletLimits.CodingKeys : Swift.Equatable {}
+extension MCIWalletLimits.CodingKeys : Swift.Hashable {}
+extension MCIWalletLimits.CodingKeys : Swift.RawRepresentable {}
+extension MCIExternalAccountLimit.CodingKeys : Swift.Equatable {}
+extension MCIExternalAccountLimit.CodingKeys : Swift.Hashable {}
+extension MCIExternalAccountLimit.CodingKeys : Swift.RawRepresentable {}
+extension MCICustomerAuthenticationType : Swift.Equatable {}
+extension MCICustomerAuthenticationType : Swift.Hashable {}
+extension MCICustomerAuthenticationType : Swift.RawRepresentable {}
+extension MCISDKTokenEventType : Swift.Equatable {}
+extension MCISDKTokenEventType : Swift.Hashable {}
+extension MCISDKTokenEventType : Swift.RawRepresentable {}
+extension MCIAccountType : Swift.Equatable {}
+extension MCIAccountType : Swift.Hashable {}
+extension MCIAccountType : Swift.RawRepresentable {}
+extension MCICustomerAccountStatus : Swift.Equatable {}
+extension MCICustomerAccountStatus : Swift.Hashable {}
+extension MCICustomerAccountStatus : Swift.RawRepresentable {}
+extension MCIIssuerProductType : Swift.Equatable {}
+extension MCIIssuerProductType : Swift.Hashable {}
+extension MCIIssuerProductType : Swift.RawRepresentable {}
+extension MCIIssuerProductStatus : Swift.Equatable {}
+extension MCIIssuerProductStatus : Swift.Hashable {}
+extension MCIIssuerProductStatus : Swift.RawRepresentable {}
+extension MCIDocumentType : Swift.Equatable {}
+extension MCIDocumentType : Swift.Hashable {}
+extension MCIDocumentType : Swift.RawRepresentable {}
+extension MCISDKImageFormat : Swift.Equatable {}
+extension MCISDKImageFormat : Swift.Hashable {}
+extension MCISDKContentMode : Swift.Equatable {}
+extension MCISDKContentMode : Swift.Hashable {}
+extension MCISDKKingfisherCacheType : Swift.Equatable {}
+extension MCISDKKingfisherCacheType : Swift.Hashable {}
+extension MCICategoryType : Swift.Equatable {}
+extension MCICategoryType : Swift.Hashable {}
+extension MCICategoryType : Swift.RawRepresentable {}
+extension MCISecurityController.SelfieValidation : Swift.Equatable {}
+extension MCISecurityController.SelfieValidation : Swift.Hashable {}
+extension MCIMarketplaceAccountLimit.CodingKeys : Swift.Equatable {}
+extension MCIMarketplaceAccountLimit.CodingKeys : Swift.Hashable {}
+extension MCIMarketplaceAccountLimit.CodingKeys : Swift.RawRepresentable {}
+extension MCIWithdrawAccountLimit.CodingKeys : Swift.Equatable {}
+extension MCIWithdrawAccountLimit.CodingKeys : Swift.Hashable {}
+extension MCIWithdrawAccountLimit.CodingKeys : Swift.RawRepresentable {}
+extension MCIMerchantActionType : Swift.Equatable {}
+extension MCIMerchantActionType : Swift.Hashable {}
+extension MCIMerchantActionType : Swift.RawRepresentable {}
+extension MCIMerchantMCCType : Swift.Equatable {}
+extension MCIMerchantMCCType : Swift.Hashable {}
+extension MCIMerchantMCCType : Swift.RawRepresentable {}
+extension MCIMerchantServiceType : Swift.Equatable {}
+extension MCIMerchantServiceType : Swift.Hashable {}
+extension MCIMerchantServiceType : Swift.RawRepresentable {}
+extension MCISDKDeviceModel : Swift.Equatable {}
+extension MCISDKDeviceModel : Swift.Hashable {}
+extension MCISDKDeviceModel : Swift.RawRepresentable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.Equatable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.Hashable {}
+extension MCISDKBarcodeGenerator.BarcodeTypes : Swift.RawRepresentable {}
+extension MCISupportOptionType : Swift.Equatable {}
+extension MCISupportOptionType : Swift.Hashable {}
+extension MCICustomerTransactionStatus : Swift.Equatable {}
+extension MCICustomerTransactionStatus : Swift.Hashable {}
+extension MCICustomerTransactionStatus : Swift.RawRepresentable {}
+extension MCICustomerTransactionType : Swift.Equatable {}
+extension MCICustomerTransactionType : Swift.Hashable {}
+extension MCICustomerTransactionType : Swift.RawRepresentable {}
+extension MCIBalanceStatus : Swift.Equatable {}
+extension MCIBalanceStatus : Swift.Hashable {}
+extension MCIBalanceStatus : Swift.RawRepresentable {}
